@@ -1,14 +1,23 @@
-#!/usr/bin/env sh
+#!/usr/bin/env php
+<?php
 
-dir=$(cd "${0%[/\\]*}" > /dev/null; cd "../nesbot/carbon/bin" && pwd)
+use Carbon\Cli\Invoker;
 
-if [ -d /proc/cygdrive ]; then
-    case $(which php) in
-        $(readlink -n /proc/cygdrive)/*)
-            # We are in Cygwin using Windows php, so the path must be translated
-            dir=$(cygpath -m "$dir");
-            ;;
-    esac
-fi
+$dir = __DIR__.'/..';
 
-"${dir}/carbon" "$@"
+if (!file_exists($dir.'/autoload.php')) {
+    $dir = __DIR__.'/../vendor';
+}
+
+if (!file_exists($dir.'/autoload.php')) {
+    $dir = __DIR__.'/../../..';
+}
+
+if (!file_exists($dir.'/autoload.php')) {
+    echo 'Autoload not found.';
+    exit(1);
+}
+
+require $dir.'/autoload.php';
+
+exit((new Invoker())(...$argv) ? 0 : 1);
