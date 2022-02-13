@@ -17,7 +17,7 @@ class RouteController extends Controller
             }
     	}
     	else{
-    		return redirect()->route('login');
+    		return redirect()->route('session_expired');
     	}
     }
 
@@ -31,7 +31,7 @@ class RouteController extends Controller
     		}
     	}
     	else{
-    		return redirect()->route('login');
+    		return redirect()->route('session_expired');
     	}
     }
 
@@ -40,7 +40,7 @@ class RouteController extends Controller
             return view('lines');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
         }
     }
 
@@ -49,7 +49,7 @@ class RouteController extends Controller
             return view('stations');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
         }
     }
 
@@ -58,7 +58,7 @@ class RouteController extends Controller
             return view('monitoring');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
         }
     }
 
@@ -67,7 +67,7 @@ class RouteController extends Controller
             return view('reference_types');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
         }
     }
 }

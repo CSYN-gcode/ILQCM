@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('index');
 })->name('login');
 
+Route::get('/session_expired', function () {
+    return view('session_expired');
+})->name('session_expired');
+
 // Route::get('/login', function () {
 //     return view('index');
 // })->name('login');

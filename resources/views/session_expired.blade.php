@@ -1,14 +1,49 @@
-@if(isset(Auth::user()->id) && Auth::user()->status == 1)
-  <script type="text/javascript">
-    window.location = "{{ url('dashboard') }}";
-  </script>
-@elseif((isset(Auth::user()->id) && Auth::user()->status == 2) || !isset(Auth::user()->id))
-<!DOCTYPE html>
+@php
+    session_start();
+    $isLogin = false;
+    if(isset($_SESSION['rapidx_user_id'])){
+        $isLogin = true;
+    }
+
+    $isAuthorized = false;
+    $user_level = 0;
+@endphp
+@if($isLogin)
+    @if($_SESSION['rapidx_user_level_id'] == 3)
+        @if(count($_SESSION['rapidx_user_accesses']) > 0)
+            @for($index = 0; $index < count($_SESSION['rapidx_user_accesses']); $index++)
+                @if($_SESSION['rapidx_user_accesses'][$index]['module_id'] == 21)
+                    @php 
+                        $isAuthorized = true; 
+                        $user_level = $_SESSION['rapidx_user_accesses'][$index]['user_level_id'];
+                    @endphp
+                    @break
+                @endif
+            @endfor
+
+            @if(!$isAuthorized)
+                <script type="text/javascript">
+                    window.location = '../RapidX/';
+                </script>
+            @endif
+        @else
+            <script type="text/javascript">
+                window.location = '../RapidX/';
+            </script>
+        @endif
+    @endif
+
+    <script type="text/javascript">
+        window.location = '../RapidX/';
+    </script>
+
+@else
+  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ILQCM | Sign In</title>
+  <title>ILQCM | Session Expired</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="{{ asset('public/images/favicon.png') }}">
@@ -27,39 +62,12 @@
          class="brand-image img-circle elevation-3" style="max-width: 70px;"> -->
          <br>
          <b>In-Line QC Monitoring</b>
+         <b><i class="fas fa-exclamation-triangle"></i> Session Expired</b>
        </a>
     </div>
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form action="{{ route('sign_in') }}" method="post" id="frmSigIn">
-        @csrf
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" name="username" placeholder="Username">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- /.col -->
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block" id="btnSignIn"><i class="fa fa-unlock" id="iBtnSignInIcon"></i> <span id="spanBtnSignIn">Sign In</span></button> <br>
-
-            <p class="login-box-msg text-danger pLoginErrMsg"></p>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+      <p class="login-box-msg">Please click Sign In button to Login RapidX</p>
+      <a href="../RapidX/" class="btn btn-primary btn-block" id="btnSignIn"><i class="fa fa-unlock" id="iBtnSignInIcon"></i> <span id="spanBtnSignIn">Sign In</span></a>
     </div>
     <!-- /.login-card-body -->
   </div>

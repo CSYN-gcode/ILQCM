@@ -19,6 +19,15 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
+          <a href="../RapidX/" class="nav-link">
+            <i class="nav-icon fas fa-arrow-left"></i>
+            <p>
+              Return to RapidX
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
           <a href="{{ route('dashboard') }}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -26,17 +35,6 @@
             </p>
           </a>
         </li>
-
-        @if(Auth::user()->user_level == 1)
-        <li class="nav-item has-treeview">
-          <a href="{{ route('users') }}" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Users
-            </p>
-          </a>
-        </li>
-        @endif
         
         <li class="nav-item has-treeview">
           <a href="{{ route('lines') }}" class="nav-link">
