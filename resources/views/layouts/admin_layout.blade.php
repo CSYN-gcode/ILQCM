@@ -1,5 +1,4 @@
 @php
-    session_start();
     $isLogin = false;
     if(isset($_SESSION['rapidx_user_id'])){
         $isLogin = true;

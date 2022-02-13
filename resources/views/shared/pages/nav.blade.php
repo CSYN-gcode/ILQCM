@@ -7,7 +7,7 @@
          alt="JCT"
          class="brand-image img-circle elevation-3"> -->
       <!-- <i class="fa fa-home"></i> -->
-    <span class="brand-text font-weight-light">In-Line QC Monitoring</span>
+    <center><span class="brand-text font-weight-light">In-Line QC Monitoring</span></center>
     <!-- </center> -->
   </a>
 

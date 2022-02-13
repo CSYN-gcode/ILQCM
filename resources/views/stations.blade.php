@@ -35,11 +35,7 @@
               <div class="row">
                 <div class="col-sm-12">
                   @php
-                    $display = 'none';
-
-                    if(Auth::user()->user_level == 1){
-                      $display = 'block';
-                    }
+                    $display = 'block';
                   @endphp
                   <div class="float-sm-left" style="min-width: 200px; display: {{ $display }}">
                     <div class="form-group row">

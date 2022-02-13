@@ -126,20 +126,6 @@
         @endphp
         <!-- <span class="badge badge-warning navbar-badge">15</span> -->
       </a>
-      <!-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item" id="aLogout">
-          <i class="fas fa-user mr-2"></i> Logout
-        </a>
-        <a href="#" class="dropdown-item" id="aChangePass">
-          <i class="fas fa-unlock mr-2"></i> Change Password
-        </a>
-        @auth
-          @if(Auth::user()->user_level == 3 || Auth::user()->user_level == 4)
-            
-          @endif
-        @endauth
-      </div> -->
     </li>
   </ul>
 </nav>
