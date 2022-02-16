@@ -39,6 +39,7 @@ Route::get('/dashboard', 'RouteController@dashboard')->name('dashboard');
 Route::get('/users', 'RouteController@users')->name('users');
 Route::get('/lines', 'RouteController@lines')->name('lines');
 Route::get('/stations', 'RouteController@stations')->name('stations');
+Route::get('/machines', 'RouteController@machines')->name('machines');
 Route::get('/monitoring', 'RouteController@monitoring')->name('monitoring');
 
 // USER CONTROLLER
@@ -79,4 +80,12 @@ Route::post('/reference_type_action', 'ReferenceTypeController@reference_type_ac
 Route::get('/get_reference_type_by_id', 'ReferenceTypeController@get_reference_type_by_id')->name('get_reference_type_by_id');
 Route::get('/get_reference_type_by_stat', 'ReferenceTypeController@get_reference_type_by_stat')->name('get_reference_type_by_stat');
 Route::get('/get_cbo_reference_type_by_stat', 'ReferenceTypeController@get_cbo_reference_type_by_stat')->name('get_cbo_reference_type_by_stat');
+
+// MACHINE CONTROLLER
+Route::get('/view_machines', 'MachineController@view_machines')->name('view_machines');
+Route::post('/save_machine', 'MachineController@save_machine')->name('save_machine');
+Route::post('/machine_action', 'MachineController@machine_action')->name('machine_action');
+Route::get('/get_machine_by_id', 'MachineController@get_machine_by_id')->name('get_machine_by_id');
+Route::get('/get_machine_by_stat', 'MachineController@get_machine_by_stat')->name('get_machine_by_stat');
+Route::get('/get_cbo_machine_by_stat', 'MachineController@get_cbo_machine_by_stat')->name('get_cbo_machine_by_stat');
 

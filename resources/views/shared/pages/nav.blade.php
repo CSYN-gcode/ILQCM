@@ -55,6 +55,15 @@
         </li>
 
         <li class="nav-item has-treeview">
+          <a href="{{ route('machines') }}" class="nav-link">
+            <i class="nav-icon fas fa-hdd"></i>
+            <p>
+              Machines
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
           <a href="{{ route('monitoring') }}" class="nav-link">
             <i class="nav-icon fas fa-clipboard-list"></i>
             <p>

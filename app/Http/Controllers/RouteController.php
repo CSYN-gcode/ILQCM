@@ -47,6 +47,16 @@ class RouteController extends Controller
         }
     }
 
+    public function machines(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('machines');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
     public function monitoring(){
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){

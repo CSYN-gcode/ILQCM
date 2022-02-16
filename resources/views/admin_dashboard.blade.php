@@ -57,6 +57,23 @@
 
         <div class="col-lg-3 col-6">
           <!-- small card -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <!-- <h3 id="h3RegistrationsCount">0</h3> -->
+              <br><br>
+              <p>Machines</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-hdd"></i>
+            </div>
+            <a href="{{ route('machines') }}" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <!-- small card -->
           <div class="small-box bg-success">
             <div class="inner">
               <!-- <h3 id="h3RegistrationsCount">0</h3> -->
