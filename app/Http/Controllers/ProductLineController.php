@@ -12,19 +12,18 @@ use Illuminate\Support\Str;
 use Auth;
 
 // MODEL
-use App\Model\Line;
+use App\Model\ProductLine;
 
 // PACKAGE
 use DataTables;
 
-class LineController extends Controller
+class ProductLineController extends Controller
 {
-    //View Lines
-    public function view_lines(Request $request){
+    //View ProductLines
+    public function view_product_lines(Request $request){
         if($request->ajax()){
-	        $data = Line::where('logdel', 0)
+	        $data = ProductLine::where('logdel', 0)
 	        			->where('status', $request->status)
-	        			->where('product_line_id', $request->product_line_id)
         				->get();
 
 	        return DataTables::of($data)
@@ -40,20 +39,55 @@ class LineController extends Controller
 
 	                return $result;
 	            })
-	            ->addColumn('raw_action', function($row){
-	                $result = '';
-	                if($row->status == 1){
-	                    $result .= '<button type="button" class="btn btn-xs btn-primary table-btns btnEditLine" line-id="' . $row->id . '"><i class="fa fa-edit" title="Edit"></i></button>';
+	            ->addColumn('raw_family', function($row){
+	                $result = "";
 
-	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" line-id="' . $row->id . '" title="Archive"><i class="fa fa-lock"></i></button>';
+	                if($row->family == 1){
+	                    $result .= 'BGA/LGA';
 	                }
-	                else{
-	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" line-id="' . $row->id . '" title="Restore"><i class="fa fa-unlock"></i></button>';
+	                else if($row->family == 2){
+	                    $result .= 'BGA-FP';
+	                }
+	                else if($row->family == 3){
+	                    $result .= 'Probe Pin';
+	                }
+	                else if($row->family == 4){
+	                    $result .= 'QF/TSOP/SMPO';
 	                }
 
 	                return $result;
 	            })
-	            ->rawColumns(['raw_status', 'raw_action'])
+	            ->addColumn('raw_action', function($row){
+	                $result = '';
+	                if($row->status == 1){
+	                    $result .= '<button type="button" class="btn btn-xs btn-primary table-btns btnEditProductLine" product-line-id="' . $row->id . '"><i class="fa fa-edit" title="Edit"></i></button>';
+
+	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" product-line-id="' . $row->id . '" title="Archive"><i class="fa fa-lock"></i></button>';
+	                }
+	                else{
+	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" product-line-id="' . $row->id . '" title="Restore"><i class="fa fa-unlock"></i></button>';
+	                }
+
+	                $family = "";
+
+	                if($row->family == 1){
+	                    $family = 'BGA/LGA';
+	                }
+	                else if($row->family == 2){
+	                    $family = 'BGA-FP';
+	                }
+	                else if($row->family == 3){
+	                    $family = 'Probe Pin';
+	                }
+	                else if($row->family == 4){
+	                    $family = 'QF/TSOP/SMPO';
+	                }
+
+	                $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnSelectProductLine" product-line-id="' . $row->id . '" description="' . $row->description . '" family="' . $family . '"><i class="fa fa-arrow-right" title="Select"></i></button>';
+
+	                return $result;
+	            })
+	            ->rawColumns(['raw_status', 'raw_family', 'raw_action'])
 	            ->make(true);
         }
     	else{
@@ -61,32 +95,31 @@ class LineController extends Controller
     	}
     }
 
-    public function save_line(Request $request){
+    public function save_product_line(Request $request){
         date_default_timezone_set('Asia/Manila');
         session_start();
 
         if($request->ajax()){
 	        if(isset($_SESSION["rapidx_user_id"])){
-		        // Add Line
-		        if(!isset($request->line_id)){
+		        // Add ProductLine
+		        if(!isset($request->product_line_id)){
 		            $data = $request->all();
 
 		            $rules = [
+		                'family' => 'required',
 		                'description' => 'required|min:2',
-		                'product_line_id' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                	$line_info = Line::where("product_line_id", $request->product_line_id)
+		                	$product_line_info = ProductLine::where("family", $request->family)
 		                	->where("description", $request->description)
 		                	->first();
-
-		                	if($line_info == null){
-			                    Line::insert([
-			                        'product_line_id' => $request->product_line_id,
+		                	if($product_line_info == null){
+			                    ProductLine::insert([
+			                        'family' => $request->family,
 			                        'description' => $request->description,
 			                        'status' => 1,
 			                        'created_by' => $_SESSION["rapidx_user_id"],
@@ -95,7 +128,7 @@ class LineController extends Controller
 			                        'updated_at' => date('Y-m-d H:i:s'),
 			                    ]);
 			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
-		                	}
+							}
 		                	else{
 		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => ["description" => "The description has already been taken."]]);
 		                	}
@@ -108,30 +141,31 @@ class LineController extends Controller
 		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
 		            }
 		        }
-		        // Edit Line
+		        // Edit ProductLine
 		        else{
 		            $data = $request->all();
 
 		            $rules = [
-		                'line_id' => 'required|numeric',
+		                'product_line_id' => 'required|numeric',
 		                'description' => 'required|min:2',
-		                'product_line_id' => 'required',
+		                'family' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                	$line_info = Line::where("product_line_id", $request->product_line_id)
-		                	->where("id", "!=", $request->line_id)
+		                	$product_line_info = ProductLine::where("family", $request->family)
+		                	->where("id", "!=", $request->product_line_id)
 		                	->where("description", $request->description)
 		                	->first();
 
-		                	if($line_info == null){
-			                    Line::where('id', $request->line_id)
+		                	if($product_line_info == null){
+			                    ProductLine::where('id', $request->product_line_id)
 			                    	->where('logdel', 0)
 			                    	->where('status', 1)
 			                        ->update([
+			                            'family' => $request->family,
 			                            'description' => $request->description,
 			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
 			                            'updated_at' => date('Y-m-d H:i:s'),
@@ -160,28 +194,28 @@ class LineController extends Controller
     	}
     }
 
-    public function get_line_by_id(Request $request){
+    public function get_product_line_by_id(Request $request){
         date_default_timezone_set('Asia/Manila');
         session_start();
         if($request->ajax()){
 	        if(isset($_SESSION["rapidx_user_id"])){
 		        $data = [
-		            'line_id' => $request->line_id,
+		            'product_line_id' => $request->product_line_id,
 		        ];
 
 		        $rules = [
-		            'line_id' => 'required',
+		            'product_line_id' => 'required',
 		        ];
 
 		        $validator = Validator::make($data, $rules);
 
 		        if($validator->passes()){
-		            $line_info = Line::where('id', $request->line_id)->where('logdel', 0)->first();
+		            $product_line_info = ProductLine::where('id', $request->product_line_id)->where('logdel', 0)->first();
 
-		            return response()->json(['auth' => 1, 'line_info' => $line_info, 'result' => 1]);
+		            return response()->json(['auth' => 1, 'product_line_info' => $product_line_info, 'result' => 1]);
 		        }
 		        else{
-		            return response()->json(['auth' => 1, 'line_info' => null, 'result' => 0]);  
+		            return response()->json(['auth' => 1, 'product_line_info' => null, 'result' => 0]);  
 		        }
 		    }
 		    else{
@@ -193,21 +227,21 @@ class LineController extends Controller
     	}
     }
 
-    public function line_action(Request $request){
+    public function product_line_action(Request $request){
         date_default_timezone_set('Asia/Manila');
         session_start();
 
         if($request->ajax()){
-	        // Change Line Status
+	        // Change ProductLine Status
 	        if(isset($_SESSION["rapidx_user_id"])){
 		        if($request->action == 1){
 		            $data = [
-		                'line_id' => $request->line_id,
+		                'product_line_id' => $request->product_line_id,
 		                'status' => $request->status,
 		            ];
 
 		            $rules = [
-		                'line_id' => 'required',
+		                'product_line_id' => 'required',
 		                'status' => 'required|numeric',
 		            ];
 
@@ -215,7 +249,7 @@ class LineController extends Controller
 
 		            if($validator->passes()){
 		                try {
-		                    Line::where('id', $request->line_id)
+		                    ProductLine::where('id', $request->product_line_id)
 		                    	->where('logdel', 0)
 		                        ->update([
 		                            'status' => $request->status,
@@ -226,7 +260,7 @@ class LineController extends Controller
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
 		                } 
 		                catch (Exception $e) {
-		                    return response()->json(['auth' => 1, 'line_info' => null]); 
+		                    return response()->json(['auth' => 1, 'product_line_info' => null]); 
 		                }
 		            }
 		            else{
@@ -243,19 +277,18 @@ class LineController extends Controller
     	}
     }
 
-    public function get_cbo_line_by_stat(Request $request){
+    public function get_cbo_product_line_by_stat(Request $request){
         date_default_timezone_set('Asia/Manila');
-        session_start();
 
         if($request->ajax()){
         	if(isset($_SESSION["rapidx_user_id"])){
 		        $search = $request->search;
 
 		        if($search == ''){
-		            $lines = [];
+		            $product_lines = [];
 		        }
 		        else{
-		            $lines = Line::orderby('description','asc')->select('id','description')
+		            $product_lines = ProductLine::orderby('description','asc')->select('id','description')
 		                        ->where('description', 'like', '%' . $search . '%')
 		                        ->where('status', 1)
 		                        ->where('logdel', 0)
@@ -268,10 +301,10 @@ class LineController extends Controller
 	                "text" => '',
 	            );
 
-		        foreach($lines as $line){
+		        foreach($product_lines as $product_line){
 		            $response[] = array(
-		                "id" => $line->id,
-		                "text" => $line->description,
+		                "id" => $product_line->id,
+		                "text" => $product_line->description,
 		            );
 		        }
 
@@ -282,7 +315,7 @@ class LineController extends Controller
         		$response = array();
 		            $response[] = array(
 		                "id" => '',
-		                "text" => 'Please reload againsd.',
+		                "text" => 'Please reload again.',
 		            );
 
 		        echo json_encode($response);
@@ -293,51 +326,39 @@ class LineController extends Controller
     	}
     }
 
-    public function get_cbo_line_by_product_line(Request $request){
+    public function get_cbo_product_line_by_family(Request $request){
         date_default_timezone_set('Asia/Manila');
-        session_start();
 
         if($request->ajax()){
-        	if(isset($_SESSION["rapidx_user_id"])){
-		        $search = $request->search;
+	        $search = $request->search;
 
-		        if($search == ''){
-		            $lines = [];
-		        }
-		        else{
-		            $lines = Line::orderby('description','asc')->select('id','description')
-		                        ->where('description', 'like', '%' . $search . '%')
-		                        ->where('product_line_id', $request->product_line_id)
-		                        ->where('status', 1)
-		                        ->where('logdel', 0)
-		                        ->get();
-		        }
+	        if($search == ''){
+	            $product_lines = [];
+	        }
+	        else{
+	            $product_lines = ProductLine::orderby('description','asc')->select('id','description')
+	                        ->where('description', 'like', '%' . $search . '%')
+	                        ->where('family', $request->family)
+	                        ->where('status', 1)
+	                        ->where('logdel', 0)
+	                        ->get();
+	        }
 
-		        $response = array();
-		        $response[] = array(
-	                "id" => '',
-	                "text" => '',
+	        $response = array();
+	        $response[] = array(
+                "id" => '',
+                "text" => '',
+            );
+
+	        foreach($product_lines as $product_line){
+	            $response[] = array(
+	                "id" => $product_line->id,
+	                "text" => $product_line->description,
 	            );
+	        }
 
-		        foreach($lines as $line){
-		            $response[] = array(
-		                "id" => $line->id,
-		                "text" => $line->description,
-		            );
-		        }
-
-		        echo json_encode($response);
-		        exit;
-        	}
-        	else{
-        		$response = array();
-		            $response[] = array(
-		                "id" => '',
-		                "text" => 'Please reload againsd.',
-		            );
-
-		        echo json_encode($response);
-        	}
+	        echo json_encode($response);
+	        exit;
         }
     	else{
     		abort(403);

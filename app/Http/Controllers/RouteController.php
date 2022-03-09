@@ -20,7 +20,7 @@ class RouteController extends Controller
     public function users(){
     	session_start();
         if(isset($_SESSION["rapidx_user_id"])){
-    		return redirect('dashboard');
+    		return view('users');
     	}
     	else{
     		return redirect()->route('session_expired');
@@ -31,6 +31,16 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('lines');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function product_lines(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('product_lines');
         }
         else{
             return redirect()->route('session_expired');
@@ -61,6 +71,16 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('monitoring');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function view_monitoring(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('view_monitoring');
         }
         else{
             return redirect()->route('session_expired');

@@ -35,12 +35,21 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item has-treeview">
+          <a href="{{ route('users') }}" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
         
         <li class="nav-item has-treeview">
-          <a href="{{ route('lines') }}" class="nav-link">
+          <a href="{{ route('product_lines') }}" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
-              Lines
+              Product Lines
             </p>
           </a>
         </li>

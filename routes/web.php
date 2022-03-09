@@ -38,24 +38,28 @@ Route::get('/session_expired', function () {
 Route::get('/dashboard', 'RouteController@dashboard')->name('dashboard');
 Route::get('/users', 'RouteController@users')->name('users');
 Route::get('/lines', 'RouteController@lines')->name('lines');
+Route::get('/product_lines', 'RouteController@product_lines')->name('product_lines');
 Route::get('/stations', 'RouteController@stations')->name('stations');
 Route::get('/machines', 'RouteController@machines')->name('machines');
 Route::get('/monitoring', 'RouteController@monitoring')->name('monitoring');
+Route::get('/view_monitoring', 'RouteController@view_monitoring')->name('view_monitoring');
 
 // USER CONTROLLER
-Route::post('/sign_in', 'UserController@sign_in')->name('sign_in');
-Route::get('/logout', 'UserController@logout')->name('logout');
 Route::get('/view_users', 'UserController@view_users')->name('view_users');
 Route::post('/save_user', 'UserController@save_user')->name('save_user');
 Route::post('/user_action', 'UserController@user_action')->name('user_action');
 Route::get('/get_user_by_id', 'UserController@get_user_by_id')->name('get_user_by_id');
-Route::get('/view_existing_branch_users', 'UserController@view_existing_branch_users')->name('view_existing_branch_users');
-Route::post('/add_user_branch', 'UserController@add_user_branch')->name('add_user_branch');
-Route::post('/branch_user_action', 'UserController@branch_user_action')->name('branch_user_action');
-Route::post('/change_password', 'UserController@change_password')->name('change_password');
-Route::get('/view_branch_user_by_user_id', 'UserController@view_branch_user_by_user_id')->name('view_branch_user_by_user_id');
-Route::post('/select_branch', 'UserController@select_branch')->name('select_branch');
-Route::get('/count_users', 'UserController@count_users')->name('count_users');
+Route::get('/get_user_by_stat', 'UserController@get_user_by_stat')->name('get_user_by_stat');
+Route::get('/get_cbo_user_by_stat', 'UserController@get_cbo_user_by_stat')->name('get_cbo_user_by_stat');
+
+// PRODUCT LINE CONTROLLER
+Route::get('/view_product_lines', 'ProductLineController@view_product_lines')->name('view_product_lines');
+Route::post('/save_product_line', 'ProductLineController@save_product_line')->name('save_product_line');
+Route::post('/product_line_action', 'ProductLineController@product_line_action')->name('product_line_action');
+Route::get('/get_product_line_by_id', 'ProductLineController@get_product_line_by_id')->name('get_product_line_by_id');
+Route::get('/get_product_line_by_stat', 'ProductLineController@get_product_line_by_stat')->name('get_product_line_by_stat');
+Route::get('/get_cbo_product_line_by_stat', 'ProductLineController@get_cbo_product_line_by_stat')->name('get_cbo_product_line_by_stat');
+Route::get('/get_cbo_product_line_by_family', 'ProductLineController@get_cbo_product_line_by_family')->name('get_cbo_product_line_by_family');
 
 // LINE
 Route::get('/view_lines', 'LineController@view_lines')->name('view_lines');
@@ -64,6 +68,7 @@ Route::post('/line_action', 'LineController@line_action')->name('line_action');
 Route::get('/get_line_by_id', 'LineController@get_line_by_id')->name('get_line_by_id');
 Route::get('/get_line_by_stat', 'LineController@get_line_by_stat')->name('get_line_by_stat');
 Route::get('/get_cbo_line_by_stat', 'LineController@get_cbo_line_by_stat')->name('get_cbo_line_by_stat');
+Route::get('/get_cbo_line_by_product_line', 'LineController@get_cbo_line_by_product_line')->name('get_cbo_line_by_product_line');
 
 // STATION
 Route::get('/view_stations', 'StationController@view_stations')->name('view_stations');
@@ -88,4 +93,13 @@ Route::post('/machine_action', 'MachineController@machine_action')->name('machin
 Route::get('/get_machine_by_id', 'MachineController@get_machine_by_id')->name('get_machine_by_id');
 Route::get('/get_machine_by_stat', 'MachineController@get_machine_by_stat')->name('get_machine_by_stat');
 Route::get('/get_cbo_machine_by_stat', 'MachineController@get_cbo_machine_by_stat')->name('get_cbo_machine_by_stat');
+
+// MONITORING CONTROLLER
+Route::get('/view_monitorings', 'MonitoringController@view_monitorings')->name('view_monitorings');
+Route::post('/save_monitoring', 'MonitoringController@save_monitoring')->name('save_monitoring');
+Route::post('/monitoring_action', 'MonitoringController@monitoring_action')->name('monitoring_action');
+Route::get('/get_monitoring_by_id', 'MonitoringController@get_monitoring_by_id')->name('get_monitoring_by_id');
+Route::get('/get_monitoring_by_stat', 'MonitoringController@get_monitoring_by_stat')->name('get_monitoring_by_stat');
+Route::get('/get_cbo_monitoring_by_stat', 'MonitoringController@get_cbo_monitoring_by_stat')->name('get_cbo_monitoring_by_stat');
+Route::get('/load_monitoring', 'MonitoringController@load_monitoring')->name('load_monitoring');
 

@@ -229,45 +229,34 @@ class StationController extends Controller
         date_default_timezone_set('Asia/Manila');
 
         if($request->ajax()){
-        	if(isset($_SESSION["rapidx_user_id"])){
-		        $search = $request->search;
+	        $search = $request->search;
 
-		        if($search == ''){
-		            $stations = [];
-		        }
-		        else{
-		            $stations = Station::orderby('description','asc')->select('id','description')
-		                        ->where('description', 'like', '%' . $search . '%')
-		                        ->where('status', 1)
-		                        ->where('logdel', 0)
-		                        ->get();
-		        }
+	        if($search == ''){
+	            $stations = [];
+	        }
+	        else{
+	            $stations = Station::orderby('description','asc')->select('id','description')
+	                        ->where('description', 'like', '%' . $search . '%')
+	                        ->where('status', 1)
+	                        ->where('logdel', 0)
+	                        ->get();
+	        }
 
-		        $response = array();
-		        $response[] = array(
-	                "id" => '',
-	                "text" => '',
+	        $response = array();
+	        $response[] = array(
+                "id" => '',
+                "text" => '',
+            );
+
+	        foreach($stations as $station){
+	            $response[] = array(
+	                "id" => $station->id,
+	                "text" => $station->description,
 	            );
+	        }
 
-		        foreach($stations as $station){
-		            $response[] = array(
-		                "id" => $station->id,
-		                "text" => $station->description,
-		            );
-		        }
-
-		        echo json_encode($response);
-		        exit;
-        	}
-        	else{
-        		$response = array();
-		            $response[] = array(
-		                "id" => '',
-		                "text" => 'Please reload again.',
-		            );
-
-		        echo json_encode($response);
-        	}
+	        echo json_encode($response);
+	        exit;
         }
     	else{
     		abort(403);

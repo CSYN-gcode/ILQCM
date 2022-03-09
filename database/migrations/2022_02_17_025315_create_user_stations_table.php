@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinesTable extends Migration
+class CreateUserStationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateLinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('lines', function (Blueprint $table) {
+        Schema::create('user_stations', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('product_line_id');
-            $table->string('description');
+            $table->foreignId('user_id');
+            $table->foreignId('station_id');
             $table->integer('status')->comment = '1=Active; 2=Archived';
             $table->bigInteger('created_by');
             $table->bigInteger('last_updated_by');
@@ -24,7 +24,8 @@ class CreateLinesTable extends Migration
             $table->timestamps();
             
             // Foreign Key
-            $table->foreign('product_line_id')->references('id')->on('product_lines');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('station_id')->references('id')->on('stations');
         });
     }
 
@@ -35,6 +36,6 @@ class CreateLinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lines');
+        Schema::dropIfExists('user_stations');
     }
 }

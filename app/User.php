@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Model\BranchUser;
+use App\Model\UserStation;
 
 class User extends Authenticatable
 {
@@ -40,5 +41,9 @@ class User extends Authenticatable
 
     public function branch_user_details() {
         return $this->hasMany(BranchUser::class, 'user_id', 'id');
+    }
+
+    public function user_station_details() {
+        return $this->hasMany(UserStation::class, 'user_id', 'id');
     }
 }

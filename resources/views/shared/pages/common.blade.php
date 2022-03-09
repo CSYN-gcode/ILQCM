@@ -230,40 +230,7 @@
 
     $.fn.dataTable.ext.errMode = 'none';
 
-    // dtBranches = $("#tblBranches").DataTable({
-    //   "processing" : false,
-    //   "serverSide" : true,
-    //   "ajax" : {
-    //     url: "{{ route('view_branch_user_by_user_id') }}",
-    //     data: function (param){
-
-    //     }
-    //   },
-      
-    //   "columns":[
-    //     { "data" : "branch_info.code" },
-    //     { "data" : "branch_info.description" },
-    //     { "data" : "raw_action", orderable:false, searchable:false }
-    //   ],
-
-    //   "columnDefs": [ 
-    //     {
-    //       "targets": [0, 1, 2],
-    //       "data": null,
-    //       "defaultContent": "--"
-    //     },
-    //     // { "visible": false, "targets": 1 }
-    //   ],
-    //   "order": [[ 1, "asc" ]],
-    //   "initComplete": function(settings, json) {
-          
-    //   },
-    //   "drawCallback": function( settings ) {
-          
-    //   }
-    // }).on( 'error', function () {
-    //   toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
-    // });//end of dtBranches
+    
 
     $("#tblBranches").on('click', '.btnRowSelectBranch', function(e){
       let branchId = $(this).attr('branch-id');

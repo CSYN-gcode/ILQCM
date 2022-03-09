@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -16,14 +16,13 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id('id');
             $table->string('name');
-            $table->string('username', 30)->unique();
-            $table->string('email', 30)->unique();
-            $table->string('password');
-            $table->tinyInteger('user_level')->comment = '1=Admin; 2=Encoder; 3=Branch Manager; 4=Branch Staff';
-            $table->tinyInteger('status')->default(1)->comment = '1=active; 2=deactivated; 3=disabled';
-            $table->integer('attempt')->default(0);
+            $table->string('email')->nullable();
+            $table->string('employee_id')->unique();
+            $table->integer('position')->comment = '1=QC; 2=QC Supervisor';
+            $table->integer('status')->comment = '1=Active; 2=Archived';
+            $table->bigInteger('created_by');
+            $table->bigInteger('last_updated_by');
             $table->tinyInteger('logdel')->default(0);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

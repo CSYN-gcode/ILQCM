@@ -30,12 +30,20 @@
         <div class="col-md-12">
           <!-- general form elements -->
           <div class="card card-primary">
+            <!-- <div class="card-header">
+              <h3 class="card-title">Users</h3>
+            </div> -->
+
             <!-- Start Page Content -->
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-12">
                   @php
-                    $display = 'block';
+                    $display = 'none';
+
+                    if(Auth::user()->user_level == 1){
+                      $display = 'block';
+                    }
                   @endphp
                   <div class="float-sm-left" style="min-width: 200px; display: {{ $display }}">
                     <div class="form-group row">
@@ -46,7 +54,8 @@
                           </div>
                           <select class="form-control form-control-sm selFilByStat" name="status">
                             <option value="1" selected="true">Active</option>
-                            <option value="2">Archived</option>
+                            <option value="2">Inactive</option>
+                            <option value="3">Disabled</option>
                           </select>
                         </div>
                       </div>
@@ -63,9 +72,9 @@
                       <thead>
                         <tr>
                           <th>Name</th>
-                          <th>Employee ID</th>
-                          <th>Position</th>
-                          <th>Station(s)</th>
+                          <th>Username</th>
+                          <th>Email</th>
+                          <th>User Level</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
@@ -113,34 +122,37 @@
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
-
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Employee ID</label>
+              <label class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="employee_id" placeholder="Employee ID">
+                <input type="email" class="form-control" name="email" placeholder="Email">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
-
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Position</label>
+              <label class="col-sm-2 col-form-label">User Level</label>
               <div class="col-sm-10">
-                <select class="form-control" name="position" placeholder="Position">
-                  <option value="1" selected="true">QC</option>
-                  <option value="2">QC Supervisor</option>
+                <select class="form-control" name="user_level">
+                  <option value="1" selected="true">Administrator</option>
+                  <option value="2">Encoder</option>
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
-
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Station(s)</label>
+              <label class="col-sm-2 col-form-label">Username</label>
               <div class="col-sm-10">
-                <select class="form-control select2 select2bs4" name="station_ids[]" placeholder="Station(s)" multiple="true">
-                </select>
+                <input type="text" class="form-control" name="username" placeholder="Username">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
+            <!-- <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div> -->
 
           </div>
         </div>
@@ -158,7 +170,7 @@
 
 <script type="text/javascript">
   // Variables
-  let dtUsers, frmSaveUser, btnSaveUser;
+  let dtUsers, frmSaveUser, btnSaveUser, dtExistingBranchUsers, dtAddBranches, selectedUserId = null;
 </script>
 
 @endsection
@@ -219,43 +231,16 @@
       
       "columns":[
         { "data" : "name" },
-        { "data" : "employee_id" },
-        { "data" : "raw_position" },
-        {
-            name: 'user_station_details',
-            data: 'user_station_details',
-            sortable: false,
-            searchable: false,
-            render: function (data) {
-                var result = '';
-                var arrStationDesc = [];
-                if(data.length > 0){
-                  for(let index = 0; index < data.length; index++){
-                    if(data[index]['station_info'] != null && data[index]['station_info']['status'] == 1){
-                      arrStationDesc.push(data[index]['station_info']['description']);
-                    }
-                  }
-
-                  if(arrStationDesc.length > 0){
-                    result = arrStationDesc.join(", ");
-                  }
-                  else{
-                    result = null;
-                  }
-                }
-                else{
-                  result = null;
-                }
-                return result;
-            }
-        },
+        { "data" : "username" },
+        { "data" : "email" },
+        { "data" : "raw_user_level" },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
       "columnDefs": [ 
         {
-          "targets": [0, 1, 2, 3, 4],
+          "targets": [3, 4],
           "data": null,
           "defaultContent": "--"
         },
@@ -286,12 +271,12 @@
       frmSaveUser[0].reset();
       $(".input-error", frmSaveUser).text('');
       $(".form-control", frmSaveUser).removeClass('is-invalid');
-      $("select[name='station_ids[]']", frmSaveUser).html("");
-      $("select[name='station_ids[]']", frmSaveUser).val("").trigger("change");
+      $(".divRowUserBranch").hide();
+      // $('input[name="password"]', frmSaveUser).parent().parent().show();
     });
 
     $('#mdlSaveUser').on('shown.bs.modal', function (e) {
-      $('input[name="description"]', frmSaveUser).focus();
+      $('input[name="name"]', frmSaveUser).focus();
     })
 
     $("#tblUsers").on('click', '.btnActions', function(e){
@@ -302,15 +287,15 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive User';        
+          title = 'Deactivate User';        
         }
         else if(status == 1){
-          title = 'Restore User';        
+          title = 'Activate User';        
         }
       }
-      // else if(action == 2){
-      //   title = 'Reset Password';
-      // }
+      else if(action == 2){
+        title = 'Reset Password';
+      }
 
       $.confirm({
         title: title,
@@ -334,6 +319,67 @@
       });
     });
 
+    $("#tblExisitingBranch").on('click', '.btnUserBranchActions', function(e){
+      let branchUserId = $(this).attr('branch-user-id');
+      let userId = $(this).attr('user-id');
+      let branchId = $(this).attr('branch-id');
+      let status = $(this).attr('status');
+      let title = '';
+
+      if(status == 2){
+        title = 'Deactivate Branch';
+      }
+      else if(status == 1){
+        title = 'Activate Branch';
+      }
+
+      $.confirm({
+        title: title,
+        content: 'Please confirm to continue.',
+        backgroundDismiss: true,
+        type: 'blue',
+        buttons: {
+          confirm: {
+            text: 'Confirm',
+            btnClass: 'btn-blue',
+            keys: ['enter'],
+            action: function(){
+              BranchUserAction(branchUserId, userId, branchId, status);
+              cnfrmLoading.open();
+            }
+          },
+          cancel: function () {
+            
+          },
+        }
+      });
+    });
+
+    $("#tblAddBranches").on('click', '.btnAddBranchUser', function(e){
+      let branchId = $(this).attr('branch-id');
+
+      $.confirm({
+        title: 'Add Branch',
+        content: 'Please confirm to continue.',
+        backgroundDismiss: true,
+        type: 'blue',
+        buttons: {
+          confirm: {
+            text: 'Confirm',
+            btnClass: 'btn-blue',
+            keys: ['enter'],
+            action: function(){
+              AddUserBranch(branchId, selectedUserId);
+              // cnfrmLoading.open();
+            }
+          },
+          cancel: function () {
+            
+          },
+        }
+      });
+    });
+
     $("#frmSaveUser").submit(function(e){
       e.preventDefault();
       SaveUser();
@@ -341,37 +387,12 @@
 
     $("#tblUsers").on('click', '.btnEditUser', function(e){
       let userId = $(this).attr('user-id');
+      selectedUserId = userId;
+      $(".divRowUserBranch").show();
       GetUserById(userId);
-    });
-
-    $("#tblUsers").on('click', '.btnGenerateQRCode', function(e){
-      let userId = $(this).attr('user-id');
-      GetUserQRCode(userId);
-    });
-
-    $('select[name="station_ids[]"]', frmSaveUser).select2({
-        // dropdownParent: $('#mdlSaveItemRegistration'),
-        placeholder: "",
-        minimumInputLength: 2,
-        allowClear: true,
-        ajax: {
-           url: "{{ route('get_cbo_station_by_stat') }}",
-           type: "get",
-           dataType: 'json',
-           delay: 250,
-           // quietMillis: 100,
-           data: function (params) {
-            return {
-              search: params.term, // search term
-            };
-           },
-           processResults: function (response) {
-             return {
-                results: response
-             };
-           },
-           cache: true
-        },
+      // dtExistingBranchUsers.draw();
+      // dtAddBranches.draw();
+      // $('input[name="password"]', frmSaveUser).parent().parent().hide();
     });
 
   });
