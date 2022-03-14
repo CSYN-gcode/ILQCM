@@ -90,6 +90,7 @@ function GetMonitoringById(monitoringId){
             $('select[name="machine_id"]', frmSaveMonitoring).html('').val('').trigger("change");
             $('select[name="qc_inspector"]', frmSaveMonitoring).html('').val('').trigger("change");
             $('select[name="qc_checked_by"]', frmSaveMonitoring).html('').val('').trigger("change");
+            $("input[name='work_week']", frmSaveMonitoring).prop('readonly', true);
         },
         success(data){
             btnSaveMonitoring.prop('disabled', false);

@@ -32,6 +32,7 @@ return array(
     'App\\Model\\ProductLine' => $baseDir . '/app/Model/ProductLine.php',
     'App\\Model\\ReferenceType' => $baseDir . '/app/Model/ReferenceType.php',
     'App\\Model\\Station' => $baseDir . '/app/Model/Station.php',
+    'App\\Model\\UserStation' => $baseDir . '/app/Model/UserStation.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

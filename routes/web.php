@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// MODEL
+use App\Model\Monitoring;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +45,31 @@ Route::get('/product_lines', 'RouteController@product_lines')->name('product_lin
 Route::get('/stations', 'RouteController@stations')->name('stations');
 Route::get('/machines', 'RouteController@machines')->name('machines');
 Route::get('/monitoring', 'RouteController@monitoring')->name('monitoring');
-Route::get('/view_monitoring', 'RouteController@view_monitoring')->name('view_monitoring');
+Route::get('/samplings', 'RouteController@samplings')->name('samplings');
+Route::get('/monitoring/{id}', function ($id) {
+	session_start();
+	if(isset($_SESSION["rapidx_user_id"])){
+		$monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id', 'pl.family', 'pl.description as pl_description')
+			        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
+			        ->leftJoin('machines', 'monitorings.machine_id', '=', 'machines.id')
+			        ->leftJoin('users as uqi', 'uqi.id', '=', 'monitorings.qc_inspector')
+			        ->leftJoin('users as qcb', 'qcb.id', '=', 'monitorings.qc_checked_by')
+			        ->leftJoin('product_lines as pl', 'pl.id', '=', 'monitorings.product_line_id')
+		            ->where('monitorings.id', $id)
+		            ->where('monitorings.status', 1)
+		            ->where('monitorings.logdel', 0)
+		            ->first();
+		if($monitoring_info != null){
+    		return view('view_monitoring')->with(['id' => $id, 'monitoring_info' => $monitoring_info]);
+		}
+		else{
+			return "Monitoring is not available.";
+		}
+    }
+    else{
+        return redirect()->route('session_expired');
+    }
+});
 
 // USER CONTROLLER
 Route::get('/view_users', 'UserController@view_users')->name('view_users');
@@ -102,4 +129,14 @@ Route::get('/get_monitoring_by_id', 'MonitoringController@get_monitoring_by_id')
 Route::get('/get_monitoring_by_stat', 'MonitoringController@get_monitoring_by_stat')->name('get_monitoring_by_stat');
 Route::get('/get_cbo_monitoring_by_stat', 'MonitoringController@get_cbo_monitoring_by_stat')->name('get_cbo_monitoring_by_stat');
 Route::get('/load_monitoring', 'MonitoringController@load_monitoring')->name('load_monitoring');
+
+// SAMPLING CONTROLLER
+Route::get('/view_samplings', 'SamplingController@view_samplings')->name('view_samplings');
+Route::post('/save_sampling', 'SamplingController@save_sampling')->name('save_sampling');
+Route::post('/sampling_action', 'SamplingController@sampling_action')->name('sampling_action');
+Route::get('/get_sampling_by_id', 'SamplingController@get_sampling_by_id')->name('get_sampling_by_id');
+Route::get('/get_sampling_by_stat', 'SamplingController@get_sampling_by_stat')->name('get_sampling_by_stat');
+Route::get('/get_cbo_sampling_by_stat', 'SamplingController@get_cbo_sampling_by_stat')->name('get_cbo_sampling_by_stat');
+Route::get('/get_po_details', 'SamplingController@get_po_details')->name('get_po_details');
+Route::get('/get_operator_details', 'SamplingController@get_operator_details')->name('get_operator_details');
 

@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Monitoring')
+@section('title', 'Samplings')
 
 @section('content_page')
 <!-- Content Wrapper. Contains page content -->
@@ -9,13 +9,13 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-10">
-          <center><h1 style="text-decoration: underline;"><i class="fas fa-monitorings"></i>In-Line Quality Control Monitoring </h1></center>
+        <div class="col-sm-6">
+          <h1><i class="fas fa-samplings"></i> Samplings</h1>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item active">Monitoring</li>
+            <li class="breadcrumb-item active">Samplings</li>
           </ol>
         </div>
       </div>
@@ -28,167 +28,12 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
-          <div class="float-sm-right">
-            <!-- <button class="btn btn-success btn-sm btnLoadRecordModal"><i class="fa fa-sync"></i> Load Record</button> -->
-          </div> <!-- .float-sm-right -->
-          <br><br>
           <!-- general form elements -->
           <div class="card card-primary">
             <!-- Start Page Content -->
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-12">
-                  <form class="form-horizontal" id="frmSaveMonitoring">
-                    @csrf
-                      <div class="row">
-                        @php
-                          $family = "";
-
-                          if($monitoring_info['family'] == 1){
-                            $family = "BGA/LGA";
-                          }
-                          else if($monitoring_info['family'] == 2){
-                            $family = "BGA-FP";
-                          }
-                          else if($monitoring_info['family'] == 3){
-                            $family = "Probe Pin";
-                          }
-                          else if($monitoring_info['family'] == 4){
-                            $family = "QF/TSOP/SMPO";
-                          }
-                        @endphp
-                        <div class="col-sm-3">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>FAMILY: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="line_id" placeholder="" value="{{ $family }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>PRODUCT LINE: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="line_id" placeholder="" value="{{ $monitoring_info['pl_description'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="row">
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>LINE: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="line_id" placeholder="" value="{{ $monitoring_info['l_description'] }}" readonly="true">
-                              <input type="text" class="form-control txtHeaderMonitoringId" name="monitoring_id" placeholder="" value="{{ $monitoring_info['m_id'] }}" readonly="true" style="display: none;">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>WORK WEEK: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="work_week" placeholder="" value="{{ $monitoring_info['work_week'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>SHIFT: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="shift" placeholder="" value="{{ $monitoring_info['shift'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>QC INSPECTOR: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="qc_inspector" placeholder="" value="{{ $monitoring_info['uqi_name'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>CHECKED BY: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="qc_checked_by" placeholder="Supervisor's name" value="{{ $monitoring_info['qcb_name'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                          <div class="form-group row" style="padding: 0px 5px;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100"><b>MACHINE: </b></span>
-                              </div>
-                              <input type="text" class="form-control" name="machine_id" placeholder="" value="{{ $monitoring_info['m_description'] }}" readonly="true">
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                  </form>
-
-                  <div class="table-responsive">
-                    <table class="table table-sm table-bordered table-hover" id="tblMonitorings" style="width: 100%;">
-                      <thead>
-                        <tr>
-                          <th style="width: 23%; text-align: center; vertical-align: middle;">In-line QC Sampling Activity - Product Conformance</th>
-                          <th style="width: 46%; text-align: center; vertical-align: middle;">Monitoring Frequency / Sample Size</th>
-                          <th style="width: 31%; text-align: center; vertical-align: middle;">Validation Activity</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td style="width: 23%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span>1. Checking of operators activity in conformance to required references such as Work Instruction, Point Panel and others</span>
-                            <br>
-                            <span>2. Checking of operators output in conformance  to product criteria.</span>
-                          </td>
-                          <td style="width: 46%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span><b>1. New Operators (from 1st day to 3 months):</span></b><br>
-                              <div style="padding-left: 20px; width: 100%;">
-                                <span style="">1.1 Hourly for a period of 1 week (starting 8:30 onwards) </span><br>
-                                <span style="">1.2 Every 2 hours for a period of 3 weeks (Frequency: 9:30, 11:30, 13:30, 15:30; If OT: 17:30 & 19:30)</span><br>
-                                <span style="">1.3 Every 3 hours for a period of 2 to 3 months  (Frequency: 9:30, 12:30, 15:30; If OT: 18:30)</span><br>
-                              </div>
-                            <span><b>2. Old Operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on the defined stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>3. Re-certified Operators from disqualification and transferred operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on all stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>4. Sample size:</b> 1 pc (minimum) ; 10 pcs (maximum) - less than 10 samples drawn is due to per station output or capacity</span>         
-                          </td>
-                          <td style="width: 31%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span>1. <b>Daily:</b> QC Supervisor to check the monitoring data for its completeness and correctness then indicate ""OK"" on the slot provided to signify that checking is performed, then ""lock"" the sheet. Call the attention of concerned QC once inconsistency is found.</span>
-                            <br><br>
-                            <span>2. <b>Weekly:</b> QC Supervisor to check the completeness of data for the whole workweek. Affix her/his E-signature on the slot provided to signify the checking performed &  ""lock"" the whole sheet and save the file.</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div> <!-- .table-responsive -->
-
                   @php
                     $display = 'block';
                   @endphp
@@ -199,7 +44,7 @@
                           <div class="input-group-prepend w-20">
                             <span class="input-group-text w-100">Status</span>
                           </div>
-                          <select class="form-control form-control-sm selFilSamplingByStat" name="status">
+                          <select class="form-control form-control-sm selFilByStat" name="status">
                             <option value="1" selected="true">Active</option>
                             <option value="2">Archived</option>
                           </select>
@@ -209,7 +54,7 @@
                   </div> <!-- .float-sm-left -->
 
                   <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add Sampling</button>
+                    <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add New</button>
                   </div> <!-- .float-sm-right -->
                   <br><br>
 
@@ -242,127 +87,8 @@
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
-
                 </div> <!-- .col-sm-12 -->
               </div> <!-- .row -->
-
-              <hr style="border: 0.1px solid black;">
-
-              <div class="row">
-                <div class="col-sm-10">
-                  <center>
-                    <div class="table-responsive">
-                      <table class="table table-sm table-bordered table-hover" style="width: 90%;">
-                        <thead>
-                          <tr>
-                            <th style="text-align: center; vertical-align: middle; width: 65%">In-line QC Sampling Activity - Worker's Conformance to SOP & Prod'n Requirements</th>
-                            <th style="text-align: center; vertical-align: middle; width: 35%">Monitoring Frequency</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td style="width: 65%; padding-top: 10px; padding-bottom: 10px; vertical-align: middle;">
-                              <span>1. Checking of production line conformance to required company and production SOPs.</span><br>
-                              <span>2. Checking of material status and condition during production run.</span><br>
-                              <span>3. Checking of machine, tools and jigs condition for continua; usage in production.</span><br>
-                              <span>4. Checking of availability of required references such as Work Instruction, Point Panel, etc.</span><br>
-                              <span>5. Checking of the workplace  in regards to 7S implementation.</span><br>
-                            </td>
-                            <td style="width: 35%; padding-top: 10px; padding-bottom: 10px; vertical-align: middle;">
-                              <span>1. Man - once per shift.</span><br>
-                              <span>2. Material - once per shift.</span><br>
-                              <span>3. Machine -once per shift.</span><br>
-                              <span>4. Method - once per shift.</span><br>
-                              <span>5. Workplace - once per shift.</span><br>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </center>
-                </div> <!-- .col-sm-12 -->
-
-                <div class="col-sm-2">
-                  <br><br>
-                  <div class="table-responsive">
-                    <table class="table table-sm table-bordered table-hover" style="width: 90%;">
-                      <thead>
-                        <th>
-                          <span>LEGEND</span>:<br>
-                          <span>/ YES</span><br>
-                          <span>X NO</span><br>
-                        </th>
-                      </thead>
-                    </table>
-                  </div>
-                </div> <!-- .col-sm-12 -->                  
-              </div> <!-- .row -->
-
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddAudit"><i class="fa fa-plus"></i> Add Audit</button>
-                  </div> <!-- .float-sm-right -->
-                  <br><br>
-                  <div class="table-responsive">
-                    <table class="table table-sm table-bordered table-hover" id="tblDailyLineAudit" style="width: 100%;">
-                      <thead>
-                        <tr>
-                          <th colspan="16" style="text-align: left; vertical-align: middle; background-color: #9f9f9f; border-bottom: 1.8px solid black;">DAILY LINE AUDIT</th>
-                        </tr>
-                        <tr>
-                          <th rowspan="2" style="text-align: center; vertical-align: middle; width: 10%">Category</th>
-                          <th rowspan="2" style="text-align: center; vertical-align: middle; width: 34%">CHECK ITEMS</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                        </tr>
-                        <tr>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
-                          <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left; vertical-align: middle; width: 10%">Man</td>
-                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Are all operators certified on their stations?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div> <!-- .table-responsive -->
-                </div>
-              </div>
-
             </div>
             <!-- !-- End Page Content -->
 
@@ -396,6 +122,7 @@
               <div class="col-sm-8">
                 <input type="text" class="form-control" name="monitoring_id" placeholder="Monitoring ID" style="display: none;">
                 <input type="text" class="form-control" name="sampling_id" placeholder="Sampling ID" style="display: none;">
+                <input type="text" class="form-control" name="monitoring_id" placeholder="Monitoring ID" style="display: none;">
                 <select class="form-control select2 select2bs4" name="station_id" placeholder="Station">
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
@@ -513,7 +240,6 @@
 </div>
 <!-- /.modal -->
 
-
 <script type="text/javascript">
   // Variables
   let dtSamplings, frmSaveSampling, btnSaveSampling;
@@ -571,8 +297,7 @@
       "ajax" : {
         url: "{{ route('view_samplings') }}",
         data: function (param){
-            param.status = $(".selFilSamplingByStat").val();
-            param.monitoring_id = $('.txtHeaderMonitoringId').val();
+            param.status = $(".selFilByStat").val();
         }
       },
       
@@ -618,7 +343,7 @@
       dtSamplings.draw();
     });
 
-    $(".selFilSamplingByStat").change(function(e){
+    $(".selFilByStat").change(function(e){
       dtSamplings.draw();
     });
 
@@ -652,8 +377,6 @@
       frmSaveSampling[0].reset();
       $(".input-error", frmSaveSampling).text('');
       $(".form-control", frmSaveSampling).removeClass('is-invalid');
-
-      $('input[name="monitoring_id"]', frmSaveSampling).val($('.txtHeaderMonitoringId').val());
     });
 
     $('#mdlSaveSampling').on('shown.bs.modal', function (e) {

@@ -87,6 +87,16 @@ class RouteController extends Controller
         }
     }
 
+    public function samplings(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('samplings');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
     public function reference_types(){
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){

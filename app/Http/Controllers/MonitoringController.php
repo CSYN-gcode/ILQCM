@@ -16,6 +16,7 @@ use App\Model\Monitoring;
 
 // PACKAGE
 use DataTables;
+use Carbon;
 
 class MonitoringController extends Controller
 {
@@ -30,6 +31,7 @@ class MonitoringController extends Controller
 			->where('monitorings.logdel', 0)
 			->where('monitorings.product_line_id', $request->product_line_id)
 			->where('monitorings.status', $request->status)
+			->where('monitorings.shift', $request->shift)
 			->get();
 
 			// return response()->json($data);
@@ -54,7 +56,7 @@ class MonitoringController extends Controller
 
 	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" monitoring-id="' . $row->m_id . '" title="Archive"><i class="fa fa-lock"></i></button>';
 
-	                    $result .= ' <a href="view_monitoring" class="btn btn-xs btn-success table-btns btnViewMonitoring" monitoring-id="' . $row->m_id . '"><i class="fa fa-clipboard-list" title="View"></i></a>';
+	                    $result .= ' <a href="monitoring/' . $row->m_id . '" class="btn btn-xs btn-success table-btns btnViewMonitoring" monitoring-id="' . $row->m_id . '"><i class="fa fa-clipboard-list" title="View"></i></a>';
 	                }
 	                else{
 	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" monitoring-id="' . $row->m_id . '" title="Restore"><i class="fa fa-unlock"></i></button>';
@@ -143,20 +145,32 @@ class MonitoringController extends Controller
 
 		            try {
 		                if($validator->passes()){
-		                    Monitoring::where('id', $request->monitoring_id)
-		                    	->where('logdel', 0)
-		                    	->where('status', 1)
-		                        ->update([
-		                            'line_id' => $request->line_id,
-			                        'work_week' => $request->work_week,
-			                        'shift' => $request->shift,
-			                        'machine_id' => $request->machine_id,
-			                        'qc_inspector' => $request->qc_inspector,
-			                        'qc_checked_by' => $request->qc_checked_by,
-		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
-		                            'updated_at' => date('Y-m-d H:i:s'),
-		                        ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	$monitoring_info = Monitoring::where('id', '!=', $request->monitoring_id)
+								->where('line_id', $request->line_id)
+								->where('work_week', $request->work_week)
+								->where('shift', $request->shift)
+			                	->first();
+
+							if($monitoring_info == null){
+								Monitoring::where('id', $request->monitoring_id)
+			                    	->where('logdel', 0)
+			                    	->where('status', 1)
+			                        ->update([
+			                            'line_id' => $request->line_id,
+				                        'work_week' => $request->work_week,
+				                        'shift' => $request->shift,
+				                        'machine_id' => $request->machine_id,
+				                        'qc_inspector' => $request->qc_inspector,
+				                        'qc_checked_by' => $request->qc_checked_by,
+			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                            'updated_at' => date('Y-m-d H:i:s'),
+			                        ]);
+
+		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+							}
+			                else{
+			                	return response()->json(['auth' => 1, 'result' => 2, 'error' => null]);
+			                }
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    

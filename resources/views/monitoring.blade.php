@@ -33,56 +33,104 @@
             <!-- Start Page Content -->
             <div class="card-body">
               <div class="row">
+
+                <div class="col-sm-12">
+                  <div class="float-sm-left">
+                    <h4><i class="fas fa-filter"></i> Filter</h4>
+                  </div>
+
+                  <div class="float-sm-right">
+                    <button class="btn btn-primary btn-sm btnAddMonitoring" disabled="true"><i class="fa fa-plus"></i> Add New</button>
+                  </div> <!-- .float-sm-right -->
+                </div>
+                <br><br>
+
                 <div class="col-sm-12">
 
                   <div class="row">
-                    <div class="col-sm-3">
-                      <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                        <div class="input-group input-group mb-3">
-                          <div class="input-group-prepend w-20">
-                            <span class="input-group-text w-100">Status</span>
-                          </div>
-                          <select class="form-control form-control selFilByStat" name="status">
-                            <option value="1" selected="true">Active</option>
-                            <option value="2">Archived</option>
-                          </select>
+                    <div class="col-sm-12">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Status</span>
+                              </div>
+                              <select class="form-control form-control selFilByStat" name="status">
+                                <option value="1" selected="true">Active</option>
+                                <option value="2">Archived</option>
+                              </select>
+                            </div>
+                          </div> <!-- .float-sm-left -->
                         </div>
-                      </div> <!-- .float-sm-left -->
+
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Family</span>
+                              </div>
+                              <select class="form-control form-control selFilByFamily" name="family">
+                                <option value="1" selected="true">BGA/LGA</option>
+                                <option value="2">BGA-FP</option>
+                                <option value="3">Probe Pin</option>
+                                <option value="4">QF/TSOP/SMPO</option>
+                              </select>
+                            </div>
+                          </div> <!-- .float-sm-left -->
+                        </div>
+
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Product Line</span>
+                              </div>
+                              <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 70%;">
+                              </select>
+                            </div>
+                          </div> <!-- .float-sm-left -->
+                        </div>
+
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Month</span>
+                              </div>
+                              <input type="month" class="form-control form-control txtFilByMonth" name="month">
+                            </div>
+                          </div> <!-- .float-sm-left -->
+                        </div>
+
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Shift</span>
+                              </div>
+                              <select class="form-control form-control selFilByShift" name="shift">
+                                <option value="A" selected="true">A</option>
+                                <option value="B">B</option>
+                              </select>
+                            </div>
+                          </div> <!-- .float-sm-left -->
+                        </div>
+
+                        <div class="col-sm-2">
+                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100">Work Week</span>
+                              </div>
+                              <input type="number" class="form-control form-control txtFilByWorkWeek" name="work_week" min="1" max="52">
+                            </div>
+                          </div> <!-- .float-sm-left -->
+                        </div>
+
+                      </div>
                     </div>
 
-                    <div class="col-sm-3">
-                      <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                        <div class="input-group input-group mb-3">
-                          <div class="input-group-prepend w-20">
-                            <span class="input-group-text w-100">Family</span>
-                          </div>
-                          <select class="form-control form-control selFilByFamily" name="family">
-                            <option value="1" selected="true">BGA/LGA</option>
-                            <option value="2">BGA-FP</option>
-                            <option value="3">Probe Pin</option>
-                            <option value="4">QF/TSOP/SMPO</option>
-                          </select>
-                        </div>
-                      </div> <!-- .float-sm-left -->
-                    </div>
-
-                    <div class="col-sm-3">
-                      <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                        <div class="input-group input-group-sm mb-3">
-                          <div class="input-group-prepend w-20">
-                            <span class="input-group-text w-100">Product Line</span>
-                          </div>
-                          <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 60%;">
-                          </select>
-                        </div>
-                      </div> <!-- .float-sm-left -->
-                    </div>
-
-                    <div class="col-sm-3">
-                      <div class="float-sm-right">
-                        <button class="btn btn-primary btn-sm btnAddMonitoring" disabled="true"><i class="fa fa-plus"></i> Add New</button>
-                      </div> <!-- .float-sm-right -->
-                    </div>
                   </div>
 
                   <br>
@@ -149,9 +197,9 @@
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Work Week</label>
+              <label class="col-sm-2 col-form-label"><i class="fa fa-info-circle text-primary" title="Note: You cannot edit this once you saved."></i> Work Week</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" name="work_week" placeholder="Work Week">
+                <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="52">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -268,6 +316,10 @@
         $('.btnAddMonitoring').prop('disabled', true);
       }
 
+      dtMonitorings.draw();
+    });
+
+    $('.selFilByShift').change(function(){
       dtMonitorings.draw();
     });
 
@@ -412,6 +464,7 @@
         data: function (param){
             param.status = $(".selFilByStat").val();
             param.product_line_id = $(".selFilByProdLineDesc").val();
+            param.shift = $(".selFilByShift").val();
         }
       },
       
@@ -459,6 +512,7 @@
       frmSaveMonitoring[0].reset();
       $(".input-error", frmSaveMonitoring).text('');
       $(".form-control", frmSaveMonitoring).removeClass('is-invalid');
+      $("input[name='work_week']", frmSaveMonitoring).prop('readonly', false);
       $('input[name="product_line_id"]', frmSaveMonitoring).val($('.selFilByProdLineDesc').val());
       $('select[name="line_id"]', frmSaveMonitoring).val("").trigger("change");
       $('select[name="line_id"]', frmSaveMonitoring).select2({
