@@ -141,6 +141,8 @@
                         <tr>
                           <th>Line</th>
                           <th>Work Week</th>
+                          <th>Date From</th>
+                          <th>Date To</th>
                           <th>Shift</th>
                           <th>Machine</th>
                           <th>QC Inspector</th>
@@ -200,6 +202,22 @@
               <label class="col-sm-2 col-form-label"><i class="fa fa-info-circle text-primary" title="Note: You cannot edit this once you saved."></i> Work Week</label>
               <div class="col-sm-10">
                 <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="52">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Date From</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="date_from" placeholder="(Auto Computed)" readonly="true">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Date To</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="date_to" placeholder="(Auto Computed)" readonly="true">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -471,6 +489,8 @@
       "columns":[
         { "data" : "l_description" },
         { "data" : "work_week" },
+        { "data" : "m_date_from" },
+        { "data" : "m_date_to" },
         { "data" : "shift" },
         { "data" : "m_description" },
         { "data" : "uqi_name" },
@@ -481,7 +501,7 @@
 
       "columnDefs": [ 
         {
-          "targets": [0, 1, 2, 3, 4, 5, 6, 7],
+          "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
           "data": null,
           "defaultContent": "--"
         },
@@ -600,6 +620,39 @@
       let monitoringId = $(this).attr('monitoring-id');
       GetMonitoringById(monitoringId);
     });
+
+    $('input[name="work_week"]', frmSaveMonitoring).on('keyup change', function(){
+      var currYear = "2021";
+      //Pass in the first of a given calendar month and the day weekday
+      var dateRange = getFirstWeekDay(currYear + "-04-01", 0, $(this).val());
+      $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
+      $('input[name="date_to"]', frmSaveMonitoring).val(dateRange.dateTo);
+    });
+
+    function getFirstWeekDay(dateString, dayOfWeek, workWeek) {
+      var date = moment(dateString, "YYYY-MM-DD");
+
+      var day = date.day();
+      var diffDays = 0;
+
+      var dateFrom = "";
+      var dateTo = "";
+
+      if (day > dayOfWeek) {
+        diffDays = (7 * workWeek) - (day - dayOfWeek);
+      } else {
+        diffDays = dayOfWeek - day;
+      }
+
+      var tempDateFrom = date.add(diffDays, 'day');
+      var dateFrom = tempDateFrom.format("YYYY-MM-DD");
+      dateTo = tempDateFrom.add(6, 'day').format("YYYY-MM-DD");
+      
+      return {
+        dateFrom: dateFrom,
+        dateTo: dateTo
+      };
+    }
 
   });
 </script>

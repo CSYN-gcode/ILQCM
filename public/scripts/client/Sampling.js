@@ -99,12 +99,12 @@ function SaveSampling(){
                         }
 
                         if(data['error']['result'] != null){
-                            $("input[name='result']", frmSaveSampling).addClass('is-invalid');
-                            $("input[name='result']", frmSaveSampling).siblings('.input-error').text(data['error']['result']);
+                            $("select[name='result']", frmSaveSampling).addClass('is-invalid');
+                            $("select[name='result']", frmSaveSampling).siblings('.input-error').text(data['error']['result']);
                         }
                         else{
-                            $("input[name='result']", frmSaveSampling).removeClass('is-invalid');
-                            $("input[name='result']", frmSaveSampling).siblings('.input-error').text('');
+                            $("select[name='result']", frmSaveSampling).removeClass('is-invalid');
+                            $("select[name='result']", frmSaveSampling).siblings('.input-error').text('');
                         }
 
                         if(data['error']['dppm'] != null){
@@ -171,7 +171,7 @@ function GetSamplingById(samplingId){
                     $('input[name="sample_size"]', frmSaveSampling).val(data['sampling_info']['sample_size']);
                     $('input[name="reject"]', frmSaveSampling).val(data['sampling_info']['reject']);
                     $('input[name="accept"]', frmSaveSampling).val(data['sampling_info']['accept']);
-                    $('input[name="result"]', frmSaveSampling).val(data['sampling_info']['result']);
+                    $('select[name="result"]', frmSaveSampling).val(data['sampling_info']['result']);
                     $('input[name="dppm"]', frmSaveSampling).val(data['sampling_info']['dppm']);
                     $('textarea[name="remarks"]', frmSaveSampling).val(data['sampling_info']['remarks']);
                     $('select[name="validation_result"]', frmSaveSampling).val(data['sampling_info']['validation_result']);

@@ -23,6 +23,38 @@
       <div class="row">
         <div class="col-lg-3 col-6">
           <!-- small card -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <!-- <h3 id="h3RegistrationsCount">0</h3> -->
+              <br><br>
+              <p>Series</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-list"></i>
+            </div>
+            <a href="{{ route('serieses') }}" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <!-- small card -->
+          <div class="small-box bg-purple">
+            <div class="inner">
+              <!-- <h3 id="h3RegistrationsCount">0</h3> -->
+              <br><br>
+              <p>Station</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-cube"></i>
+            </div>
+            <a href="{{ route('stations') }}" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <!-- small card -->
           <div class="small-box bg-danger">
             <div class="inner">
               <!-- <h3 id="h3RegistrationsCount">0</h3> -->
@@ -55,22 +87,6 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-6">
-          <!-- small card -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-              <!-- <h3 id="h3RegistrationsCount">0</h3> -->
-              <br><br>
-              <p>Station</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-cube"></i>
-            </div>
-            <a href="{{ route('stations') }}" class="small-box-footer">
-              More info <i class="fas fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
 
         <div class="col-lg-3 col-6">
           <!-- small card -->

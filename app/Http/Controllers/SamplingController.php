@@ -46,6 +46,18 @@ class SamplingController extends Controller
 
 	                return $result;
 	            })
+	            ->addColumn('raw_result', function($row){
+	                $result = "";
+
+	                if($row->result == 1){
+	                    $result .= 'NDF';
+	                }
+	                else if($row->result == 2){
+	                    $result .= 'N/A';
+	                }
+
+	                return $result;
+	            })
 	            ->addColumn('raw_date', function($row){
 	                return Carbon::parse($row->created_at)->format('m/d/Y');;
 	            })

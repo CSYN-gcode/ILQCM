@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Stations')
+@section('title', 'Series')
 
 @section('content_page')
 <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1><i class="fas fa-stations"></i> Stations</h1>
+          <h1><i class="fas fa-serieses"></i> Series</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item active">Stations</li>
+            <li class="breadcrumb-item active">Series</li>
           </ol>
         </div>
       </div>
@@ -54,16 +54,15 @@
                   </div> <!-- .float-sm-left -->
 
                   <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddStation"><i class="fa fa-plus"></i> Add New</button>
+                    <button class="btn btn-primary btn-sm btnAddSeries"><i class="fa fa-plus"></i> Add New</button>
                   </div> <!-- .float-sm-right -->
                   <br><br>
 
                   <div class="table-responsive">
-                    <table class="table table-sm table-bordered table-hover" id="tblStations" style="width: 100%;">
+                    <table class="table table-sm table-bordered table-hover" id="tblSerieses" style="width: 100%;">
                       <thead>
                         <tr>
                           <th>Description</th>
-                          <th>Series(es)</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
@@ -90,42 +89,32 @@
 <!-- /.content-wrapper -->
 
 <!-- MODALS -->
-<div class="modal fade" id="mdlSaveStation">
+<div class="modal fade" id="mdlSaveSeries">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title"><i class="fa fa-info-circle text-info"></i> Station Details</h4>
+        <h4 class="modal-title"><i class="fa fa-info-circle text-info"></i> Series Details</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="form-horizontal" id="frmSaveStation">
+      <form class="form-horizontal" id="frmSaveSeries">
         @csrf
         <div class="modal-body">
           <div class="card-body">
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="station_id" placeholder="Station ID" style="display: none;">
+                <input type="text" class="form-control" name="series_id" placeholder="Series ID" style="display: none;">
                 <input type="text" class="form-control" name="description" placeholder="Description">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
-
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Series(es)</label>
-              <div class="col-sm-10">
-                <select class="form-control select2 select2bs4" name="series_ids[]" placeholder="Series(es)" multiple="true">
-                </select>
-                <span class="text-danger float-sm-right input-error"></span>
-              </div>
-            </div>
-
           </div>
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary btnSaveStation">Save</button>
+          <button type="submit" class="btn btn-primary btnSaveSeries">Save</button>
         </div>
       </form>
     </div>
@@ -137,20 +126,20 @@
 
 <script type="text/javascript">
   // Variables
-  let dtStations, frmSaveStation, btnSaveStation;
+  let dtSerieses, frmSaveSeries, btnSaveSeries;
 </script>
 
 @endsection
 
 @section('js_content')
 <!-- Custom Links -->
-<script src="{{ asset('public/scripts/client/Station.js') }}"></script>
+<script src="{{ asset('public/scripts/client/Series.js') }}"></script>
 
 <!-- JS Codes -->
 <script type="text/javascript">
   $(document).ready(function () {
-    frmSaveStation = $("#frmSaveStation");
-    btnSaveStation = $('.btnSaveStation');
+    frmSaveSeries = $("#frmSaveSeries");
+    btnSaveSeries = $('.btnSaveSeries');
 
     bsCustomFileInput.init();
     //Initialize Select2 Elements
@@ -179,18 +168,18 @@
       "hideMethod": "fadeOut",
     };
 
-    $(document).on('click','#tblStations tbody tr',function(e){
+    $(document).on('click','#tblSerieses tbody tr',function(e){
       $(this).closest('tbody').find('tr').removeClass('table-active');
       $(this).closest('tr').addClass('table-active');
     });
 
     $.fn.dataTable.ext.errMode = 'none';
 
-    dtStations = $("#tblStations").DataTable({
+    dtSerieses = $("#tblSerieses").DataTable({
       "processing" : false,
       "serverSide" : true,
       "ajax" : {
-        url: "{{ route('view_stations') }}",
+        url: "{{ route('view_serieses') }}",
         data: function (param){
             param.status = $(".selFilByStat").val();
         }
@@ -198,34 +187,6 @@
       
       "columns":[
         { "data" : "description" },
-        {
-            name: 'station_series_details',
-            data: 'station_series_details',
-            sortable: false,
-            searchable: false,
-            render: function (data) {
-                var result = '';
-                var arrSeriesDesc = [];
-                if(data.length > 0){
-                  for(let index = 0; index < data.length; index++){
-                    if(data[index]['series_info'] != null && data[index]['series_info']['status'] == 1){
-                      arrSeriesDesc.push(data[index]['series_info']['description']);
-                    }
-                  }
-
-                  if(arrSeriesDesc.length > 0){
-                    result = arrSeriesDesc.join(", ");
-                  }
-                  else{
-                    result = null;
-                  }
-                }
-                else{
-                  result = null;
-                }
-                return result;
-            }
-        },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
@@ -247,42 +208,40 @@
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
-    });//end of dtStations
+    });//end of dtSerieses
 
     $(document).on('click', '.btnReload', function(){
       // window.location.reload();
-      dtStations.draw();
+      dtSerieses.draw();
     });
 
     $(".selFilByStat").change(function(e){
-      dtStations.draw();
+      dtSerieses.draw();
     });
 
-    $(".btnAddStation").click(function(e){
-      $("#mdlSaveStation").modal('show');
-      frmSaveStation[0].reset();
-      $(".input-error", frmSaveStation).text('');
-      $(".form-control", frmSaveStation).removeClass('is-invalid');
-      $("select[name='series_ids[]']", frmSaveStation).html("");
-      $("select[name='series_ids[]']", frmSaveStation).val("").trigger("change");
+    $(".btnAddSeries").click(function(e){
+      $("#mdlSaveSeries").modal('show');
+      frmSaveSeries[0].reset();
+      $(".input-error", frmSaveSeries).text('');
+      $(".form-control", frmSaveSeries).removeClass('is-invalid');
     });
 
-    $('#mdlSaveStation').on('shown.bs.modal', function (e) {
-      $('input[name="description"]', frmSaveStation).focus();
+    $('#mdlSaveSeries').on('shown.bs.modal', function (e) {
+      $('input[name="description"]', frmSaveSeries).focus();
     })
 
-    $("#tblStations").on('click', '.btnActions', function(e){
-      let stationId = $(this).attr('station-id');
+    $("#tblSerieses").on('click', '.btnActions', function(e){
+      let seriesId = $(this).attr('series-id');
       let action = $(this).attr('action');
       let status = $(this).attr('status');
       let title = '';
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Station';        
+          title = 'Archive Series';        
         }
         else if(status == 1){
-          title = 'Restore Station';        
+          title = 'Restore Series';        
         }
       }
       // else if(action == 2){
@@ -300,7 +259,7 @@
             btnClass: 'btn-blue',
             keys: ['enter'],
             action: function(){
-              StationAction(stationId, action, status);
+              SeriesAction(seriesId, action, status);
               cnfrmLoading.open();
             }
           },
@@ -311,39 +270,14 @@
       });
     });
 
-    $("#frmSaveStation").submit(function(e){
+    $("#frmSaveSeries").submit(function(e){
       e.preventDefault();
-      SaveStation();
+      SaveSeries();
     });
 
-    $("#tblStations").on('click', '.btnEditStation', function(e){
-      let stationId = $(this).attr('station-id');
-      GetStationById(stationId);
-    });
-
-    $('select[name="series_ids[]"]', frmSaveStation).select2({
-        // dropdownParent: $('#mdlSaveItemRegistration'),
-        placeholder: "",
-        minimumInputLength: 2,
-        allowClear: true,
-        ajax: {
-           url: "{{ route('get_cbo_series_by_stat') }}",
-           type: "get",
-           dataType: 'json',
-           delay: 250,
-           // quietMillis: 100,
-           data: function (params) {
-            return {
-              search: params.term, // search term
-            };
-           },
-           processResults: function (response) {
-             return {
-                results: response
-             };
-           },
-           cache: true
-        },
+    $("#tblSerieses").on('click', '.btnEditSeries', function(e){
+      let seriesId = $(this).attr('series-id');
+      GetSeriesById(seriesId);
     });
 
   });

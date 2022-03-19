@@ -37,6 +37,24 @@
         </li>
 
         <li class="nav-item has-treeview">
+          <a href="{{ route('serieses') }}" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Series
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="{{ route('stations') }}" class="nav-link">
+            <i class="nav-icon fas fa-cube"></i>
+            <p>
+              Stations
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
           <a href="{{ route('users') }}" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
@@ -50,15 +68,6 @@
             <i class="nav-icon fas fa-list"></i>
             <p>
               Product Lines
-            </p>
-          </a>
-        </li>
-
-        <li class="nav-item has-treeview">
-          <a href="{{ route('stations') }}" class="nav-link">
-            <i class="nav-icon fas fa-cube"></i>
-            <p>
-              Stations
             </p>
           </a>
         </li>

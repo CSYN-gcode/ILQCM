@@ -106,4 +106,14 @@ class RouteController extends Controller
             return redirect()->route('session_expired');
         }
     }
+
+    public function serieses(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('serieses');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
 }

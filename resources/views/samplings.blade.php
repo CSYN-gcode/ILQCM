@@ -377,6 +377,7 @@
       frmSaveSampling[0].reset();
       $(".input-error", frmSaveSampling).text('');
       $(".form-control", frmSaveSampling).removeClass('is-invalid');
+      $('select[name="station_id"]', frmSaveSampling).val("").trigger("change");
     });
 
     $('#mdlSaveSampling').on('shown.bs.modal', function (e) {

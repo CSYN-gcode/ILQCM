@@ -23,7 +23,7 @@ class MonitoringController extends Controller
     //View Monitorings
     public function view_monitorings(Request $request){
         if($request->ajax()){
-	        $data = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'qcb.name as qcb_name')
+	        $data = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'monitorings.date_from as m_date_from', 'monitorings.date_to as m_date_to', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'qcb.name as qcb_name')
 	        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
 	        ->leftJoin('machines', 'monitorings.machine_id', '=', 'machines.id')
 	        ->leftJoin('users as uqi', 'uqi.id', '=', 'monitorings.qc_inspector')
@@ -86,6 +86,8 @@ class MonitoringController extends Controller
 		                'product_line_id' => 'required',
 		                'line_id' => 'required',
 		                'work_week' => 'required',
+		                'date_from' => 'required',
+		                'date_to' => 'required',
 		                'shift' => 'required',
 		                'machine_id' => 'required',
 		            ];
@@ -104,6 +106,8 @@ class MonitoringController extends Controller
 			                        'product_line_id' => $request->product_line_id,
 			                        'line_id' => $request->line_id,
 			                        'work_week' => $request->work_week,
+			                        'date_from' => $request->date_from,
+			                        'date_to' => $request->date_to,
 			                        'shift' => $request->shift,
 			                        'machine_id' => $request->machine_id,
 			                        'qc_inspector' => $request->qc_inspector,
@@ -157,7 +161,6 @@ class MonitoringController extends Controller
 			                    	->where('status', 1)
 			                        ->update([
 			                            'line_id' => $request->line_id,
-				                        'work_week' => $request->work_week,
 				                        'shift' => $request->shift,
 				                        'machine_id' => $request->machine_id,
 				                        'qc_inspector' => $request->qc_inspector,
@@ -206,7 +209,7 @@ class MonitoringController extends Controller
 		        $validator = Validator::make($data, $rules);
 
 		        if($validator->passes()){
-		            $monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id')
+		            $monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'monitorings.date_from as m_date_from', 'monitorings.date_to as m_date_to', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id')
 			        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
 			        ->leftJoin('machines', 'monitorings.machine_id', '=', 'machines.id')
 			        ->leftJoin('users as uqi', 'uqi.id', '=', 'monitorings.qc_inspector')

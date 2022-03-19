@@ -79,10 +79,7 @@
                           </div>
                         </div>
 
-                      </div>
-
-                      <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                           <div class="form-group row" style="padding: 0px 5px;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -94,13 +91,39 @@
                           </div>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                           <div class="form-group row" style="padding: 0px 5px;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
                                 <span class="input-group-text w-100"><b>WORK WEEK: </b></span>
                               </div>
                               <input type="text" class="form-control" name="work_week" placeholder="" value="{{ $monitoring_info['work_week'] }}" readonly="true">
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="row">
+
+                        <div class="col-sm-2">
+                          <div class="form-group row" style="padding: 0px 5px;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100"><b>DATE FROM: </b></span>
+                              </div>
+                              <input type="text" class="form-control txtHeaderDateFrom" name="date_from" placeholder="" value="{{ $monitoring_info['m_date_from'] }}" readonly="true">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <div class="form-group row" style="padding: 0px 5px;">
+                            <div class="input-group input-group mb-3">
+                              <div class="input-group-prepend w-20">
+                                <span class="input-group-text w-100"><b>DATE TO: </b></span>
+                              </div>
+                              <input type="text" class="form-control txtHeaderDateTo" name="date_to" placeholder="" value="{{ $monitoring_info['m_date_to'] }}" readonly="true">
                             </div>
                           </div>
                         </div>
@@ -298,12 +321,8 @@
                 </div> <!-- .col-sm-12 -->                  
               </div> <!-- .row -->
 
-              <div class="row">
+              <div class="row" style="border: 1px solid red;">
                 <div class="col-sm-12">
-                  <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddAudit"><i class="fa fa-plus"></i> Add Audit</button>
-                  </div> <!-- .float-sm-right -->
-                  <br><br>
                   <div class="table-responsive">
                     <table class="table table-sm table-bordered table-hover" id="tblDailyLineAudit" style="width: 100%;">
                       <thead>
@@ -313,13 +332,13 @@
                         <tr>
                           <th rowspan="2" style="text-align: center; vertical-align: middle; width: 10%">Category</th>
                           <th rowspan="2" style="text-align: center; vertical-align: middle; width: 34%">CHECK ITEMS</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: 05/01/2021</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
                         </tr>
                         <tr>
                           <th style="text-align: center; vertical-align: middle; width: 4%">Yes</th>
@@ -466,7 +485,11 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">RESULT</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" name="result" placeholder="RESULT">
+                <select class="form-control" name="result" placeholder="Validation Result">
+                  <!-- <option value="" selected="true">--</option> -->
+                  <option value="1">NDF</option>
+                  <!-- <option value="2">NG</option> -->
+                </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -586,7 +609,7 @@
         { "data" : "sample_size", orderable: false },
         { "data" : "accept", orderable: false },
         { "data" : "reject", orderable: false },
-        { "data" : "result", orderable: false },
+        { "data" : "raw_result", orderable: false },
         { "data" : "dppm", orderable: false },
         { "data" : "remarks", orderable: false },
         { "data" : "raw_validation_result", orderable: false },
@@ -652,7 +675,7 @@
       frmSaveSampling[0].reset();
       $(".input-error", frmSaveSampling).text('');
       $(".form-control", frmSaveSampling).removeClass('is-invalid');
-
+      $('select[name="station_id"]', frmSaveSampling).val("").trigger("change");
       $('input[name="monitoring_id"]', frmSaveSampling).val($('.txtHeaderMonitoringId').val());
     });
 
@@ -849,6 +872,23 @@
       }
 
     });
+
+    function GenerateDateRange(){
+      var dateFrom = moment($('.txtHeaderDateFrom').val());
+      var dateTo = moment($('.txtHeaderDateTo').val());
+
+      var arrDateRange = [];
+
+      for(var dateFrom = dateFrom; dateFrom <= dateTo; dateFrom.add(1, 'day')){
+        arrDateRange.push(dateFrom.format("MM/DD/YYYY"));
+      }
+
+      for(var index = 0; index < arrDateRange.length; index++){
+        $('.spanDateRange').eq(index).html(arrDateRange[index]);
+      }
+    }
+
+    GenerateDateRange();
 
   });
 </script>

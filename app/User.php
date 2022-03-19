@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Model\BranchUser;
 use App\Model\UserStation;
+use App\Model\UserSeries;
 
 class User extends Authenticatable
 {
@@ -45,5 +46,9 @@ class User extends Authenticatable
 
     public function user_station_details() {
         return $this->hasMany(UserStation::class, 'user_id', 'id');
+    }
+
+    public function user_series_details() {
+        return $this->hasMany(UserSeries::class, 'user_id', 'id');
     }
 }

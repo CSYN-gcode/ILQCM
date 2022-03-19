@@ -14,6 +14,7 @@ use Auth;
 // MODEL
 use App\User;
 use App\Model\UserStation;
+use App\Model\UserSeries;
 
 // PACKAGE
 use DataTables;
@@ -30,6 +31,15 @@ class UserController extends Controller
 		            			$query->where('status', 1);
 		            		},
 		            		'user_station_details.station_info' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+
+		            		'user_series_details' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            		'user_series_details.series_info' => function($query){
 		            			$query->where('logdel', 0);
 		            			$query->where('status', 1);
 		            		},
@@ -98,9 +108,11 @@ class UserController extends Controller
 
 		            $rules = [
 		                'name' => 'required|min:4|unique:users',
+		                'email' => 'required|min:4|unique:users',
 		                'employee_id' => 'required|min:2|unique:users',
 		                'position' => 'required',
 		                'station_ids' => 'required',
+		                'series_ids' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
@@ -111,6 +123,7 @@ class UserController extends Controller
 		                		DB::beginTransaction();
 			                    $user_id = User::insertGetId([
 			                        'name' => $request->name,
+			                        'email' => $request->email,
 			                        'employee_id' => $request->employee_id,
 			                        'position' => $request->position,
 			                        'status' => 1,
@@ -125,6 +138,20 @@ class UserController extends Controller
 				                    	UserStation::insert([
 					                        'user_id' => $user_id,
 					                        'station_id' => $request->station_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    if(count($request->series_ids) > 0){
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	UserSeries::insert([
+					                        'user_id' => $user_id,
+					                        'series_id' => $request->series_ids[$index],
 					                        'status' => 1,
 					                        'created_by' => $_SESSION["rapidx_user_id"],
 					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
@@ -156,9 +183,11 @@ class UserController extends Controller
 		            $rules = [
 		                'user_id' => 'required|numeric',
 		                'name' => 'required|min:2|unique:users,name,' . $request->user_id,
+		                'email' => 'required|min:2|unique:users,email,' . $request->user_id,
 		                'employee_id' => 'required|min:2|unique:users,employee_id,' . $request->user_id,
 		                'position' => 'required|numeric',
 		                'station_ids' => 'required',
+		                'series_ids' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
@@ -172,6 +201,7 @@ class UserController extends Controller
 			                    	->where('status', 1)
 			                        ->update([
 			                            'name' => $request->name,
+			                            'email' => $request->email,
 			                            'employee_id' => $request->employee_id,
 			                            'position' => $request->position,
 			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
@@ -186,6 +216,23 @@ class UserController extends Controller
 				                    	UserStation::insert([
 					                        'user_id' => $request->user_id,
 					                        'station_id' => $request->station_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    if(count($request->series_ids) > 0){
+			                    	UserSeries::where('user_id', $request->user_id)
+			                    	->delete();
+
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	UserSeries::insert([
+					                        'user_id' => $request->user_id,
+					                        'series_id' => $request->series_ids[$index],
 					                        'status' => 1,
 					                        'created_by' => $_SESSION["rapidx_user_id"],
 					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
@@ -242,6 +289,15 @@ class UserController extends Controller
 		            			$query->where('status', 1);
 		            		},
 		            		'user_station_details.station_info' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+
+		            		'user_series_details' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            		'user_series_details.series_info' => function($query){
 		            			$query->where('logdel', 0);
 		            			$query->where('status', 1);
 		            		},

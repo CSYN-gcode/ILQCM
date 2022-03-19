@@ -19,6 +19,8 @@ class CreateMonitoringsTable extends Migration
             $table->foreignId('line_id');
             $table->foreignId('machine_id');
             $table->integer('work_week');
+            $table->date('date_from');
+            $table->date('date_to');
             $table->string('shift');
             $table->foreignId('qc_inspector')->nullable();
             $table->foreignId('qc_checked_by')->nullable();

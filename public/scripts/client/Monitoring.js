@@ -105,6 +105,8 @@ function GetMonitoringById(monitoringId){
                     $('input[name="monitoring_id"]', frmSaveMonitoring).val(data['monitoring_info']['m_id']);
                     $('input[name="product_line_id"]', frmSaveMonitoring).val(data['monitoring_info']['m_product_line_id']);
                     $('input[name="work_week"]', frmSaveMonitoring).val(data['monitoring_info']['work_week']);
+                    $('input[name="date_from"]', frmSaveMonitoring).val(data['monitoring_info']['m_date_from']);
+                    $('input[name="date_to"]', frmSaveMonitoring).val(data['monitoring_info']['m_date_to']);
                     $('select[name="shift"]', frmSaveMonitoring).val(data['monitoring_info']['shift']);
                     $('select[name="line_id"]', frmSaveMonitoring).select2({
                       placeholder: "",

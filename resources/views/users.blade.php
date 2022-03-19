@@ -63,9 +63,11 @@
                       <thead>
                         <tr>
                           <th>Name</th>
+                          <th>Email</th>
                           <th>Employee ID</th>
                           <th>Position</th>
                           <th>Station(s)</th>
+                          <th>Series(es)</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
@@ -115,6 +117,14 @@
             </div>
 
             <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
               <label class="col-sm-2 col-form-label">Employee ID</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" name="employee_id" placeholder="Employee ID">
@@ -128,6 +138,7 @@
                 <select class="form-control" name="position" placeholder="Position">
                   <option value="1" selected="true">QC</option>
                   <option value="2">QC Supervisor</option>
+                  <option value="3">Operator</option>
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
@@ -137,6 +148,15 @@
               <label class="col-sm-2 col-form-label">Station(s)</label>
               <div class="col-sm-10">
                 <select class="form-control select2 select2bs4" name="station_ids[]" placeholder="Station(s)" multiple="true">
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Series(es)</label>
+              <div class="col-sm-10">
+                <select class="form-control select2 select2bs4" name="series_ids[]" placeholder="Series(es)" multiple="true">
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
@@ -219,6 +239,7 @@
       
       "columns":[
         { "data" : "name" },
+        { "data" : "email" },
         { "data" : "employee_id" },
         { "data" : "raw_position" },
         {
@@ -249,13 +270,41 @@
                 return result;
             }
         },
+        {
+            name: 'user_series_details',
+            data: 'user_series_details',
+            sortable: false,
+            searchable: false,
+            render: function (data) {
+                var result = '';
+                var arrSeriesDesc = [];
+                if(data.length > 0){
+                  for(let index = 0; index < data.length; index++){
+                    if(data[index]['series_info'] != null && data[index]['series_info']['status'] == 1){
+                      arrSeriesDesc.push(data[index]['series_info']['description']);
+                    }
+                  }
+
+                  if(arrSeriesDesc.length > 0){
+                    result = arrSeriesDesc.join(", ");
+                  }
+                  else{
+                    result = null;
+                  }
+                }
+                else{
+                  result = null;
+                }
+                return result;
+            }
+        },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
       "columnDefs": [ 
         {
-          "targets": [0, 1, 2, 3, 4],
+          "targets": [0, 1, 2, 3, 4, 5],
           "data": null,
           "defaultContent": "--"
         },
@@ -288,6 +337,8 @@
       $(".form-control", frmSaveUser).removeClass('is-invalid');
       $("select[name='station_ids[]']", frmSaveUser).html("");
       $("select[name='station_ids[]']", frmSaveUser).val("").trigger("change");
+      $("select[name='series_ids[]']", frmSaveUser).html("");
+      $("select[name='series_ids[]']", frmSaveUser).val("").trigger("change");
     });
 
     $('#mdlSaveUser').on('shown.bs.modal', function (e) {
@@ -356,6 +407,31 @@
         allowClear: true,
         ajax: {
            url: "{{ route('get_cbo_station_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
+    $('select[name="series_ids[]"]', frmSaveUser).select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_series_by_stat') }}",
            type: "get",
            dataType: 'json',
            delay: 250,

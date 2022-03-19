@@ -39,6 +39,7 @@ Route::get('/session_expired', function () {
 
 // ROUTE CONTROLLER
 Route::get('/dashboard', 'RouteController@dashboard')->name('dashboard');
+Route::get('/serieses', 'RouteController@serieses')->name('serieses');
 Route::get('/users', 'RouteController@users')->name('users');
 Route::get('/lines', 'RouteController@lines')->name('lines');
 Route::get('/product_lines', 'RouteController@product_lines')->name('product_lines');
@@ -49,7 +50,7 @@ Route::get('/samplings', 'RouteController@samplings')->name('samplings');
 Route::get('/monitoring/{id}', function ($id) {
 	session_start();
 	if(isset($_SESSION["rapidx_user_id"])){
-		$monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id', 'pl.family', 'pl.description as pl_description')
+		$monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'monitorings.date_from as m_date_from', 'monitorings.date_to as m_date_to', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id', 'pl.family', 'pl.description as pl_description')
 			        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
 			        ->leftJoin('machines', 'monitorings.machine_id', '=', 'machines.id')
 			        ->leftJoin('users as uqi', 'uqi.id', '=', 'monitorings.qc_inspector')
@@ -112,6 +113,14 @@ Route::post('/reference_type_action', 'ReferenceTypeController@reference_type_ac
 Route::get('/get_reference_type_by_id', 'ReferenceTypeController@get_reference_type_by_id')->name('get_reference_type_by_id');
 Route::get('/get_reference_type_by_stat', 'ReferenceTypeController@get_reference_type_by_stat')->name('get_reference_type_by_stat');
 Route::get('/get_cbo_reference_type_by_stat', 'ReferenceTypeController@get_cbo_reference_type_by_stat')->name('get_cbo_reference_type_by_stat');
+
+// SERIES CONTROLLER
+Route::get('/view_serieses', 'SeriesController@view_serieses')->name('view_serieses');
+Route::post('/save_series', 'SeriesController@save_series')->name('save_series');
+Route::post('/series_action', 'SeriesController@series_action')->name('series_action');
+Route::get('/get_series_by_id', 'SeriesController@get_series_by_id')->name('get_series_by_id');
+Route::get('/get_series_by_stat', 'SeriesController@get_series_by_stat')->name('get_series_by_stat');
+Route::get('/get_cbo_series_by_stat', 'SeriesController@get_cbo_series_by_stat')->name('get_cbo_series_by_stat');
 
 // MACHINE CONTROLLER
 Route::get('/view_machines', 'MachineController@view_machines')->name('view_machines');

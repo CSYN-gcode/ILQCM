@@ -13,6 +13,7 @@ use Auth;
 
 // MODEL
 use App\Model\Station;
+use App\Model\StationSeries;
 
 // PACKAGE
 use DataTables;
@@ -22,7 +23,17 @@ class StationController extends Controller
     //View Stations
     public function view_stations(Request $request){
         if($request->ajax()){
-	        $data = Station::where('logdel', 0)
+	        $data = Station::with([
+		            		'station_series_details' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            		'station_series_details.series_info' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+	        			])
+	        			->where('logdel', 0)
 	        			->where('status', $request->status)
         				->get();
 
@@ -68,27 +79,47 @@ class StationController extends Controller
 	        if(isset($_SESSION["rapidx_user_id"])){
 		        // Add Station
 		        if(!isset($request->station_id)){
-		            $data = [
-		                'description' => $request->description,
-		            ];
+		            $data = $request->all();
 
 		            $rules = [
 		                'description' => 'required|min:2|unique:stations',
+		                'series_ids' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    Station::insert([
-		                        'description' => $request->description,
-		                        'status' => 1,
-		                        'created_by' => $_SESSION["rapidx_user_id"],
-		                        'last_updated_by' => $_SESSION["rapidx_user_id"],
-		                        'created_at' => date('Y-m-d H:i:s'),
-		                        'updated_at' => date('Y-m-d H:i:s'),
-		                    ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	try {
+			                    $station_id = Station::insertGetId([
+			                        'description' => $request->description,
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+
+			                    if(count($request->series_ids) > 0){
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	StationSeries::insert([
+					                        'station_id' => $station_id,
+					                        'series_id' => $request->series_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    DB::commit();
+		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	} catch (Exception $e) {
+		                		DB::rollback();
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]); 
+		                	}
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
@@ -100,29 +131,52 @@ class StationController extends Controller
 		        }
 		        // Edit Station
 		        else{
-		            $data = [
-		                'station_id' => $request->station_id,
-		                'description' => $request->description,
-		            ];
+		            $data = $request->all();
 
 		            $rules = [
 		                'station_id' => 'required|numeric',
 		                'description' => 'required|min:2|unique:stations,description,' . $request->station_id,
+		                'series_ids' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    Station::where('id', $request->station_id)
-		                    	->where('logdel', 0)
-		                    	->where('status', 1)
-		                        ->update([
-		                            'description' => $request->description,
-		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
-		                            'updated_at' => date('Y-m-d H:i:s'),
-		                        ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	try {
+		                		DB::beginTransaction();
+			                    Station::where('id', $request->station_id)
+			                    	->where('logdel', 0)
+			                    	->where('status', 1)
+			                        ->update([
+			                            'description' => $request->description,
+			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                            'updated_at' => date('Y-m-d H:i:s'),
+			                        ]);
+
+			                    if(count($request->series_ids) > 0){
+			                    	StationSeries::where('station_id', $request->station_id)
+			                    	->delete();
+
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	StationSeries::insert([
+					                        'station_id' => $request->station_id,
+					                        'series_id' => $request->series_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    DB::commit();
+		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	} catch (Exception $e) {
+		                		DB::rollback();
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]); 
+		                	}
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
@@ -158,7 +212,19 @@ class StationController extends Controller
 		        $validator = Validator::make($data, $rules);
 
 		        if($validator->passes()){
-		            $station_info = Station::where('id', $request->station_id)->where('logdel', 0)->first();
+		            $station_info = Station::with([
+		            				'station_series_details' => function($query){
+				            			$query->where('logdel', 0);
+				            			$query->where('status', 1);
+				            		},
+				            		'station_series_details.series_info' => function($query){
+				            			$query->where('logdel', 0);
+				            			$query->where('status', 1);
+				            		},
+		            			])
+		            			->where('id', $request->station_id)
+		            			->where('logdel', 0)
+		            			->first();
 
 		            return response()->json(['auth' => 1, 'station_info' => $station_info, 'result' => 1]);
 		        }

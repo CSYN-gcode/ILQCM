@@ -31,6 +31,7 @@ function SaveUser(){
                     $(".input-error", frmSaveUser).text('');
                     $(".form-control", frmSaveUser).removeClass('is-invalid');
                     $("select[name='station_ids[]']", frmSaveUser).val("").trigger("change");
+                    $("select[name='series_ids[]']", frmSaveUser).val("").trigger("change");
                     dtUsers.draw();
                 }
                 else{
@@ -43,6 +44,15 @@ function SaveUser(){
                         else{
                             $("input[name='name']", frmSaveUser).removeClass('is-invalid');
                             $("input[name='name']", frmSaveUser).siblings('.input-error').text('');
+                        }
+
+                        if(data['error']['email'] != null){
+                            $("input[name='email']", frmSaveUser).addClass('is-invalid');
+                            $("input[name='email']", frmSaveUser).siblings('.input-error').text(data['error']['email']);
+                        }
+                        else{
+                            $("input[name='email']", frmSaveUser).removeClass('is-invalid');
+                            $("input[name='email']", frmSaveUser).siblings('.input-error').text('');
                         }
                         
                         if(data['error']['employee_id'] != null){
@@ -70,6 +80,15 @@ function SaveUser(){
                         else{
                             $("select[name='station_ids[]']", frmSaveUser).removeClass('is-invalid');
                             $("select[name='station_ids[]']", frmSaveUser).siblings('.input-error').text('');
+                        }
+
+                        if(data['error']['series_ids'] != null){
+                            $("select[name='series_ids[]']", frmSaveUser).addClass('is-invalid');
+                            $("select[name='series_ids[]']", frmSaveUser).siblings('.input-error').text(data['error']['series_ids']);
+                        }
+                        else{
+                            $("select[name='series_ids[]']", frmSaveUser).removeClass('is-invalid');
+                            $("select[name='series_ids[]']", frmSaveUser).siblings('.input-error').text('');
                         }
                     }
                 }
@@ -108,6 +127,8 @@ function GetUserById(userId){
             $('input[name="user_id"]', frmSaveUser).val('');
             $("select[name='station_ids[]']", frmSaveUser).html("");
             $("select[name='station_ids[]']", frmSaveUser).val("").trigger("change");
+            $("select[name='series_ids[]']", frmSaveUser).html("");
+            $("select[name='series_ids[]']", frmSaveUser).val("").trigger("change");
         },
         success(data){
             btnSaveUser.prop('disabled', false);
@@ -120,6 +141,7 @@ function GetUserById(userId){
                     $("#mdlSaveUser").modal('show');
                     $('input[name="user_id"]', frmSaveUser).val(data['user_info']['id']);
                     $('input[name="name"]', frmSaveUser).val(data['user_info']['name']);
+                    $('input[name="email"]', frmSaveUser).val(data['user_info']['email']);
                     $('input[name="employee_id"]', frmSaveUser).val(data['user_info']['employee_id']);
                     $('select[name="position"]', frmSaveUser).val(data['user_info']['position']);
                     
@@ -134,6 +156,19 @@ function GetUserById(userId){
                         }
                         $("select[name='station_ids[]']", frmSaveUser).append(userStationDetails);
                         $("select[name='station_ids[]']", frmSaveUser).val(stationIds).trigger("change");
+                    }
+
+                    let userSeriesDetails = "";
+                    let seriesIds = [];
+                    if(data['user_info']['user_series_details'].length > 0){
+                        for(let index = 0; index < data['user_info']['user_series_details'].length; index++){
+                            if(data['user_info']['user_series_details'][index]['series_info'] != null && data['user_info']['user_series_details'][index]['series_info']['status'] == 1){
+                                seriesIds.push(data['user_info']['user_series_details'][index]['series_id']);
+                                userSeriesDetails += '<option value="' + data['user_info']['user_series_details'][index]['series_id'] + '">' + data['user_info']['user_series_details'][index]['series_info']['description'] + '</option>';
+                            }
+                        }
+                        $("select[name='series_ids[]']", frmSaveUser).append(userSeriesDetails);
+                        $("select[name='series_ids[]']", frmSaveUser).val(seriesIds).trigger("change");
                     }
                 }
                 else{
