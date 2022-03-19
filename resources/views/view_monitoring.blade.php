@@ -57,7 +57,7 @@
                             $family = "QF/TSOP/SMPO";
                           }
                         @endphp
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="display: none;">
                           <div class="form-group row" style="padding: 0px 5px;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -68,7 +68,7 @@
                           </div>
                         </div>
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="display: none;">
                           <div class="form-group row" style="padding: 0px 5px;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -485,11 +485,7 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">RESULT</label>
               <div class="col-sm-8">
-                <select class="form-control" name="result" placeholder="Validation Result">
-                  <!-- <option value="" selected="true">--</option> -->
-                  <option value="1">NDF</option>
-                  <!-- <option value="2">NG</option> -->
-                </select>
+                <input type="text" class="form-control" name="result" placeholder="RESULT" autocomplete="off">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -609,7 +605,7 @@
         { "data" : "sample_size", orderable: false },
         { "data" : "accept", orderable: false },
         { "data" : "reject", orderable: false },
-        { "data" : "raw_result", orderable: false },
+        { "data" : "result", orderable: false },
         { "data" : "dppm", orderable: false },
         { "data" : "remarks", orderable: false },
         { "data" : "raw_validation_result", orderable: false },

@@ -50,7 +50,7 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -64,7 +64,7 @@
                           </div> <!-- .float-sm-left -->
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -80,19 +80,21 @@
                           </div> <!-- .float-sm-left -->
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group-sm mb-3">
                               <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Product Line</span>
+                                <span class="input-group-text w-100">Description</span>
                               </div>
-                              <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 70%;">
+                              <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 60%;">
                               </select>
                             </div>
                           </div> <!-- .float-sm-left -->
                         </div>
+                      </div>
 
-                        <div class="col-sm-2">
+                      <div class="row">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -103,7 +105,7 @@
                           </div> <!-- .float-sm-left -->
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">
@@ -117,7 +119,7 @@
                           </div> <!-- .float-sm-left -->
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                           <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
                             <div class="input-group input-group mb-3">
                               <div class="input-group-prepend w-20">

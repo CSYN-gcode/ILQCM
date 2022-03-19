@@ -46,18 +46,6 @@ class SamplingController extends Controller
 
 	                return $result;
 	            })
-	            ->addColumn('raw_result', function($row){
-	                $result = "";
-
-	                if($row->result == 1){
-	                    $result .= 'NDF';
-	                }
-	                else if($row->result == 2){
-	                    $result .= 'N/A';
-	                }
-
-	                return $result;
-	            })
 	            ->addColumn('raw_date', function($row){
 	                return Carbon::parse($row->created_at)->format('m/d/Y');;
 	            })
@@ -83,14 +71,19 @@ class SamplingController extends Controller
 	            ->addColumn('raw_validation_result', function($row){
 	                $result = "";
 
-	                if($row->validation_result == 1){
-	                    $result .= 'OK';
-	                }
-	                else if($row->validation_result == 0){
-	                    $result .= 'NG';
+	                if($row->validation_result == null){
+	                	$result = "--";
 	                }
 	                else{
-	                	$result .= "--";
+		                if($row->validation_result == 1){
+		                    $result = 'OK';
+		                }
+		                else if($row->validation_result == 0){
+		                    $result = 'NG';
+		                }
+		                else{
+		                	$result = "--";
+		                }
 	                }
 
 	                return $result;

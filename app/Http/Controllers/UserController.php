@@ -70,6 +70,9 @@ class UserController extends Controller
 	                else if($row->position == 2){
 	                    $result .= 'QC Supervisor';
 	                }
+	                else if($row->position == 3){
+	                    $result .= 'Operator';
+	                }
 
 	                return $result;
 	            })
