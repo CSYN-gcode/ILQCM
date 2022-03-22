@@ -111,12 +111,15 @@ class UserController extends Controller
 
 		            $rules = [
 		                'name' => 'required|min:4|unique:users',
-		                'email' => 'required|min:4|unique:users',
 		                'employee_id' => 'required|min:2|unique:users',
 		                'position' => 'required',
 		                'station_ids' => 'required',
 		                'series_ids' => 'required',
 		            ];
+
+		            if($request->position == 2){
+		            	$rules["email"] = 'required|min:4|unique:users';
+		            }
 
 		            $validator = Validator::make($data, $rules);
 
@@ -186,12 +189,15 @@ class UserController extends Controller
 		            $rules = [
 		                'user_id' => 'required|numeric',
 		                'name' => 'required|min:2|unique:users,name,' . $request->user_id,
-		                'email' => 'required|min:2|unique:users,email,' . $request->user_id,
 		                'employee_id' => 'required|min:2|unique:users,employee_id,' . $request->user_id,
 		                'position' => 'required|numeric',
 		                'station_ids' => 'required',
 		                'series_ids' => 'required',
 		            ];
+
+		            if($request->position == 2){
+		            	$rules["email"] = 'required|min:2|unique:users,email,' . $request->user_id;
+		            }
 
 		            $validator = Validator::make($data, $rules);
 
