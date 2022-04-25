@@ -360,39 +360,39 @@
                         <tr>
                           <td rowspan="10" style="text-align: left; vertical-align: top; width: 10%"><b>Man</b></td>
                           <td style="text-align: left; vertical-align: middle; width: 34%">1. Are all operators certified on their stations?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             2. Do the operators follow Company & Production SOPs?
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -401,20 +401,20 @@
                                   hairnet, skillcard and company ID)</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -422,20 +422,20 @@
                              <li>No bringing of cellphones inside the Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -443,20 +443,20 @@
                              <li>No cosmetics (makeup, lipstick) inside Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -464,20 +464,20 @@
                              <li>No bringing of food or eating inside Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -487,20 +487,20 @@
                              <li>No wearing of dangling items (dangling jewelries and wristwatch)?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
