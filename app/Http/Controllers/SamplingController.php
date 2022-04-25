@@ -47,18 +47,33 @@ class SamplingController extends Controller
 	                return $result;
 	            })
 	            ->addColumn('raw_date', function($row){
-	                return Carbon::parse($row->created_at)->format('m/d/Y');;
+	                return Carbon::parse($row->created_at)->format('m/d/Y');
 	            })
 	            ->addColumn('raw_time', function($row){
-	                return Carbon::parse($row->created_at)->format('H:i');;
+	                return Carbon::parse($row->created_at)->format('H:i');
 	            })
 	            ->addColumn('raw_po_no_series', function($row){
-	                return $row->po_no . " / " . $row->series;
+	            	if($row->no_production == 0){
+	                	return $row->po_no . " / " . $row->series;
+	            	}
+	            	else{
+	            		return "--";
+	            	}
+	            })
+	            ->addColumn('raw_operator_name', function($row){
+	            	if($row->no_production == 0){
+	                	return $row->operator_name;
+	            	}
+	            	else{
+	            		return "No Production";
+	            	}
 	            })
 	            ->addColumn('raw_action', function($row){
 	                $result = '';
 	                if($row->status == 1){
-	                    $result .= '<button type="button" class="btn btn-xs btn-primary table-btns btnEditSampling" sampling-id="' . $row->id . '"><i class="fa fa-edit" title="Edit"></i></button>';
+	                	if($row->no_production == 0){
+	                    	$result .= '<button type="button" class="btn btn-xs btn-primary table-btns btnEditSampling" sampling-id="' . $row->id . '"><i class="fa fa-edit" title="Edit"></i></button>';
+	                    }
 
 	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" sampling-id="' . $row->id . '" title="Archive"><i class="fa fa-lock"></i></button>';
 	                }
@@ -109,7 +124,7 @@ class SamplingController extends Controller
 		            $rules = [
 		                'monitoring_id' => 'required',
 						'operator' => 'required',
-						'station_id' => 'required',
+						// 'station_id' => 'required',
 						'po_no' => 'required',
 						'series' => 'required',
 						'sample_size' => 'required',
@@ -160,7 +175,7 @@ class SamplingController extends Controller
 		                'monitoring_id' => 'required',
 						'sampling_id' => 'required',
 						'operator' => 'required',
-						'station_id' => 'required',
+						// 'station_id' => 'required',
 						'po_no' => 'required',
 						'series' => 'required',
 						'sample_size' => 'required',
@@ -299,6 +314,76 @@ class SamplingController extends Controller
     	}
     }
 
+    public function add_no_production(Request $request){
+        date_default_timezone_set('Asia/Manila');
+        session_start();
+
+        if($request->ajax()){
+	        // Change Sampling Status
+	        if(isset($_SESSION["rapidx_user_id"])){
+	            $data = $request->all();
+
+	            $rules = [
+	                'monitoring_id' => 'required',
+	                'no_production_date' => 'required',
+	            ];
+
+	            $validator = Validator::make($data, $rules);
+
+	            if($validator->passes()){
+	                try {
+	                	$check_sampling_no_prod = Sampling::where('monitoring_id', $request->monitoring_id)
+	                		->where('no_production_date', $request->no_production_date)
+	                		->first();
+
+	                	if($check_sampling_no_prod == null){
+	                		Sampling::insert([
+								'monitoring_id' => $request->monitoring_id,
+								'no_production_date' => $request->no_production_date,
+								'no_production' => 1,
+		                        'status' => 1,
+		                        'created_by' => $_SESSION["rapidx_user_id"],
+		                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+		                        'created_at' => date('Y-m-d H:i:s'),
+		                        'updated_at' => date('Y-m-d H:i:s'),
+		                    ]);
+	                	}
+	                	else{
+	                		if($check_sampling_no_prod->status != 1){
+		                    	Sampling::where('monitoring_id', $request->monitoring_id)
+		                    	->where('no_production_date', $request->no_production_date)
+		                    	->where('logdel', 0)
+		                    	->where('status', '!=', 1)
+		                        ->update([
+		                            'status' => 1,
+		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+		                            'updated_at' => date('Y-m-d H:i:s'),
+		                        ]);
+	                		}
+	                		else{
+	                			return response()->json(['auth' => 1, 'result' => 2, 'error']);
+	                		}
+	                	}
+
+	                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
+	                } 
+	                catch (Exception $e) {
+						return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
+	                }
+	            }
+	            else{
+	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+	            }
+	        } // Session Expired
+		    else{
+	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
+		    }  
+		}
+    	else{
+    		abort(403);
+    	}
+    }
+
     public function get_cbo_sampling_by_stat(Request $request){
         date_default_timezone_set('Asia/Manila');
 
@@ -389,12 +474,12 @@ class SamplingController extends Controller
 	        if(isset($_SESSION["rapidx_user_id"])){
 		        $data = [
 		            'employee_id' => $request->employee_id,
-		            'station_id' => $request->station_id,
+		            // 'station_id' => $request->station_id,
 		        ];
 
 		        $rules = [
 		            'employee_id' => 'required',
-		            'station_id' => 'required',
+		            // 'station_id' => 'required',
 		        ];
 
 		        $validator = Validator::make($data, $rules);

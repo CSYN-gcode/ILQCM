@@ -223,7 +223,7 @@
                             <span class="input-group-text w-100">Status</span>
                           </div>
                           <select class="form-control form-control-sm selFilSamplingByStat" name="status">
-                            <option value="1" selected="true">Active</option>
+                            <option value="1" selected="true">Active</option> 
                             <option value="2">Archived</option>
                           </select>
                         </div>
@@ -233,6 +233,7 @@
 
                   <div class="float-sm-right">
                     <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add Sampling</button>
+                    <button class="btn btn-warning btn-sm btnAddNoProduction"><i class="fa fa-ban"></i> Add No Production Today</button>
                   </div> <!-- .float-sm-right -->
                   <br><br>
 
@@ -330,7 +331,7 @@
                           <th colspan="16" style="text-align: left; vertical-align: middle; background-color: #9f9f9f; border-bottom: 1.8px solid black;">DAILY LINE AUDIT</th>
                         </tr>
                         <tr>
-                          <th rowspan="2" style="text-align: center; vertical-align: middle; width: 10%">Category</th>
+                          <th rowspan="2" style="text-align: center; vertical-align: middle; width: 10%">CATEGORY</th>
                           <th rowspan="2" style="text-align: center; vertical-align: middle; width: 34%">CHECK ITEMS</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; width: 8%">Date: <span class="spanDateRange"></span></th>
@@ -357,7 +358,7 @@
                           <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
                         </tr>
                         <tr>
-                          <td style="text-align: left; vertical-align: middle; width: 10%">Man</td>
+                          <td rowspan="10" style="text-align: left; vertical-align: top; width: 10%"><b>Man</b></td>
                           <td style="text-align: left; vertical-align: middle; width: 34%">1. Are all operators certified on their stations?</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
@@ -373,6 +374,163 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            2. Do the operators follow Company & Production SOPs?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%"></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Wearing of complete uniform (blue polo, bunnysuit, gloves, facemask,           
+                                  hairnet, skillcard and company ID)</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>
+                             <li>No bringing of cellphones inside the Production area</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>
+                             <li>No cosmetics (makeup, lipstick) inside Production area</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>
+                             <li>No bringing of food or eating inside Production area</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            3. Do the operators follow safety rules?
+                            <ul>
+                             <li>Use of PPE</li>
+                             <li>No wearing of dangling items (dangling jewelries and wristwatch)?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">/</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%">X</td>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -599,7 +757,7 @@
         { "data" : "created_at", visible: false, orderable: false },
         { "data" : "raw_date", orderable: false },
         { "data" : "raw_time", orderable: false },
-        { "data" : "operator_name", orderable: false },
+        { "data" : "raw_operator_name", orderable: false },
         { "data" : "s_description", orderable: false },
         { "data" : "raw_po_no_series", orderable: false },
         { "data" : "sample_size", orderable: false },
@@ -615,7 +773,7 @@
 
       "columnDefs": [ 
         {
-          "targets": [0, 1, 2],
+          "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
           "data": null,
           "defaultContent": "--"
         },
@@ -750,6 +908,45 @@
                           return false;
                       }
                       GetPODetails(po_no);
+                  }
+              },
+              cancel: function () {
+                  //close
+              },
+          },
+          onContentReady: function () {
+            // bind to events
+            var jc = this;
+            this.$content.find('form').on('submit', function (e) {
+                // if the user submits the form by pressing enter in the field.
+                e.preventDefault();
+                jc.$$formSubmit.trigger('click'); // reference the button and click it
+            });
+        }
+      });
+    });
+
+    $(".btnAddNoProduction").click(function(){
+      $.confirm({
+          title: 'Add No Production',
+          content: '' +
+          '<form action="" class="formSearchPoNo">' +
+          '<div class="form-group">' +
+          '<label>Current Date</label>' +
+          '<input type="text" class="noProductionDate form-control" value="<?php echo date('Y-m-d'); ?>" required readonly />' +
+          '</div>' +
+          '</form>',
+          buttons: {
+              formSubmit: {
+                  text: 'Save',
+                  btnClass: 'btn-blue',
+                  action: function () {
+                      var noProductionDate = this.$content.find('.noProductionDate').val();
+                      if(!noProductionDate){
+                          toastr.warning('Invalid Production Date.');
+                          return false;
+                      }
+                      AddNoProduction(noProductionDate, $(".txtHeaderMonitoringId").val());
                   }
               },
               cancel: function () {

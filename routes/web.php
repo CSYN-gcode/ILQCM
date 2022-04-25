@@ -142,6 +142,7 @@ Route::get('/load_monitoring', 'MonitoringController@load_monitoring')->name('lo
 // SAMPLING CONTROLLER
 Route::get('/view_samplings', 'SamplingController@view_samplings')->name('view_samplings');
 Route::post('/save_sampling', 'SamplingController@save_sampling')->name('save_sampling');
+Route::post('/add_no_production', 'SamplingController@add_no_production')->name('add_no_production');
 Route::post('/sampling_action', 'SamplingController@sampling_action')->name('sampling_action');
 Route::get('/get_sampling_by_id', 'SamplingController@get_sampling_by_id')->name('get_sampling_by_id');
 Route::get('/get_sampling_by_stat', 'SamplingController@get_sampling_by_stat')->name('get_sampling_by_stat');

@@ -234,6 +234,48 @@ function SamplingAction(samplingId, action, status){
     });
 }
 
+function AddNoProduction(noProductionDate, monitoringId){
+    let url = globalLink.replace('link', 'add_no_production');
+    let login = globalLink.replace('link', 'login');
+
+    $.ajax({
+        url: url,
+        method: 'post',
+        data: {
+            _token: _token,
+            no_production_date: noProductionDate,
+            monitoring_id: monitoringId,
+        },
+        dataType: 'json',
+        beforeSend() {
+            cnfrmLoading.open();
+        },
+        success(data){
+            cnfrmLoading.close();
+            dtSamplings.draw();
+
+            if(data['auth'] == 1){
+                if(data['result'] == 1){
+                    toastr.success('Record Saved!');
+                }
+                else if(data['result'] == 2){
+                    toastr.warning('No Production Already Exist!');
+                }
+                else{
+                    toastr.error('Saving Failed!');
+                }
+            }
+            else{ // if session expired
+                cnfrmAutoLogin.open();
+            }
+        },
+        error(xhr, data, status){
+            cnfrmLoading.close();
+            toastr.error('An error occured!');
+        }
+    });
+}
+
 function GetPODetails(po_no){
     let url = globalLink.replace('link', 'get_po_details');
     let login = globalLink.replace('link', 'login');
@@ -278,10 +320,10 @@ function GetOperatorDetails(employee_id, station_id){
     let url = globalLink.replace('link', 'get_operator_details');
     let login = globalLink.replace('link', 'login');
 
-    if(station_id === null){
-        toastr.warning('Please select station first.');
-        return;
-    }
+    // if(station_id === null){
+    //     toastr.warning('Please select station first.');
+    //     return;
+    // }
 
     if(employee_id === null){
         toastr.warning('Employee ID is required.');
@@ -306,13 +348,20 @@ function GetOperatorDetails(employee_id, station_id){
             if(data['auth'] == 1){
                 if(data['data'] != null){
                     $("#mdlSaveSampling").modal('show');
-                    if(data['data']['user_station_details'].length > 0){
+                    if(station_id != null){
+                        if(data['data']['user_station_details'].length > 0){
+                            $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
+                            $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                            toastr.success('Record found.');
+                        }
+                        else{
+                            toastr.warning('Operator is not certified.');
+                        }
+                    }
+                    else{
                         $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
                         $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
                         toastr.success('Record found.');
-                    }
-                    else{
-                        toastr.warning('Operator is not certified.');
                     }
                 }
                 else{
