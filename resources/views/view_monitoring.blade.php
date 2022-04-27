@@ -232,8 +232,13 @@
                   </div> <!-- .float-sm-left -->
 
                   <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add Sampling</button>
-                    <button class="btn btn-warning btn-sm btnAddNoProduction"><i class="fa fa-ban"></i> Add No Production Today</button>
+                    @if($sampling_no_prod_count <= 0)
+                      <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add Sampling</button>
+                      <button class="btn btn-warning btn-sm btnAddNoProduction"><i class="fa fa-ban"></i> Add No Production Today</button>
+                    @else
+                      <button class="btn btn-primary btn-sm btnAddSampling" disabled="true" title="No Production for Today"><i class="fa fa-plus"></i> Add Sampling</button>
+                      <button class="btn btn-warning btn-sm btnAddNoProduction" disabled="true" title="No Production for Today"><i class="fa fa-ban"></i> Add No Production Today</button>
+                    @endif
                   </div> <!-- .float-sm-right -->
                   <br><br>
 

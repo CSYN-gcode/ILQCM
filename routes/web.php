@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // MODEL
 use App\Model\Monitoring;
+use App\Model\Sampling;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +61,11 @@ Route::get('/monitoring/{id}', function ($id) {
 		            ->where('monitorings.status', 1)
 		            ->where('monitorings.logdel', 0)
 		            ->first();
+
+		$sampling_no_prod_count = Sampling::where("no_production_date", date("Y-m-d"))->where('status', 1)->where('logdel', 0)->count();
+
 		if($monitoring_info != null){
-    		return view('view_monitoring')->with(['id' => $id, 'monitoring_info' => $monitoring_info]);
+    		return view('view_monitoring')->with(['id' => $id, 'monitoring_info' => $monitoring_info, 'sampling_no_prod_count' => $sampling_no_prod_count]);
 		}
 		else{
 			return "Monitoring is not available.";

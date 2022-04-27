@@ -256,7 +256,8 @@ function AddNoProduction(noProductionDate, monitoringId){
 
             if(data['auth'] == 1){
                 if(data['result'] == 1){
-                    toastr.success('Record Saved!');
+                    toastr.success('Record Saved!', 'Record Saved!', {timeOut: 3000, preventDuplicates: true});
+                    location.reload();
                 }
                 else if(data['result'] == 2){
                     toastr.warning('No Production Already Exist!');
