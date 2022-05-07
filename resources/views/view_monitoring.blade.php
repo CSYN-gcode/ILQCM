@@ -363,7 +363,7 @@
                           <th style="text-align: center; vertical-align: middle; width: 4%">No</th>
                         </tr>
                         <tr>
-                          <td rowspan="10" style="text-align: left; vertical-align: top; width: 10%"><b>Man</b></td>
+                          <td rowspan="12" style="text-align: left; vertical-align: top; width: 10%"><b>Man</b></td>
                           <td style="text-align: left; vertical-align: middle; width: 34%">1. Are all operators certified on their stations?</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
@@ -487,8 +487,46 @@
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             3. Do the operators follow safety rules?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
                             <ul>
                              <li>Use of PPE</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
                              <li>No wearing of dangling items (dangling jewelries and wristwatch)?</li>
                             </ul>  
                           </td>
@@ -509,34 +547,1161 @@
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">OK</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">N/A</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
                         </tr>
+                        <!-- Material / Product -->
+                         <tr>
+                          <td rowspan="14" style="text-align: left; vertical-align: top; width: 10%"><b>Material / <br> Product</b></td>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Input Materials</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are material properly labeled?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are material properly sealed?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Does the material rack only contains materials needed for the ongoing</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">2. Work-in-Process (WIP)</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are input and output station well-identified with label and being followed?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are non-conforming products properly identified?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are required trays for non-conforming products being used (red - SCRAP / yellow - for VERIFICATION)?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">3. Output Product</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are the output products for completion properly labeled and with attavhed status slip?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Are the products not mixed in one layer?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                        </tr>
+
+                        <!-- Machine / Jigs / Tools -->
+                        <tr>
+                          <td rowspan="14" style="text-align: left; vertical-align: top; width: 10%"><b>Machine / Jigs / Tolls</b></td>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Are machine traceability and stickers clearly filled-up and updated?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Machine Tag</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Buy-Off Sticker</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Preventive Maintenance Sticker</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Calibration Sticker</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Pressure Gague Indicator (Min/Max)</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            2. Are Machine Records completely filled-upp and updated?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>    
+                             <li>Pre-production Checksheets (with signatures)</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            <ul>
+                             <li>Machine Downtime Report (with signatures)</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            3. Are machine pre-production samples (unit) complete, available and updated?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            4. Are those loose parts (washers, screws, etc.); machine cover and knuckles?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                        </tr>
+
+                        <!-- Method / Process -->
+                         <tr>
+                          <td rowspan="13" style="text-align: left; vertical-align: top; width: 10%"><b>Method / <br> Process</b></td>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Is the ongoing product already PASSED product, qualification and pilot run? (Check the report if already checkedd by Prod'n, Eng'g & QC.)</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">2. Are posted references being followed and tallies with the actual activity of the operator?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Work Instruction / SEI tally versus Operator activity?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Point Panel / inspection guide tally versus Operator activity?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">3. Is the required maginification for microscope being used? (marking on the knob shall be observed, if applicable)</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">4. Is the Defect Escalation procedure being practiced / used?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Defect escalation slip with sign of Prodn/Engg/QC?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">5. Is the runcard properly filled-up?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Lot number of required parts updated & readable?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Operator name, IN & OUT preperly filled-up and readable?</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                        </tr>
+
+                        <!-- Work Place -->
+                         <tr>
+                          <td rowspan="11" style="text-align: left; vertical-align: top; width: 10%"><b>Work <br> Place</b></td>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Are visual mnagement properly implemented and updated?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Line Identification Tag</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Line Information Board</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <ul>
+                             <li>Output Monitoring Board</li>
+                            </ul>  
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">2. Are working areas free from dust and unnecessary items?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">3. Area all line demarcations in-palced, properly used and maintained?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">4. Are production waste well maintained and properly disposed?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">5. There no scattered units or materials on the floor?</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                            </select>
+                            <input type="date" name="" class="form-control form-control-sm">
+                          </th>
+                        </tr>
+                        <tr>
+                          <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
+                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                          </th>
+                        </tr>
+
                       </thead>
                       <tbody>
                       </tbody>
