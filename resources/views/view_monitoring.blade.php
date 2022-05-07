@@ -2249,6 +2249,13 @@
         isChecked = 1;
       }
 
+      if(value == 1){
+        $('.chkDLA[index="' + index + '"][value="0"]').prop('checked', false);
+      }
+      else{
+        $('.chkDLA[index="' + index + '"][value="1"]').prop('checked', false); 
+      }
+
       console.log(value);
       console.log(index);
       console.log(dateIndex);
