@@ -365,39 +365,39 @@
                         <tr>
                           <td rowspan="12" style="text-align: left; vertical-align: top; width: 10%"><b>Man</b></td>
                           <td style="text-align: left; vertical-align: middle; width: 34%">1. Are all operators certified on their stations?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.2" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.2" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             2. Do the operators follow Company & Production SOPs?
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -406,20 +406,20 @@
                                   hairnet, skillcard and company ID)</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -427,20 +427,20 @@
                              <li>No bringing of cellphones inside the Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -448,20 +448,20 @@
                              <li>No cosmetics (makeup, lipstick) inside Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -469,20 +469,20 @@
                              <li>No bringing of food or eating inside Production area</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -509,20 +509,20 @@
                              <li>Use of PPE</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -530,20 +530,20 @@
                              <li>No wearing of dangling items (dangling jewelries and wristwatch)?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
@@ -642,20 +642,20 @@
                              <li>Are material properly labeled?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -663,20 +663,20 @@
                              <li>Are material properly sealed?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -684,20 +684,20 @@
                              <li>Does the material rack only contains materials needed for the ongoing</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
                         <tr>
@@ -723,20 +723,20 @@
                              <li>Are input and output station well-identified with label and being followed?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -744,20 +744,20 @@
                              <li>Are non-conforming products properly identified?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -765,20 +765,20 @@
                              <li>Are required trays for non-conforming products being used (red - SCRAP / yellow - for VERIFICATION)?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
                         <tr>
@@ -804,20 +804,20 @@
                              <li>Are the output products for completion properly labeled and with attavhed status slip?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -825,20 +825,20 @@
                              <li>Are the products not mixed in one layer?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
@@ -938,20 +938,20 @@
                              <li>Machine Tag</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -959,20 +959,20 @@
                              <li>Buy-Off Sticker</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -980,20 +980,20 @@
                              <li>Preventive Maintenance Sticker</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -1001,20 +1001,20 @@
                              <li>Calibration Sticker</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -1022,20 +1022,20 @@
                              <li>Pressure Gague Indicator (Min/Max)</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -1062,20 +1062,20 @@
                              <li>Pre-production Checksheets (with signatures)</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
@@ -1083,60 +1083,60 @@
                              <li>Machine Downtime Report (with signatures)</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             3. Are machine pre-production samples (unit) complete, available and updated?
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             4. Are those loose parts (washers, screws, etc.); machine cover and knuckles?
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.4.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
                         <tr>
@@ -1215,21 +1215,21 @@
                         <!-- Method / Process -->
                          <tr>
                           <td rowspan="13" style="text-align: left; vertical-align: top; width: 10%"><b>Method / <br> Process</b></td>
-                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Is the ongoing product already PASSED product, qualification and pilot run? (Check the report if already checkedd by Prod'n, Eng'g & QC.)</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Is the ongoing product already PASSED product, qualification and pilot run? (Check the report if already checked by Prod'n, Eng'g & QC.)</td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">2. Are posted references being followed and tallies with the actual activity of the operator?</td>
@@ -1254,20 +1254,20 @@
                              <li>Work Instruction / SEI tally versus Operator activity?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -1275,37 +1275,37 @@
                              <li>Point Panel / inspection guide tally versus Operator activity?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">3. Is the required maginification for microscope being used? (marking on the knob shall be observed, if applicable)</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">4. Is the Defect Escalation procedure being practiced / used?</td>
@@ -1330,20 +1330,20 @@
                              <li>Defect escalation slip with sign of Prodn/Engg/QC?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">5. Is the runcard properly filled-up?</td>
@@ -1368,20 +1368,20 @@
                              <li>Lot number of required parts updated & readable?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -1389,20 +1389,20 @@
                              <li>Operator name, IN & OUT preperly filled-up and readable?</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
                         <tr>
@@ -1503,20 +1503,20 @@
                              <li>Line Identification Tag</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -1524,20 +1524,20 @@
                              <li>Line Information Board</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td>
@@ -1545,88 +1545,88 @@
                              <li>Output Monitoring Board</li>
                             </ul>  
                           </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">2. Are working areas free from dust and unnecessary items?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.2.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.2.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">3. Area all line demarcations in-palced, properly used and maintained?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">4. Are production waste well maintained and properly disposed?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.4.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.4.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">5. There no scattered units or materials on the floor?</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.5.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.5.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
                         <tr>
@@ -2236,7 +2236,30 @@
 
     });
 
+    $('.chkDLA').click(function(){
+      let value = $(this).attr('value');
+      let index = $(this).attr('index');
+      let dateIndex = $(this).attr('date-index');
+      let monitoringId = $(this).attr('monitoring-id');
+      let date = $(this).attr('date');
+
+      let isChecked = 0;
+
+      if($(this).prop('checked')){
+        isChecked = 1;
+      }
+
+      console.log(value);
+      console.log(index);
+      console.log(dateIndex);
+      console.log(monitoringId);
+      console.log(date);
+      console.log(isChecked);
+
+    });
+
     function GenerateDateRange(){
+      // Set the header date labels
       var dateFrom = moment($('.txtHeaderDateFrom').val());
       var dateTo = moment($('.txtHeaderDateTo').val());
 
@@ -2248,6 +2271,20 @@
 
       for(var index = 0; index < arrDateRange.length; index++){
         $('.spanDateRange').eq(index).html(arrDateRange[index]);
+      }
+
+      // Set the checkboxes date attributes
+      var chkDateFrom = moment($('.txtHeaderDateFrom').val());
+      var chkDateTo = moment($('.txtHeaderDateTo').val());
+
+      var chkArrDateRange = [];
+
+      for(var chkDateFrom = chkDateFrom; chkDateFrom <= chkDateTo; chkDateFrom.add(1, 'day')){
+        chkArrDateRange.push(chkDateFrom.format("YYYY-MM-DD"));
+      }
+
+      for(var index = 0; index < chkArrDateRange.length; index++){
+        $('.chkDLA[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
       }
     }
 
