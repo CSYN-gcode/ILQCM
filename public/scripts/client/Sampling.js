@@ -26,8 +26,10 @@ function SaveSampling(){
 
             if(data['auth'] == 1){
                 if(data['result'] == 1){
+                    $("#mdlSaveSampling").modal('hide');
                     toastr.success('Record Saved!');
                     frmSaveSampling[0].reset();
+                    $('.form-sampling').show();
                     $(".input-error", frmSaveSampling).text('');
                     $(".form-control", frmSaveSampling).removeClass('is-invalid');
                     dtSamplings.draw();
@@ -173,9 +175,16 @@ function GetSamplingById(samplingId){
                     $('input[name="accept"]', frmSaveSampling).val(data['sampling_info']['accept']);
                     $('input[name="result"]', frmSaveSampling).val(data['sampling_info']['result']);
                     $('input[name="dppm"]', frmSaveSampling).val(data['sampling_info']['dppm']);
-                    $('textarea[name="remarks"]', frmSaveSampling).val(data['sampling_info']['remarks']);
+                    $('select[name="remarks"]', frmSaveSampling).val(data['sampling_info']['remarks']);
                     $('select[name="validation_result"]', frmSaveSampling).val(data['sampling_info']['validation_result']);
                     // $('input[name="description"]', frmSaveSampling).val(data['sampling_info']['description']);
+
+                    if(data['sampling_info']['remarks'] == "NO PRODUCTION" || data['sampling_info']['remarks'] == "NO MONITORING STATION"){
+                        $('.form-sampling').hide();
+                    }
+                    else{
+                        $('.form-sampling').show();
+                    }
                 }
                 else{
                     toastr.error('No record found.');

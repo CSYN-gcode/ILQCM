@@ -146,6 +146,8 @@ Route::get('/get_monitoring_by_id', 'MonitoringController@get_monitoring_by_id')
 Route::get('/get_monitoring_by_stat', 'MonitoringController@get_monitoring_by_stat')->name('get_monitoring_by_stat');
 Route::get('/get_cbo_monitoring_by_stat', 'MonitoringController@get_cbo_monitoring_by_stat')->name('get_cbo_monitoring_by_stat');
 Route::get('/load_monitoring', 'MonitoringController@load_monitoring')->name('load_monitoring');
+Route::post('/save_dla', 'MonitoringController@save_dla')->name('save_dla');
+Route::get('/get_dla_by_monitoring_id', 'MonitoringController@get_dla_by_monitoring_id')->name('get_dla_by_monitoring_id');
 
 // SAMPLING CONTROLLER
 Route::get('/view_samplings', 'SamplingController@view_samplings')->name('view_samplings');

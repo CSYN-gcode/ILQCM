@@ -343,6 +343,10 @@
       dtMonitorings.draw();
     });
 
+    $('.txtFilByWorkWeek').keyup(function(){
+      dtMonitorings.draw();
+    });
+
     $('.selFilByFamily').change(function(){
       $('.btnAddMonitoring').prop('disabled', true);
       $('.selFilByProdLineDesc').select2().val("").trigger("change");
@@ -485,6 +489,7 @@
             param.status = $(".selFilByStat").val();
             param.product_line_id = $(".selFilByProdLineDesc").val();
             param.shift = $(".selFilByShift").val();
+            param.work_week = $(".txtFilByWorkWeek").val();
         }
       },
       
@@ -627,7 +632,7 @@
       // var currYear = "2021";
       var currYear = moment().format("YYYY");
       //Pass in the first of a given calendar month and the day weekday
-      var dateRange = getFirstWeekDay(currYear + "-04-01", 0, $(this).val());
+      var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
       $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
       $('input[name="date_to"]', frmSaveMonitoring).val(dateRange.dateTo);
     });

@@ -232,13 +232,7 @@
                   </div> <!-- .float-sm-left -->
 
                   <div class="float-sm-right">
-                    @if($sampling_no_prod_count <= 0)
                       <button class="btn btn-primary btn-sm btnAddSampling"><i class="fa fa-plus"></i> Add Sampling</button>
-                      <button class="btn btn-warning btn-sm btnAddNoProduction"><i class="fa fa-ban"></i> Add No Production Today</button>
-                    @else
-                      <button class="btn btn-primary btn-sm btnAddSampling" disabled="true" title="No Production for Today"><i class="fa fa-plus"></i> Add Sampling</button>
-                      <button class="btn btn-warning btn-sm btnAddNoProduction" disabled="true" title="No Production for Today"><i class="fa fa-ban"></i> Add No Production Today</button>
-                    @endif
                   </div> <!-- .float-sm-right -->
                   <br><br>
 
@@ -327,13 +321,13 @@
                 </div> <!-- .col-sm-12 -->                  
               </div> <!-- .row -->
 
-              <div class="row" style="border: 1px solid red;">
+              <div class="row">
                 <div class="col-sm-12">
                   <div class="table-responsive">
                     <table class="table table-sm table-bordered table-hover" id="tblDailyLineAudit" style="width: 100%;">
                       <thead>
                         <tr>
-                          <th colspan="16" style="text-align: left; vertical-align: middle; background-color: #9f9f9f; border-bottom: 1.8px solid black;">DAILY LINE AUDIT</th>
+                          <th colspan="16" style="text-align: left; vertical-align: middle; background-color: #9f9f9f; border-bottom: 1.8px solid black;">DAILY LINE AUDIT <button class="btn btn-success btn-sm btnSaveDLA" style="float: right;"><i class="fa fa-check"></i> Save</button></th>
                         </tr>
                         <tr>
                           <th rowspan="2" style="text-align: center; vertical-align: middle; width: 10%">CATEGORY</th>
@@ -369,8 +363,8 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.2" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.2" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -547,74 +541,74 @@
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.6" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="1.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="1.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="1.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="1.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
                         <!-- Material / Product -->
@@ -842,74 +836,74 @@
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.2" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.3" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.4" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.5" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.6" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="2.7" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="2.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="2.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="2.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
 
@@ -1141,74 +1135,74 @@
 
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.2" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.3" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.4" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.5" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.6" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.7" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="3.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="3.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="3.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
 
@@ -1407,74 +1401,74 @@
 
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.2" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.3" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.4" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.5" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.6" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="4.7" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="4.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="4.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="4.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
 
@@ -1631,74 +1625,74 @@
 
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input class="form-control form-control-sm" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.2" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.3" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.4" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.5" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.6" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
+                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="5.7" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">In-charge person: / CAPA due date :            </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
-                          <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <select class="form-control select2 select2bs4" name="in_charge_person" placeholder="In-charge person">
+                          <th colspan="2" style="text-align: left; vertical-align: middle; font-size: 12px; font-weight: normal; background-color: #9f9f9f;">
+                            <select index="5.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control select2 select2bs4 selInCharge" name="in_charge_person" placeholder="In-charge person">
                             </select>
-                            <input type="date" name="" class="form-control form-control-sm">
+                            <input type="date" name="" index="5.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.2" date-index="2" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.3" date-index="3" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.4" date-index="4" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.5" date-index="5" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.6" date-index="6" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
-                            <textarea name="" class="form-control form-control-sm" rows="3" placeholder="Type here..."></textarea>
+                            <textarea name="" index="5.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
 
@@ -1726,7 +1720,7 @@
 
 <!-- MODALS -->
 <div class="modal fade" id="mdlSaveSampling">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title"><i class="fa fa-info-circle text-info"></i> Sampling Details</h4>
@@ -1738,7 +1732,21 @@
         @csrf
         <div class="modal-body">
           <div class="card-body">
+
             <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Remarks</label>
+              <div class="col-sm-8">
+                <select class="form-control" name="remarks" placeholder="Remarks">
+                  <option>NO PRODUCTION</option>
+                  <option>NO MONITORING STATION</option>
+                  <option selected="true">PASSED</option>
+                  <option>FAILED</option>
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Station</label>
               <div class="col-sm-8">
                 <input type="text" class="form-control" name="monitoring_id" placeholder="Monitoring ID" style="display: none;">
@@ -1749,7 +1757,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Operator Name</label>
               <div class="col-sm-8">
                 <input type="text" class="form-control" name="operator" placeholder="User ID" readonly="true" style="display: none;">
@@ -1764,7 +1772,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">P.O. No.</label>
               <div class="col-sm-8">
                 <div class="input-group">
@@ -1778,7 +1786,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Series</label>
               <div class="col-sm-8">
                 <input type="text" class="form-control" name="series" placeholder="(Auto Fill-in)" readonly="">
@@ -1786,7 +1794,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Sample Size</label>
               <div class="col-sm-8">
                 <input type="number" class="form-control" name="sample_size" placeholder="Sample Size" value="0">
@@ -1794,7 +1802,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">ACCEPT</label>
               <div class="col-sm-8">
                 <input type="number" class="form-control" name="accept" placeholder="ACCEPT" readonly="true" value="0">
@@ -1802,7 +1810,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">REJECT</label>
               <div class="col-sm-8">
                 <input type="number" class="form-control" name="reject" placeholder="REJECT" value="0">
@@ -1810,7 +1818,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">RESULT</label>
               <div class="col-sm-8">
                 <input type="text" class="form-control" name="result" placeholder="RESULT" autocomplete="off">
@@ -1818,7 +1826,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">DPPM</label>
               <div class="col-sm-8">
                 <input type="number" class="form-control" name="dppm" placeholder="DPPM" readonly="true" value="0">
@@ -1826,15 +1834,15 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <!-- <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Remarks</label>
               <div class="col-sm-8">
                 <textarea class="form-control" name="remarks" placeholder="Remarks" rows="4"></textarea>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
-            </div>
+            </div> -->
 
-            <div class="form-group row">
+            <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Validation Result<br>(QC Supervisor)</label>
               <div class="col-sm-8">
                 <select class="form-control" name="validation_result" placeholder="Validation Result">
@@ -1871,6 +1879,7 @@
 @section('js_content')
 <!-- Custom Links -->
 <script src="{{ asset('public/scripts/client/Sampling.js') }}"></script>
+<script src="{{ asset('public/scripts/client/Monitoring.js') }}"></script>
 
 <!-- JS Codes -->
 <script type="text/javascript">
@@ -1927,7 +1936,7 @@
         { "data" : "created_at", visible: false, orderable: false },
         { "data" : "raw_date", orderable: false },
         { "data" : "raw_time", orderable: false },
-        { "data" : "raw_operator_name", orderable: false },
+        { "data" : "operator_name", orderable: false },
         { "data" : "s_description", orderable: false },
         { "data" : "raw_po_no_series", orderable: false },
         { "data" : "sample_size", orderable: false },
@@ -1960,6 +1969,8 @@
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
     });//end of dtSamplings
 
+    LoadDLA($(".txtHeaderMonitoringId").val());
+
     $(document).on('click', '.btnReload', function(){
       // window.location.reload();
       dtSamplings.draw();
@@ -1967,6 +1978,15 @@
 
     $(".selFilSamplingByStat").change(function(e){
       dtSamplings.draw();
+    });
+
+    $('select[name="remarks"]', frmSaveSampling).change(function(e){
+      if($(this).val() == "NO PRODUCTION" || $(this).val() == "NO MONITORING STATION"){
+        $('.form-sampling').hide();
+      }
+      else{
+        $('.form-sampling').show();
+      }
     });
 
     $('select[name="station_id"]', frmSaveSampling).select2({
@@ -1994,9 +2014,34 @@
         },
     });
 
+    $('.selInCharge').select2({
+        placeholder: "N/A",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_user_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
     $(".btnAddSampling").click(function(e){
       $("#mdlSaveSampling").modal('show');
       frmSaveSampling[0].reset();
+      $('.form-sampling').show();
       $(".input-error", frmSaveSampling).text('');
       $(".form-control", frmSaveSampling).removeClass('is-invalid');
       $('select[name="station_id"]', frmSaveSampling).val("").trigger("change");
@@ -2098,7 +2143,7 @@
 
     $(".btnAddNoProduction").click(function(){
       $.confirm({
-          title: 'Add No Production',
+          title: 'Add NO PRODUCTION',
           content: '' +
           '<form action="" class="formSearchPoNo">' +
           '<div class="form-group">' +
@@ -2187,6 +2232,38 @@
       cnfrmScanOperator.open();
     });
 
+    $(".btnSaveDLA").click(function(){
+      let dlaCheckItems = [];
+
+      $(".chkDLA:checked").each(function(){
+          dlaCheckItems.push({
+            value: $(this).val(),
+            index: $(this).attr('index'),
+            date_index: $(this).attr('date-index'),
+            date: $(this).attr('date'),
+            monitoring_id: $(this).attr('monitoring-id'),
+          });
+      });
+
+      let dlaResults = [];
+
+      for(let index = 0; index < $('.txtResult').length; index++){
+          dlaResults.push({
+            result: $('.txtResult').eq(index).val(),
+            person_in_charge: $('.selInCharge').eq(index).val(),
+            due_date: $('.txtDueDate').eq(index).val(),
+            corrective_action: $('.txtCorrectiveAction').eq(index).val(),
+            index: $('.txtResult').eq(index).attr('index'),
+            date_index: $('.txtResult').eq(index).attr('date-index'),
+            date: $('.txtResult').eq(index).attr('date'),
+            monitoring_id: $('.txtResult').eq(index).attr('monitoring-id'),
+          });
+      }
+
+      SaveDLA($(".txtHeaderMonitoringId").val(), dlaCheckItems, dlaResults);
+
+    });
+
     $(document).on('keypress',function(e){
       if(cnfrmScanOperator.isOpen()){
         $('.scanned_employee_id').focus();
@@ -2199,6 +2276,12 @@
     });
 
     $('input[name="sample_size"]', frmSaveSampling).on("keyup change", function(){
+      if($('input[name="reject"]', frmSaveSampling).val() > 0){
+        $('select[name="remarks"]', frmSaveSampling).val("FAILED");
+      }
+      else{
+        $('select[name="remarks"]', frmSaveSampling).val("PASSED");
+      }
       var accept = parseFloat($(this).val()) - parseFloat($('input[name="reject"]', frmSaveSampling).val());
       if(!isNaN(accept)){
         $('input[name="accept"]', frmSaveSampling).val(accept);
@@ -2218,6 +2301,12 @@
     });
 
     $('input[name="reject"]', frmSaveSampling).on("keyup change", function(){
+      if($('input[name="reject"]', frmSaveSampling).val() > 0){
+        $('select[name="remarks"]', frmSaveSampling).val("FAILED");
+      }
+      else{
+        $('select[name="remarks"]', frmSaveSampling).val("PASSED");
+      }
       var accept = parseFloat($('input[name="sample_size"]', frmSaveSampling).val()) - parseFloat($(this).val());
       if(!isNaN(accept)){
         $('input[name="accept"]', frmSaveSampling).val(accept);
@@ -2292,6 +2381,10 @@
 
       for(var index = 0; index < chkArrDateRange.length; index++){
         $('.chkDLA[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+        $('.txtResult[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+        $('.selInCharge[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+        $('.txtDueDate[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+        $('.txtCorrectiveAction[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
       }
     }
 

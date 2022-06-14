@@ -209,3 +209,102 @@ function MonitoringAction(monitoringId, action, status){
         }
     });
 }
+
+function SaveDLA(monitoringId, dlaCheckItems, dlaResults){
+    let url = globalLink.replace('link', 'save_dla');
+    let login = globalLink.replace('link', 'login');
+
+    $.ajax({
+        url: url,
+        method: 'post',
+        data: {
+            _token: _token,
+            monitoring_id: monitoringId,
+            dla_check_items: dlaCheckItems,
+            dla_results: dlaResults,
+        },
+        dataType: 'json',
+        beforeSend() {
+            cnfrmLoading.open();
+        },
+        success(data){
+            cnfrmLoading.close();
+
+            if(data['auth'] == 1){
+                if(data['result'] == 1){
+                    toastr.success('Record Saved!');
+                    LoadDLA(monitoringId);
+                }
+                else{
+                    toastr.error('Saving Failed!');
+                }
+            }
+            else{ // if session expired
+                cnfrmAutoLogin.open();
+            }
+        },
+        error(xhr, data, status){
+            cnfrmLoading.close();
+            toastr.error('An error occured!');
+        }
+    });
+}
+
+function LoadDLA(monitoringId){
+    let url = globalLink.replace('link', 'get_dla_by_monitoring_id');
+    let login = globalLink.replace('link', 'login');
+
+    $.ajax({
+        url: url,
+        method: 'get',
+        data: {
+            monitoring_id: monitoringId
+        },
+        dataType: 'json',
+        beforeSend() {
+            // btnSaveMonitoring.prop('disabled', true);
+            // btnSaveMonitoring.html('Loading...');
+            cnfrmLoading.open();
+            // $("input[name='work_week']", frmSaveMonitoring).prop('readonly', true);
+        },
+        success(data){
+            // btnSaveMonitoring.prop('disabled', false);
+            // btnSaveMonitoring.html('Save');
+            cnfrmLoading.close();
+
+            $('.selInCharge').html('').val('').trigger('change');
+
+            if(data['auth'] == 1){
+                if(data['dla_check_items'].length > 0){
+                    for(let index = 0; index < data['dla_check_items'].length; index++){
+                        $('.chkDLA[index="'+ data['dla_check_items'][index]['index'] + '"][value="' + data['dla_check_items'][index]['value'] + '"]').prop('checked', true);
+                    }
+                }
+                else{
+                    $('.chkDLA').prop('checked', false);
+                }
+
+                if(data['dla_results'].length > 0){
+                    for(let index = 0; index < data['dla_results'].length; index++){
+                        $('.txtResult[index="'+ data['dla_results'][index]['index'] + '"]').val(data['dla_results'][index]['result']);
+                        $('.txtDueDate[index="'+ data['dla_results'][index]['index'] + '"]').val(data['dla_results'][index]['capa_due_date']);
+                        $('.txtCorrectiveAction[index="'+ data['dla_results'][index]['index'] + '"]').val(data['dla_results'][index]['corrective_action']);
+                        $('.selInCharge[index="'+ data['dla_results'][index]['index'] + '"]').html('<option value="' + data['dla_results'][index]['person_in_charge'] + '">' + data['dla_results'][index]['user_name'] + ' (' + data['dla_results'][index]['employee_id'] + ')</option>').val(data['dla_results'][index]['person_in_charge']).trigger('change');
+                    }
+                }
+                else{
+                    $('.chkDLA').prop('checked', false);
+                }
+            }
+            else{ // if session expired
+                cnfrmAutoLogin.open();
+            }
+        },
+        error(xhr, data, status){
+            cnfrmLoading.close();
+            // btnSaveMonitoring.prop('disabled', false);
+            // btnSaveMonitoring.html('Save');
+            toastr.error('An error occured!');
+        }
+    });
+}

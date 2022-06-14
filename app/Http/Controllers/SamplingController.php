@@ -60,14 +60,6 @@ class SamplingController extends Controller
 	            		return "--";
 	            	}
 	            })
-	            ->addColumn('raw_operator_name', function($row){
-	            	if($row->no_production == 0){
-	                	return $row->operator_name;
-	            	}
-	            	else{
-	            		return "No Production";
-	            	}
-	            })
 	            ->addColumn('raw_action', function($row){
 	                $result = '';
 	                if($row->status == 1){
@@ -119,53 +111,88 @@ class SamplingController extends Controller
 	        if(isset($_SESSION["rapidx_user_id"])){
 		        // Add Sampling
 		        if(!isset($request->sampling_id)){
-		            $data = $request->all();
 
-		            $rules = [
-		                'monitoring_id' => 'required',
-						'operator' => 'required',
-						// 'station_id' => 'required',
-						'po_no' => 'required',
-						'series' => 'required',
-						'sample_size' => 'required',
-						'accept' => 'required',
-						'reject' => 'required',
-						'dppm' => 'required',
-						'result' => 'required',
-		            ];
+		        	if($request->remarks == "NO PRODUCTION" || $request->remarks == "NO MONITORING STATION"){
+		        		$data = $request->all();
 
-		            $validator = Validator::make($data, $rules);
+			            $rules = [
+			                'monitoring_id' => 'required',
+			                'remarks' => 'required',
+			            ];
 
-		            try {
-		                if($validator->passes()){
-		                    Sampling::insert([
-								'monitoring_id' => $request->monitoring_id,
-								'operator' => $request->operator,
-								'station_id' => $request->station_id,
-								'po_no' => $request->po_no,
-								'series' => $request->series,
-								'sample_size' => $request->sample_size,
-								'accept' => $request->accept,
-								'reject' => $request->reject,
-								'dppm' => $request->dppm,
-								'result' => $request->result,
-								'remarks' => $request->remarks,
-								'validation_result' => $request->validation_result,
-		                        'status' => 1,
-		                        'created_by' => $_SESSION["rapidx_user_id"],
-		                        'last_updated_by' => $_SESSION["rapidx_user_id"],
-		                        'created_at' => date('Y-m-d H:i:s'),
-		                        'updated_at' => date('Y-m-d H:i:s'),
-		                    ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+			            $validator = Validator::make($data, $rules);
+
+			            try {
+			                if($validator->passes()){
+				        		Sampling::insert([
+									'monitoring_id' => $request->monitoring_id,
+									'remarks' => $request->remarks,
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+			                }
+			                else{
+			                	return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
+			                }
 		                }
-		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
-		                }
-		            }
-		            catch(\Exception $e) {
-		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
-		            }
+			            catch(\Exception $e) {
+			                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
+			            }
+		        	}
+		        	else{
+		        		$data = $request->all();
+
+			            $rules = [
+			                'monitoring_id' => 'required',
+							'operator' => 'required',
+							// 'station_id' => 'required',
+							'po_no' => 'required',
+							'series' => 'required',
+							'sample_size' => 'required',
+							'accept' => 'required',
+							'reject' => 'required',
+							'dppm' => 'required',
+							'result' => 'required',
+			            ];
+
+			            $validator = Validator::make($data, $rules);
+
+			            try {
+			                if($validator->passes()){
+			                    Sampling::insert([
+									'monitoring_id' => $request->monitoring_id,
+									'operator' => $request->operator,
+									'station_id' => $request->station_id,
+									'po_no' => $request->po_no,
+									'series' => $request->series,
+									'sample_size' => $request->sample_size,
+									'accept' => $request->accept,
+									'reject' => $request->reject,
+									'dppm' => $request->dppm,
+									'result' => $request->result,
+									'remarks' => $request->remarks,
+									'validation_result' => $request->validation_result,
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+			                }
+			                else{
+			                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+			                }
+			            }
+			            catch(\Exception $e) {
+			                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
+			            }
+		        	}
+		            
 		        }
 		        // Edit Sampling
 		        else{
