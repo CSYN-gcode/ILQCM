@@ -177,7 +177,19 @@ function GetSamplingById(samplingId){
                     $('input[name="dppm"]', frmSaveSampling).val(data['sampling_info']['dppm']);
                     $('select[name="remarks"]', frmSaveSampling).val(data['sampling_info']['remarks']);
                     $('select[name="validation_result"]', frmSaveSampling).val(data['sampling_info']['validation_result']);
+                    $('select[name="sampling_type"]', frmSaveSampling).val(data['sampling_info']['sampling_type']);
                     // $('input[name="description"]', frmSaveSampling).val(data['sampling_info']['description']);
+
+                    if(data['sampling_info']['sampling_type'] == "0"){
+                        $('.btnSearchPoNo').prop('disabled', false);
+                        $('input[name="po_no"]', frmSaveSampling).prop('readonly', true).prop('placeholder', '(Click the button to fill-in)');
+                        $('input[name="series"]', frmSaveSampling).prop('readonly', true).prop('placeholder', '(Click the button to fill-in)');
+                      }
+                      else{
+                        $('.btnSearchPoNo').prop('disabled', true);
+                        $('input[name="po_no"]', frmSaveSampling).removeAttr('readonly').prop('placeholder', 'Type here...');
+                        $('input[name="series"]', frmSaveSampling).removeAttr('readonly').prop('placeholder', 'Type here...');
+                      }
 
                     if(data['sampling_info']['remarks'] == "NO PRODUCTION" || data['sampling_info']['remarks'] == "NO MONITORING STATION"){
                         $('.form-sampling').hide();

@@ -80,6 +80,38 @@ Route::get('/monitoring/{id}', function ($id) {
     }
 });
 
+Route::get('/monitoring_v2/{id}', function ($id) {
+	session_start();
+	if(isset($_SESSION["rapidx_user_id"])){
+		$monitoring_info = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'line_id', 'monitorings.date_from as m_date_from', 'monitorings.date_to as m_date_to', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'uqi.employee_id as uqi_employee_id', 'qcb.name as qcb_name', 'qcb.employee_id as qcb_employee_id', 'pl.family', 'pl.description as pl_description')
+			        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
+			        ->leftJoin('machines', 'monitorings.machine_id', '=', 'machines.id')
+			        ->leftJoin('users as uqi', 'uqi.id', '=', 'monitorings.qc_inspector')
+			        ->leftJoin('users as qcb', 'qcb.id', '=', 'monitorings.qc_checked_by')
+			        ->leftJoin('product_lines as pl', 'pl.id', '=', 'monitorings.product_line_id')
+		            ->where('monitorings.id', $id)
+		            ->where('monitorings.status', 1)
+		            ->where('monitorings.logdel', 0)
+		            ->first();
+
+		$sampling_no_prod_count = Sampling::where("no_production_date", date("Y-m-d"))
+					->where("no_production_date", $monitoring_info->id)
+					->where('status', 1)
+					->where('logdel', 0)
+					->count();
+
+		if($monitoring_info != null){
+    		return view('view_monitoring_v2')->with(['id' => $id, 'monitoring_info' => $monitoring_info, 'sampling_no_prod_count' => $sampling_no_prod_count]);
+		}
+		else{
+			return "Monitoring is not available.";
+		}
+    }
+    else{
+        return redirect()->route('session_expired');
+    }
+});
+
 // USER CONTROLLER
 Route::get('/view_users', 'UserController@view_users')->name('view_users');
 Route::post('/save_user', 'UserController@save_user')->name('save_user');

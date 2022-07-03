@@ -30,6 +30,7 @@ class CreateSamplingsTable extends Migration
             $table->integer('no_production')->nullable()->comment = '1=Yes; 2=No';
             $table->integer('status')->nullable()->comment = '1=Active; 2=Archived';
             $table->date('no_production_date')->nullable();
+            $table->integer('sampling_type')->nullable()->comment = '0=Automatic; 1=Manual';
             $table->bigInteger('created_by');
             $table->bigInteger('last_updated_by');
             $table->tinyInteger('logdel')->default(0);

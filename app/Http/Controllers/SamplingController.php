@@ -157,6 +157,7 @@ class SamplingController extends Controller
 							'reject' => 'required',
 							'dppm' => 'required',
 							'result' => 'required',
+							'sampling_type' => 'required',
 			            ];
 
 			            $validator = Validator::make($data, $rules);
@@ -176,6 +177,7 @@ class SamplingController extends Controller
 									'result' => $request->result,
 									'remarks' => $request->remarks,
 									'validation_result' => $request->validation_result,
+									'sampling_type' => $request->sampling_type,
 			                        'status' => 1,
 			                        'created_by' => $_SESSION["rapidx_user_id"],
 			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
