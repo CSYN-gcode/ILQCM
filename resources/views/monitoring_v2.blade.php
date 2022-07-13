@@ -40,7 +40,7 @@
                   </div>
 
                   <div class="float-sm-right">
-                    <button class="btn btn-primary btn-sm btnAddMonitoring"><i class="fa fa-plus"></i> Add New</button>
+                    <button class="btn btn-primary btn-sm btnAddMonitoring" disabled="true"><i class="fa fa-plus"></i> Add New</button>
                   </div> <!-- .float-sm-right -->
                 </div>
                 <br><br>
@@ -338,7 +338,7 @@
         $('.btnAddMonitoring').prop('disabled', false);
       }
       else{
-        // $('.btnAddMonitoring').prop('disabled', true);
+        $('.btnAddMonitoring').prop('disabled', true);
       }
 
       dtMonitorings.draw();
@@ -353,7 +353,7 @@
     });
 
     $('.selFilByFamily').change(function(){
-      // $('.btnAddMonitoring').prop('disabled', true);
+      $('.btnAddMonitoring').prop('disabled', true);
       $('.selFilByProdLineDesc').select2().val("").trigger("change");
       $('.selFilByProdLineDesc').select2({
           // dropdownParent: $('#mdlSaveItemRegistration'),
@@ -417,12 +417,6 @@
     }
     else{
       monitorningFilter = JSON.parse(localStorage.getItem("monitorningFilter"));
-      if($('.selFilByProdLineDesc').val() != "" && $('.selFilByProdLineDesc').val() != null){
-        $('.btnAddMonitoring').prop('disabled', false);
-      }
-      else{
-        // $('.btnAddMonitoring').prop('disabled', true);
-      }
     }
 
     $('.selFilByFamily, .selFilByProdLineDesc').change(function(){
@@ -586,10 +580,6 @@
     });
 
     $(".btnAddMonitoring").click(function(e){
-      if($('.selFilByProdLineDesc').val() == ""){
-        toastr.warning('Please select a description from the filter!');
-        return;
-      }
       $("#mdlSaveMonitoring").modal('show');
       frmSaveMonitoring[0].reset();
       $(".input-error", frmSaveMonitoring).text('');

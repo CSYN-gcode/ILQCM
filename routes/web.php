@@ -47,6 +47,7 @@ Route::get('/product_lines', 'RouteController@product_lines')->name('product_lin
 Route::get('/stations', 'RouteController@stations')->name('stations');
 Route::get('/machines', 'RouteController@machines')->name('machines');
 Route::get('/monitoring', 'RouteController@monitoring')->name('monitoring');
+Route::get('/monitoring_v2', 'RouteController@monitoring_v2')->name('monitoring_v2');
 Route::get('/samplings', 'RouteController@samplings')->name('samplings');
 Route::get('/monitoring/{id}', function ($id) {
 	session_start();

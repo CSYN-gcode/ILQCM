@@ -77,6 +77,16 @@ class RouteController extends Controller
         }
     }
 
+    public function monitoring_v2(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('monitoring_v2');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
     public function view_monitoring(){
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
