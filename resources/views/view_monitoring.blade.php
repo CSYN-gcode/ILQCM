@@ -194,12 +194,12 @@
                           <td style="width: 46%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
                             <span><b>1. New Operators (from 1st day to 3 months):</span></b><br>
                               <div style="padding-left: 20px; width: 100%;">
-                                <span style="">1.1 Hourly for a period of 1 week (starting 8:30 onwards) </span><br>
-                                <span style="">1.2 Every 2 hours for a period of 3 weeks (Frequency: 9:30, 11:30, 13:30, 15:30; If OT: 17:30 & 19:30)</span><br>
-                                <span style="">1.3 Every 3 hours for a period of 2 to 3 months  (Frequency: 9:30, 12:30, 15:30; If OT: 18:30)</span><br>
+                                <span style="">1.1 Every 2 hours (6X) for a period of 1 week (Frequency: starts 9:30, 11:30, 13:30, 14:30 or 2 hours after the 1st output certification; If OT: 17:30 & 18:30) </span><br>
+                                <span style="">1.2 Every 3 hours (4X) for a period of 3 weeks (Frequency: 9:30, 12:30, 14:30; If OT: 18:30)</span><br>
+                                <span style="">1.3 Every 4 hours (3X) for a period of 2 to 3 months  (Frequency: 11:30, 14:30; If OT: 18:30)</span><br>
                               </div>
-                            <span><b>2. Old Operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on the defined stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>3. Re-certified Operators from disqualification and transferred operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on all stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
+                            <span><b>2. Old Operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on the defined stations (Frequency: 9:30, 13:30 & 17:30). For YF: 1X monitoring per shift and 1X monitoring if the line is on overtime schedule  (Frequency: 11:00 & 16:00).</span><br>
+                            <span><b>3. Re-certified Operators from disqualification and transferred operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on all stations (Frequency: 9:30, 13:30 & 17:30). For YF: 1X monitoring per shift and 1X monitoring if the line is on overtime schedule  (Frequency: 11:00 & 16:00).</span><br>
                             <span><b>4. Sample size:</b> 1 pc (minimum) ; 10 pcs (maximum) - less than 10 samples drawn is due to per station output or capacity</span>         
                           </td>
                           <td style="width: 31%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
