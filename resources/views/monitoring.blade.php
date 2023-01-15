@@ -684,8 +684,8 @@
     });
 
     $('input[name="work_week"]', frmSaveMonitoring).on('keyup change', function(){
-      // var currYear = "2021";
-      var currYear = moment().format("YYYY");
+      var currYear = "2022";
+      // var currYear = moment().format("YYYY");
       //Pass in the first of a given calendar month and the day weekday
       var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
       $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);

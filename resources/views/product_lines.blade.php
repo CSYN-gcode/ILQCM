@@ -182,6 +182,8 @@
                   <option value="2">BGA-FP</option>
                   <option value="3">Probe Pin</option>
                   <option value="4">QF/TSOP/SMPO</option>
+                  <option value="5">PPS-CN</option>
+                  <option value="6">PPS-TS</option>
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
