@@ -22,56 +22,134 @@ use QrCode;
 
 class UserController extends Controller
 {
+    public function SystemOneEmpInfo(Request $request){
+        $pmi_emp_info = DB::connection('mysql_systemone_hris')
+            ->table('tbl_EmployeeInfo')
+            ->select('pkid', 'EmpNo')
+            ->where('EmpNo', $request->emp_id)
+            ->first();
+
+        if(!isset($pmi_emp_info)){
+            $subcon_emp_info = DB::connection('mysql_systemone_subcon')
+            ->table('tbl_EmployeeInfo')
+            ->select('pkid', 'EmpNo')
+            ->where('EmpNo', $request->emp_id)
+            ->first();
+
+            return response()->json(["emp_cat" => 'subcon', "result" => $subcon_emp_info]);
+        }else{
+            return response()->json(["emp_cat" => 'pmi', "result" => $pmi_emp_info]);
+        }
+    }
+
     //View Users
     public function view_users(Request $request){
         if($request->ajax()){
-	        $data = User::with([
-		            		'user_station_details' => function($query){
-		            			$query->where('logdel', 0);
-		            			$query->where('status', 1);
-		            		},
-		            		'user_station_details.station_info' => function($query){
-		            			$query->where('logdel', 0);
-		            			$query->where('status', 1);
-		            		},
+            $user_info = DB::connection('mysql')
+                            ->table('users')
+                            ->select(
+                                'users.*',
+                            )
+                            ->where('users.logdel', 0)
+                            ->where('users.status', $request->status)
+                            ->when($request->position, function ($query) use ($request) {
+                                return $query ->where('users.position', $request->position);
+                            })
+                            ->get();
+            //old code
+	        // $data = User::with([
+		    //         		'user_station_details' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_station_details.station_info' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_series_details' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_series_details.series_info' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         	])
+	        // 			->where('logdel', 0)
+	        // 			->where('status', $request->status)
+	        // 			// ->where('position', $request->position)
+            //             ->when($request->position, function ($query) use ($request) {
+            //                 return $query ->where('position', $request->position);
+            //             })
+        	// 			->get();
+            // return $data;
+            //old code
 
-		            		'user_series_details' => function($query){
-		            			$query->where('logdel', 0);
-		            			$query->where('status', 1);
-		            		},
-		            		'user_series_details.series_info' => function($query){
-		            			$query->where('logdel', 0);
-		            			$query->where('status', 1);
-		            		},
-		            	])
-	        			->where('logdel', 0)
-	        			->where('status', $request->status)
-        				->get();
-
-	        return DataTables::of($data)
+	        return DataTables::of($user_info)
 	            ->addColumn('raw_status', function($row){
 	                $result = "";
-
 	                if($row->status == 1){
 	                    $result .= '<span class="badge badge-pill bg-success">Active</span>';
 	                }
 	                else if($row->status == 2){
 	                    $result .= '<span class="badge badge-pill bg-danger">Archived</span>';
 	                }
-
 	                return $result;
 	            })
+                ->addColumn('stations', function($row){
+                    $result = "";
+                    $user_stations = DB::connection('mysql')
+                                        ->table('user_stations')
+                                        ->join('stations', 'stations.id', '=', 'user_stations.station_id')
+                                        ->select(
+                                            'stations.description',
+                                        )
+                                        ->where('user_stations.user_id', $row->id)
+                                        ->where('user_stations.logdel', 0)
+                                        ->where('user_stations.status', 1)
+                                        ->where('stations.logdel', 0)
+                                        ->where('stations.status', 1)
+                                        ->get();
+
+                    foreach( $user_stations as $station ){
+                        $result .= "$station->description,";
+                    }
+                    return $result;
+                })
+                ->addColumn('serieses', function($row){
+                    $result = "";
+
+                    $user_serieses = DB::connection('mysql')
+                                        ->table('user_serieses')
+                                        ->join('serieses', 'serieses.id', '=', 'user_serieses.series_id')
+                                        ->select(
+                                            'serieses.description',
+                                        )
+                                        ->where('user_serieses.user_id', $row->id)
+                                        ->where('user_serieses.logdel', 0)
+                                        ->where('user_serieses.status', 1)
+                                        ->where('serieses.logdel', 0)
+                                        ->where('serieses.status', 1)
+                                        ->get();
+
+                    foreach( $user_serieses as $serieses ){
+                        $result .= "$serieses->description,";
+                    }
+                    return $result;
+                })
 	            ->addColumn('raw_position', function($row){
 	                $result = "";
 
 	                if($row->position == 1){
 	                    $result .= 'QC';
-	                }
-	                else if($row->position == 2){
+	                }else if($row->position == 2){
 	                    $result .= 'QC Supervisor';
-	                }
-	                else if($row->position == 3){
+	                }else if($row->position == 3){
 	                    $result .= 'Operator';
+	                }else if($row->position == 4){
+	                    $result .= 'PPC';
+	                }else if($row->position == 5){
+	                    $result .= 'ADMIN';
 	                }
 
 	                return $result;
@@ -84,7 +162,9 @@ class UserController extends Controller
 	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" user-id="' . $row->id . '" title="Archive"><i class="fa fa-lock"></i></button>';
 
 	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnGenerateQRCode" user-id="' . $row->id . '" title="Generate QR Code"><i class="fa fa-qrcode"></i></button>';
-	                }
+
+                        $result .= ' <button type="button" class="btn btn-xs btn-secondary table-btns btnGotoEtr" user-id="' . $row->employee_id . '" title="Goto ETR"><i class="fa fa-search"></i></button>';
+                    }
 	                else{
 	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" user-id="' . $row->id . '" title="Restore"><i class="fa fa-unlock"></i></button>';
 	                }
@@ -113,9 +193,12 @@ class UserController extends Controller
 		                'name' => 'required|min:4|unique:users',
 		                'employee_id' => 'required|min:2|unique:users',
 		                'position' => 'required',
-		                'station_ids' => 'required',
-		                'series_ids' => 'required',
 		            ];
+
+                    if($request->position < 3){
+		                $rules["station_ids"] = 'required';
+		                $rules["series_ids"] =  'required';
+                    }
 
 		            if($request->position == 2){
 		            	$rules["email"] = 'required|min:4|unique:users';
@@ -139,7 +222,7 @@ class UserController extends Controller
 			                        'updated_at' => date('Y-m-d H:i:s'),
 			                    ]);
 
-			                    if(count($request->station_ids) > 0){
+			                    if(isset($request->station_ids) && count($request->station_ids) > 0){
 			                    	for($index = 0; $index < count($request->station_ids); $index++){
 				                    	UserStation::insert([
 					                        'user_id' => $user_id,
@@ -153,7 +236,7 @@ class UserController extends Controller
 			                    	}
 			                    }
 
-			                    if(count($request->series_ids) > 0){
+			                    if(isset($request->station_ids) && count($request->series_ids) > 0){
 			                    	for($index = 0; $index < count($request->series_ids); $index++){
 				                    	UserSeries::insert([
 					                        'user_id' => $user_id,
@@ -171,11 +254,11 @@ class UserController extends Controller
 		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
 		                	} catch (Exception $e) {
 		                		DB::rollback();
-		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]); 
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]);
 		                	}
 		                }
 		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		                }
 		            }
 		            catch(\Exception $e) {
@@ -255,11 +338,11 @@ class UserController extends Controller
 		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
 		                	} catch (Exception $e) {
 		                		DB::rollback();
-		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]); 
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]);
 		                	}
 		                }
 		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		                }
 		            }
 		            catch(\Exception $e) {
@@ -322,7 +405,7 @@ class UserController extends Controller
 		            return response()->json(['auth' => 1, 'user_info' => $user_info, 'result' => 1, 'qrcode' => "data:image/png;base64," . base64_encode($qrcode)]);
 		        }
 		        else{
-		            return response()->json(['auth' => 1, 'user_info' => null, 'result' => 0, 'qrcode' => ""]);  
+		            return response()->json(['auth' => 1, 'user_info' => null, 'result' => 0, 'qrcode' => ""]);
 		        }
 		    }
 		    else{
@@ -365,19 +448,19 @@ class UserController extends Controller
 		                        ]);
 
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
-		                } 
+		                }
 		                catch (Exception $e) {
-		                    return response()->json(['auth' => 1, 'user_info' => null]); 
+		                    return response()->json(['auth' => 1, 'user_info' => null]);
 		                }
 		            }
 		            else{
-		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		            }
 		        }
 	        } // Session Expired
 		    else{
 	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }  
+		    }
 		}
     	else{
     		abort(403);
@@ -421,5 +504,24 @@ class UserController extends Controller
     	else{
     		abort(403);
     	}
+    }
+
+    public function user_logout()
+    {
+        //laravel code
+        // session()->forget('rapidx_user_id');
+        // $request->session()->put([
+        //     'rapidx_user_id' => $user_login[0]->id,
+        //     'rapidx_user_level_id' => $user_login[0]->user_level_id,
+        //     'rapidx_username' => $user_login[0]->username,
+        //     'rapidx_name' => $user_login[0]->name
+        // ]);
+        // session()->forget(['rapidx_user_id', 'rapidx_user_level_id', 'rapidx_username', 'rapidx_name']);
+
+        session_start();
+        session_unset();
+        session_destroy();
+        Auth::logout();
+        return response()->json(['result' => "1"]);
     }
 }

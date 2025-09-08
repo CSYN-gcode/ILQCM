@@ -54,6 +54,12 @@ class ProductLineController extends Controller
 	                else if($row->family == 4){
 	                    $result .= 'QF/TSOP/SMPO';
 	                }
+	                else if($row->family == 5){
+	                    $result .= 'PPS-CN';
+	                }
+	                else if($row->family == 6){
+	                    $result .= 'PPS-TS';
+	                }
 
 	                return $result;
 	            })

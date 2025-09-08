@@ -1,7 +1,61 @@
 // VARIABLES
+function SaveMultipleSamplingResult(multiSelectArrayValues){
+    let url = globalLink.replace('link', 'save_multiple_sampling_result');
+    let login = globalLink.replace('link', 'login');
+    let formData = new FormData(frmSaveMultipleSamplingResult[0]);
+        formData.append('multi_select_sampling_id', multiSelectArrayValues);
 
-// FUNCTIONS
-// Save Sampling
+    $.ajax({
+        url: url,
+        method: 'post',
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        beforeSend() {
+            cnfrmLoading.open();
+        },
+        success(data){
+            cnfrmLoading.close();
+            if(data['auth'] == 1){
+                if(data['result'] == 1){
+                    $("#mdlSaveMultipleSamplingResult").modal('hide');
+                    toastr.success('Record Saved!');
+                    frmSaveMultipleSamplingResult[0].reset();
+                    $(".input-error", frmSaveMultipleSamplingResult).text('');
+                    $(".form-control", frmSaveMultipleSamplingResult).removeClass('is-invalid');
+                    dtSamplingsPending.draw();
+                    dtSamplingsOk.draw();
+                    dtSamplingsNg.draw();
+                    dtSamplingsNoProdNoMonitoring.draw();
+                    btnSaveMultipleSamplingResult.addClass('d-none');
+                }else{
+                    toastr.error('Saving Failed!');
+                    if(data['error'] != null){
+                        if(data['error']['validation_result'] != null){
+                            $("select[name='validation_result']", frmSaveMultipleSamplingResult).addClass('is-invalid');
+                            $("select[name='validation_result']", frmSaveMultipleSamplingResult).siblings('.input-error').text(data['error']['validation_result']);
+                        }
+                        else{
+                            $("select[name='validation_result']", frmSaveMultipleSamplingResult).removeClass('is-invalid');
+                            $("select[name='validation_result']", frmSaveMultipleSamplingResult).siblings('.input-error').text('');
+                        }
+                    }
+                }
+            }
+            else{ // if session expired
+                cnfrmAutoLogin.open();
+            }
+        },
+        error(xhr, data, status){
+            cnfrmLoading.close();
+            btnSaveMultipleSamplingResult.prop('disabled', false);
+            btnSaveMultipleSamplingResult.html('Save');
+            toastr.error('Saving Failed!');
+        }
+    });
+}
+
 function SaveSampling(){
     let url = globalLink.replace('link', 'save_sampling');
     let login = globalLink.replace('link', 'login');
@@ -32,7 +86,10 @@ function SaveSampling(){
                     $('.form-sampling').show();
                     $(".input-error", frmSaveSampling).text('');
                     $(".form-control", frmSaveSampling).removeClass('is-invalid');
-                    dtSamplings.draw();
+                    dtSamplingsPending.draw();
+                    dtSamplingsOk.draw();
+                    dtSamplingsNg.draw();
+                    dtSamplingsNoProdNoMonitoring.draw();
                 }
                 else{
                     toastr.error('Saving Failed!');
@@ -319,11 +376,15 @@ function GetPODetails(po_no){
             if(data['auth'] == 1){
                 if(data['data'] != null){
                     $("#mdlSaveSampling").modal('show');
-                    $('input[name="po_no"]', frmSaveSampling).val(data['data']['po_no']);
-                    $('input[name="series"]', frmSaveSampling).val(data['data']['device_name']);
                     toastr.success('Record found.');
-                }
-                else{
+                    if(data['result'] == 1){
+                        $('input[name="po_no"]', frmSaveSampling).val(data['data']['po_no']);
+                        $('input[name="series"]', frmSaveSampling).val(data['data']['device_name']);
+                    }else if(data['result'] == 2){
+                        $('input[name="po_no"]', frmSaveSampling).val(data['data']['po_number']);
+                        $('input[name="series"]', frmSaveSampling).val(data['data']['series_description']);
+                    }
+                }else{
                     toastr.warning('No record found.');
                 }
             }

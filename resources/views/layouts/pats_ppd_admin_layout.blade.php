@@ -47,7 +47,7 @@
 <div class="wrapper">
   @include('shared.pages.header')
 
-  @include('shared.pages.nav')
+  @include('shared.pages.pats_ppd_nav')
 
   @yield('content_page')
 
@@ -237,7 +237,7 @@
 <!-- /.modal -->
 
 <script type="text/javascript">
-  let dashboard = globalLink.replace('link', 'dashboard');
+  let dashboard = globalLink.replace('link', 'pats_ppd_dashboard');
   let dtBranches;
 
   // JS Confirm Lazy Loading
@@ -290,7 +290,7 @@
 
   // FUNCTIONS
   function Logout(){
-    let url = globalLink.replace('link', 'user_logout');
+    let url = globalLink.replace('link', 'logout');
     let urlLogin = globalLink.replace('link', 'dashboard');
     $.ajax({
         url: url,
