@@ -90,15 +90,13 @@ function SaveSampling(){
                     dtSamplingsOk.draw();
                     dtSamplingsNg.draw();
                     dtSamplingsNoProdNoMonitoring.draw();
-                }
-                else{
+                }else{
                     toastr.error('Saving Failed!');
                     if(data['error'] != null){
                         if(data['error']['station_id'] != null){
                             $("select[name='station_id']", frmSaveSampling).addClass('is-invalid');
                             $("select[name='station_id']", frmSaveSampling).siblings('.input-error').text(data['error']['station_id']);
-                        }
-                        else{
+                        }else{
                             $("select[name='station_id']", frmSaveSampling).removeClass('is-invalid');
                             $("select[name='station_id']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -106,8 +104,7 @@ function SaveSampling(){
                         if(data['error']['operator'] != null){
                             $("input[name='operator_name']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='operator']", frmSaveSampling).siblings('.input-error').text(data['error']['operator']);
-                        }
-                        else{
+                        }else{
                             $("input[name='operator_name']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='operator']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -115,8 +112,7 @@ function SaveSampling(){
                         if(data['error']['po_no'] != null){
                             $("input[name='po_no']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='po_no']", frmSaveSampling).siblings('.input-error').text(data['error']['po_no']);
-                        }
-                        else{
+                        }else{
                             $("input[name='po_no']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='po_no']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -124,8 +120,7 @@ function SaveSampling(){
                         if(data['error']['series'] != null){
                             $("input[name='series']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='series']", frmSaveSampling).siblings('.input-error').text(data['error']['series']);
-                        }
-                        else{
+                        }else{
                             $("input[name='series']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='series']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -133,8 +128,7 @@ function SaveSampling(){
                         if(data['error']['sample_size'] != null){
                             $("input[name='sample_size']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='sample_size']", frmSaveSampling).siblings('.input-error').text(data['error']['sample_size']);
-                        }
-                        else{
+                        }else{
                             $("input[name='sample_size']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='sample_size']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -142,8 +136,7 @@ function SaveSampling(){
                         if(data['error']['accept'] != null){
                             $("input[name='accept']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='accept']", frmSaveSampling).siblings('.input-error').text(data['error']['accept']);
-                        }
-                        else{
+                        }else{
                             $("input[name='accept']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='accept']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -151,8 +144,7 @@ function SaveSampling(){
                         if(data['error']['reject'] != null){
                             $("input[name='reject']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='reject']", frmSaveSampling).siblings('.input-error').text(data['error']['reject']);
-                        }
-                        else{
+                        }else{
                             $("input[name='reject']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='reject']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -160,8 +152,7 @@ function SaveSampling(){
                         if(data['error']['result'] != null){
                             $("input[name='result']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='result']", frmSaveSampling).siblings('.input-error').text(data['error']['result']);
-                        }
-                        else{
+                        }else{
                             $("input[name='result']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='result']", frmSaveSampling).siblings('.input-error').text('');
                         }
@@ -169,15 +160,21 @@ function SaveSampling(){
                         if(data['error']['dppm'] != null){
                             $("input[name='dppm']", frmSaveSampling).addClass('is-invalid');
                             $("input[name='dppm']", frmSaveSampling).siblings('.input-error').text(data['error']['dppm']);
-                        }
-                        else{
+                        }else{
                             $("input[name='dppm']", frmSaveSampling).removeClass('is-invalid');
                             $("input[name='dppm']", frmSaveSampling).siblings('.input-error').text('');
                         }
+
+                        if(data['error']['qc_inspector'] != null){
+                            $("input[name='qc_inspector_name']", frmSaveSampling).addClass('is-invalid');
+                            $("input[name='qc_inspector']", frmSaveSampling).siblings('.input-error').text(data['error']['qc_inspector']);
+                        }else{
+                            $("input[name='qc_inspector_name']", frmSaveSampling).removeClass('is-invalid');
+                            $("input[name='qc_inspector']", frmSaveSampling).siblings('.input-error').text('');
+                        }
                     }
                 }
-            }
-            else{ // if session expired
+            }else{ // if session expired
                 cnfrmAutoLogin.open();
             }
         },
@@ -399,7 +396,7 @@ function GetPODetails(po_no){
     });
 }
 
-function GetOperatorDetails(employee_id, station_id){
+function GetOperatorDetails(employee_id, station_id, category){
     let url = globalLink.replace('link', 'get_operator_details');
     let login = globalLink.replace('link', 'login');
 
@@ -433,17 +430,27 @@ function GetOperatorDetails(employee_id, station_id){
                     $("#mdlSaveSampling").modal('show');
                     if(station_id != null){
                         if(data['data']['user_station_details'].length > 0){
-                            $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
-                            $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                            if(category == 'operator'){
+                                $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
+                                $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                            }else{
+                                $('input[name="qc_inspector"]', frmSaveSampling).val(data['data']['id']);
+                                $('input[name="qc_inspector_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                            }
+
                             toastr.success('Record found.');
-                        }
-                        else{
+                        }else{
                             toastr.warning('Operator is not certified.');
                         }
-                    }
-                    else{
-                        $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
-                        $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                    }else{
+                        if(category == 'operator'){
+                            $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
+                            $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                        }else{
+                            $('input[name="qc_inspector"]', frmSaveSampling).val(data['data']['id']);
+                            $('input[name="qc_inspector_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+                        }
+
                         toastr.success('Record found.');
                     }
                 }

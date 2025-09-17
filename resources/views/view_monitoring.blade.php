@@ -284,6 +284,7 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
+                                      <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -1094,7 +1095,7 @@
 
                         <!-- Machine / Jigs / Tools -->
                         <tr>
-                          <td rowspan="14" style="text-align: left; vertical-align: top; width: 10%"><b>Machine / Jigs / Tolls</b></td>
+                          <td rowspan="15" style="text-align: left; vertical-align: top; width: 10%"><b>Machine / Jigs / Tolls</b></td>
                           <td style="text-align: left; vertical-align: middle; width: 34%">1. Are machine traceability and stickers clearly filled-up and updated?</td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
@@ -1318,6 +1319,28 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.4.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
 
+                        {{-- NEW ROW --}}
+                        <tr>
+                          <td style="text-align: left; vertical-align: middle; width: 34%">
+                            5. Are Buy-off, PM Calibration sticker and EEDMS are both updated?
+                          </td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.5.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.5.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                        </tr>
+                        {{-- NEW ROW --}}
+
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;"><input index="3.1" date-index="1" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtResult" type="text" name="dla_result" placeholder="Type here..."></th>
@@ -1366,6 +1389,7 @@
                             <input type="date" name="" index="3.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtDueDate">
                           </th>
                         </tr>
+
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">Corrective Action</th>
                           <th colspan="2" style="text-align: center; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">
@@ -1392,23 +1416,23 @@
                         </tr>
 
                         <!-- Method / Process -->
-                         <tr>
-                          <td rowspan="13" style="text-align: left; vertical-align: top; width: 10%"><b>Method / <br> Process</b></td>
-                          <td style="text-align: left; vertical-align: middle; width: 34%">1. Is the ongoing product already PASSED product, qualification and pilot run? (Check the report if already checked by Prod'n, Eng'g & QC.)</td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                        <tr>
+                            <td rowspan="15" style="text-align: left; vertical-align: top; width: 10%"><b>Method / <br> Process</b></td>
+                            <td style="text-align: left; vertical-align: middle; width: 34%">1. Is the ongoing product already PASSED product, qualification and pilot run? (Check the report if already checked by Prod'n, Eng'g & QC.)</td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.1.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">2. Are posted references being followed and tallies with the actual activity of the operator?</td>
@@ -1427,6 +1451,7 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"></td>
                         </tr>
+
                         <tr>
                           <td>
                             <ul>
@@ -1544,7 +1569,7 @@
                         <tr>
                           <td>
                             <ul>
-                             <li>Lot number of required parts updated & readable?</li>
+                                <li>Lot number of required parts updated & readable?</li>
                             </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1563,26 +1588,72 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
                         <tr>
-                          <td>
-                            <ul>
-                             <li>Operator name, IN & OUT preperly filled-up and readable?</li>
-                            </ul>
-                          </td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
-                          <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td>
+                                <ul>
+                                    <li>Operator name, IN & OUT preperly filled-up and readable?</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
+
+                        {{-- NEW ROW --}}
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Are posted references DCC stamp not faded?</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.3.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Are posted SEI updated and with "OK for posting" stamp?</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.2" date-index="2" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.3" date-index="3" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.4" date-index="4" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.5" date-index="5" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.6" date-index="6" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                            <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.4.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
+                        </tr>
+                        {{-- END NEW ROW --}}
 
                         <tr>
                           <th style="text-align: right; vertical-align: middle; font-size: 20px; background-color: #9f9f9f;">RESULT</th>
@@ -1880,11 +1951,11 @@
                             <textarea name="" index="5.7" date-index="7" monitoring-id="{{$monitoring_info['m_id']}}" class="form-control form-control-sm txtCorrectiveAction" rows="3" placeholder="N/A"></textarea>
                           </th>
                         </tr>
-
                       </thead>
                       <tbody>
                       </tbody>
                     </table>
+
                   </div> <!-- .table-responsive -->
                 </div>
               </div>
@@ -2030,13 +2101,19 @@
               </div>
             </div>
 
-            <!-- <div class="form-group row form-sampling">
-              <label class="col-sm-4 col-form-label">Remarks</label>
-              <div class="col-sm-8">
-                <textarea class="form-control" name="remarks" placeholder="Remarks" rows="4"></textarea>
-                <span class="text-danger float-sm-right input-error"></span>
-              </div>
-            </div> -->
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Inspector Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="qc_inspector" placeholder="User ID" readonly="true" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="qc_inspector_name" placeholder="(Click the button to fill-in)" readonly="true">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary btnScanQcInspector" title="Click to scan operator."><i class="fa fa-qrcode"></i></button>
+                        </div>
+                    </div>
+                    <span class="text-danger float-sm-right input-error"></span>
+                </div>
+            </div>
 
             <div class="form-group row form-sampling">
               <label class="col-sm-4 col-form-label">Validation Result<br>(QC Supervisor)</label>
@@ -2231,153 +2308,153 @@
     });
 
     dtSamplingsPending = $("#tblSamplings_Pending").DataTable({
-      "processing" : false,
-      "serverSide" : true,
-      "lengthMenu": [ [50, -1], [50, "All"] ],
-      "ajax" : {
-        url: "{{ route('view_samplings_pending') }}",
-        data: function (param){
-            param.status = $(".selFilSamplingByStat").val();
-            param.monitoring_id = $('.txtHeaderMonitoringId').val();
-            param.validation_result = '';
-            param.result = ["PASSED","FAILED"];
-        }
-      },
-      "columns":[
-        { "data" : "created_at", visible: false, orderable: false },
-        { "data" : "multi_select" },
-        { "data" : "raw_date", orderable: false },
-        { "data" : "raw_time", orderable: false },
-        { "data" : "operator_name", orderable: false },
-        { "data" : "s_description", orderable: false },
-        { "data" : "raw_po_no_series", orderable: false },
-        { "data" : "sample_size", orderable: false },
-        { "data" : "accept", orderable: false },
-        { "data" : "reject", orderable: false },
-        { "data" : "result", orderable: false },
-        { "data" : "dppm", orderable: false },
-        { "data" : "remarks", orderable: false },
-        { "data" : "raw_validation_result", orderable: false },
-        { "data" : "raw_status", orderable: false, searchable: false },
-        { "data" : "raw_action", orderable:false, searchable:false }
-      ],
-      "columnDefs": [
-        {
-          "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-          "data": null,
-          "defaultContent": "--"
+        "processing" : false,
+        "serverSide" : true,
+        "lengthMenu": [ [50, -1], [50, "All"] ],
+        "ajax" : {
+            url: "{{ route('view_samplings_pending') }}",
+            data: function (param){
+                param.status = $(".selFilSamplingByStat").val();
+                param.monitoring_id = $('.txtHeaderMonitoringId').val();
+                param.validation_result = '';
+                param.result = ["PASSED","FAILED"];
+            }
         },
-        // { "visible": false, "targets": 1 }
-      ],
-      "order": [[ 1, "asc" ]],
-      "initComplete": function(settings, json) {
-      },
-      "drawCallback": function( settings ) {
-      }
+        "columns":[
+            { "data" : "created_at", visible: false, orderable: false },
+            { "data" : "multi_select" },
+            { "data" : "raw_date", orderable: false },
+            { "data" : "raw_time", orderable: false },
+            { "data" : "operator_name", orderable: false },
+            { "data" : "s_description", orderable: false },
+            { "data" : "raw_po_no_series", orderable: false },
+            { "data" : "sample_size", orderable: false },
+            { "data" : "accept", orderable: false },
+            { "data" : "reject", orderable: false },
+            { "data" : "result", orderable: false },
+            { "data" : "dppm", orderable: false },
+            { "data" : "remarks", orderable: false },
+            { "data" : "raw_validation_result", orderable: false },
+            { "data" : "raw_status", orderable: false, searchable: false },
+            { "data" : "raw_action", orderable:false, searchable:false }
+        ],
+        "columnDefs": [
+            {
+            "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+            "data": null,
+            "defaultContent": "--"
+            },
+            // { "visible": false, "targets": 1 }
+        ],
+        "order": [[ 1, "asc" ]],
+        "initComplete": function(settings, json) {
+        },
+        "drawCallback": function( settings ) {
+        }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
     });//end of dtSamplings
 
 
     $("#tblSamplings_Pending").on('click', '.btnActions', function(e){
-      let samplingId = $(this).attr('sampling-id');
-      let action = $(this).attr('action');
-      let status = $(this).attr('status');
-      let title = '';
+        let samplingId = $(this).attr('sampling-id');
+        let action = $(this).attr('action');
+        let status = $(this).attr('status');
+        let title = '';
 
-      if(action == 1){
-        if(status == 2){
-          title = 'Archive Sampling';
-        }
-        else if(status == 1){
-          title = 'Restore Sampling';
-        }
-      }
-      // else if(action == 2){
-      //   title = 'Reset Password';
-      // }
-      $.confirm({
-        title: title,
-        content: 'Please confirm to continue.',
-        backgroundDismiss: true,
-        type: 'blue',
-        buttons: {
-          confirm: {
-            text: 'Confirm',
-            btnClass: 'btn-blue',
-            keys: ['enter'],
-            action: function(){
-              SamplingAction(samplingId, action, status);
-              cnfrmLoading.open();
+        if(action == 1){
+            if(status == 2){
+            title = 'Archive Sampling';
             }
-          },
-          cancel: function () {
-
-          },
+            else if(status == 1){
+            title = 'Restore Sampling';
+            }
         }
-      });
+        // else if(action == 2){
+        //   title = 'Reset Password';
+        // }
+
+        $.confirm({
+            title: title,
+            content: 'Please confirm to continue.',
+            backgroundDismiss: true,
+            type: 'blue',
+            buttons: {
+            confirm: {
+                text: 'Confirm',
+                btnClass: 'btn-blue',
+                keys: ['enter'],
+                action: function(){
+                SamplingAction(samplingId, action, status);
+                cnfrmLoading.open();
+                }
+            },
+            cancel: function () {
+
+            },
+            }
+        });
     });
 
     $("#tblSamplings_Pending").on('click', '.btnEditSampling', function(e){
-      let samplingId = $(this).attr('sampling-id');
-      GetSamplingById(samplingId);
+        let samplingId = $(this).attr('sampling-id');
+        GetSamplingById(samplingId);
     });
     //end of tblSamplings_Pending
 
     //start of tblSamplings_Ok
     $(document).on('click','#tblSamplings_Ok tbody tr',function(e){
-      $(this).closest('tbody').find('tr').removeClass('table-active');
-      $(this).closest('tr').addClass('table-active');
+        $(this).closest('tbody').find('tr').removeClass('table-active');
+        $(this).closest('tr').addClass('table-active');
     });
 
     dtSamplingsOk = $("#tblSamplings_Ok").DataTable({
-      "processing" : false,
-      "serverSide" : true,
-      "lengthMenu": [ [50, -1], [50, "All"] ],
-      "ajax" : {
-        url: "{{ route('view_samplings_ok') }}",
-        data: function (param){
-            param.status = $(".selFilSamplingByStat").val();
-            param.monitoring_id = $('.txtHeaderMonitoringId').val();
-            param.validation_result = '1';
-            param.result = ["PASSED","FAILED"];
-        }
-      },
-      "columns":[
-        { "data" : "created_at", visible: false, orderable: false },
-        // { "data" : "multi_select", visible: false },
-        { "data" : "raw_date", orderable: false },
-        { "data" : "raw_time", orderable: false },
-        { "data" : "operator_name", orderable: false },
-        { "data" : "s_description", orderable: false },
-        { "data" : "raw_po_no_series", orderable: false },
-        { "data" : "sample_size", orderable: false },
-        { "data" : "accept", orderable: false },
-        { "data" : "reject", orderable: false },
-        { "data" : "result", orderable: false },
-        { "data" : "dppm", orderable: false },
-        { "data" : "remarks", orderable: false },
-        { "data" : "raw_validation_result", orderable: false },
-        { "data" : "raw_status", orderable: false, searchable: false },
-        { "data" : "raw_action", orderable:false, searchable:false }
-      ],
-      "columnDefs": [
-        {
-          "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-          "data": null,
-          "defaultContent": "--"
+        "processing" : false,
+        "serverSide" : true,
+        "lengthMenu": [ [50, -1], [50, "All"] ],
+        "ajax" : {
+            url: "{{ route('view_samplings_ok') }}",
+            data: function (param){
+                param.status = $(".selFilSamplingByStat").val();
+                param.monitoring_id = $('.txtHeaderMonitoringId').val();
+                param.validation_result = '1';
+                param.result = ["PASSED","FAILED"];
+            }
         },
-        // { "visible": false, "targets": 1 }
-      ],
-      "order": [[ 1, "asc" ]],
-      "initComplete": function(settings, json) {
-      },
-      "drawCallback": function( settings ) {
-      }
+        "columns":[
+            { "data" : "created_at", visible: false, orderable: false },
+            // { "data" : "multi_select", visible: false },
+            { "data" : "raw_date", orderable: false },
+            { "data" : "raw_time", orderable: false },
+            { "data" : "operator_name", orderable: false },
+            { "data" : "s_description", orderable: false },
+            { "data" : "raw_po_no_series", orderable: false },
+            { "data" : "sample_size", orderable: false },
+            { "data" : "accept", orderable: false },
+            { "data" : "reject", orderable: false },
+            { "data" : "result", orderable: false },
+            { "data" : "dppm", orderable: false },
+            { "data" : "remarks", orderable: false },
+            { "data" : "raw_validation_result", orderable: false },
+            { "data" : "raw_status", orderable: false, searchable: false },
+            { "data" : "raw_action", orderable:false, searchable:false }
+        ],
+        "columnDefs": [
+            {
+            "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+            "data": null,
+            "defaultContent": "--"
+            },
+            // { "visible": false, "targets": 1 }
+        ],
+        "order": [[ 1, "asc" ]],
+        "initComplete": function(settings, json) {
+        },
+        "drawCallback": function( settings ) {
+        }
     }).on( 'error', function () {
-      toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
+        toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
     });//end of dtSamplings
-
 
     $("#tblSamplings_Ok").on('click', '.btnActions', function(e){
       let samplingId = $(this).attr('sampling-id');
@@ -2385,37 +2462,36 @@
       let status = $(this).attr('status');
       let title = '';
 
-      if(action == 1){
-        if(status == 2){
-          title = 'Archive Sampling';
-        }
-        else if(status == 1){
-          title = 'Restore Sampling';
-        }
-      }
-      // else if(action == 2){
-      //   title = 'Reset Password';
-      // }
-      $.confirm({
-        title: title,
-        content: 'Please confirm to continue.',
-        backgroundDismiss: true,
-        type: 'blue',
-        buttons: {
-          confirm: {
-            text: 'Confirm',
-            btnClass: 'btn-blue',
-            keys: ['enter'],
-            action: function(){
-              SamplingAction(samplingId, action, status);
-              cnfrmLoading.open();
+        if(action == 1){
+            if(status == 2){
+                title = 'Archive Sampling';
+            }else if(status == 1){
+                title = 'Restore Sampling';
             }
-          },
-          cancel: function () {
-
-          },
         }
-      });
+        // else if(action == 2){
+        //   title = 'Reset Password';
+        // }
+        $.confirm({
+            title: title,
+            content: 'Please confirm to continue.',
+            backgroundDismiss: true,
+            type: 'blue',
+            buttons: {
+            confirm: {
+                text: 'Confirm',
+                btnClass: 'btn-blue',
+                keys: ['enter'],
+                action: function(){
+                SamplingAction(samplingId, action, status);
+                cnfrmLoading.open();
+                }
+            },
+            cancel: function () {
+
+            },
+            }
+        });
     });
 
     $("#tblSamplings_Ok").on('click', '.btnEditSampling', function(e){
@@ -2488,8 +2564,7 @@
       if(action == 1){
         if(status == 2){
           title = 'Archive Sampling';
-        }
-        else if(status == 1){
+        }else if(status == 1){
           title = 'Restore Sampling';
         }
       }
@@ -2618,43 +2693,13 @@
     });
     //end of tblSamplings_NoProdNoMonitoring
 
-    // OLD CODE
-    // let checked_chckbox_arr = [];
-    // let arrayAll = [
-    //                 ['1.1.0', '1.2.1', '1.2.2', '1.2.3', '1.2.4', '1.3.1', '1.3.2'],
-    //                 ['2.1.1', '2.1.2', '2.1.3', '2.2.1', '2.2.2', '2.2.3', '2.3.1', '2.3.2'],
-    //                 // ['3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.2.1', '3.2.2', '3.3.0', '3.4.0'],
-    //                 ['3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.2.1', '3.2.2', '3.3.0'],
-    //                 ['4.1.0', '4.2.1', '4.2.2', '4.3.0', '4.4.1', '4.5.1', '4.5.2'],
-    //                 ['5.1.1', '5.1.2', '5.1.3', '5.2.0', '5.3.0', '5.4.0', '5.5.0']
-    //                ];
-
-    // let arrayAllAppended = [];
-    // let arrayAllGroupedToPerDay = [];
-    // let arrayAllGroupedPerCategory = [];
-
-    // for (let arrIndex = 0; arrIndex < arrayAll.length; arrIndex++){
-    //   for (let i = 0; i < 7; i++){
-    //     for (let indexCount = 0; indexCount < arrayAll[arrIndex].length; indexCount++){
-    //       arrayValues = arrayAll[arrIndex][indexCount] +'.'+ (i + 1);
-    //       arrayAllAppended.push(arrayValues);
-    //     }
-    //     arrayAllGroupedToPerDay.push(arrayAllAppended);
-    //     arrayAllAppended = [];
-    //   }
-    //   arrayAllGroupedPerCategory.push(arrayAllGroupedToPerDay);
-    //   arrayAllGroupedToPerDay = [];
-    // }
-    // console.log('all', arrayAllGroupedPerCategory);
-    // OLD CODE
-
     let checked_chckbox_arr = [];
 
     let arrayAll = [
         ['1.1.0', '1.2.1', '1.2.2', '1.2.3', '1.2.4', '1.3.1', '1.3.2'],
         ['2.1.1', '2.1.2', '2.1.3', '2.2.1', '2.2.2', '2.2.3', '2.3.1', '2.3.2'],
-        ['3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.2.1', '3.2.2', '3.3.0'],
-        ['4.1.0', '4.2.1', '4.2.2', '4.3.0', '4.4.1', '4.5.1', '4.5.2'],
+        ['3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.2.1', '3.2.2', '3.3.0', '3.5.0'],
+        ['4.1.0', '4.2.1', '4.2.2', '4.3.0', '4.4.1', '4.5.1', '4.5.2', '4.5.3', '4.5.4'],
         ['5.1.1', '5.1.2', '5.1.3', '5.2.0', '5.3.0', '5.4.0', '5.5.0']
     ];
 
@@ -2799,294 +2844,6 @@
         console.log("Completed categories per day:", totalCompleted);
         console.log("data-alert:", $('.btnSaveDLA').attr('data-alert'));
     }
-
-
-    // console.log("Checked per category per day:", totalChecked);
-    // console.log("Completed categories per day:", totalCompleted);
-
-    // function fnChkDLA(checked_chckbox_arr, arrayAllGroupedPerCategory){
-    //     // let count = [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]; //default values of check count per day
-    //     let count = Array(5).fill().map(() => Array(7).fill(0)); // Track count of checked boxes per day/category
-    //     let countofcheckedpercatperday = 0;
-    //     let countofcompletedcatperday = 0;
-    //     if(checked_chckbox_arr.length > 0){
-    //         for (let i = 0; i < checked_chckbox_arr.length; i++){ //loop for checked_chckbox_arr all indexes
-    //             for (let index_per_cat = 0; index_per_cat < arrayAllGroupedPerCategory.length; index_per_cat++){ //for catergory (5 categories)
-    //                 for (let index_per_day = 0; index_per_day < arrayAllGroupedPerCategory[index_per_cat].length; index_per_day++){ //for days (7 days)
-    //                     let foundatindex = jQuery.inArray(checked_chckbox_arr[i][0], arrayAllGroupedPerCategory[index_per_cat][index_per_day]); //check if checked_chckbox_arr "index" value      in groupedArrayOne[current index]
-    //                     if(foundatindex != -1){//check if inarray result have value or return an index
-    //                         if(count[index_per_cat][index_per_day] == 0){
-    //                             countofcheckedpercatperday++;
-    //                         }
-    //                         count[index_per_cat][index_per_day]++;
-
-    //                         if(count[index_per_cat][index_per_day] == arrayAllGroupedPerCategory[index_per_cat][index_per_day].length){
-    //                             countofcompletedcatperday++;
-    //                             if(countofcheckedpercatperday == countofcompletedcatperday){
-    //                                 console.log('equal alert 0');
-    //                                 // $('.btnSaveDLA').attr('alert', '0');
-
-    //                                 $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val('OK');
-    //                                 $('.selInCharge[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', false);
-    //                                 $('.txtDueDate[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', false);
-    //                                 // $('.txtCorrectiveAction[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', false); // optional corrective action 01/15/2025
-    //                                 $('.btnSaveDLA').prop('disabled', false);
-    //                                 console.log('all fields is OK', 'category:', index_per_cat+1, 'day:',index_per_day+1);
-    //                             }else{
-    //                                 console.log('not equal alert 1');
-    //                                 // $('.btnSaveDLA').attr('alert', '1');
-    //                             }
-    //                         }else{
-    //                             $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val('NG');
-    //                             $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                             $('.selInCharge[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                             $('.txtDueDate[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                             // $('.txtCorrectiveAction[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true); // optional corrective action 01/15/2025
-
-    //                             if( $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val() != ''
-    //                                 && $('.selInCharge[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"] :selected').val() != undefined
-    //                                 && $('.txtDueDate[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val() != ''
-    //                                 // && $('.txtCorrectiveAction[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val() != '' // optional corrective action 01/15/2025
-    //                             ){
-    //                                 console.log('all fields is filled-in','category:', index_per_cat+1, 'day:',index_per_day+1);
-    //                                 if(countofcheckedpercatperday > countofcompletedcatperday){
-    //                                     countofcompletedcatperday++;
-    //                                     // if(countofcheckedpercatperday == countofcompletedcatperday){
-    //                                     //     $('.btnSaveDLA').attr('alert', '0');
-    //                                     // }else{
-    //                                     //     $('.btnSaveDLA').attr('alert', '1');
-    //                                     // }
-    //                                 }
-    //                             }else{
-    //                                 console.log('please fill all corrective action fields', 'category:', index_per_cat + 1, 'day:',index_per_day + 1);
-    //                                 // $('.btnSaveDLA').attr('alert', '1');
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         if(countofcheckedpercatperday == countofcompletedcatperday){
-    //             $('.btnSaveDLA').attr('alert', '0');
-    //         }else{
-    //             $('.btnSaveDLA').attr('alert', '1');
-    //         }
-    //     }else{
-    //         $('.btnSaveDLA').attr('alert', '0');
-    //     }
-    // }
-
-    // function fnChkDLA(checked_chckbox_arr, arrayAllGroupedPerCategory){
-    //     let count = Array(5).fill().map(() => Array(7).fill(0)); // Track count of checked boxes per day/category
-    //     let countofcheckedpercatperday = 0;
-    //     let countofcompletedcatperday = 0;
-    //     let alertStatus = ''; // Default to '1' (incomplete)
-
-    //     if(checked_chckbox_arr.length > 0){
-    //         for (let i = 0; i < checked_chckbox_arr.length; i++){ //loop for checked_chckbox_arr all indexes
-    //             for (let index_per_cat = 0; index_per_cat < arrayAllGroupedPerCategory.length; index_per_cat++){ //for catergory (5 categories)
-    //                 for (let index_per_day = 0; index_per_day < arrayAllGroupedPerCategory[index_per_cat].length; index_per_day++){ //for days (7 days)
-    //                     let foundatindex = jQuery.inArray(checked_chckbox_arr[i][0], arrayAllGroupedPerCategory[index_per_cat][index_per_day]); //check if checked_chckbox_arr "index" value exists in groupedArrayOne[current index]
-    //                     // console.log('result',foundatindex);
-    //                     if(foundatindex != -1){//check if inarray result have value or return an index
-    //                         if(count[index_per_cat][index_per_day] == 0){
-    //                             countofcheckedpercatperday++;
-    //                         }
-
-    //                         count[index_per_cat][index_per_day]++;
-    //                     }
-
-    //                     if(count[index_per_cat][index_per_day] == arrayAllGroupedPerCategory[index_per_cat][index_per_day].length){
-    //                     countofcompletedcatperday++;
-
-    //                         // If all tasks are completed for the category/day, mark it as completed
-    //                         $('input[name="dla_result"][index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val('OK');
-    //                         $('.selInCharge[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val('').trigger('change');
-    //                         $('.txtDueDate[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val('');
-    //                         $('.selInCharge[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').prop('required', false);
-    //                         $('.txtDueDate[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').prop('required', false);
-    //                         $('.btnSaveDLA').prop('disabled', false);
-    //                     }else{
-    //                         $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').val('NG');
-    //                         // $('input[name="dla_result"][index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                         $('.selInCharge[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                         $('.txtDueDate[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true);
-    //                         // $('.txtCorrectiveAction[index="'+(index_per_cat + 1)+'.'+(index_per_day + 1)+'"]').prop('required', true); // optional corrective action 01/15/2025
-    //                         // $('.btnSaveDLA').attr('alert', '1');
-    //                     }
-
-    //                     // Check if .selInCharge and .txtDueDate are filled, and override result if necessary
-    //                     if ($('.selInCharge[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val() != '' &&
-    //                         $('.txtDueDate[index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val() != '') {
-    //                         // Override the result to 'OK' if required fields are filled
-    //                         $('input[name="dla_result"][index="' + (index_per_cat + 1) + '.' + (index_per_day + 1) + '"]').val('OK');
-    //                         $('.btnSaveDLA').attr('alert', '0'); // Set alert to '0' because the fields are filled
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         // After looping, check if all categories and days are completed
-    //         if (countofcheckedpercatperday === countofcompletedcatperday) {
-    //             alertStatus = '0'; // Set alert to 0 if all tasks are completed
-    //         }else{
-    //             alertStatus = '1'; // Set alert to 1 if any task is incomplete
-    //         }
-
-    //         // Set the final alert status on the button
-    //         $('.btnSaveDLA').attr('alert', alertStatus);
-    //     }else{
-    //         $('.btnSaveDLA').attr('alert', '0');
-    //     }
-    // }
-
-    // function fnChkDLA(checked_chckbox_arr, arrayAllGroupedPerCategory) {
-    //     let countofcheckedpercatperday = 0;
-    //     let countofcompletedcatperday = 0;
-    //     let finalAlertValue;
-
-    //     // Initialize count tracking
-    //     let count = [];
-    //     for (let catIndex = 0; catIndex < arrayAllGroupedPerCategory.length; catIndex++) {
-    //         count[catIndex] = new Array(arrayAllGroupedPerCategory[catIndex].length).fill(0);
-    //     }
-
-    //     for (let i = 0; i < checked_chckbox_arr.length; i++) {
-    //         let checkboxId = checked_chckbox_arr[i][0]; // Extract checkbox ID (string value)
-
-    //         let foundCategoryIndex = -1;
-    //         let foundDayIndex = -1;
-
-    //         // Find the category and day dynamically
-    //         for (let catIndex = 0; catIndex < arrayAllGroupedPerCategory.length; catIndex++) {
-    //             for (let dayIndex = 0; dayIndex < arrayAllGroupedPerCategory[catIndex].length; dayIndex++) {
-    //                 if (arrayAllGroupedPerCategory[catIndex][dayIndex].includes(checkboxId)) {
-    //                     foundCategoryIndex = catIndex;
-    //                     foundDayIndex = dayIndex;
-    //                     break;
-    //                 }
-    //             }
-    //             if (foundCategoryIndex !== -1) break; // Stop looping once found
-    //         }
-
-    //         // If checkboxId was not found, continue to next iteration
-    //         if (foundCategoryIndex === -1 || foundDayIndex === -1) {
-    //             console.warn(`Checkbox ID ${checkboxId} not found in arrayAllGroupedPerCategory`);
-    //             continue;
-    //         }
-
-    //         // Check if the checkbox ID is in the respective category & day
-    //         let foundAtIndex = jQuery.inArray(checkboxId, arrayAllGroupedPerCategory[foundCategoryIndex][foundDayIndex]);
-
-    //         if (foundAtIndex !== -1) {
-    //             count[foundCategoryIndex][foundDayIndex]++;
-
-    //             // Increment countofcheckedpercatperday only if this is the first checked item in this category-day
-    //             if (count[foundCategoryIndex][foundDayIndex] === 1) {
-    //                 countofcheckedpercatperday++;
-    //             }
-
-    //             // If all checkboxes for this category-day are checked, increment countofcompletedcatperday
-    //             if (count[foundCategoryIndex][foundDayIndex] === arrayAllGroupedPerCategory[foundCategoryIndex][foundDayIndex].length) {
-    //                 countofcompletedcatperday++;
-
-    //                 // ✅ Set Result to "OK"
-    //                 $('input[name="dla_result"][index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val('OK');
-    //                 $('.selInCharge[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val('').trigger('change');
-    //                 $('.txtDueDate[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val('');
-    //                 $('.selInCharge[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').prop('required', false);
-    //                 $('.txtDueDate[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').prop('required', false);
-    //                 $('.btnSaveDLA').prop('disabled', false);
-    //             }else{
-    //                  // ✅ Set Result to "NG"
-    //                  $('input[name="dla_result"][index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val('NG');
-    //                     $('.selInCharge[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').prop('required', true);
-    //                     $('.txtDueDate[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').prop('required', true);
-
-    //                 // ✅ If required fields are filled, update "NG" back to "OK"
-    //                 if ($('.selInCharge[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val() !== '' &&
-    //                     $('.txtDueDate[index="' + (foundCategoryIndex + 1) + '.' + (foundDayIndex + 1) + '"]').val() !== '') {
-    //                     // finalAlertValue = 0;
-    //                     countofcompletedcatperday++;
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     console.log("Count of checked per category per day:", countofcheckedpercatperday);
-    //     console.log("Count of completed categories per day:", countofcompletedcatperday);
-
-    //     // ✅ Ensure the correct `data-alert` value is set consistently
-    //     setTimeout(() => {
-    //         let finalAlertValue = countofcompletedcatperday === countofcheckedpercatperday ? '0' : '1';
-    //         $('.btnSaveDLA').attr('data-alert', finalAlertValue);
-    //     }, 100);
-
-    //     // return {
-    //     //     countofcheckedpercatperday,
-    //     //     countofcompletedcatperday
-    //     // };
-    // }
-
-
-    // function fnChkDLA(checked_chckbox_arr, arrayAllGroupedPerCategory) {
-    //     let countofcompletedcatperday = 0;
-    //     let checkedMap = new Map();
-
-    //     // 🔹 Step 1: Store checked items for fast lookup
-    //     checked_chckbox_arr.forEach(([checkedItem]) => checkedMap.set(checkedItem, true));
-
-    //     // 🔹 Step 2: Process each category and day
-    //     arrayAllGroupedPerCategory.forEach((category, index_per_cat) => {
-    //         category.forEach((dayItems, index_per_day) => {
-    //             let indexAttr = `${index_per_cat + 1}.${index_per_day + 1}`;
-
-    //             let resultField = $(`input[name="dla_result"][index="${indexAttr}"]`);
-    //             let inChargeField = $(`.selInCharge[index="${indexAttr}"]`);
-    //             let dueDateField = $(`.txtDueDate[index="${indexAttr}"]`);
-
-    //             let checkedItems = dayItems.filter(item => checkedMap.has(item));
-    //             let totalChecksForCategoryDay = dayItems.length;
-    //             let checkedCount = checkedItems.length;
-
-    //             // 🔹 Set result only if at least one checkbox is checked
-    //             let resultValue = "";
-    //             // resultField.val('').trigger('change');
-
-    //             if (totalChecksForCategoryDay > 0) { // ✅ Ensure category per day is not empty
-    //                 if (checkedCount > 0) {
-    //                     resultValue = checkedCount === totalChecksForCategoryDay ? "OK" : "NG";
-    //                 }
-    //             }
-
-    //             resultField.val(resultValue).trigger('change');
-
-    //             let isInChargeFilled = inChargeField.val()?.trim() !== "";
-    //             let isDueDateFilled = dueDateField.val()?.trim() !== "";
-
-    //             let isComplete = resultValue === "OK" || (resultValue === "NG" && isInChargeFilled && isDueDateFilled);
-
-    //             inChargeField.prop('required', resultValue === "NG" && !isInChargeFilled).trigger('change');
-    //             dueDateField.prop('required', resultValue === "NG" && !isDueDateFilled).trigger('change');
-
-    //             if (isComplete) {
-    //                 countofcompletedcatperday++;
-    //             }
-    //         });
-    //     });
-
-    //     // 🔹 Step 3: Update .btnSaveDLA alert status
-    //     setTimeout(() => {
-    //         let finalAlertValue = countofcompletedcatperday > 0 ? '0' : '1';
-    //         $('.btnSaveDLA').attr('data-alert', finalAlertValue);
-    //     }, 100);
-    // }
-
-
-    // $(".chkDLA_Alert").click(function(){
-    //     toastr.error('ERROR!');
-    // });
 
     $('input[name="sample_size"]', frmSaveSampling).on("keyup change", function(){
       if($('input[name="reject"]', frmSaveSampling).val() > 0){
@@ -3238,69 +2995,6 @@
             GetPODetails(po_no);
             $("#modalSearchPoNo").modal('hide');
     });
-        // $.confirm({
-        //     title: 'Search P.O. No.',
-        //     content: '' +
-        //     '<form action="" class="formSearchPoNo">' +
-        //         '<div class="form-group">' +
-        //             '<label>Enter P.O. No.</label>' +
-        //             '<input type="text" placeholder="P.O. No." class="po_no form-control" required />' +
-        //         '</div>' +
-        //     '</form>',
-        //     buttons: {
-        //         formSubmit: {
-        //             text: 'Search',
-        //             btnClass: 'btn-blue',
-        //             action: function () {
-        //                 var po_no = this.$content.find('.po_no').val();
-        //                 if(!po_no){
-        //                     toastr.warning('Invalid P.O. No.');
-        //                     return false;
-        //                 }
-        //                 GetPODetails(po_no);
-        //             }
-        //         },
-        //         cancel: function () {
-        //             //close
-        //         },
-        //     },
-        //     onContentReady: function () {
-        //         // bind to events
-        //         var jc = this;
-        //         this.$content.find('form').on('submit', function (e) {
-        //             // if the user submits the form by pressing enter in the field.
-        //             e.preventDefault();
-        //             jc.$$formSubmit.trigger('click'); // reference the button and click it
-        //         });
-        //     }
-        // });
-
-        // console.log($('.po_no').focus());
-        // $('.po_no').first().focus();
-        // console.log('dito na');
-    // });
-
-    // formSearchPoNo
-    // $('.formSearchPoNo').on('shown.modal', function () {
-    //     console.log('testing shown form');
-    //     $('.po_no').focus();
-    // });
-
-    // $('.po_no').click(function (e) {
-    //     e.preventDefault();
-    //     console.log('test');
-    //     $('.po_no').focus();
-    // });
-
-    // document.find('.po_no').addEventListener('click', function(){
-    //     this.focus();
-    // });
-
-    // $('.formSearchPoNo').on('click', '.po_no', function (e){
-    //     console.log('po field clicked');
-    //     // e.preventDefault();
-    //     this.focus();
-    // });
 
     $(".btnAddNoProduction").click(function(){
       $.confirm({
@@ -3381,7 +3075,7 @@
                   toastr.warning('Employee ID is required.');
                   return false;
               }
-              GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val());
+              GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val(), 'operator');
               cnfrmScanOperator.close();
               return false;
               //jc.$$formSubmit.trigger('click'); // reference the button and click it
@@ -3391,6 +3085,51 @@
 
     $(".btnScanOperator").click(function(){
       cnfrmScanOperator.open();
+    });
+
+    let cnfrmScanQcInspector = $.confirm({
+        lazyOpen: true,
+        title: '',
+        content: '' +
+        '<form class="formScanQcInspector">' +
+        '<center><h4>Scan Employee ID</h4>' +
+        '<input type="text" placeholder="Employee ID" class="scanned_employee_id form-control" required style="opacity: 0;">' +
+        '<i style="font-size: 150px;" class="fa fa-qrcode"></i></center>' +
+        '<div class="form-group">' +
+        '</div>' +
+        '</form>',
+        buttons: {
+            cancel: function (){
+
+            },
+        },
+        onContentReady: function () {
+          // bind to events
+            var jc = this;
+            this.$content.find('form').on('submit', function (e) {
+                // if the user submits the form by pressing enter in the field.
+                e.preventDefault();
+                var scanned_employee_id = $('.scanned_employee_id').val();
+                if(!scanned_employee_id){
+                    toastr.warning('Employee ID is required.');
+                    return false;
+                }
+                GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val(), 'qc_inspector');
+                cnfrmScanQcInspector.close();
+                return false;
+                //jc.$$formSubmit.trigger('click'); // reference the button and click it
+            });
+        }
+    });
+
+    $(".btnScanQcInspector").click(function(){
+      cnfrmScanQcInspector.open();
+    });
+
+    $(document).on('keypress',function(e){
+      if(cnfrmScanQcInspector.isOpen()){
+        $('.scanned_employee_id').focus();
+      }
     });
 
     $(".btnSaveDLA").click(function(){ //nmodify
@@ -3487,118 +3226,81 @@
     });
 
     $('input[name="sample_size"]', frmSaveSampling).on("keyup change", function(){
-      if($('input[name="reject"]', frmSaveSampling).val() > 0){
-        $('select[name="remarks"]', frmSaveSampling).val("FAILED");
-      }
-      else{
-        $('select[name="remarks"]', frmSaveSampling).val("PASSED");
-      }
-      var accept = parseFloat($(this).val()) - parseFloat($('input[name="reject"]', frmSaveSampling).val());
-      if(!isNaN(accept)){
-        $('input[name="accept"]', frmSaveSampling).val(accept);
-
-        var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
-        if(!isNaN(dppm) && isFinite(dppm)){
-          $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));
+        if($('input[name="reject"]', frmSaveSampling).val() > 0){
+            $('select[name="remarks"]', frmSaveSampling).val("FAILED");
+        }else{
+            $('select[name="remarks"]', frmSaveSampling).val("PASSED");
         }
-        else{
-          $('input[name="dppm"]', frmSaveSampling).val(0);
-        }
-      }
-      else{
-        $('input[name="accept"]', frmSaveSampling).val(0);
-      }
 
+        var accept = parseFloat($(this).val()) - parseFloat($('input[name="reject"]', frmSaveSampling).val());
+        if(!isNaN(accept)){
+            $('input[name="accept"]', frmSaveSampling).val(accept);
+
+            var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
+            if(!isNaN(dppm) && isFinite(dppm)){
+            $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));
+            }
+            else{
+            $('input[name="dppm"]', frmSaveSampling).val(0);
+            }
+        }else{
+            $('input[name="accept"]', frmSaveSampling).val(0);
+        }
     });
 
     $('input[name="reject"]', frmSaveSampling).on("keyup change", function(){
-      if($('input[name="reject"]', frmSaveSampling).val() > 0){
-        $('select[name="remarks"]', frmSaveSampling).val("FAILED");
-      }
-      else{
-        $('select[name="remarks"]', frmSaveSampling).val("PASSED");
-      }
-      var accept = parseFloat($('input[name="sample_size"]', frmSaveSampling).val()) - parseFloat($(this).val());
-      if(!isNaN(accept)){
-        $('input[name="accept"]', frmSaveSampling).val(accept);
-
-        var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
-        if(!isNaN(dppm) && isFinite(dppm)){
-          $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));
+        if($('input[name="reject"]', frmSaveSampling).val() > 0){
+            $('select[name="remarks"]', frmSaveSampling).val("FAILED");
+        }else{
+            $('select[name="remarks"]', frmSaveSampling).val("PASSED");
         }
-        else{
-          $('input[name="dppm"]', frmSaveSampling).val(0);
-        }
-      }
-      else{
-        $('input[name="accept"]', frmSaveSampling).val(0);
-      }
+        var accept = parseFloat($('input[name="sample_size"]', frmSaveSampling).val()) - parseFloat($(this).val());
+        if(!isNaN(accept)){
+            $('input[name="accept"]', frmSaveSampling).val(accept);
 
+            var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
+            if(!isNaN(dppm) && isFinite(dppm)){
+            $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));
+            }
+            else{
+            $('input[name="dppm"]', frmSaveSampling).val(0);
+            }
+        }else{
+            $('input[name="accept"]', frmSaveSampling).val(0);
+        }
     });
 
-    // $('.chkDLA').click(function(){
-    //   let value = $(this).attr('value');
-    //   let index = $(this).attr('index');
-    //   let dateIndex = $(this).attr('date-index');
-    //   let monitoringId = $(this).attr('monitoring-id');
-    //   let date = $(this).attr('date');
-
-    //   let isChecked = 0;
-
-    //   if($(this).prop('checked')){
-    //     isChecked = 1;
-    //   }
-
-    //   if(value == 1){
-    //     $('.chkDLA[index="' + index + '"][value="0"]').prop('checked', false);
-    //   }
-    //   else{
-    //     $('.chkDLA[index="' + index + '"][value="1"]').prop('checked', false);
-    //   }
-
-    // //   console.log(value);
-    // //   console.log(index);
-    // //   console.log(dateIndex);
-    // //   console.log(monitoringId);
-    // //   console.log(date);
-    // //   console.log(isChecked);
-
-    // });
-
     function GenerateDateRange(){
-      // Set the header date labels
-      var dateFrom = moment($('.txtHeaderDateFrom').val());
-      var dateTo = moment($('.txtHeaderDateTo').val());
+        var dateFrom = moment($('.txtHeaderDateFrom').val());
+        var dateTo = moment($('.txtHeaderDateTo').val());
 
-      var arrDateRange = [];
+        var arrDateRange = [];
 
-      for(var dateFrom = dateFrom; dateFrom <= dateTo; dateFrom.add(1, 'day')){
-        arrDateRange.push(dateFrom.format("MM/DD/YYYY"));
-      }
+        for(var dateFrom = dateFrom; dateFrom <= dateTo; dateFrom.add(1, 'day')){
+            arrDateRange.push(dateFrom.format("MM/DD/YYYY"));
+        }
 
-      for(var index = 0; index < arrDateRange.length; index++){
-        $('.spanDateRange').eq(index).html(arrDateRange[index]);
-        // console.log(arrDateRange[index]);
+        for(var index = 0; index < arrDateRange.length; index++){
+            $('.spanDateRange').eq(index).html(arrDateRange[index]);
+        }
 
-      }
+        // Set the checkboxes date attributes
+        var chkDateFrom = moment($('.txtHeaderDateFrom').val());
+        var chkDateTo = moment($('.txtHeaderDateTo').val());
 
-      // Set the checkboxes date attributes
-      var chkDateFrom = moment($('.txtHeaderDateFrom').val());
-      var chkDateTo = moment($('.txtHeaderDateTo').val());
+        var chkArrDateRange = [];
 
-      var chkArrDateRange = [];
+        for(var chkDateFrom = chkDateFrom; chkDateFrom <= chkDateTo; chkDateFrom.add(1, 'day')){
+            chkArrDateRange.push(chkDateFrom.format("YYYY-MM-DD"));
+        }
 
-      for(var chkDateFrom = chkDateFrom; chkDateFrom <= chkDateTo; chkDateFrom.add(1, 'day')){
-        chkArrDateRange.push(chkDateFrom.format("YYYY-MM-DD"));
-      }
-
-      for(var index = 0; index < chkArrDateRange.length; index++){
-        $('.chkDLA[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
-        $('.txtResult[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
-        $('.selInCharge[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
-        $('.txtDueDate[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
-        $('.txtCorrectiveAction[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
-      }
+        for(var index = 0; index < chkArrDateRange.length; index++){
+            $('.chkDLA[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+            $('.txtResult[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+            $('.selInCharge[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+            $('.txtDueDate[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+            $('.txtCorrectiveAction[date-index=' + (index + 1) + ']').attr('date', chkArrDateRange[index]);
+        }
     }
 
     GenerateDateRange();
