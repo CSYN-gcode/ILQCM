@@ -15,6 +15,7 @@ use Auth;
 use App\User;
 use App\Model\Sampling;
 use App\Model\MaterialIssuanceSubSystem;
+use App\Model\Strategic;
 
 // PACKAGE
 use DataTables;
@@ -31,16 +32,22 @@ class SamplingController extends Controller
 	        			->where('samplings.monitoring_id', $request->monitoring_id)
 	        			->where('samplings.logdel', 0)
 	        			->where('samplings.status', $request->status)
-        				->get();
+	        			->where('samplings.validation_result', '=', $request->validation_result)
+	        			->whereIn('samplings.remarks', $request->result)
+                        ->get();
 
 	        return DataTables::of($data)
+                ->addColumn('multi_select', function($row){
+	                $result = "";
+                    $result .= '<input style="width: 70px; height: 25px; text-align: center;" type="checkbox" sampling-id="'.$row->id.'" class="multiSelect">';
+	                return $result;
+	            })
 	            ->addColumn('raw_status', function($row){
 	                $result = "";
 
 	                if($row->status == 1){
 	                    $result .= '<span class="badge badge-pill bg-success">Active</span>';
-	                }
-	                else if($row->status == 2){
+	                }else if($row->status == 2){
 	                    $result .= '<span class="badge badge-pill bg-danger">Archived</span>';
 	                }
 
@@ -95,10 +102,61 @@ class SamplingController extends Controller
 
 	                return $result;
 	            })
-	            ->rawColumns(['raw_status', 'raw_action'])
+	            ->rawColumns(['multi_select', 'raw_status', 'raw_action'])
 	            ->make(true);
         }
     	else{
+    		abort(403);
+    	}
+    }
+
+    public function saveMultipleSamplingResult(Request $request){
+        date_default_timezone_set('Asia/Manila');
+        session_start();
+
+        // return $request->all();
+
+        // return response()->json(['auth' => 1, 'result' => $request->all(), 'error' => null]);
+        
+        // return $request->multi_select_sampling_id[0];
+
+        if($request->ajax()){
+            $data = $request->all();
+
+            $rules = [
+                'multiple_validation_result' => 'required',
+            ];
+
+            $validator = Validator::make($data, $rules);
+
+            try {
+                if($validator->passes()){
+                
+                    if($request->multi_select_sampling_id > 1){
+                        $multi_select_sampling_array = explode(',', $request->multi_select_sampling_id);
+                    }else{
+                        $multi_select_sampling_array = $request->multi_select_sampling_id;
+                    }
+
+                    foreach ($multi_select_sampling_array as $multiple_id) {
+                        Sampling::where('id', $multiple_id)
+                                ->where('logdel', 0)
+                                ->where('status', 1)
+                                ->update([
+                                    'validation_result' => $request->multiple_validation_result,
+                                    'last_updated_by' => $_SESSION["rapidx_user_id"],
+                                    'updated_at' => date('Y-m-d H:i:s'),
+                                ]);
+                    }
+
+                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+                }else{
+                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
+                }
+            }catch(\Exception $e) {
+                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
+            }
+	    }else{
     		abort(403);
     	}
     }
@@ -187,14 +245,14 @@ class SamplingController extends Controller
 			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
 			                }
 			                else{
-			                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+			                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 			                }
 			            }
 			            catch(\Exception $e) {
 			                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
 			            }
 		        	}
-		            
+
 		        }
 		        // Edit Sampling
 		        else{
@@ -239,7 +297,7 @@ class SamplingController extends Controller
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
 		                }
 		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		                }
 		            }
 		            catch(\Exception $e) {
@@ -281,7 +339,7 @@ class SamplingController extends Controller
 		            return response()->json(['auth' => 1, 'sampling_info' => $sampling_info, 'result' => 1]);
 		        }
 		        else{
-		            return response()->json(['auth' => 1, 'sampling_info' => null, 'result' => 0]);  
+		            return response()->json(['auth' => 1, 'sampling_info' => null, 'result' => 0]);
 		        }
 		    }
 		    else{
@@ -324,19 +382,19 @@ class SamplingController extends Controller
 		                        ]);
 
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
-		                } 
+		                }
 		                catch (Exception $e) {
-		                    return response()->json(['auth' => 1, 'sampling_info' => null]); 
+		                    return response()->json(['auth' => 1, 'sampling_info' => null]);
 		                }
 		            }
 		            else{
-		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		            }
 		        }
 	        } // Session Expired
 		    else{
 	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }  
+		    }
 		}
     	else{
     		abort(403);
@@ -395,18 +453,18 @@ class SamplingController extends Controller
 	                	}
 
 	                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
-	                } 
+	                }
 	                catch (Exception $e) {
 						return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
 	                }
 	            }
 	            else{
-	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 	            }
 	        } // Session Expired
 		    else{
 	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }  
+		    }
 		}
     	else{
     		abort(403);
@@ -478,13 +536,30 @@ class SamplingController extends Controller
 		        $validator = Validator::make($data, $rules);
 
 		        if($validator->passes()){
-		            $data = MaterialIssuanceSubSystem::where('po_no', $request->po_no)
-                                        ->first();
+		            $data = MaterialIssuanceSubSystem::where('po_no', $request->po_no)->first();
 
-		            return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
-		        }
-		        else{
-		            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);  
+                    if(!isset($data)){
+                        // $data = Strategic::where('po_number', $request->po_no)
+                        //                     ->where('logdel', 0)
+                        //                     ->where('status', 1)
+                        //                     ->first();
+
+                        $data = DB::connection('mysql')
+                                    ->table('strategic_po')
+                                    ->join('serieses', 'strategic_po.series_name', '=', 'serieses.id')
+                                    ->select(
+                                        'strategic_po.*',
+                                        'serieses.description AS series_description',
+                                    )
+                                    ->where('strategic_po.po_number', $request->po_no)
+                                    ->first();
+
+                        return response()->json(['auth' => 1, 'data' => $data, 'result' => 2]);
+                    }else{
+                        return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
+                    }
+		        }else{
+		            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);
 		        }
 		    }
 		    else{
@@ -495,6 +570,45 @@ class SamplingController extends Controller
     		abort(403);
     	}
     }
+
+    // public function getStratPoDetails($po_no){
+    //     date_default_timezone_set('Asia/Manila');
+    //     // session_start();
+    //     return 'true';
+    //     if($request->ajax()){
+	//         if(isset($_SESSION["rapidx_user_id"])){
+	// 	        $data = [
+	// 	            'po_no' => $request->po_no,
+	// 	        ];
+
+	// 	        $rules = [
+	// 	            'po_no' => 'required',
+	// 	        ];
+
+	// 	        $validator = Validator::make($data, $rules);
+
+	// 	        if($validator->passes()){
+	// 	            $data = Strategic::where('po_number', $request->po_no)
+    //                                     ->where('logdel', 0)
+    //                                     ->where('status', 1)
+    //                                     ->get();
+
+    //                                     // return $data;
+
+	// 	            return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
+	// 	        }
+	// 	        else{
+	// 	            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);
+	// 	        }
+	// 	    }
+	// 	    else{
+	//         	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
+	// 	    }
+	// 	}
+    // 	else{
+    // 		abort(403);
+    // 	}
+    // }
 
     public function get_operator_details(Request $request){
         date_default_timezone_set('Asia/Manila');
@@ -529,7 +643,7 @@ class SamplingController extends Controller
 		            return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
 		        }
 		        else{
-		            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);  
+		            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);
 		        }
 		    }
 		    else{
@@ -540,4 +654,43 @@ class SamplingController extends Controller
     		abort(403);
     	}
     }
+
+
+    // public function getStratPoDetails(Request $request){
+    //     date_default_timezone_set('Asia/Manila');
+    //     session_start();
+    //     if($request->ajax()){
+	//         if(isset($_SESSION["rapidx_user_id"])){
+	// 	        $data = [
+	// 	            'po_no' => $request->po_no,
+	// 	        ];
+
+	// 	        $rules = [
+	// 	            'po_no' => 'required',
+	// 	        ];
+
+	// 	        $validator = Validator::make($data, $rules);
+
+	// 	        if($validator->passes()){
+	// 	            $data = Strategic::where('po_number', $request->po_no)
+    //                                     ->where('logdel', 0)
+    //                                     ->where('status', 1)
+    //                                     ->get();
+
+    //                                     // return $data;
+
+	// 	            return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
+	// 	        }
+	// 	        else{
+	// 	            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);
+	// 	        }
+	// 	    }
+	// 	    else{
+	//         	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
+	// 	    }
+	// 	}
+    // 	else{
+    // 		abort(403);
+    // 	}
+    // }
 }

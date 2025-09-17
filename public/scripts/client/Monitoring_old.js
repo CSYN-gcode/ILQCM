@@ -91,7 +91,6 @@ function GetMonitoringById(monitoringId){
             $('select[name="qc_inspector"]', frmSaveMonitoring).html('').val('').trigger("change");
             $('select[name="qc_checked_by"]', frmSaveMonitoring).html('').val('').trigger("change");
             $("input[name='work_week']", frmSaveMonitoring).prop('readonly', true);
-            // $("input[name='work_week']", frmSaveMonitoring).prop('readonly', false); //Clark Comment 01/02/2024
         },
         success(data){
             btnSaveMonitoring.prop('disabled', false);
@@ -211,180 +210,26 @@ function MonitoringAction(monitoringId, action, status){
     });
 }
 
-// function SaveDLACheckItems(monitoringId, dlaCheckItems){ //nmodify
-//     let url = globalLink.replace('link', 'save_dla_check_items');
-//     let login = globalLink.replace('link', 'login');
+function SaveDLA(monitoringId, dlaCheckItems, dlaResults){ //nmodify
+    // var data = $.param({monitoringId,dlaCheckItems,dlaResults});
+    // var data = $.param({_token}) + '&' + $.param({monitoringId}) + '&' + $.param({dlaResults});
+    // var data = $.param({_token}) + '&' + $.param({monitoringId}) + '&' + $.param({dlaCheckItems}) + '&' + $.param({dlaResults});
 
-//     $.ajax({
-//         url: url,
-//         method: 'post',
-//         data: {
-//             _token: _token,
-//             monitoring_id: monitoringId,
-//             dla_check_items: dlaCheckItems,
-//         },
-//         // data: data,
-//         dataType: 'json',
-//         beforeSend() {
-//             cnfrmLoading.open();
-//         },
-//         success(data){
-//             cnfrmLoading.close();
-
-//             if(data['auth'] == 1){
-//                 // console.log('hereeeee');
-//                 if(data['result'] == 1){
-//                     toastr.success('Record Saved!');
-//                     // LoadDLA(monitoringId);
-//                 }
-//                 else{
-//                     toastr.error('Saving Failed!');
-//                 }
-//             }
-//             else{ // if session expired
-//                 // cnfrmAutoLogin.open();
-//             }
-//         },
-//         error(xhr, data, status){
-//             cnfrmLoading.close();
-//             toastr.error('An error occured!');
-//         }
-//     });
-// }
-
-function SaveDLAUncheckedCheckItems(monitoringId, test){ //nmodify
-    let url = globalLink.replace('link', 'save_unchecked_dla_check_items');
+    // var data =  + '&' + data2;
+    let url = globalLink.replace('link', 'save_dla');
     let login = globalLink.replace('link', 'login');
+    console.log('m_id', monitoringId);
+    console.log('check_items', dlaCheckItems);
+    console.log('dla_results', dlaResults);
 
+    // var obj = { monitoringId };
     $.ajax({
         url: url,
         method: 'post',
         data: {
             _token: _token,
             monitoring_id: monitoringId,
-            unchecked_dlaCheckItems: test
-        },
-        // data: data,
-        dataType: 'json',
-        beforeSend() {
-            cnfrmLoading.open();
-        },
-        success(data){
-            cnfrmLoading.close();
-            if(data['auth'] == 1){
-                if(data['result'] == 1){
-                    // toastr.success('Record Saved!'); /cmodify --clark||sucess alert is in the dlaresults
-                    // LoadDLA(monitoringId);
-                }else{
-                    toastr.error('ERROR Saving Unchecked Items!');
-                }
-            }
-            else{ // if session expired
-                // cnfrmAutoLogin.open();
-                window.location = "../RapidX/";
-            }
-        },
-        error(xhr, data, status){
-            cnfrmLoading.close();
-            toastr.error('An error occured!');
-        }
-    });
-}
-
-function SaveDLAFirstArrCheckItems(monitoringId, firstArrdlaCheckItems){ //nmodify
-    let url = globalLink.replace('link', 'save_first_arr_dla_check_items');
-    let login = globalLink.replace('link', 'login');
-
-    $.ajax({
-        url: url,
-        method: 'post',
-        data: {
-            _token: _token,
-            monitoring_id: monitoringId,
-            first_dla_check_items: firstArrdlaCheckItems
-        },
-        // data: data,
-        dataType: 'json',
-        beforeSend() {
-            cnfrmLoading.open();
-        },
-        success(data){
-            cnfrmLoading.close();
-
-            if(data['auth'] == 1){
-                // console.log('hereeeee');
-                if(data['result'] == 1){
-                    // toastr.success('Record Saved!'); /cmodify --clark||sucess alert is in the dlaresults
-                    // LoadDLA(monitoringId);
-                }
-                else{
-                    toastr.error('Saving Failed!');
-                }
-            }
-            else{ // if session expired
-                window.location = "../RapidX/";
-                // cnfrmAutoLogin.open();
-            }
-        },
-        error(xhr, data, status){
-            cnfrmLoading.close();
-            toastr.error('An error occured!');
-        }
-    });
-}
-
-function SaveDLASecondArrCheckItems(monitoringId, secondArrdlaCheckItems){ //nmodify
-    let url = globalLink.replace('link', 'save_second_arr_dla_check_items');
-    let login = globalLink.replace('link', 'login');
-
-    $.ajax({
-        url: url,
-        method: 'post',
-        data: {
-            _token: _token,
-            monitoring_id: monitoringId,
-            second_dla_check_items: secondArrdlaCheckItems,
-        },
-        // data: data,
-        dataType: 'json',
-        beforeSend() {
-            cnfrmLoading.open();
-        },
-        success(data){
-            cnfrmLoading.close();
-
-            if(data['auth'] == 1){
-                // console.log('hereeeee');
-                if(data['result'] == 1){
-                    // toastr.success('Record Saved!'); /cmodify --clark||sucess alert is in the dlaresults
-                    // LoadDLA(monitoringId);
-                }
-                else{
-                    toastr.error('Saving Failed!');
-                }
-            }
-            else{ // if session expired
-                // cnfrmAutoLogin.open();
-                window.location = "../RapidX/";
-            }
-        },
-        error(xhr, data, status){
-            cnfrmLoading.close();
-            toastr.error('An error occured!');
-        }
-    });
-}
-
-function SaveDLAResults(monitoringId, dlaResults){ //nmodify
-    let url = globalLink.replace('link', 'save_dla_results');
-    let login = globalLink.replace('link', 'login');
-
-    $.ajax({
-        url: url,
-        method: 'post',
-        data: {
-            _token: _token,
-            monitoring_id: monitoringId,
+            // dla_check_items: dlaCheckItems,
             dla_results: dlaResults,
         },
         // data: data,
@@ -399,8 +244,7 @@ function SaveDLAResults(monitoringId, dlaResults){ //nmodify
                 // console.log('hereeeee');
                 if(data['result'] == 1){
                     toastr.success('Record Saved!');
-                    console.log('saveDLAResult');
-                    LoadDLACheckItems(monitoringId);
+                    // LoadDLA(monitoringId);
                 }
                 else{
                     toastr.error('Saving Failed!');
@@ -408,7 +252,6 @@ function SaveDLAResults(monitoringId, dlaResults){ //nmodify
             }
             else{ // if session expired
                 // cnfrmAutoLogin.open();
-                window.location = "../RapidX/";
             }
         },
         error(xhr, data, status){
@@ -418,70 +261,8 @@ function SaveDLAResults(monitoringId, dlaResults){ //nmodify
     });
 }
 
-function LoadDLACheckItems(monitoringId, PushToCheckedChckboxArr, fnChkDLA){
-    let url = globalLink.replace('link', 'get_dla_check_items_by_monitoring_id');
-    let login = globalLink.replace('link', 'login');
-
-    $.ajax({
-        url: url,
-        method: 'get',
-        data: {
-            monitoring_id: monitoringId
-        },
-        dataType: 'json',
-        beforeSend() {
-            // btnSaveMonitoring.prop('disabled', true);
-            // btnSaveMonitoring.html('Loading...');
-            cnfrmLoading.open();
-            // $("input[name='work_week']", frmSaveMonitoring).prop('readonly', true);
-        },
-        success(data){
-            // console.log('LoadDLACheckItems called');
-            // btnSaveMonitoring.prop('disabled', false);
-            // btnSaveMonitoring.html('Save');
-            cnfrmLoading.close();
-
-            // $('.selInCharge').html('').val('').trigger('change');
-
-            let test = [];
-            if(data['auth'] == 1){
-                if(data['dla_check_items'].length > 0){
-                    for(let index = 0; index < data['dla_check_items'].length; index++){
-                        $('.chkDLA[index="'+ data['dla_check_items'][index]['index'] + '"][value="' + data['dla_check_items'][index]['value'] + '"]').prop('checked', true);
-                        // checked_chckbox_arr.push([data['dla_check_items'][index]['index']]);
-                        // let test;
-                        // console.log(data['dla_check_items'][index]['index']);
-                        if(data['dla_check_items'][index]['value'] == '1'){
-                            test.push(data['dla_check_items'][index]['index']);
-                        }
-                        // if($('.chkDLA[index="'+ data['dla_check_items'][index]['index'] + '"][value="' + data['dla_check_items'][index]['value'] + '"]').attr('value') == 1){
-                        //     let yes_check = $('.chkDLA[index="'+ data['dla_check_items'][index]['index'] + '"][value="' + data['dla_check_items'][index]['value'] + '"]').attr('index');
-                        //     test.push([yes_check]);
-                        // }
-                        //
-                    }
-                    // CLARK COMMENT 10/02/2024 WORKING FOR CHECKING(CHECKED ITEMS) RETRIEVED DATA
-                    PushToCheckedChckboxArr(test, fnChkDLA);
-                }else{
-                    $('.chkDLA').prop('checked', false);
-                }
-            }
-            else{ // if session expired
-                cnfrmAutoLogin.open();
-            }
-        },
-        error(xhr, data, status){
-            cnfrmLoading.close();
-            // btnSaveMonitoring.prop('disabled', false);
-            // btnSaveMonitoring.html('Save');
-            toastr.error('An error occured!');
-        }
-    });
-}
-
-
-function LoadDLAResults(monitoringId){
-    let url = globalLink.replace('link', 'get_dla_results_by_monitoring_id');
+function LoadDLA(monitoringId){
+    let url = globalLink.replace('link', 'get_dla_by_monitoring_id');
     let login = globalLink.replace('link', 'login');
 
     $.ajax({
@@ -505,6 +286,14 @@ function LoadDLAResults(monitoringId){
             $('.selInCharge').html('').val('').trigger('change');
 
             if(data['auth'] == 1){
+                if(data['dla_check_items'].length > 0){
+                    for(let index = 0; index < data['dla_check_items'].length; index++){
+                        $('.chkDLA[index="'+ data['dla_check_items'][index]['index'] + '"][value="' + data['dla_check_items'][index]['value'] + '"]').prop('checked', true);
+                    }
+                }
+                else{
+                    $('.chkDLA').prop('checked', false);
+                }
 
                 if(data['dla_results'].length > 0){
                     for(let index = 0; index < data['dla_results'].length; index++){
@@ -514,9 +303,11 @@ function LoadDLAResults(monitoringId){
                         $('.selInCharge[index="'+ data['dla_results'][index]['index'] + '"]').html('<option value="' + data['dla_results'][index]['person_in_charge'] + '">' + data['dla_results'][index]['user_name'] + ' (' + data['dla_results'][index]['employee_id'] + ')</option>').val(data['dla_results'][index]['person_in_charge']).trigger('change');
                     }
                 }else{
+                    // alert('EZ MIL CHARGE TO ISS!');
                     $('.chkDLA').prop('checked', false);
                 }
-            }else{ // if session expired
+            }
+            else{ // if session expired
                 cnfrmAutoLogin.open();
             }
         },

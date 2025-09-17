@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout')
+@extends('layouts.pats_ppd_admin_layout')
 
 @section('title', 'Dashboard')
 
@@ -10,6 +10,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
+
           <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
         </div>
       </div>
@@ -20,22 +21,6 @@
   <section class="content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 col-6">
-            <!-- small card -->
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <!-- <h3 id="h3RegistrationsCount">0</h3> -->
-                <br><br>
-                <p>Strategic PO</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-list-ol"></i>
-              </div>
-              <a href="{{ route('strategic_po') }}" class="small-box-footer">
-                More info <i class="fas fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
         <div class="col-lg-3 col-6">
           <!-- small card -->
           <div class="small-box bg-info">

@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="{{ route('dashboard') }}" class="brand-link">
+  <a href="{{ route('pats_ppd_dashboard') }}" class="brand-link">
     <!-- <center> -->
     <!-- <img src="{{ asset('public/images/favicon.png') }}"
          alt="JCT"
@@ -18,8 +18,6 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-
-             {{-- Clark Comment 01/16/2024 --}}
         {{-- <li class="nav-item has-treeview">
           <a href="../RapidX/" class="nav-link">
             <i class="nav-icon fas fa-arrow-left"></i>
@@ -28,10 +26,9 @@
             </p>
           </a>
         </li> --}}
-                {{-- Clark Comment 01/16/2024 --}}
 
         <li class="nav-item has-treeview">
-          <a href="{{ route('dashboard') }}" class="nav-link">
+          <a href="{{ route('pats_ppd_dashboard') }}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -40,16 +37,7 @@
         </li>
 
         <li class="nav-item has-treeview">
-            <a href="{{ route('strategic_po') }}" class="nav-link">
-                <i class="nav-icon fas fa-list-ol"></i>
-                <p>
-                Strategic PO
-                </p>
-            </a>
-        </li>
-
-        <li class="nav-item has-treeview">
-          <a href="{{ route('serieses') }}" class="nav-link">
+          <a href="{{ route('pats_ppd_serieses') }}" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
               Series

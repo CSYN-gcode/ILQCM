@@ -200,7 +200,7 @@
                               </div>
                             <span><b>2. Old Operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on the defined stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
                             <span><b>3. Re-certified Operators from disqualification and transferred operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on all stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>4. Sample size:</b> 1 pc (minimum) ; 10 pcs (maximum) - less than 10 samples drawn is due to per station output or capacity</span>         
+                            <span><b>4. Sample size:</b> 1 pc (minimum) ; 10 pcs (maximum) - less than 10 samples drawn is due to per station output or capacity</span>
                           </td>
                           <td style="width: 31%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
                             <span>1. <b>Daily:</b> QC Supervisor to check the monitoring data for its completeness and correctness then indicate ""OK"" on the slot provided to signify that checking is performed, then ""lock"" the sheet. Call the attention of concerned QC once inconsistency is found.</span>
@@ -223,7 +223,7 @@
                             <span class="input-group-text w-100">Status</span>
                           </div>
                           <select class="form-control form-control-sm selFilSamplingByStat" name="status">
-                            <option value="1" selected="true">Active</option> 
+                            <option value="1" selected="true">Active</option>
                             <option value="2">Archived</option>
                           </select>
                         </div>
@@ -261,7 +261,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -318,7 +318,7 @@
                       </thead>
                     </table>
                   </div>
-                </div> <!-- .col-sm-12 -->                  
+                </div> <!-- .col-sm-12 -->
               </div> <!-- .row -->
 
               <div class="row">
@@ -395,10 +395,10 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
-                             <li>Wearing of complete uniform (blue polo, bunnysuit, gloves, facemask,           
+                            <ul>
+                             <li>Wearing of complete uniform (blue polo, bunnysuit, gloves, facemask,
                                   hairnet, skillcard and company ID)</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -419,7 +419,7 @@
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             <ul>
                              <li>No bringing of cellphones inside the Production area</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -440,7 +440,7 @@
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             <ul>
                              <li>No cosmetics (makeup, lipstick) inside Production area</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -461,7 +461,7 @@
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             <ul>
                              <li>No bringing of food or eating inside Production area</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.2.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.2.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -501,7 +501,7 @@
                           <td>
                             <ul>
                              <li>Use of PPE</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -522,7 +522,7 @@
                           <td>
                             <ul>
                              <li>No wearing of dangling items (dangling jewelries and wristwatch)?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="1.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="1.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -634,7 +634,7 @@
                           <td>
                             <ul>
                              <li>Are material properly labeled?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -655,7 +655,7 @@
                           <td>
                             <ul>
                              <li>Are material properly sealed?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -676,7 +676,7 @@
                           <td>
                             <ul>
                              <li>Does the material rack only contains materials needed for the ongoing</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -715,7 +715,7 @@
                           <td>
                             <ul>
                              <li>Are input and output station well-identified with label and being followed?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -736,7 +736,7 @@
                           <td>
                             <ul>
                              <li>Are non-conforming products properly identified?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -757,7 +757,7 @@
                           <td>
                             <ul>
                              <li>Are required trays for non-conforming products being used (red - SCRAP / yellow - for VERIFICATION)?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.2.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -796,7 +796,7 @@
                           <td>
                             <ul>
                              <li>Are the output products for completion properly labeled and with attavhed status slip?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -817,7 +817,7 @@
                           <td>
                             <ul>
                              <li>Are the products not mixed in one layer?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="2.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="2.3.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -928,9 +928,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Machine Tag</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -949,9 +949,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Buy-Off Sticker</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -970,9 +970,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Preventive Maintenance Sticker</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -991,9 +991,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Calibration Sticker</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.4.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1012,9 +1012,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Pressure Gague Indicator (Min/Max)</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.1.5.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.1.5.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1052,9 +1052,9 @@
                         </tr>
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
-                            <ul>    
+                            <ul>
                              <li>Pre-production Checksheets (with signatures)</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1075,7 +1075,7 @@
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             <ul>
                              <li>Machine Downtime Report (with signatures)</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1092,7 +1092,7 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.2.2.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
-                        
+
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             3. Are machine pre-production samples (unit) complete, available and updated?
@@ -1112,7 +1112,7 @@
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="3.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="3.3.0.7" date-index="7" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                         </tr>
-                        
+
                         <tr>
                           <td style="text-align: left; vertical-align: middle; width: 34%">
                             4. Are those loose parts (washers, screws, etc.); machine cover and knuckles?
@@ -1246,7 +1246,7 @@
                           <td>
                             <ul>
                              <li>Work Instruction / SEI tally versus Operator activity?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1267,7 +1267,7 @@
                           <td>
                             <ul>
                              <li>Point Panel / inspection guide tally versus Operator activity?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.2.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1322,7 +1322,7 @@
                           <td>
                             <ul>
                              <li>Defect escalation slip with sign of Prodn/Engg/QC?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.4.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.4.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1360,7 +1360,7 @@
                           <td>
                             <ul>
                              <li>Lot number of required parts updated & readable?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1381,7 +1381,7 @@
                           <td>
                             <ul>
                              <li>Operator name, IN & OUT preperly filled-up and readable?</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="4.5.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1495,7 +1495,7 @@
                           <td>
                             <ul>
                              <li>Line Identification Tag</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.1.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1516,7 +1516,7 @@
                           <td>
                             <ul>
                              <li>Line Information Board</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.2.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1537,7 +1537,7 @@
                           <td>
                             <ul>
                              <li>Output Monitoring Board</li>
-                            </ul>  
+                            </ul>
                           </td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="/"><input value="1" index="5.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
                           <td style="text-align: center; vertical-align: middle; width: 4%;" val="X"><input value="0" index="5.1.3.1" date-index="1" class="chkDLA" monitoring-id="{{$monitoring_info['m_id']}}" type="checkbox" name="" class=""></td>
@@ -1789,7 +1789,7 @@
                 <div class="input-group">
                   <input type="text" class="form-control" name="po_no" readonly="" placeholder="(Click the button to fill-in)">
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-primary btnSearchPoNo" title="Click to type P.O. No."><i class="fa fa-search"></i></button>
+                    {{-- <button type="button" class="btn btn-primary btnSearchPoNo" title="Click to type P.O. No."><i class="fa fa-search"></i></button> --}}
                   </div>
                 </div>
 
@@ -1906,7 +1906,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -1942,7 +1942,7 @@
             param.monitoring_id = $('.txtHeaderMonitoringId').val();
         }
       },
-      
+
       "columns":[
         { "data" : "created_at", visible: false, orderable: false },
         { "data" : "raw_date", orderable: false },
@@ -1961,7 +1961,7 @@
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
           "data": null,
@@ -1971,10 +1971,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -2084,10 +2084,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Sampling';        
+          title = 'Archive Sampling';
         }
         else if(status == 1){
-          title = 'Restore Sampling';        
+          title = 'Restore Sampling';
         }
       }
       // else if(action == 2){
@@ -2110,7 +2110,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -2284,7 +2284,8 @@
           });
       }
 
-      SaveDLA($(".txtHeaderMonitoringId").val(), dlaCheckItems, dlaResults);
+    //   console.log('clark')
+      SaveDLA($(".txtHeaderMonitoringId").val(), dlaCheckItems, dlaResults); //nmodify
 
     });
 
@@ -2309,7 +2310,7 @@
       var accept = parseFloat($(this).val()) - parseFloat($('input[name="reject"]', frmSaveSampling).val());
       if(!isNaN(accept)){
         $('input[name="accept"]', frmSaveSampling).val(accept);
-        
+
         var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
         if(!isNaN(dppm) && isFinite(dppm)){
           $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));
@@ -2366,7 +2367,7 @@
         $('.chkDLA[index="' + index + '"][value="0"]').prop('checked', false);
       }
       else{
-        $('.chkDLA[index="' + index + '"][value="1"]').prop('checked', false); 
+        $('.chkDLA[index="' + index + '"][value="1"]').prop('checked', false);
       }
 
       console.log(value);

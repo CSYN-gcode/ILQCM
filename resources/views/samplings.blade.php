@@ -83,7 +83,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -153,7 +153,6 @@
                     <button type="button" class="btn btn-primary btnSearchPoNo" title="Click to type P.O. No."><i class="fa fa-search"></i></button>
                   </div>
                 </div>
-
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -265,7 +264,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -300,7 +299,7 @@
             param.status = $(".selFilByStat").val();
         }
       },
-      
+
       "columns":[
         { "data" : "created_at", visible: false, orderable: false },
         { "data" : "raw_date", orderable: false },
@@ -319,7 +318,7 @@
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2],
           "data": null,
@@ -329,10 +328,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -392,10 +391,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Sampling';        
+          title = 'Archive Sampling';
         }
         else if(status == 1){
-          title = 'Restore Sampling';        
+          title = 'Restore Sampling';
         }
       }
       // else if(action == 2){
@@ -418,7 +417,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -435,51 +434,68 @@
     });
 
     $(".btnSearchPoNo").click(function(){
-      $.confirm({
-          title: 'Search P.O. No.',
-          content: '' +
-          '<form action="" class="formSearchPoNo">' +
-          '<div class="form-group">' +
-          '<label>Enter P.O. No.</label>' +
-          '<input type="text" placeholder="P.O. No." class="po_no form-control" required />' +
-          '</div>' +
-          '</form>',
-          buttons: {
-              formSubmit: {
-                  text: 'Search',
-                  btnClass: 'btn-blue',
-                  action: function () {
-                      var po_no = this.$content.find('.po_no').val();
-                      if(!po_no){
-                          toastr.warning('Invalid P.O. No.');
-                          return false;
-                      }
-                      GetPODetails(po_no);
-                  }
-              },
-              cancel: function () {
-                  //close
-              },
-          },
-          onContentReady: function () {
-            // bind to events
-            var jc = this;
-            this.$content.find('form').on('submit', function (e) {
-                // if the user submits the form by pressing enter in the field.
-                e.preventDefault();
-                jc.$$formSubmit.trigger('click'); // reference the button and click it
-            });
-        }
-      });
+        // console.log('test click, add PO');
+        $.confirm({
+            title: 'Search P.O. No.',
+            content: '' +
+            '<form class="formSearchPoNo">' +
+                '<div class="form-group">' +
+                    '<label>Enter P.O. No.</label>' +
+                    '<input type="text" placeholder="P.O. No." class="po_no form-control" onclick="this.focus()" required>' +
+                '</div>' +
+            '</form>',
+            buttons: {
+                formSubmit: {
+                    text: 'Search',
+                    btnClass: 'btn-blue',
+                    action: function () {
+                        var po_no = this.content.find('.po_no').val();
+                        if(!po_no){
+                            toastr.warning('Invalid P.O. No.');
+                            return false;
+                        }
+                        GetPODetails(po_no);
+                    }
+                },
+                cancel: function () {
+                    //close
+                },
+            },
+            onContentReady: function () {
+                // bind to events
+                var jc = this;
+                this.content.find('form').on('submit', function (e) {
+                    // if the user submits the form by pressing enter in the field.
+                    e.preventDefault();
+                    jc.formSubmit.trigger('click'); // reference the button and click it
+                });
+            }
+
+            // $('.po_no').focus();
+        });
+
+        // window.onload = function() {
+        //     document.getElementById('.po_no').focus();
+        // }
+        // setInterval(() => {
+        //     document.querySelector('.po_no').focus();
+        //     $(document).('.po_no').focus();
+        //     console.log('test click end');
+        // }, 1000);
     });
+
+    // $('.po_no').click(function (e){
+    //     // e.preventDefault();
+    //     $('.po_no').focus();
+    // });
 
     var cnfrmScanOperator = $.confirm({
         lazyOpen: true,
         title: '',
         content: '' +
-        '<form action="" class="formScanOperator">' +
+        '<form class="formScanOperator">' +
         '<center><h4>Scan Employee ID</h4>' +
-        '<input type="text" placeholder="Employee ID" class="scanned_employee_id form-control" required / style="opacity: 0;">' +
+        '<input type="text" placeholder="Employee ID" class="scanned_employee_id form-control" required style="opacity: 0;">' +
         '<i style="font-size: 150px;" class="fa fa-qrcode"></i></center>' +
         '<div class="form-group">' +
         '</div>' +
@@ -540,7 +556,7 @@
       var accept = parseFloat($(this).val()) - parseFloat($('input[name="reject"]', frmSaveSampling).val());
       if(!isNaN(accept)){
         $('input[name="accept"]', frmSaveSampling).val(accept);
-        
+
         var dppm = (parseFloat($('input[name="reject"]', frmSaveSampling).val()) / parseFloat($('input[name="accept"]', frmSaveSampling).val())) * 1000000;
         if(!isNaN(dppm) && isFinite(dppm)){
           $('input[name="dppm"]', frmSaveSampling).val(dppm.toFixed(2));

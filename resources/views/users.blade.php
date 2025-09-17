@@ -37,21 +37,37 @@
                   @php
                     $display = 'block';
                   @endphp
-                  <div class="float-sm-left" style="min-width: 200px; display: {{ $display }}">
-                    <div class="form-group row">
-                      <div class="col">
-                        <div class="input-group input-group-sm mb-3">
-                          <div class="input-group-prepend w-20">
-                            <span class="input-group-text w-100">Status</span>
-                          </div>
-                          <select class="form-control form-control-sm selFilByStat" name="status">
-                            <option value="1" selected="true">Active</option>
-                            <option value="2">Archived</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> <!-- .form-group row -->
-                  </div> <!-- .float-sm-left -->
+                    <div class="float-sm-left" style="min-width: 500px; display: {{ $display }}">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend w-20">
+                                        <span class="input-group-text w-100">Status</span>
+                                    </div>
+                                    <select class="form-control form-control-sm selFilByStat" name="status">
+                                        <option value="1" selected="true">Active</option>
+                                        <option value="2">Archived</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="input-group input-group-sm input-group mb-3">
+                                    <div class="input-group-prepend w-20">
+                                        <span class="input-group-text w-100">Position</span>
+                                    </div>
+                                    <select class="form-control selFilByPosition" name="position" placeholder="Position">
+                                        <option value="" selected="true" >All</option>
+                                        <option value="1">QC</option>
+                                        <option value="2">QC Supervisor</option>
+                                        <option value="3">Operator</option>
+                                        <option value="4">PPC</option>
+                                        <option value="5">ADMIN</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> <!-- .form-group row -->
+                    </div> <!-- .float-sm-left -->
 
                   <div class="float-sm-right">
                     <button class="btn btn-primary btn-sm btnAddUser"><i class="fa fa-plus"></i> Add New</button>
@@ -62,18 +78,18 @@
                     <table class="table table-sm table-bordered table-hover" id="tblUsers" style="width: 100%;">
                       <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Employee ID</th>
-                          <th>Position</th>
-                          <th>Station(s)</th>
-                          <th>Series(es)</th>
-                          <th>Status</th>
-                          <th>Action</th>
+                          <th style="width: 15%;">Name</th>
+                          <th style="width: 10%;">Email</th>
+                          <th style="width: 10%;">Employee ID</th>
+                          <th style="width: 5%;">Position</th>
+                          <th style="width: 30%;">Station(s)</th>
+                          <th style="width: 15%;">Series(es)</th>
+                          <th style="width: 5%;">Status</th>
+                          <th style="width: 10%;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -136,9 +152,12 @@
               <label class="col-sm-2 col-form-label">Position</label>
               <div class="col-sm-10">
                 <select class="form-control" name="position" placeholder="Position">
-                  <option value="1" selected="true">QC</option>
-                  <option value="2">QC Supervisor</option>
-                  <option value="3">Operator</option>
+                    <option value="" selected="true" disabled>Please Select Position</option>
+                    <option value="1">QC</option>
+                    <option value="2">QC Supervisor</option>
+                    <option value="3">Operator</option>
+                    <option value="4">PPC</option>
+                    <option value="5">ADMIN</option>
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
@@ -161,6 +180,16 @@
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
+
+            <!-- CLARK Modify -->
+            {{-- <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Trainings</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="trainings_ids" placeholder="Training(s)">
+                    <span class="text-danger float-sm-right input-error"></span>
+                </div>
+            </div> --}}
+            <!-- CLARK Modify -->
 
           </div>
         </div>
@@ -190,6 +219,46 @@
 <!-- JS Codes -->
 <script type="text/javascript">
   $(document).ready(function () {
+
+    // CLARK CHANGES
+    // $("select[name='position']").change(function(e){
+    //     console.log($(this).val());
+    //     if($(this).val() > 3){
+    //         // $('select[name="station_ids[]"]').prop('required', false);
+    //         // $('select[name="series_ids[]"]').prop('required', false);
+
+    //         $('select[name="station_ids[]"]').val("0");
+    //         $('select[name="series_ids[]"]').val("0");
+    //     }else{
+    //         $('select[name="station_ids[]"]').val("");
+    //         $('select[name="series_ids[]"]').val("");
+    //     }
+    // //   dtUsers.draw();
+    // });
+    // CLARK CHANGES
+
+    $("#tblUsers").on('click', '.btnGotoEtr', function(e){
+        console.log('pindot');
+        let emp_id = $(this).attr('user-id');
+        $.ajax({
+            type: "get",
+            url: "get_system_one_emp_info",
+            data: {
+                emp_id: emp_id
+            },
+            dataType: "json",
+            success: function (response) {
+                let pkid = response['result'].pkid;
+                // console.log('id', pkid);
+                if(response['emp_cat'] == 'pmi'){
+                    window.open("http://systemone/etr/emp_record_viewer.php?empID="+pkid)
+                }else if(response['emp_cat'] == 'subcon'){
+                    window.open("http://systemone/etr/subcon_employee_records_viewer.php?empID="+pkid)
+                }
+            }
+        });
+    });
+
     frmSaveUser = $("#frmSaveUser");
     btnSaveUser = $('.btnSaveUser');
 
@@ -201,7 +270,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -234,75 +303,20 @@
         url: "{{ route('view_users') }}",
         data: function (param){
             param.status = $(".selFilByStat").val();
+            param.position = $(".selFilByPosition").val();
         }
       },
-      
       "columns":[
         { "data" : "name" },
         { "data" : "email" },
         { "data" : "employee_id" },
         { "data" : "raw_position" },
-        {
-            name: 'user_station_details',
-            data: 'user_station_details',
-            sortable: false,
-            searchable: false,
-            render: function (data) {
-                var result = '';
-                var arrStationDesc = [];
-                if(data.length > 0){
-                  for(let index = 0; index < data.length; index++){
-                    if(data[index]['station_info'] != null && data[index]['station_info']['status'] == 1){
-                      arrStationDesc.push(data[index]['station_info']['description']);
-                    }
-                  }
-
-                  if(arrStationDesc.length > 0){
-                    result = arrStationDesc.join(", ");
-                  }
-                  else{
-                    result = null;
-                  }
-                }
-                else{
-                  result = null;
-                }
-                return result;
-            }
-        },
-        {
-            name: 'user_series_details',
-            data: 'user_series_details',
-            sortable: false,
-            searchable: false,
-            render: function (data) {
-                var result = '';
-                var arrSeriesDesc = [];
-                if(data.length > 0){
-                  for(let index = 0; index < data.length; index++){
-                    if(data[index]['series_info'] != null && data[index]['series_info']['status'] == 1){
-                      arrSeriesDesc.push(data[index]['series_info']['description']);
-                    }
-                  }
-
-                  if(arrSeriesDesc.length > 0){
-                    result = arrSeriesDesc.join(", ");
-                  }
-                  else{
-                    result = null;
-                  }
-                }
-                else{
-                  result = null;
-                }
-                return result;
-            }
-        },
+        { "data" : "stations" },
+        { "data" : "serieses" },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
-
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2, 3, 4, 5],
           "data": null,
@@ -312,10 +326,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -327,6 +341,10 @@
     });
 
     $(".selFilByStat").change(function(e){
+      dtUsers.draw();
+    });
+
+    $(".selFilByPosition").change(function(e){
       dtUsers.draw();
     });
 
@@ -353,10 +371,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive User';        
+          title = 'Archive User';
         }
         else if(status == 1){
-          title = 'Restore User';        
+          title = 'Restore User';
         }
       }
       // else if(action == 2){
@@ -379,7 +397,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });

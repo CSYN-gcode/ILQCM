@@ -24,8 +24,6 @@ class MonitoringController extends Controller
 {
     //View Monitorings
     public function view_monitorings(Request $request){
-        // date_default_timezone_set('Asia/Manila');
-        // $FiscalYearNow = Carbon::now()->format('m');
         if($request->ajax()){
 	        $data = Monitoring::select('monitorings.id as m_id', 'monitorings.product_line_id as m_product_line_id', 'monitorings.date_from as m_date_from', 'monitorings.date_to as m_date_to', 'line_id', 'work_week', 'shift', 'machine_id', 'qc_inspector', 'qc_checked_by', 'monitorings.status as m_status', 'lines.description as l_description', 'machines.description as m_description', 'uqi.name as uqi_name', 'qcb.name as qcb_name')
 	        ->leftJoin('lines', 'monitorings.line_id', '=', 'lines.id')
@@ -35,62 +33,11 @@ class MonitoringController extends Controller
 			->where('monitorings.logdel', 0)
 			->where('monitorings.product_line_id', $request->product_line_id)
 			->where('monitorings.status', $request->status)
-			->where('monitorings.shift', $request->shift)
-            ->when($request->work_week, function ($query) use ($request) {
-                return $query ->where('monitorings.work_week', $request->work_week);
-            })
-            ->when($request->year, function ($query) use ($request) {
-                // return $query ->where('date_from', 'like', '%'.$request->year.'-%')->where('date_to', 'like', '%'.$request->year.'-%');
-                $fiscalStart = $request->year . '-04-01';
-                $fiscalEnd = ($request->year + 1) . '-03-31';
+			->where('monitorings.shift', $request->shift);
 
-                $query->where(function ($q) use ($fiscalStart, $fiscalEnd, $request) {
-                    $q->whereBetween('date_from', [$fiscalStart, $fiscalEnd])
-                      ->orWhereBetween('date_to', [$fiscalStart, $fiscalEnd])
-                      ->orWhere(function ($q) use ($fiscalStart, $fiscalEnd) {
-                          $q->where('date_from', '<', $fiscalStart)
-                            ->where('date_to', '>', $fiscalEnd);
-                      });
-
-                    // If searching for a previous fiscal year, include Jan–March of next year
-                    if ($request->year < date('Y')) {
-                        $q->orWhere(function ($q) use ($request) {
-                            $q->whereYear('date_from', $request->year + 1)
-                              ->whereMonth('date_from', '<=', 3);
-                        });
-                    }
-                });
-
-                // If searching for 2026, exclude Jan–March 2026
-                // if ($request->year == date('Y') + 1) {
-                //     $query->where(function ($q) {
-                //         $q->whereYear('date_from', '>', date('Y') + 1); // Exclude any data from January-March 2026
-                //     });
-                // }
-                // $query->where(function ($q) use ($fiscalStart, $fiscalEnd, $request) {
-                //     $q->whereBetween('date_from', [$fiscalStart, $fiscalEnd])
-                //     ->orWhereBetween('date_to', [$fiscalStart, $fiscalEnd])
-                //     ->orWhere(function ($q) use ($fiscalStart, $fiscalEnd) {
-                //         $q->where('date_from', '<', $fiscalStart)
-                //             ->where('date_to', '>', $fiscalEnd);
-                //     });
-                // });
-
-                // // Include records in Jan–March of next year that belong to the fiscal year
-                // if ($request->year < date('Y')) {
-                //     $query->orWhere(function ($q) use ($request) {
-                //         $q->whereYear('date_from', $request->year + 1)
-                //             ->whereMonth('date_from', '<=', 3);
-                //     });
-                // }
-
-                // return $query;
-                // return $query ->whereBetween('date_from', [$request->year.'-03-30' , ($request->year + 1).'-03-31'])->whereBetween('date_to', [$request->year.'-03-30' , ($request->year + 1).'-03-31']);
-            });
-
-			// if(isset($request->work_week)){
-			// 	$data->where('monitorings.work_week', $request->work_week);
-			// }
+			if(isset($request->work_week)){
+				$data->where('monitorings.work_week', $request->work_week);
+			}
 
 			$data->get();
 
@@ -211,14 +158,12 @@ class MonitoringController extends Controller
 
 		            try {
 		                if($validator->passes()){
+		                	$monitoring_info = Monitoring::where('id', '!=', $request->monitoring_id)
+								->where('line_id', $request->line_id)
+								->where('work_week', $request->work_week)
+								->where('shift', $request->shift)
+			                	->first();
 
-/* nmodify MIGZ 10232023 NOTE: error found, This is edit details there is not need to validation if the data is exist
-
-		                	 $monitoring_info = Monitoring::where('id', '!=', $request->monitoring_id)
-							 	->where('line_id', $request->line_id)
-							 	->where('work_week', $request->work_week)
-							 	->where('shift', $request->shift)
-			                 	->first();
 							if($monitoring_info == null){
 								Monitoring::where('id', $request->monitoring_id)
 			                    	->where('logdel', 0)
@@ -238,27 +183,6 @@ class MonitoringController extends Controller
 			                else{
 			                	return response()->json(['auth' => 1, 'result' => 2, 'error' => null]);
 			                }
-*/
-                            Monitoring::where('id', $request->monitoring_id)
-			                    	->where('logdel', 0)
-			                    	->where('status', 1)
-			                        ->update([
-			                            'line_id' => $request->line_id,
-				                        'shift' => $request->shift,
-
-                                        //clark 01/02/2024 comment: to be implemented to enable edit of work week
-				                        // 'work_week' => $request->work_week,
-                                        // 'date_from' => $request->date_from,
-                                        // 'date_to' => $request->date_to,
-                                        //clark 01/02/2024 comment: to be implemented to enable edit of work week
-
-				                        'machine_id' => $request->machine_id,
-				                        'qc_inspector' => $request->qc_inspector,
-				                        'qc_checked_by' => $request->qc_checked_by,
-			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
-			                            'updated_at' => date('Y-m-d H:i:s'),
-			                        ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
@@ -418,166 +342,23 @@ class MonitoringController extends Controller
     	}
     }
 
-    public function save_unchecked_dla_check_items(Request $request){ //nmodify
+    public function save_dla(Request $request){ //nmodify
         date_default_timezone_set('Asia/Manila');
         session_start();
 
-        if(isset($request->unchecked_dlaCheckItems)){
-            if(isset($_SESSION["rapidx_user_id"])){
-                $data = [
-	                'monitoring_id' => $request->monitoring_id,
-	                // 'unchecked_dla_check_items' => $request->unchecked_dla_check_items,
-	            ];
-
-	            $rules = [
-	                'monitoring_id' => 'required',
-	                // 'unchecked_dla_check_items' => 'required',
-                    // 'person_in_charge' => 'required',
-	            ];
-
-                $validator = Validator::make($data, $rules);
-	            if($validator->passes()){
-	            	DB::beginTransaction();
-	                try{
-	                	foreach ($request->unchecked_dlaCheckItems as $unchecked_dlaCheckItem) {
-                            DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                                    ->where('index', $unchecked_dlaCheckItem['index'])
-                                    ->update([
-                                        'status' => 0, //UNSET the checkboxes
-                                        'last_updated_by' => $_SESSION["rapidx_user_id"],
-                                        'updated_at' => date('Y-m-d H:i:s'),
-                                    ]);
-                        }
-                        DB::commit();
-	                    return response()->json(['auth' => 1, 'result' => 1, 'success']);
-                    }catch (\Exception $err) {
-	                	DB::rollback();
-						return response()->json(['auth' => 1, 'error_msg' => $err->getMessage()]);
-					}
-                }else{
-	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
-	            }
-            }
-            else{
-                return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-            }
-        }else{
-    		return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
-    	}
-    }
-
-    public function save_first_arr_dla_check_items(Request $request){ //nmodify
-        date_default_timezone_set('Asia/Manila');
-        session_start();
-
-        // return $request->all();
+        return $request->all();
 
         if($request->ajax()){
 	        // Change Monitoring Status
 	        if(isset($_SESSION["rapidx_user_id"])){
 	            $data = [
 	                'monitoring_id' => $request->monitoring_id,
-	                'first_dla_check_items' => $request->first_dla_check_items,
+	                'dla_check_items' => $request->dla_check_items,
 	            ];
 
 	            $rules = [
 	                'monitoring_id' => 'required',
-	                // 'first_dla_check_items' => 'required',
-                    // 'person_in_charge' => 'required',
-	            ];
-
-	            $validator = Validator::make($data, $rules);
-
-	            if($validator->passes()){
-	            	DB::beginTransaction();
-	                try {
-                        // commented by clark
-	                	// DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                        //     ->where('index', $request->$unchecked_dlaCheckItems['index'])
-	                    //     ->update([
-		                //         'status' => 0,
-	                    //         'last_updated_by' => $_SESSION["rapidx_user_id"],
-	                    //         'updated_at' => date('Y-m-d H:i:s'),
-	                    //     ]);
-                        if($request->first_dla_check_items == null){
-                            return response()->json(['auth' => 1, 'result' => 1, 'first_dla_check_items' => null]);
-                            // return "test";
-                        }else if($request->first_dla_check_items != null){
-	                	    foreach ($request->first_dla_check_items as $first_dla_check_items) {
-
-                                $dla_check_item_info = DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                                    ->where('index', $first_dla_check_items['index'])
-                                    ->first();
-
-                                    // var_dump($dla_check_item);
-
-                                if($dla_check_item_info == null){
-                                    DLACheckItem::insert([
-                                        'monitoring_id' => $request->monitoring_id,
-                                        'value' => $first_dla_check_items['value'],
-                                        'index' => $first_dla_check_items['index'],
-                                        'date_index' => $first_dla_check_items['date_index'],
-                                        'date' => $first_dla_check_items['date'],
-                                        'status' => 1,
-                                        'created_by' => $_SESSION["rapidx_user_id"],
-                                        'last_updated_by' => $_SESSION["rapidx_user_id"],
-                                        'created_at' => date('Y-m-d H:i:s'),
-                                        'updated_at' => date('Y-m-d H:i:s'),
-                                    ]);
-                                }
-                                else{
-                                    // var_dump($dla_check_item['index']);
-                                    DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                                        ->where('index', $first_dla_check_items['index'])
-                                        ->update([
-                                            'value' => $first_dla_check_items['value'],
-                                            'status' => 1,
-                                            'last_updated_by' => $_SESSION["rapidx_user_id"],
-                                            'updated_at' => date('Y-m-d H:i:s'),
-                                        ]);
-                                }
-                            }
-                        }
-
-	                	DB::commit();
-	                    return response()->json(['auth' => 1, 'result' => 1, 'success']);
-	                }
-	                catch (\Exception $err) {
-	                	DB::rollback();
-						return response()->json(['auth' => 1, 'error_msg' => $err->getMessage()]);
-					}
-	            }
-	            else{
-	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
-	            }
-	        } // Session Expired
-		    else{
-	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }
-		}
-    	else{
-    		// abort(403);
-			return 'logout';
-    	}
-    }
-
-    public function save_second_arr_dla_check_items(Request $request){ //nmodify
-        date_default_timezone_set('Asia/Manila');
-        session_start();
-
-        // return $request->all();
-
-        if($request->ajax()){
-	        // Change Monitoring Status
-	        if(isset($_SESSION["rapidx_user_id"])){
-	            $data = [
-	                'monitoring_id' => $request->monitoring_id,
-	                'second_dla_check_items' => $request->second_dla_check_items,
-	            ];
-
-	            $rules = [
-	                'monitoring_id' => 'required',
-	                // 'second_dla_check_items' => 'required',
+	                'dla_check_items' => 'required',
                     // 'person_in_charge' => 'required',
 	            ];
 
@@ -594,93 +375,51 @@ class MonitoringController extends Controller
 	                    //         'updated_at' => date('Y-m-d H:i:s'),
 	                    //     ]);
 
-                        if($request->second_dla_check_items == null){
-                            return response()->json(['auth' => 1, 'result' => 1, 'second_dla_check_items' => null]);
-                            // return "test";
-                        }else if($request->second_dla_check_items != null){
-                            foreach ($request->second_dla_check_items as $second_dla_check_items) {
 
-                                $dla_check_item_info = DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                                                    ->where('index', $second_dla_check_items['index'])
-                                                    ->first();
+                        // return $request->dla_check_items[0]['monitoring_id'];
 
-                                    // var_dump($dla_check_item);
+                        // return $request->dla_check_items;
 
-                                if($dla_check_item_info == null){
-                                    DLACheckItem::insert([
-                                        'monitoring_id' => $request->monitoring_id,
-                                        'value' => $second_dla_check_items['value'],
-                                        'index' => $second_dla_check_items['index'],
-                                        'date_index' => $second_dla_check_items['date_index'],
-                                        'date' => $second_dla_check_items['date'],
-                                        'status' => 1,
-                                        'created_by' => $_SESSION["rapidx_user_id"],
-                                        'last_updated_by' => $_SESSION["rapidx_user_id"],
-                                        'created_at' => date('Y-m-d H:i:s'),
-                                        'updated_at' => date('Y-m-d H:i:s'),
-                                    ]);
-                                }
-                                else{
-                                    // var_dump($dla_check_item['index']);
-                                    DLACheckItem::where('monitoring_id', $request->monitoring_id)
-                                        ->where('index', $second_dla_check_items['index'])
-                                        ->update([
-                                            'value' => $second_dla_check_items['value'],
-                                            'status' => 1,
-                                            'last_updated_by' => $_SESSION["rapidx_user_id"],
-                                            'updated_at' => date('Y-m-d H:i:s'),
-                                        ]);
-                                }
-                            }
+	                	foreach ($request->dla_check_items as $dla_check_item) {
 
-                            DB::commit();
-                            return response()->json(['auth' => 1, 'result' => 1, 'success']);
-                        }
-                    }
-	                catch (\Exception $err) {
-	                	DB::rollback();
-						return response()->json(['auth' => 1, 'error_msg' => $err->getMessage()]);
-					}
-	            }
-	            else{
-	                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
-	            }
-	        } // Session Expired
-		    else{
-	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }
-		}
-    	else{
-    		// abort(403);
-			return 'logout';
-    	}
-    }
+	                		$dla_check_item_info = DLACheckItem::where('monitoring_id', $request->monitoring_id)
+	                			->where('index', $dla_check_item['index'])
+	                			->first();
 
-    public function save_dla_results(Request $request){ //nmodify
-        date_default_timezone_set('Asia/Manila');
-        session_start();
+                                // var_dump($dla_check_item);
 
-        // return $request->all();
-
-        if($request->ajax()){
-	        // Change Monitoring Status
-	        if(isset($_SESSION["rapidx_user_id"])){
-	            $data = [
-	                'monitoring_id' => $request->monitoring_id,
-	                // 'dla_check_items' => $request->dla_check_items,
-	            ];
-
-	            $rules = [
-	                'monitoring_id' => 'required',
-	                // 'dla_check_items' => 'required',
-                    // 'person_in_charge' => 'required',
-	            ];
-
-	            $validator = Validator::make($data, $rules);
-
-	            if($validator->passes()){
-	            	DB::beginTransaction();
-	                try {
+	                		if($dla_check_item_info == null){
+		                    	DLACheckItem::insert([
+			                        'monitoring_id' => $request->monitoring_id,
+									'value' => $dla_check_item['value'],
+									'index' => $dla_check_item['index'],
+									'date_index' => $dla_check_item['date_index'],
+									'date' => $dla_check_item['date'],
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+	                		}
+	                		else{
+                                // var_dump($dla_check_item['index']);
+	                			DLACheckItem::where('monitoring_id', $request->monitoring_id)
+			                    	->where('index', $dla_check_item['index'])
+			                        ->update([
+			                            'value' => $dla_check_item['value'],
+				                        'status' => 1,
+			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                            'updated_at' => date('Y-m-d H:i:s'),
+			                        ]);
+	                		}
+	                	}
+	                	// DLAResult::where('monitoring_id', $request->monitoring_id)
+	                    //     ->update([
+		                //         'status' => 0,
+	                    //         'last_updated_by' => $_SESSION["rapidx_user_id"],
+	                    //         'updated_at' => date('Y-m-d H:i:s'),
+	                    //     ]);
 
 						$ctr = 0;
 	                    if(isset($request->dla_results)){
@@ -702,7 +441,7 @@ class MonitoringController extends Controller
                                         $index_results = null;
                                     }
 
-                                    // var_dump($dla_result['index']);
+                                    var_dump($dla_result['index']);
 
                                     /*MODIFY BY MIGZ 2023  - The developer did not required the INDEX, DATE, DATE INDEX
                                         Solution: If the user wants to required the ff. add those fields to the rules.
@@ -803,6 +542,7 @@ class MonitoringController extends Controller
 			return 'logout';
     	}
     }
+
 
     // public function save_dla(Request $request){ //nmodify
     //     date_default_timezone_set('Asia/Manila');
@@ -979,7 +719,7 @@ class MonitoringController extends Controller
     // 	}
     // }
 
-    public function get_dla_check_items_by_monitoring_id(Request $request){
+    public function get_dla_by_monitoring_id(Request $request){
         date_default_timezone_set('Asia/Manila');
         session_start();
         if($request->ajax()){
@@ -1000,38 +740,6 @@ class MonitoringController extends Controller
 		            	->where('logdel', 0)
 		            	->get();
 
-		            return response()->json(['auth' => 1, 'dla_check_items' => $dla_check_items, 'result' => 1]);
-		        }
-		        else{
-		            return response()->json(['auth' => 1, 'dla_check_items' => null, 'result' => 0]);
-		        }
-		    }
-		    else{
-	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }
-		}
-    	else{
-    		abort(403);
-    	}
-    }
-
-    public function get_dla_results_by_monitoring_id(Request $request){
-        date_default_timezone_set('Asia/Manila');
-        session_start();
-        if($request->ajax()){
-	        if(isset($_SESSION["rapidx_user_id"])){
-		        $data = [
-		            'monitoring_id' => $request->monitoring_id,
-		        ];
-
-		        $rules = [
-		            'monitoring_id' => 'required',
-		        ];
-
-		        $validator = Validator::make($data, $rules);
-
-		        if($validator->passes()){
-
 		            $dla_results = DLAResult::select('dla_results.*', 'users.name as user_name', 'users.employee_id')
 		            	->leftJoin('users', 'users.id', '=', 'dla_results.person_in_charge')
 		            	->where('dla_results.monitoring_id', $request->monitoring_id)
@@ -1040,7 +748,7 @@ class MonitoringController extends Controller
 		            	->where('dla_results.logdel', 0)
 		            	->get();
 
-		            return response()->json(['auth' => 1, 'dla_results' => $dla_results, 'result' => 1]);
+		            return response()->json(['auth' => 1, 'dla_check_items' => $dla_check_items, 'dla_results' => $dla_results, 'result' => 1]);
 		        }
 		        else{
 		            return response()->json(['auth' => 1, 'dla_check_items' => null, 'result' => 0]);

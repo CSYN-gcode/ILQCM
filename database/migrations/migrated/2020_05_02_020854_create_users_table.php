@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->nullable();
             $table->string('employee_id')->unique();
             $table->integer('position')->comment = '1=QC; 2=QC Supervisor';
+            $table->string('trainings')->nullable();
             $table->integer('status')->comment = '1=Active; 2=Archived';
             $table->bigInteger('created_by');
             $table->bigInteger('last_updated_by');

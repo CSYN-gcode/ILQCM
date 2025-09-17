@@ -17,6 +17,16 @@ class RouteController extends Controller
     	}
     }
 
+    public function pats_ppd_dashboard(){
+    	session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+			return view('pats_ppd_dashboard');
+    	}
+    	else{
+    		return redirect()->route('session_expired');
+    	}
+    }
+
     public function users(){
     	session_start();
         if(isset($_SESSION["rapidx_user_id"])){
@@ -77,6 +87,26 @@ class RouteController extends Controller
         }
     }
 
+    // public function monitoring_clark(){
+    //     session_start();
+    //     if(isset($_SESSION["rapidx_user_id"])){
+    //         return view('monitoring_clark');
+    //     }
+    //     else{
+    //         return redirect()->route('session_expired');
+    //     }
+    // }
+
+    public function monitoring_clark(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('view_monitoring_clark');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
     public function monitoring_v2(){
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
@@ -126,4 +156,26 @@ class RouteController extends Controller
             return redirect()->route('session_expired');
         }
     }
+
+    public function strategic_po(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('strategic_po');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    // PATS PPD ROUTES
+    // public function pats_ppd_serieses(){
+    //     session_start();
+    //     if(isset($_SESSION["rapidx_user_id"])){
+    //         return view('pats_ppd/serieses');
+    //     }
+    //     else{
+    //         return redirect()->route('session_expired');
+    //     }
+    // }
+
 }

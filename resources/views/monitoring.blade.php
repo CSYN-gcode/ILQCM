@@ -49,94 +49,104 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Status</span>
-                              </div>
-                              <select class="form-control form-control selFilByStat" name="status">
-                                <option value="1" selected="true">Active</option>
-                                <option value="2">Archived</option>
-                              </select>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Status</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByStat" name="status">
+                                            <option value="1" selected="true">Active</option>
+                                            <option value="2">Archived</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div> <!-- .float-sm-left -->
-                        </div>
 
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Family</span>
-                              </div>
-                              <select class="form-control form-control selFilByFamily" name="family">
-                                <option value="1" selected="true">BGA/LGA</option>
-                                <option value="2">BGA-FP</option>
-                                <option value="3">Probe Pin</option>
-                                <option value="4">QF/TSOP/SMPO</option>
-                              </select>
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Fiscal Year</span>
+                                        </div>
+                                        {{-- echo date('Y'); current year --}}
+                                        <input type="text" class="form-control form-control txtFilByYear" name="year" value="<?php echo date('Y'); ?>">
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div> <!-- .float-sm-left -->
-                        </div>
 
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group-sm mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Description</span>
-                              </div>
-                              <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 60%;">
-                              </select>
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Shift</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByShift" name="shift">
+                                            <option value="A" selected="true">A</option>
+                                            <option value="B">B</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div> <!-- .float-sm-left -->
-                        </div>
-                      </div>
 
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Month</span>
-                              </div>
-                              <input type="month" class="form-control form-control txtFilByMonth" name="month">
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                <div class="input-group input-group mb-3">
+                                    <div class="input-group-prepend w-20">
+                                    <span class="input-group-text w-100">Work Week</span>
+                                    </div>
+                                    <input type="number" class="form-control form-control txtFilByWorkWeek" name="work_week" min="1" max="53" value="<?php echo (date("W") - date("W", strtotime(date('Y').'-04-01'))); ?>">
+                                </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div> <!-- .float-sm-left -->
                         </div>
-
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Shift</span>
-                              </div>
-                              <select class="form-control form-control selFilByShift" name="shift">
-                                <option value="A" selected="true">A</option>
-                                <option value="B">B</option>
-                              </select>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Family</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByFamily" name="family">
+                                            <option value="1" selected="true">BGA/LGA</option>
+                                            <option value="2">BGA-FP</option>
+                                            <option value="3">Probe Pin</option>
+                                            <option value="4">QF/TSOP/SMPO</option>
+                                            <option value="5">PPS-CN</option>
+                                            <option value="6">PPS-TS</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div> <!-- .float-sm-left -->
-                        </div>
 
-                        <div class="col-sm-4">
-                          <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
-                            <div class="input-group input-group mb-3">
-                              <div class="input-group-prepend w-20">
-                                <span class="input-group-text w-100">Work Week</span>
-                              </div>
-                              <input type="number" class="form-control form-control txtFilByWorkWeek" name="work_week" min="1" max="52">
+                            <div class="col-sm-5">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Description</span>
+                                        </div>
+                                        <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 60%;">
+                                        </select>
+                                    </div> <!-- .float-sm-left -->
+                                </div>
                             </div>
-                          </div> <!-- .float-sm-left -->
-                        </div>
 
-                      </div>
+                            {{-- <div class="col-sm-4">
+                            <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                <div class="input-group input-group mb-3">
+                                <div class="input-group-prepend w-20">
+                                    <span class="input-group-text w-100">Month</span>
+                                </div>
+                                <input type="month" class="form-control form-control txtFilByMonth" name="month">
+                                </div>
+                            </div> <!-- .float-sm-left -->
+                            </div> --}}
+                        </div>
                     </div>
 
                   </div>
-
                   <br>
-
                   <div class="table-responsive">
                     <table class="table table-sm table-bordered table-hover" id="tblMonitorings" style="width: 100%;">
                       <thead>
@@ -154,7 +164,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -203,7 +213,11 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label"><i class="fa fa-info-circle text-primary" title="Note: You cannot edit this once you saved."></i> Work Week</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="52">
+                {{--
+                    nmodify MIGZ 03-25-2024, remove the maximum input
+                    <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="52">
+                --}}
+                <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="53">
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -293,7 +307,7 @@
 
 @section('js_content')
 <!-- Custom Links -->
-<script src="{{ asset('public/scripts/client/Monitoring.js') }}"></script>
+<script src="{{ asset('public/scripts/client/Monitoring.js?n=1132434') }}"></script>
 
 <!-- JS Codes -->
 <script type="text/javascript">
@@ -309,7 +323,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -348,6 +362,14 @@
       dtMonitorings.draw();
     });
 
+    $('.txtFilByYear').change(function(){
+      dtMonitorings.draw();
+    });
+
+    // $('.txtFilByMonth').change(function(){
+    //   dtMonitorings.draw();
+    // });
+
     $('.txtFilByWorkWeek').keyup(function(){
       dtMonitorings.draw();
     });
@@ -381,7 +403,7 @@
           },
       });
     });
-    
+
     $('.selFilByProdLineDesc').select2({
         // dropdownParent: $('#mdlSaveItemRegistration'),
         placeholder: "",
@@ -534,6 +556,8 @@
     dtMonitorings = $("#tblMonitorings").DataTable({
       "processing" : false,
       "serverSide" : true,
+      "searching" : false,
+    //   "lengthMenu": [ [25, 50, -1], [25, 50, "All"] ],
       "ajax" : {
         url: "{{ route('view_monitorings') }}",
         data: function (param){
@@ -541,9 +565,10 @@
             param.product_line_id = $(".selFilByProdLineDesc").val();
             param.shift = $(".selFilByShift").val();
             param.work_week = $(".txtFilByWorkWeek").val();
+            param.year = $(".txtFilByYear").val();
         }
       },
-      
+
       "columns":[
         { "data" : "l_description" },
         { "data" : "work_week" },
@@ -557,7 +582,7 @@
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
           "data": null,
@@ -567,10 +592,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -641,10 +666,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Monitoring';        
+          title = 'Archive Monitoring';
         }
         else if(status == 1){
-          title = 'Restore Monitoring';        
+          title = 'Restore Monitoring';
         }
       }
       // else if(action == 2){
@@ -667,7 +692,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -684,8 +709,21 @@
     });
 
     $('input[name="work_week"]', frmSaveMonitoring).on('keyup change', function(){
-      var currYear = "2022";
-      // var currYear = moment().format("YYYY");
+      var currYear = "2023";
+      var monthofCurrentYear = moment().format("MM")
+      console.log('month now', monthofCurrentYear);
+      if(monthofCurrentYear == 1 || monthofCurrentYear == 2 || monthofCurrentYear == 3){
+        var currYear = moment().format("YYYY") - 1;
+        console.log('fiscalyear now', currYear);
+      }else{
+        var currYear = moment().format("YYYY");
+        // var currYear = "2024";
+        console.log('year now', currYear);
+      }
+
+      //  console.log('month now', monthofCurrentYear);
+      //   var currYear = moment().format("YYYY");
+      //   console.log('year now', currYear);
       //Pass in the first of a given calendar month and the day weekday
       var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
       $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
@@ -710,7 +748,7 @@
       var tempDateFrom = date.add(diffDays, 'day');
       var dateFrom = tempDateFrom.format("YYYY-MM-DD");
       dateTo = tempDateFrom.add(6, 'day').format("YYYY-MM-DD");
-      
+
       return {
         dateFrom: dateFrom,
         dateTo: dateTo
