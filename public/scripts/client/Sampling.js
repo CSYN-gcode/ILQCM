@@ -397,13 +397,14 @@ function GetPODetails(po_no){
 }
 
 function GetOperatorDetails(employee_id, station_id, category){
-    let url = globalLink.replace('link', 'get_operator_details');
+    let url;
     let login = globalLink.replace('link', 'login');
 
-    // if(station_id === null){
-    //     toastr.warning('Please select station first.');
-    //     return;
-    // }
+    if(category == 'operator'){
+        url = globalLink.replace('link', 'get_operator_details');
+    }else{
+        url = globalLink.replace('link', 'get_qc_inspector_details');
+    }
 
     if(employee_id === null){
         toastr.warning('Employee ID is required.');
@@ -420,8 +421,13 @@ function GetOperatorDetails(employee_id, station_id, category){
         dataType: 'json',
         beforeSend() {
             cnfrmLoading.open();
-            $('input[name="operator"]', frmSaveSampling).val('');
-            $('input[name="operator_name"]', frmSaveSampling).val('');
+            if(category == 'operator'){
+                $('input[name="operator"]', frmSaveSampling).val('');
+                $('input[name="operator_name"]', frmSaveSampling).val('');
+            }else{
+                $('input[name="qc_inspector"]', frmSaveSampling).val('');
+                $('input[name="qc_inspector_name"]', frmSaveSampling).val('');
+            }
         },
         success(data){
             cnfrmLoading.close();
@@ -429,18 +435,24 @@ function GetOperatorDetails(employee_id, station_id, category){
                 if(data['data'] != null){
                     $("#mdlSaveSampling").modal('show');
                     if(station_id != null){
-                        if(data['data']['user_station_details'].length > 0){
-                            if(category == 'operator'){
-                                $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
-                                $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
-                            }else{
-                                $('input[name="qc_inspector"]', frmSaveSampling).val(data['data']['id']);
-                                $('input[name="qc_inspector_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
-                            }
+                        if(category == 'operator'){
+                            if(data['data']['user_station_details'].length > 0){
+                                    $('input[name="operator"]', frmSaveSampling).val(data['data']['id']);
+                                    $('input[name="operator_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
 
-                            toastr.success('Record found.');
+                                toastr.success('Record found.');
+                            }else{
+                                toastr.warning('Operator is not certified.');
+                            }
                         }else{
-                            toastr.warning('Operator is not certified.');
+                            if(data['data'] != null){
+                                    $('input[name="qc_inspector"]', frmSaveSampling).val(data['data']['id']);
+                                    $('input[name="qc_inspector_name"]', frmSaveSampling).val(data['data']['name'] + " (" + data['data']['employee_id'] + ")");
+
+                                toastr.success('Record found.');
+                            }else{
+                                toastr.warning('QC inspector not found.');
+                            }
                         }
                     }else{
                         if(category == 'operator'){
@@ -453,8 +465,7 @@ function GetOperatorDetails(employee_id, station_id, category){
 
                         toastr.success('Record found.');
                     }
-                }
-                else{
+                }else{
                     toastr.warning('Invalid Employee ID.');
                 }
             }

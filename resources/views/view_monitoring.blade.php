@@ -327,6 +327,7 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
+                                      <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -361,6 +362,7 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
+                                      <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -395,6 +397,7 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
+                                      <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -2334,6 +2337,7 @@
             { "data" : "result", orderable: false },
             { "data" : "dppm", orderable: false },
             { "data" : "remarks", orderable: false },
+            { "data" : "qc_inspector_name", orderable: false },
             { "data" : "raw_validation_result", orderable: false },
             { "data" : "raw_status", orderable: false, searchable: false },
             { "data" : "raw_action", orderable:false, searchable:false }
@@ -2435,6 +2439,7 @@
             { "data" : "result", orderable: false },
             { "data" : "dppm", orderable: false },
             { "data" : "remarks", orderable: false },
+            { "data" : "qc_inspector_name", orderable: false },
             { "data" : "raw_validation_result", orderable: false },
             { "data" : "raw_status", orderable: false, searchable: false },
             { "data" : "raw_action", orderable:false, searchable:false }
@@ -2533,6 +2538,7 @@
         { "data" : "result", orderable: false },
         { "data" : "dppm", orderable: false },
         { "data" : "remarks", orderable: false },
+        { "data" : "qc_inspector_name", orderable: false },
         { "data" : "raw_validation_result", orderable: false },
         { "data" : "raw_status", orderable: false, searchable: false },
         { "data" : "raw_action", orderable:false, searchable:false }
@@ -2632,6 +2638,7 @@
         { "data" : "result", orderable: false },
         { "data" : "dppm", orderable: false },
         { "data" : "remarks", orderable: false },
+        { "data" : "qc_inspector_name", orderable: false },
         { "data" : "raw_validation_result", orderable: false },
         { "data" : "raw_status", orderable: false, searchable: false },
         { "data" : "raw_action", orderable:false, searchable:false }

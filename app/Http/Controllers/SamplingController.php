@@ -26,8 +26,9 @@ class SamplingController extends Controller
     //View Samplings
     public function view_samplings(Request $request){
         if($request->ajax()){
-	        $data = Sampling::select('samplings.*', 'users.name as operator_name', 'stations.description as s_description')
+	        $data = Sampling::select('samplings.*', 'users.name as operator_name', 'qc_users.name as qc_inspector_name', 'stations.description as s_description')
 	        			->leftJoin('users', 'samplings.operator', '=', 'users.id')
+	        			->leftJoin('users as qc_users', 'samplings.qc_inspector', '=', 'qc_users.id')
 	        			->leftJoin('stations', 'samplings.station_id', '=', 'stations.id')
 	        			->where('samplings.monitoring_id', $request->monitoring_id)
 	        			->where('samplings.logdel', 0)
@@ -104,8 +105,7 @@ class SamplingController extends Controller
 	            })
 	            ->rawColumns(['multi_select', 'raw_status', 'raw_action'])
 	            ->make(true);
-        }
-    	else{
+        }else{
     		abort(403);
     	}
     }
@@ -655,6 +655,39 @@ class SamplingController extends Controller
     	}
     }
 
+    public function get_qc_inspector_details(Request $request){
+        date_default_timezone_set('Asia/Manila');
+        session_start();
+        if($request->ajax()){
+	        if(isset($_SESSION["rapidx_user_id"])){
+		        $data = [
+		            'employee_id' => $request->employee_id,
+		        ];
+
+		        $rules = [
+		            'employee_id' => 'required',
+		        ];
+
+		        $validator = Validator::make($data, $rules);
+
+		        if($validator->passes()){
+		            $data = User::where('employee_id', $request->employee_id)
+            					->whereIn('position', [1,2,3])
+            					->where('status', 1)
+            					->where('logdel', 0)
+                                ->first();
+
+		            return response()->json(['auth' => 1, 'data' => $data, 'result' => 1]);
+		        }else{
+		            return response()->json(['auth' => 1, 'data' => null, 'result' => 0]);
+		        }
+		    }else{
+	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
+		    }
+		}else{
+    		abort(403);
+    	}
+    }
 
     // public function getStratPoDetails(Request $request){
     //     date_default_timezone_set('Asia/Manila');
