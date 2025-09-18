@@ -77,6 +77,7 @@
                           <th style="text-align: center; vertical-align: middle;">RESULT</th>
                           <th style="text-align: center; vertical-align: middle;">DPPM</th>
                           <th style="text-align: center; vertical-align: middle;">Remarks </th>
+                          <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
                           <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                           <th style="text-align: center; vertical-align: middle;">Status</th>
                           <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -130,18 +131,18 @@
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label">Operator Name</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" name="operator" placeholder="User ID" readonly="true" style="display: none;">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="operator_name" placeholder="(Click the button to fill-in)" readonly="true">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-primary btnScanOperator" title="Click to scan operator."><i class="fa fa-qrcode"></i></button>
-                  </div>
-                </div>
+                <label class="col-sm-4 col-form-label">Operator Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="operator" placeholder="User ID" readonly="true" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="operator_name" placeholder="(Click the button to fill-in)" readonly="true">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary btnScanOperator" title="Click to scan operator."><i class="fa fa-qrcode"></i></button>
+                        </div>
+                    </div>
 
-                <span class="text-danger float-sm-right input-error"></span>
-              </div>
+                    <span class="text-danger float-sm-right input-error"></span>
+                </div>
             </div>
 
             <div class="form-group row">
@@ -206,26 +207,39 @@
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label">Remarks</label>
-              <div class="col-sm-8">
-                <textarea class="form-control" name="remarks" placeholder="Remarks" rows="4"></textarea>
-                <span class="text-danger float-sm-right input-error"></span>
-              </div>
+                <label class="col-sm-4 col-form-label">Remarks</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="remarks" placeholder="Remarks" rows="4"></textarea>
+                    <span class="text-danger float-sm-right input-error"></span>
+                </div>
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label">Validation Result<br>(QC Supervisor)</label>
-              <div class="col-sm-8">
-                <select class="form-control" name="validation_result" placeholder="Validation Result">
-                  <option value="" selected="true">--</option>
-                  <option value="1">OK</option>
-                  <option value="0">NG</option>
-                </select>
-                <span class="text-danger float-sm-right input-error"></span>
-              </div>
+                <label class="col-sm-4 col-form-label">Inspector Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="qc_inspector" placeholder="User ID" readonly="true" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="qc_inspector_name" placeholder="(Click the button to fill-in)" readonly="true">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary btnScanQcInspector" title="Click to scan operator."><i class="fa fa-qrcode"></i></button>
+                        </div>
+                    </div>
+                    <span class="text-danger float-sm-right input-error"></span>
+                </div>
             </div>
 
-          </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Validation Result<br>(QC Supervisor)</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="validation_result" placeholder="Validation Result">
+                        <option value="" selected="true">--</option>
+                        <option value="1">OK</option>
+                        <option value="0">NG</option>
+                        </select>
+                        <span class="text-danger float-sm-right input-error"></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -372,11 +386,11 @@
     });
 
     $(".btnAddSampling").click(function(e){
-      $("#mdlSaveSampling").modal('show');
-      frmSaveSampling[0].reset();
-      $(".input-error", frmSaveSampling).text('');
-      $(".form-control", frmSaveSampling).removeClass('is-invalid');
-      $('select[name="station_id"]', frmSaveSampling).val("").trigger("change");
+        $("#mdlSaveSampling").modal('show');
+        frmSaveSampling[0].reset();
+        $(".input-error", frmSaveSampling).text('');
+        $(".form-control", frmSaveSampling).removeClass('is-invalid');
+        $('select[name="station_id"]', frmSaveSampling).val("").trigger("change");
     });
 
     $('#mdlSaveSampling').on('shown.bs.modal', function (e) {
@@ -434,7 +448,6 @@
     });
 
     $(".btnSearchPoNo").click(function(){
-        // console.log('test click, add PO');
         $.confirm({
             title: 'Search P.O. No.',
             content: '' +
@@ -470,18 +483,7 @@
                     jc.formSubmit.trigger('click'); // reference the button and click it
                 });
             }
-
-            // $('.po_no').focus();
         });
-
-        // window.onload = function() {
-        //     document.getElementById('.po_no').focus();
-        // }
-        // setInterval(() => {
-        //     document.querySelector('.po_no').focus();
-        //     $(document).('.po_no').focus();
-        //     console.log('test click end');
-        // }, 1000);
     });
 
     // $('.po_no').click(function (e){
@@ -501,21 +503,7 @@
         '</div>' +
         '</form>',
         buttons: {
-            // formSubmit: {
-            //     text: 'Search',
-            //     btnClass: 'btn-blue',
-            //     visibility: false,
-            //     action: function () {
-            //         var scanned_employee_id = this.$content.find('.scanned_employee_id').val();
-            //         if(!scanned_employee_id){
-            //             toastr.warning('Employee ID is required.');
-            //             return false;
-            //         }
-            //         GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val());
-            //     }
-            // },
             cancel: function () {
-                //close
             },
         },
         onContentReady: function () {

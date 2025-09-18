@@ -117,7 +117,6 @@ class SamplingController extends Controller
         // return $request->all();
 
         // return response()->json(['auth' => 1, 'result' => $request->all(), 'error' => null]);
-        
         // return $request->multi_select_sampling_id[0];
 
         if($request->ajax()){
@@ -131,7 +130,6 @@ class SamplingController extends Controller
 
             try {
                 if($validator->passes()){
-                
                     if($request->multi_select_sampling_id > 1){
                         $multi_select_sampling_array = explode(',', $request->multi_select_sampling_id);
                     }else{
@@ -175,6 +173,7 @@ class SamplingController extends Controller
 
 			            $rules = [
 			                'monitoring_id' => 'required',
+                            'qc_inspector' => 'required',
 			                'remarks' => 'required',
 			            ];
 
@@ -184,6 +183,7 @@ class SamplingController extends Controller
 			                if($validator->passes()){
 				        		Sampling::insert([
 									'monitoring_id' => $request->monitoring_id,
+									'qc_inspector' => $request->qc_inspector,
 									'remarks' => $request->remarks,
 			                        'status' => 1,
 			                        'created_by' => $_SESSION["rapidx_user_id"],
@@ -196,12 +196,10 @@ class SamplingController extends Controller
 			                else{
 			                	return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 			                }
-		                }
-			            catch(\Exception $e) {
+		                }catch(\Exception $e) {
 			                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
 			            }
-		        	}
-		        	else{
+		        	}else{
 		        		$data = $request->all();
 
 			            $rules = [
@@ -232,6 +230,7 @@ class SamplingController extends Controller
 									'accept' => $request->accept,
 									'reject' => $request->reject,
 									'dppm' => $request->dppm,
+                                    'qc_inspector' => $request->qc_inspector,
 									'result' => $request->result,
 									'remarks' => $request->remarks,
 									'validation_result' => $request->validation_result,
@@ -243,12 +242,10 @@ class SamplingController extends Controller
 			                        'updated_at' => date('Y-m-d H:i:s'),
 			                    ]);
 			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
-			                }
-			                else{
+			                }else{
 			                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 			                }
-			            }
-			            catch(\Exception $e) {
+			            }catch(\Exception $e) {
 			                return response()->json(['auth' => 1, 'result' => 0, 'error' => $e]);
 			            }
 		        	}
@@ -269,6 +266,7 @@ class SamplingController extends Controller
 						'accept' => 'required',
 						'reject' => 'required',
 						'dppm' => 'required',
+						'qc_inspector' => 'required',
 						'result' => 'required',
 		            ];
 
