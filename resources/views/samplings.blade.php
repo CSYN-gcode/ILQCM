@@ -512,7 +512,7 @@
                   toastr.warning('Employee ID is required.');
                   return false;
               }
-              GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val());
+              GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val(), 'operator');
               cnfrmScanOperator.close();
               return false;
               //jc.$$formSubmit.trigger('click'); // reference the button and click it

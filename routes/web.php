@@ -248,5 +248,6 @@ Route::get('/get_sampling_by_stat', 'SamplingController@get_sampling_by_stat')->
 Route::get('/get_cbo_sampling_by_stat', 'SamplingController@get_cbo_sampling_by_stat')->name('get_cbo_sampling_by_stat');
 Route::get('/get_po_details', 'SamplingController@get_po_details')->name('get_po_details');
 Route::get('/get_operator_details', 'SamplingController@get_operator_details')->name('get_operator_details');
+Route::get('/get_qc_inspector_details', 'SamplingController@get_qc_inspector_details')->name('get_qc_inspector_details');
 Route::get('/get_strat_po_details', 'SamplingController@getStratPoDetails')->name('get_strat_po_details');
 
