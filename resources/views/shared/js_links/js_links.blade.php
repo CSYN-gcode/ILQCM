@@ -3,6 +3,7 @@
 <script src="{{ asset('public/template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- bs-custom-file-input -->
 <script src="{{ asset('public/template/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script src="{{ asset('public/template/plugins/moment/moment.min.js') }}" />
 <!-- AdminLTE App -->
 <script src="{{ asset('public/template/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -21,3 +22,5 @@
 
 <!-- Confirm -->
 <script src="{{ asset('public/template/plugins/jquery-confirm/jquery-confirm.min.js') }}" />
+
+<!-- Moment -->

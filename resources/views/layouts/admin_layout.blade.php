@@ -1,10 +1,42 @@
-@auth
+@php
+    $isLogin = false;
+    if(isset($_SESSION['rapidx_user_id'])){
+        $isLogin = true;
+    }
+
+    $isAuthorized = false;
+    $user_level = 0;
+@endphp
+@if($isLogin)
+    @if($_SESSION['rapidx_user_level_id'] == 3)
+        @if(count($_SESSION['rapidx_user_accesses']) > 0)
+            @for($index = 0; $index < count($_SESSION['rapidx_user_accesses']); $index++)
+                @if($_SESSION['rapidx_user_accesses'][$index]['module_id'] == 21)
+                    @php
+                        $isAuthorized = true;
+                        $user_level = $_SESSION['rapidx_user_accesses'][$index]['user_level_id'];
+                    @endphp
+                    @break
+                @endif
+            @endfor
+
+            @if(!$isAuthorized)
+                <script type="text/javascript">
+                    window.location = '../RapidX/';
+                </script>
+            @endif
+        @else
+            <script type="text/javascript">
+                window.location = '../RapidX/';
+            </script>
+        @endif
+    @endif
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>In-Line QC Monitoring | @yield('title')</title>
+  <title>ILQCM | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="{{ asset('public/images/favicon.png') }}">
@@ -18,7 +50,7 @@
   @include('shared.pages.nav')
 
   @yield('content_page')
-  
+
   @include('shared.pages.footer')
 </div>
 
@@ -30,7 +62,7 @@
     let cnfrmAutoLogin;
     let cnfrmLogout;
 </script>
-        
+
 @include('shared.js_links.js_links')
 @include('shared.pages.common')
 @yield('js_content')
@@ -62,7 +94,7 @@
       },
     }
   });
-  
+
   cnfrmLogout = $.confirm({
     lazyOpen: true,
     title: 'Logout',
@@ -185,7 +217,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    
+
                   </tbody>
                 </table>
               </div> <!-- .table-responsive -->
@@ -234,7 +266,7 @@
       },
     }
   });
-  
+
   cnfrmLogout = $.confirm({
     lazyOpen: true,
     title: 'Logout',
@@ -258,7 +290,7 @@
 
   // FUNCTIONS
   function Logout(){
-    let url = globalLink.replace('link', 'logout');
+    let url = globalLink.replace('link', 'user_logout');
     let urlLogin = globalLink.replace('link', 'dashboard');
     $.ajax({
         url: url,
@@ -317,41 +349,6 @@
 
     $.fn.dataTable.ext.errMode = 'none';
 
-    // dtBranches = $("#tblBranches").DataTable({
-    //   "processing" : false,
-    //   "serverSide" : true,
-    //   "ajax" : {
-    //     url: "{{ route('view_branch_user_by_user_id') }}",
-    //     data: function (param){
-
-    //     }
-    //   },
-      
-    //   "columns":[
-    //     { "data" : "branch_info.code" },
-    //     { "data" : "branch_info.description" },
-    //     { "data" : "raw_action", orderable:false, searchable:false }
-    //   ],
-
-    //   "columnDefs": [ 
-    //     {
-    //       "targets": [0, 1, 2],
-    //       "data": null,
-    //       "defaultContent": "--"
-    //     },
-    //     // { "visible": false, "targets": 1 }
-    //   ],
-    //   "order": [[ 1, "asc" ]],
-    //   "initComplete": function(settings, json) {
-          
-    //   },
-    //   "drawCallback": function( settings ) {
-          
-    //   }
-    // }).on( 'error', function () {
-    //   toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
-    // });//end of dtBranches
-
     $("#tblBranches").on('click', '.btnRowSelectBranch', function(e){
       let branchId = $(this).attr('branch-id');
       let title = '';
@@ -372,7 +369,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -402,7 +399,7 @@
                     location.reload();
                   }
                   else{
-                    toastr.error('Branch Selection Failed!');   
+                    toastr.error('Branch Selection Failed!');
                   }
               }
               else{ // if session expired
@@ -411,7 +408,7 @@
           },
           error(xhr, data, status){
               cnfrmLoading.close();
-              toastr.success('Branch Selection Failed!');  
+              toastr.success('Branch Selection Failed!');
           }
       });
     }
@@ -511,5 +508,7 @@
 </body>
 </html>
 @else
-
+    <script type="text/javascript">
+        window.location = "../RapidX/";
+    </script>
 @endauth

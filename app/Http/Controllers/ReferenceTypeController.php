@@ -65,7 +65,7 @@ class ReferenceTypeController extends Controller
         session_start();
 
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        // Add ReferenceType
 		        if(!isset($request->reference_type_id)){
 		            $data = [
@@ -83,8 +83,8 @@ class ReferenceTypeController extends Controller
 		                    ReferenceType::insert([
 		                        'description' => $request->description,
 		                        'status' => 1,
-		                        'created_by' => Auth::user()->id,
-		                        'last_updated_by' => Auth::user()->id,
+		                        'created_by' => $_SESSION["rapidx_user_id"],
+		                        'last_updated_by' => $_SESSION["rapidx_user_id"],
 		                        'created_at' => date('Y-m-d H:i:s'),
 		                        'updated_at' => date('Y-m-d H:i:s'),
 		                    ]);
@@ -119,7 +119,7 @@ class ReferenceTypeController extends Controller
 		                    	->where('status', 1)
 		                        ->update([
 		                            'description' => $request->description,
-		                            'last_updated_by' => Auth::user()->id,
+		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
 		                            'updated_at' => date('Y-m-d H:i:s'),
 		                        ]);
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
@@ -146,7 +146,7 @@ class ReferenceTypeController extends Controller
         date_default_timezone_set('Asia/Manila');
         session_start();
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        $data = [
 		            'reference_type_id' => $request->reference_type_id,
 		        ];
@@ -181,7 +181,7 @@ class ReferenceTypeController extends Controller
 
         if($request->ajax()){
 	        // Change ReferenceType Status
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        if($request->action == 1){
 		            $data = [
 		                'reference_type_id' => $request->reference_type_id,
@@ -201,7 +201,7 @@ class ReferenceTypeController extends Controller
 		                    	->where('logdel', 0)
 		                        ->update([
 		                            'status' => $request->status,
-		                            'last_updated_by' => Auth::user()->id,
+		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
 		                            'updated_at' => date('Y-m-d H:i:s'),
 		                        ]);
 
@@ -229,7 +229,7 @@ class ReferenceTypeController extends Controller
         date_default_timezone_set('Asia/Manila');
 
         if($request->ajax()){
-        	if(Auth::check()){
+        	if(isset($_SESSION["rapidx_user_id"])){
 		        $search = $request->search;
 
 		        if($search == ''){

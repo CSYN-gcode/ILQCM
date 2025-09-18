@@ -8,66 +8,174 @@ use Auth;
 class RouteController extends Controller
 {
     public function dashboard(){
-    	if(Auth::check()){
-    		if(Auth::user()->user_level == 1 || Auth::user()->user_level == 2){
-    			return view('admin_dashboard');
-    		}
-            else{
-                return view('branch.dashboard');   
-            }
+    	session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+			return view('admin_dashboard');
     	}
     	else{
-    		return redirect()->route('login');
+    		return redirect()->route('session_expired');
+    	}
+    }
+
+    public function pats_ppd_dashboard(){
+    	session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+			return view('pats_ppd_dashboard');
+    	}
+    	else{
+    		return redirect()->route('session_expired');
     	}
     }
 
     public function users(){
-    	if(Auth::check()){
-    		if(Auth::user()->user_level == 1){
-    			return view('users');
-    		}
-    		else{
-    			return redirect('dashboard');
-    		}
+    	session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+    		return view('users');
     	}
     	else{
-    		return redirect()->route('login');
+    		return redirect()->route('session_expired');
     	}
     }
 
     public function lines(){
-        if(Auth::check()){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
             return view('lines');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function product_lines(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('product_lines');
+        }
+        else{
+            return redirect()->route('session_expired');
         }
     }
 
     public function stations(){
-        if(Auth::check()){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
             return view('stations');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function machines(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('machines');
+        }
+        else{
+            return redirect()->route('session_expired');
         }
     }
 
     public function monitoring(){
-        if(Auth::check()){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
             return view('monitoring');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
+        }
+    }
+
+    // public function monitoring_clark(){
+    //     session_start();
+    //     if(isset($_SESSION["rapidx_user_id"])){
+    //         return view('monitoring_clark');
+    //     }
+    //     else{
+    //         return redirect()->route('session_expired');
+    //     }
+    // }
+
+    public function monitoring_clark(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('view_monitoring_clark');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function monitoring_v2(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('monitoring_v2');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function view_monitoring(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('view_monitoring');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function samplings(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('samplings');
+        }
+        else{
+            return redirect()->route('session_expired');
         }
     }
 
     public function reference_types(){
-        if(Auth::check()){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
             return view('reference_types');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('session_expired');
         }
     }
+
+    public function serieses(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('serieses');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    public function strategic_po(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('strategic_po');
+        }
+        else{
+            return redirect()->route('session_expired');
+        }
+    }
+
+    // PATS PPD ROUTES
+    // public function pats_ppd_serieses(){
+    //     session_start();
+    //     if(isset($_SESSION["rapidx_user_id"])){
+    //         return view('pats_ppd/serieses');
+    //     }
+    //     else{
+    //         return redirect()->route('session_expired');
+    //     }
+    // }
+
 }

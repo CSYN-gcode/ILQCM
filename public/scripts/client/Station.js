@@ -30,6 +30,7 @@ function SaveStation(){
                     frmSaveStation[0].reset();
                     $(".input-error", frmSaveStation).text('');
                     $(".form-control", frmSaveStation).removeClass('is-invalid');
+                    $("select[name='series_ids[]']", frmSaveStation).val("").trigger("change");
                     dtStations.draw();
                 }
                 else{
@@ -42,6 +43,14 @@ function SaveStation(){
                         else{
                             $("input[name='description']", frmSaveStation).removeClass('is-invalid');
                             $("input[name='description']", frmSaveStation).siblings('.input-error').text('');
+                        }
+                        if(data['error']['series_ids'] != null){
+                            $("select[name='series_ids[]']", frmSaveStation).addClass('is-invalid');
+                            $("select[name='series_ids[]']", frmSaveStation).siblings('.input-error').text(data['error']['series_ids']);
+                        }
+                        else{
+                            $("select[name='series_ids[]']", frmSaveStation).removeClass('is-invalid');
+                            $("select[name='series_ids[]']", frmSaveStation).siblings('.input-error').text('');
                         }
                     }
                 }
@@ -78,6 +87,8 @@ function GetStationById(stationId){
             cnfrmLoading.open();
             frmSaveStation[0].reset();
             $('input[name="station_id"]', frmSaveStation).val('');
+            $("select[name='series_ids[]']", frmSaveStation).html("");
+            $("select[name='series_ids[]']", frmSaveStation).val("").trigger("change");
         },
         success(data){
             btnSaveStation.prop('disabled', false);
@@ -90,6 +101,19 @@ function GetStationById(stationId){
                     $("#mdlSaveStation").modal('show');
                     $('input[name="station_id"]', frmSaveStation).val(data['station_info']['id']);
                     $('input[name="description"]', frmSaveStation).val(data['station_info']['description']);
+
+                    let stationSeriesDetails = "";
+                    let seriesIds = [];
+                    if(data['station_info']['station_series_details'].length > 0){
+                        for(let index = 0; index < data['station_info']['station_series_details'].length; index++){
+                            if(data['station_info']['station_series_details'][index]['series_info'] != null && data['station_info']['station_series_details'][index]['series_info']['status'] == 1){
+                                seriesIds.push(data['station_info']['station_series_details'][index]['series_id']);
+                                stationSeriesDetails += '<option value="' + data['station_info']['station_series_details'][index]['series_id'] + '">' + data['station_info']['station_series_details'][index]['series_info']['description'] + '</option>';
+                            }
+                        }
+                        $("select[name='series_ids[]']", frmSaveStation).append(stationSeriesDetails);
+                        $("select[name='series_ids[]']", frmSaveStation).val(seriesIds).trigger("change");
+                    }
                 }
                 else{
                     toastr.error('No record found.');

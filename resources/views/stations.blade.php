@@ -35,11 +35,7 @@
               <div class="row">
                 <div class="col-sm-12">
                   @php
-                    $display = 'none';
-
-                    if(Auth::user()->user_level == 1){
-                      $display = 'block';
-                    }
+                    $display = 'block';
                   @endphp
                   <div class="float-sm-left" style="min-width: 200px; display: {{ $display }}">
                     <div class="form-group row">
@@ -67,6 +63,7 @@
                       <thead>
                         <tr>
                           <th>Description</th>
+                          <th>Series(es)</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
@@ -114,6 +111,16 @@
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Series(es)</label>
+              <div class="col-sm-10">
+                <select class="form-control select2 select2bs4" name="series_ids[]" placeholder="Series(es)" multiple="true">
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
           </div>
         </div>
         <div class="modal-footer justify-content-between">
@@ -191,6 +198,34 @@
       
       "columns":[
         { "data" : "description" },
+        {
+            name: 'station_series_details',
+            data: 'station_series_details',
+            sortable: false,
+            searchable: false,
+            render: function (data) {
+                var result = '';
+                var arrSeriesDesc = [];
+                if(data.length > 0){
+                  for(let index = 0; index < data.length; index++){
+                    if(data[index]['series_info'] != null && data[index]['series_info']['status'] == 1){
+                      arrSeriesDesc.push(data[index]['series_info']['description']);
+                    }
+                  }
+
+                  if(arrSeriesDesc.length > 0){
+                    result = arrSeriesDesc.join(", ");
+                  }
+                  else{
+                    result = null;
+                  }
+                }
+                else{
+                  result = null;
+                }
+                return result;
+            }
+        },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
@@ -228,6 +263,8 @@
       frmSaveStation[0].reset();
       $(".input-error", frmSaveStation).text('');
       $(".form-control", frmSaveStation).removeClass('is-invalid');
+      $("select[name='series_ids[]']", frmSaveStation).html("");
+      $("select[name='series_ids[]']", frmSaveStation).val("").trigger("change");
     });
 
     $('#mdlSaveStation').on('shown.bs.modal', function (e) {
@@ -282,6 +319,31 @@
     $("#tblStations").on('click', '.btnEditStation', function(e){
       let stationId = $(this).attr('station-id');
       GetStationById(stationId);
+    });
+
+    $('select[name="series_ids[]"]', frmSaveStation).select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_series_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
     });
 
   });

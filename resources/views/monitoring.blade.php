@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Monitoring')
+@section('title', 'Monitorings')
 
 @section('content_page')
 <!-- Content Wrapper. Contains page content -->
@@ -9,13 +9,13 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-10">
-          <center><h1 style="text-decoration: underline;"><i class="fas fa-monitorings"></i>In-Line Quality Control Monitoring </h1></center>
+        <div class="col-sm-6">
+          <h1><i class="fas fa-monitorings"></i> Monitorings</h1>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item active">Monitoring</li>
+            <li class="breadcrumb-item active">Monitorings</li>
           </ol>
         </div>
       </div>
@@ -33,140 +33,141 @@
             <!-- Start Page Content -->
             <div class="card-body">
               <div class="row">
+
                 <div class="col-sm-12">
-                  <form class="form-horizontal" id="frmSaveMonitoring">
-                    @csrf
-                      <div class="row">
+                  <div class="float-sm-left">
+                    <h4><i class="fas fa-filter"></i> Filter</h4>
+                  </div>
 
-                        <div class="col-sm-2">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" style="float: right !important;">LINE :</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="monitoring_id" placeholder="Monitoring ID" style="display: none;">
-                              <input type="text" class="form-control" name="line_id" placeholder="">
-                              <span class="text-danger float-sm-right input-error"></span>
+                  <div class="float-sm-right">
+                    <button class="btn btn-primary btn-sm btnAddMonitoring"><i class="fa fa-plus"></i> Add New</button>
+                  </div> <!-- .float-sm-right -->
+                </div>
+                <br><br>
+
+                <div class="col-sm-12">
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Status</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByStat" name="status">
+                                            <option value="1" selected="true">Active</option>
+                                            <option value="2">Archived</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div>
-                        </div>
 
-                        <div class="col-sm-2">
-                          <div class="form-group row">
-                            <label class="col-sm-6 col-form-label" style="float: right !important;">WORK WEEK :</label>
-                            <div class="col-sm-6">
-                              <input type="number" class="form-control" name="line_id" placeholder="">
-                              <span class="text-danger float-sm-right input-error"></span>
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Fiscal Year</span>
+                                        </div>
+                                        {{-- echo date('Y'); current year --}}
+                                        <input type="text" class="form-control form-control txtFilByYear" name="year" value="<?php echo date('Y'); ?>">
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div>
-                        </div>
 
-                        <div class="col-sm-2">
-                          <div class="form-group row">
-                            <label class="col-sm-6 col-form-label" style="float: right !important;">SHIFT :</label>
-                            <div class="col-sm-6">
-                              <input type="text" class="form-control" name="line_id" placeholder="">
-                              <span class="text-danger float-sm-right input-error"></span>
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Shift</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByShift" name="shift">
+                                            <option value="A" selected="true">A</option>
+                                            <option value="B">B</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div>
-                        </div>
 
-                        <div class="col-sm-3">
-                          <div class="form-group row">
-                            <label class="col-sm-6 col-form-label" style="float: right !important;">QC INSPECTOR :</label>
-                            <div class="col-sm-6">
-                              <input type="text" class="form-control" name="line_id" placeholder="">
-                              <span class="text-danger float-sm-right input-error"></span>
+                            <div class="col-sm-3">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                <div class="input-group input-group mb-3">
+                                    <div class="input-group-prepend w-20">
+                                    <span class="input-group-text w-100">Work Week</span>
+                                    </div>
+                                    <input type="number" class="form-control form-control txtFilByWorkWeek" name="work_week" min="1" max="53" value="<?php echo (date("W") - date("W", strtotime(date('Y').'-04-01'))); ?>">
+                                </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div>
                         </div>
-
-                        <div class="col-sm-3">
-                          <div class="form-group row">
-                            <label class="col-sm-6 col-form-label" style="float: right !important;">CHECKED BY :</label>
-                            <div class="col-sm-6">
-                              <input type="text" class="form-control" name="line_id" placeholder="">
-                              <span class="text-danger float-sm-right input-error"></span>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Family</span>
+                                        </div>
+                                        <select class="form-control form-control selFilByFamily" name="family">
+                                            <option value="1" selected="true">BGA/LGA</option>
+                                            <option value="2">BGA-FP</option>
+                                            <option value="3">Probe Pin</option>
+                                            <option value="4">QF/TSOP/SMPO</option>
+                                            <option value="5">PPS-CN</option>
+                                            <option value="6">PPS-TS</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- .float-sm-left -->
                             </div>
-                          </div>
-                        </div>
 
-                      </div>
-
-                      <div class="row">
-                        <div class="col-sm-2">
-                          <div class="form-group row">
-                            <label class="col-sm-5 col-form-label" style="float: right !important;">MACHINE :</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" name="machine_id" placeholder="N/A">
-                              <span class="text-danger float-sm-right input-error"></span>
+                            <div class="col-sm-5">
+                                <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend w-20">
+                                            <span class="input-group-text w-100">Description</span>
+                                        </div>
+                                        <select class="form-control form-control-sm selFilByProdLineDesc select2 select2bs4" name="pl_description" style="width: 60%;">
+                                        </select>
+                                    </div> <!-- .float-sm-left -->
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                  </form>
 
+                            {{-- <div class="col-sm-4">
+                            <div class="float-sm-left" style="min-width: 200px; width: 100%; display: block;">
+                                <div class="input-group input-group mb-3">
+                                <div class="input-group-prepend w-20">
+                                    <span class="input-group-text w-100">Month</span>
+                                </div>
+                                <input type="month" class="form-control form-control txtFilByMonth" name="month">
+                                </div>
+                            </div> <!-- .float-sm-left -->
+                            </div> --}}
+                        </div>
+                    </div>
+
+                  </div>
+                  <br>
                   <div class="table-responsive">
                     <table class="table table-sm table-bordered table-hover" id="tblMonitorings" style="width: 100%;">
                       <thead>
                         <tr>
-                          <th style="width: 23%; text-align: center; vertical-align: middle;">In-line QC Sampling Activity - Product Conformance</th>
-                          <th style="width: 46%; text-align: center; vertical-align: middle;">Monitoring Frequency / Sample Size</th>
-                          <th style="width: 31%; text-align: center; vertical-align: middle;">Validation Activity</th>
+                          <th>Line</th>
+                          <th>Work Week</th>
+                          <th>Date From</th>
+                          <th>Date To</th>
+                          <th>Shift</th>
+                          <th>Machine</th>
+                          <th>QC Inspector</th>
+                          <th>Checked By</th>
+                          <th>Status</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td style="width: 23%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span>1. Checking of operators activity in conformance to required references such as Work Instruction, Point Panel and others</span>
-                            <br>
-                            <span>2. Checking of operators output in conformance  to product criteria.</span>
-                          </td>
-                          <td style="width: 46%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span><b>1. New Operators (from 1st day to 3 months):</span></b><br>
-                              <div style="padding-left: 20px; width: 100%;">
-                                <span style="">1.1 Hourly for a period of 1 week (starting 8:30 onwards) </span><br>
-                                <span style="">1.2 Every 2 hours for a period of 3 weeks (Frequency: 9:30, 11:30, 13:30, 15:30; If OT: 17:30 & 19:30)</span><br>
-                                <span style="">1.3 Every 3 hours for a period of 2 to 3 months  (Frequency: 9:30, 12:30, 15:30; If OT: 18:30)</span><br>
-                              </div>
-                            <span><b>2. Old Operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on the defined stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>3. Re-certified Operators from disqualification and transferred operators:</b> 2X per shift and additional of 1 monitoring if the line is on overtime schedule on all stations (Frequency: 9:30, 13:30 & 17:30).</span><br>
-                            <span><b>4. Sample size:</b> 1 pc (minimum) ; 10 pcs (maximum) - less than 10 samples drawn is due to per station output or capacity</span>         
-                          </td>
-                          <td style="width: 31%; padding-top: 20px; padding-bottom: 20px; vertical-align: middle;">
-                            <span>1. <b>Daily:</b> QC Supervisor to check the monitoring data for its completeness and correctness then indicate ""OK"" on the slot provided to signify that checking is performed, then ""lock"" the sheet. Call the attention of concerned QC once inconsistency is found.</span>
-                            <br><br>
-                            <span>2. <b>Weekly:</b> QC Supervisor to check the completeness of data for the whole workweek. Affix her/his E-signature on the slot provided to signify the checking performed &  ""lock"" the whole sheet and save the file.</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div> <!-- .table-responsive -->
-                 
-                  <div class="table-responsive">
-                    <table class="table table-sm table-bordered table-hover" id="tblProductSamplings" style="width: 100%;">
-                      <thead>
-                        <tr>
-                          <th colspan="12" style="text-align: center; vertical-align: middle; background-color: #9f9f9f; border-bottom: 1.8px solid black;">PRODUCT SAMPLING</th>
-                        </tr>
-                        <tr>
-                          <th style="text-align: center; vertical-align: middle;">Date</th>
-                          <th style="text-align: center; vertical-align: middle;">Time</th>
-                          <th style="text-align: center; vertical-align: middle;">OPTR. Name</th>
-                          <th style="text-align: center; vertical-align: middle;">STATION</th>
-                          <th style="text-align: center; vertical-align: middle;">P.O NO. / Series</th>
-                          <th style="text-align: center; vertical-align: middle;">Sample Size </th>
-                          <th style="text-align: center; vertical-align: middle;">ACCEPT</th>
-                          <th style="text-align: center; vertical-align: middle;">REJECT</th>
-                          <th style="text-align: center; vertical-align: middle;">RESULT</th>
-                          <th style="text-align: center; vertical-align: middle;">DPPM</th>
-                          <th style="text-align: center; vertical-align: middle;">Remarks </th>
-                          <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div> <!-- .table-responsive -->
 
+                      </tbody>
+                    </table>
+                  </div> <!-- .table-responsive -->
                 </div> <!-- .col-sm-12 -->
               </div> <!-- .row -->
             </div>
@@ -183,16 +184,130 @@
 </div>
 <!-- /.content-wrapper -->
 
+<!-- MODALS -->
+<div class="modal fade" id="mdlSaveMonitoring">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="fa fa-info-circle text-info"></i> Monitoring Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="form-horizontal" id="frmSaveMonitoring">
+        @csrf
+        <div class="modal-body">
+          <div class="card-body">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Line</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="monitoring_id" placeholder="Monitoring ID" style="display: none;">
+                <input type="text" class="form-control" name="product_line_id" placeholder="Product Line ID" style="display: none;">
+                <select class="form-control select2 select2bs4" name="line_id" placeholder="Line">
+
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label"><i class="fa fa-info-circle text-primary" title="Note: You cannot edit this once you saved."></i> Work Week</label>
+              <div class="col-sm-10">
+                {{--
+                    nmodify MIGZ 03-25-2024, remove the maximum input
+                    <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="52">
+                --}}
+                <input type="number" class="form-control" name="work_week" placeholder="Work Week" min="1" max="53">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Date From</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="date_from" placeholder="(Auto Computed)" readonly="true">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Date To</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="date_to" placeholder="(Auto Computed)" readonly="true">
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Shift</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="shift" placeholder="Line">
+                  <option value="A" selected="true">A</option>
+                  <option value="B">B</option>
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Machine</label>
+              <div class="col-sm-10">
+                <select class="form-control select2 select2bs4" name="machine_id" placeholder="Machine">
+
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">QC Inspector</label>
+              <div class="col-sm-10">
+                <select class="form-control select2 select2bs4" name="qc_inspector" placeholder="QC Inspector">
+
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Checked By</label>
+              <div class="col-sm-10">
+                <select class="form-control select2 select2bs4" name="qc_checked_by" placeholder="Checked By">
+
+                </select>
+                <span class="text-danger float-sm-right input-error"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary btnSaveMonitoring">Save</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 <script type="text/javascript">
   // Variables
   let dtMonitorings, frmSaveMonitoring, btnSaveMonitoring;
+  let monitorningFilter = {
+    family: null,
+    plDescription: null,
+    plId: null,
+  };
 </script>
 
 @endsection
 
 @section('js_content')
 <!-- Custom Links -->
-<script src="{{ asset('public/scripts/client/Monitoring.js') }}"></script>
+<script src="{{ asset('public/scripts/client/Monitoring.js?n=1132434') }}"></script>
 
 <!-- JS Codes -->
 <script type="text/javascript">
@@ -208,7 +323,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -232,7 +347,259 @@
       $(this).closest('tr').addClass('table-active');
     });
 
+    $('.selFilByProdLineDesc').change(function(){
+      if($(this).val() != "" && $(this).val() != null){
+        $('.btnAddMonitoring').prop('disabled', false);
+      }
+      else{
+        // $('.btnAddMonitoring').prop('disabled', true);
+      }
+
+      dtMonitorings.draw();
+    });
+
+    $('.selFilByShift').change(function(){
+      dtMonitorings.draw();
+    });
+
+    $('.txtFilByYear').change(function(){
+      dtMonitorings.draw();
+    });
+
+    // $('.txtFilByMonth').change(function(){
+    //   dtMonitorings.draw();
+    // });
+
+    $('.txtFilByWorkWeek').keyup(function(){
+      dtMonitorings.draw();
+    });
+
+    $('.selFilByFamily').change(function(){
+      // $('.btnAddMonitoring').prop('disabled', true);
+      $('.selFilByProdLineDesc').select2().val("").trigger("change");
+      $('.selFilByProdLineDesc').select2({
+          // dropdownParent: $('#mdlSaveItemRegistration'),
+          placeholder: "",
+          minimumInputLength: 2,
+          allowClear: true,
+          ajax: {
+             url: "{{ route('get_cbo_product_line_by_family') }}",
+             type: "get",
+             dataType: 'json',
+             delay: 250,
+             // quietMillis: 100,
+             data: function (params) {
+              return {
+                search: params.term, // search term
+                family: $('.selFilByFamily').val(),
+              };
+             },
+             processResults: function (response) {
+               return {
+                  results: response
+               };
+             },
+             cache: true
+          },
+      });
+    });
+
+    $('.selFilByProdLineDesc').select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_product_line_by_family') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+              family: $('.selFilByFamily').val(),
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
+    // localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
+    // localStorage.removeItem("monitorningFilter");
+
+    if(localStorage.getItem("monitorningFilter") == undefined){
+      localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
+      monitorningFilter = JSON.parse(localStorage.getItem("monitorningFilter"));
+    }
+    else{
+      monitorningFilter = JSON.parse(localStorage.getItem("monitorningFilter"));
+      if($('.selFilByProdLineDesc').val() != "" && $('.selFilByProdLineDesc').val() != null){
+        $('.btnAddMonitoring').prop('disabled', false);
+      }
+      else{
+        // $('.btnAddMonitoring').prop('disabled', true);
+      }
+    }
+
+    $('.selFilByFamily, .selFilByProdLineDesc').change(function(){
+      if($('.selFilByProdLineDesc').val() != null){
+        let data = $('.selFilByProdLineDesc').select2('data');
+        monitorningFilter = {
+          family: $('.selFilByFamily').val(),
+          plDescription: data[0].text,
+          plId: data[0].id,
+        };
+      }
+      else{
+        monitorningFilter = {
+          family: $('.selFilByFamily').val(),
+          plDescription: null,
+          plId: null,
+        };
+      }
+
+      localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
+      monitorningFilter = JSON.parse(localStorage.getItem("monitorningFilter"));
+    });
+
+    if(monitorningFilter.family != null){
+      $('.selFilByFamily').val(monitorningFilter.family);
+    }
+
+    if(monitorningFilter.plId != null){
+      $('.selFilByProdLineDesc').html('<option value="' + monitorningFilter.plId + '">' + monitorningFilter.plDescription + '</option>').val(monitorningFilter.plId);
+    }
+
+    $('select[name="machine_id"]', frmSaveMonitoring).select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_machine_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
+    $('select[name="qc_inspector"]', frmSaveMonitoring).select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_user_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
+    $('select[name="qc_checked_by"]', frmSaveMonitoring).select2({
+        // dropdownParent: $('#mdlSaveItemRegistration'),
+        placeholder: "",
+        minimumInputLength: 2,
+        allowClear: true,
+        ajax: {
+           url: "{{ route('get_cbo_user_by_stat') }}",
+           type: "get",
+           dataType: 'json',
+           delay: 250,
+           // quietMillis: 100,
+           data: function (params) {
+            return {
+              search: params.term, // search term
+            };
+           },
+           processResults: function (response) {
+             return {
+                results: response
+             };
+           },
+           cache: true
+        },
+    });
+
     $.fn.dataTable.ext.errMode = 'none';
+
+    dtMonitorings = $("#tblMonitorings").DataTable({
+      "processing" : false,
+      "serverSide" : true,
+      "searching" : false,
+    //   "lengthMenu": [ [25, 50, -1], [25, 50, "All"] ],
+      "ajax" : {
+        url: "{{ route('view_monitorings') }}",
+        data: function (param){
+            param.status = $(".selFilByStat").val();
+            param.product_line_id = $(".selFilByProdLineDesc").val();
+            param.shift = $(".selFilByShift").val();
+            param.work_week = $(".txtFilByWorkWeek").val();
+            param.year = $(".txtFilByYear").val();
+        }
+      },
+
+      "columns":[
+        { "data" : "l_description" },
+        { "data" : "work_week" },
+        { "data" : "m_date_from" },
+        { "data" : "m_date_to" },
+        { "data" : "shift" },
+        { "data" : "m_description" },
+        { "data" : "uqi_name" },
+        { "data" : "qcb_name" },
+        { "data" : "raw_status" },
+        { "data" : "raw_action", orderable:false, searchable:false }
+      ],
+
+      "columnDefs": [
+        {
+          "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          "data": null,
+          "defaultContent": "--"
+        },
+        // { "visible": false, "targets": 1 }
+      ],
+      "order": [[ 1, "asc" ]],
+      "initComplete": function(settings, json) {
+
+      },
+      "drawCallback": function( settings ) {
+
+      }
+    }).on( 'error', function () {
+      toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
+    });//end of dtMonitorings
 
     $(document).on('click', '.btnReload', function(){
       // window.location.reload();
@@ -244,10 +611,47 @@
     });
 
     $(".btnAddMonitoring").click(function(e){
+      if($('.selFilByProdLineDesc').val() == ""){
+        toastr.warning('Please select a description from the filter!');
+        return;
+      }
       $("#mdlSaveMonitoring").modal('show');
       frmSaveMonitoring[0].reset();
       $(".input-error", frmSaveMonitoring).text('');
       $(".form-control", frmSaveMonitoring).removeClass('is-invalid');
+      $("input[name='work_week']", frmSaveMonitoring).prop('readonly', false);
+      $('input[name="product_line_id"]', frmSaveMonitoring).val($('.selFilByProdLineDesc').val());
+      $('select[name="line_id"]', frmSaveMonitoring).val("").trigger("change");
+      $('select[name="line_id"]', frmSaveMonitoring).select2({
+          // dropdownParent: $('#mdlSaveItemRegistration'),
+          placeholder: "",
+          minimumInputLength: 2,
+          allowClear: true,
+          ajax: {
+             url: "{{ route('get_cbo_line_by_product_line') }}",
+             type: "get",
+             dataType: 'json',
+             delay: 250,
+             // quietMillis: 100,
+             data: function (params) {
+              return {
+                search: params.term, // search term
+                product_line_id: $('input[name="product_line_id"]', frmSaveMonitoring).val(),
+              };
+             },
+             processResults: function (response) {
+               return {
+                  results: response
+               };
+             },
+             cache: true
+          },
+      });
+
+      $('input[name="monitoring_id"]', frmSaveMonitoring).val('');
+      $('select[name="machine_id"]', frmSaveMonitoring).html('').val('').trigger("change");
+      $('select[name="qc_inspector"]', frmSaveMonitoring).html('').val('').trigger("change");
+      $('select[name="qc_checked_by"]', frmSaveMonitoring).html('').val('').trigger("change");
     });
 
     $('#mdlSaveMonitoring').on('shown.bs.modal', function (e) {
@@ -262,10 +666,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Monitoring';        
+          title = 'Archive Monitoring';
         }
         else if(status == 1){
-          title = 'Restore Monitoring';        
+          title = 'Restore Monitoring';
         }
       }
       // else if(action == 2){
@@ -288,7 +692,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -303,6 +707,53 @@
       let monitoringId = $(this).attr('monitoring-id');
       GetMonitoringById(monitoringId);
     });
+
+    $('input[name="work_week"]', frmSaveMonitoring).on('keyup change', function(){
+      var currYear = "2023";
+      var monthofCurrentYear = moment().format("MM")
+      console.log('month now', monthofCurrentYear);
+      if(monthofCurrentYear == 1 || monthofCurrentYear == 2 || monthofCurrentYear == 3){
+        var currYear = moment().format("YYYY") - 1;
+        console.log('fiscalyear now', currYear);
+      }else{
+        var currYear = moment().format("YYYY");
+        // var currYear = "2024";
+        console.log('year now', currYear);
+      }
+
+      //  console.log('month now', monthofCurrentYear);
+      //   var currYear = moment().format("YYYY");
+      //   console.log('year now', currYear);
+      //Pass in the first of a given calendar month and the day weekday
+      var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
+      $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
+      $('input[name="date_to"]', frmSaveMonitoring).val(dateRange.dateTo);
+    });
+
+    function getFirstWeekDay(dateString, dayOfWeek, workWeek) {
+      var date = moment(dateString, "YYYY-MM-DD");
+
+      var day = date.day();
+      var diffDays = 0;
+
+      var dateFrom = "";
+      var dateTo = "";
+
+      if (day > dayOfWeek) {
+        diffDays = (7 * workWeek) - (day - dayOfWeek);
+      } else {
+        diffDays = dayOfWeek - day;
+      }
+
+      var tempDateFrom = date.add(diffDays, 'day');
+      var dateFrom = tempDateFrom.format("YYYY-MM-DD");
+      dateTo = tempDateFrom.add(6, 'day').format("YYYY-MM-DD");
+
+      return {
+        dateFrom: dateFrom,
+        dateTo: dateTo
+      };
+    }
 
   });
 </script>

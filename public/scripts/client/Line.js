@@ -31,6 +31,7 @@ function SaveLine(){
                     $(".input-error", frmSaveLine).text('');
                     $(".form-control", frmSaveLine).removeClass('is-invalid');
                     dtLines.draw();
+                    $('input[name="product_line_id"]', frmSaveLine).val($(".txtSelectedProdLineId").val());
                 }
                 else{
                     toastr.error('Saving Failed!');
@@ -90,6 +91,7 @@ function GetLineById(lineId){
                     $("#mdlSaveLine").modal('show');
                     $('input[name="line_id"]', frmSaveLine).val(data['line_info']['id']);
                     $('input[name="description"]', frmSaveLine).val(data['line_info']['description']);
+                    $('input[name="product_line_id"]', frmSaveLine).val(data['line_info']['product_line_id']);
                 }
                 else{
                     toastr.error('No record found.');

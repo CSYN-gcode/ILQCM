@@ -13,113 +13,143 @@ use Auth;
 
 // MODEL
 use App\User;
+use App\Model\UserStation;
+use App\Model\UserSeries;
 
 // PACKAGE
 use DataTables;
+use QrCode;
 
 class UserController extends Controller
 {
-    // Sign In
-    public function sign_in(Request $request){
-        date_default_timezone_set('Asia/Manila');
+    public function SystemOneEmpInfo(Request $request){
+        $pmi_emp_info = DB::connection('mysql_systemone_hris')
+            ->table('tbl_EmployeeInfo')
+            ->select('pkid', 'EmpNo')
+            ->where('EmpNo', $request->emp_id)
+            ->first();
 
-        if($request->ajax()){
-	        $data = array(
-	            'username' => $request->username,
-	            'password' => $request->password,
-	            'status' => 1,
-	            'logdel' => 0,
-	        );
+        if(!isset($pmi_emp_info)){
+            $subcon_emp_info = DB::connection('mysql_systemone_subcon')
+            ->table('tbl_EmployeeInfo')
+            ->select('pkid', 'EmpNo')
+            ->where('EmpNo', $request->emp_id)
+            ->first();
 
-	        $rules = [
-	            'username' => 'required|min:4',
-	            'password' => 'required|min:4'
-	        ];
-
-	        $validator = Validator::make($data, $rules);
-
-	        try {
-	            if($validator->passes()){
-	                if(Auth::attempt($data)){
-	                    
-	                    $user_info = [
-	                        'id' => Auth::user()->id,
-	                        'name' => Auth::user()->name,
-	                        'username' => Auth::user()->username,
-	                        'user_level' => Auth::user()->user_level,
-	                        'status' => Auth::user()->status,
-	                    ];
-
-	                    return response()->json([
-	                        'result' => 1,
-	                        'user_info' => $user_info,
-	                    ]);
-	                }
-	                else{
-	                    try{
-	                        $user_info = User::where('username', $request->username)->first();
-
-	                        return response()->json(['result' => 0, 'user_info' => $user_info]);
-	                    }
-	                    catch(\Exception $e) {
-	                        DB::rollback();
-	                        return response()->json(['result' => 0, 'error' => 'Login Failed!', 'user_info' => null]);  
-	                    }
-	                }
-	            }
-	            else{
-	                try{
-	                    $user_info = User::where('username', $request->username)->first();
-
-	                    return response()->json(['result' => 0, 'user_info' => $user_info]);
-	                }
-	                catch(\Exception $e) {
-	                    DB::rollback();
-	                    return response()->json(['result' => 0, 'error' => $e, 'user_info' => null]);
-	                }
-	            }
-	        } 
-	        catch (Exception $e) {
-	            return response()->json(['result' => 0, 'error' => $e->messages(), 'user_info' => null]);
-	        }
+            return response()->json(["emp_cat" => 'subcon', "result" => $subcon_emp_info]);
+        }else{
+            return response()->json(["emp_cat" => 'pmi', "result" => $pmi_emp_info]);
         }
-    	else{
-    		abort(403);
-    	}
-
-    }
-
-    // Logout
-    public function logout(Request $request){
-    	if($request->ajax()){
-	        Auth::logout();
-	        session()->flush();
-	        return response()->json(['result' => 1]);
-    	}
-    	else{
-    		abort(403);
-    	}
     }
 
     //View Users
     public function view_users(Request $request){
         if($request->ajax()){
-	        $data = User::where('logdel', 0)
-	        			->where('status', $request->status)
-	        			->get();
+            $user_info = DB::connection('mysql')
+                            ->table('users')
+                            ->select(
+                                'users.*',
+                            )
+                            ->where('users.logdel', 0)
+                            ->where('users.status', $request->status)
+                            ->when($request->position, function ($query) use ($request) {
+                                return $query ->where('users.position', $request->position);
+                            })
+                            ->get();
+            //old code
+	        // $data = User::with([
+		    //         		'user_station_details' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_station_details.station_info' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_series_details' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         		'user_series_details.series_info' => function($query){
+		    //         			$query->where('logdel', 0);
+		    //         			$query->where('status', 1);
+		    //         		},
+		    //         	])
+	        // 			->where('logdel', 0)
+	        // 			->where('status', $request->status)
+	        // 			// ->where('position', $request->position)
+            //             ->when($request->position, function ($query) use ($request) {
+            //                 return $query ->where('position', $request->position);
+            //             })
+        	// 			->get();
+            // return $data;
+            //old code
 
-	        return DataTables::of($data)
+	        return DataTables::of($user_info)
 	            ->addColumn('raw_status', function($row){
 	                $result = "";
-
 	                if($row->status == 1){
 	                    $result .= '<span class="badge badge-pill bg-success">Active</span>';
 	                }
 	                else if($row->status == 2){
-	                    $result .= '<span class="badge badge-pill bg-danger">Inactive</span>';
+	                    $result .= '<span class="badge badge-pill bg-danger">Archived</span>';
 	                }
-	                else if($row->status == 3){
-	                    $result .= '<span class="badge badge-pill bg-warning">Disabled</span>';
+	                return $result;
+	            })
+                ->addColumn('stations', function($row){
+                    $result = "";
+                    $user_stations = DB::connection('mysql')
+                                        ->table('user_stations')
+                                        ->join('stations', 'stations.id', '=', 'user_stations.station_id')
+                                        ->select(
+                                            'stations.description',
+                                        )
+                                        ->where('user_stations.user_id', $row->id)
+                                        ->where('user_stations.logdel', 0)
+                                        ->where('user_stations.status', 1)
+                                        ->where('stations.logdel', 0)
+                                        ->where('stations.status', 1)
+                                        ->get();
+
+                    foreach( $user_stations as $station ){
+                        $result .= "$station->description,";
+                    }
+                    return $result;
+                })
+                ->addColumn('serieses', function($row){
+                    $result = "";
+
+                    $user_serieses = DB::connection('mysql')
+                                        ->table('user_serieses')
+                                        ->join('serieses', 'serieses.id', '=', 'user_serieses.series_id')
+                                        ->select(
+                                            'serieses.description',
+                                        )
+                                        ->where('user_serieses.user_id', $row->id)
+                                        ->where('user_serieses.logdel', 0)
+                                        ->where('user_serieses.status', 1)
+                                        ->where('serieses.logdel', 0)
+                                        ->where('serieses.status', 1)
+                                        ->get();
+
+                    foreach( $user_serieses as $serieses ){
+                        $result .= "$serieses->description,";
+                    }
+                    return $result;
+                })
+	            ->addColumn('raw_position', function($row){
+	                $result = "";
+
+	                if($row->position == 1){
+	                    $result .= 'QC';
+	                }else if($row->position == 2){
+	                    $result .= 'QC Supervisor';
+	                }else if($row->position == 3){
+	                    $result .= 'Operator';
+	                }else if($row->position == 4){
+	                    $result .= 'PPC';
+	                }else if($row->position == 5){
+	                    $result .= 'ADMIN';
 	                }
 
 	                return $result;
@@ -129,29 +159,19 @@ class UserController extends Controller
 	                if($row->status == 1){
 	                    $result .= '<button type="button" class="btn btn-xs btn-primary table-btns btnEditUser" user-id="' . $row->id . '"><i class="fa fa-edit" title="Edit"></i></button>';
 
-	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" user-id="' . $row->id . '" title="Deactivate"><i class="fa fa-lock"></i></button>';
+	                    $result .= ' <button type="button" class="btn btn-xs btn-danger table-btns btnActions" action="1" status="2" user-id="' . $row->id . '" title="Archive"><i class="fa fa-lock"></i></button>';
 
-	                    $result .= ' <button type="button" class="btn btn-xs btn-warning table-btns btnActions" action="2" status="1" user-id="' . $row->id . '" title="Reset Password"><i class="fa fa-history"></i></button>';
-	                }
+	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnGenerateQRCode" user-id="' . $row->id . '" title="Generate QR Code"><i class="fa fa-qrcode"></i></button>';
+
+                        $result .= ' <button type="button" class="btn btn-xs btn-secondary table-btns btnGotoEtr" user-id="' . $row->employee_id . '" title="Goto ETR"><i class="fa fa-search"></i></button>';
+                    }
 	                else{
-	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" user-id="' . $row->id . '" title="Activate"><i class="fa fa-unlock"></i></button>';
+	                    $result .= ' <button type="button" class="btn btn-xs btn-success table-btns btnActions" action="1" status="1" user-id="' . $row->id . '" title="Restore"><i class="fa fa-unlock"></i></button>';
 	                }
 
 	                return $result;
 	            })
-	            ->addColumn('raw_user_level', function($row){
-	                $result = "";
-
-	                if($row->user_level == 1){
-	                    $result = 'Administrator';
-	                }
-	                else if($row->user_level == 2){
-	                    $result = 'Encoder';
-	                }
-
-	                return $result;
-	            })
-	            ->rawColumns(['raw_status', 'raw_action', 'raw_user_level'])
+	            ->rawColumns(['raw_status', 'raw_position', 'raw_action'])
 	            ->make(true);
         }
     	else{
@@ -164,38 +184,81 @@ class UserController extends Controller
         session_start();
 
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        // Add User
 		        if(!isset($request->user_id)){
 		            $data = $request->all();
 
 		            $rules = [
-		                'name' => 'required|min:5|unique:users',
-		                'username' => 'required|min:5|unique:users',
-		                'email' => 'required|min:8|unique:users',
-		                'user_level' => 'required|numeric',
-		                // 'password' => 'required|min:8',
+		                'name' => 'required|min:4|unique:users',
+		                'employee_id' => 'required|min:2|unique:users',
+		                'position' => 'required',
 		            ];
+
+                    if($request->position < 3){
+		                $rules["station_ids"] = 'required';
+		                $rules["series_ids"] =  'required';
+                    }
+
+		            if($request->position == 2){
+		            	$rules["email"] = 'required|min:4|unique:users';
+		            }
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    User::insert([
-		                        'name' => $request->name,
-		                        'username' => $request->username,
-		                        'email' => $request->email,
-		                        'user_level' => $request->user_level,
-		                        'password' => Hash::make('jct12345'),
-		                        'status' => 1,
-		                        'attempt' => 0,
-		                        'created_at' => date('Y-m-d H:i:s'),
-		                        'updated_at' => date('Y-m-d H:i:s'),
-		                    ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	try {
+		                		DB::beginTransaction();
+			                    $user_id = User::insertGetId([
+			                        'name' => $request->name,
+			                        'email' => $request->email,
+			                        'employee_id' => $request->employee_id,
+			                        'position' => $request->position,
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+
+			                    if(isset($request->station_ids) && count($request->station_ids) > 0){
+			                    	for($index = 0; $index < count($request->station_ids); $index++){
+				                    	UserStation::insert([
+					                        'user_id' => $user_id,
+					                        'station_id' => $request->station_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    if(isset($request->station_ids) && count($request->series_ids) > 0){
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	UserSeries::insert([
+					                        'user_id' => $user_id,
+					                        'series_id' => $request->series_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    DB::commit();
+		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	} catch (Exception $e) {
+		                		DB::rollback();
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]);
+		                	}
 		                }
 		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		                }
 		            }
 		            catch(\Exception $e) {
@@ -208,30 +271,78 @@ class UserController extends Controller
 
 		            $rules = [
 		                'user_id' => 'required|numeric',
-		                'name' => 'required|min:5|unique:users,name,' . $request->user_id,
-		                'username' => 'required|min:5|unique:users,username,' . $request->user_id,
-		                'email' => 'required|min:8|unique:users,email,' . $request->user_id,
-		                'user_level' => 'required|numeric',
+		                'name' => 'required|min:2|unique:users,name,' . $request->user_id,
+		                'employee_id' => 'required|min:2|unique:users,employee_id,' . $request->user_id,
+		                'position' => 'required|numeric',
+		                'station_ids' => 'required',
+		                'series_ids' => 'required',
 		            ];
+
+		            if($request->position == 2){
+		            	$rules["email"] = 'required|min:2|unique:users,email,' . $request->user_id;
+		            }
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    User::where('id', $request->user_id)
-		                    	->where('logdel', 0)
-		                    	->where('status', 1)
-		                        ->update([
-		                            'name' => $request->name,
-		                            'username' => $request->username,
-		                            'email' => $request->email,
-		                            'user_level' => $request->user_level,
-		                            'updated_at' => date('Y-m-d H:i:s'),
-		                        ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	try {
+		                		DB::beginTransaction();
+			                    User::where('id', $request->user_id)
+			                    	->where('logdel', 0)
+			                    	->where('status', 1)
+			                        ->update([
+			                            'name' => $request->name,
+			                            'email' => $request->email,
+			                            'employee_id' => $request->employee_id,
+			                            'position' => $request->position,
+			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                            'updated_at' => date('Y-m-d H:i:s'),
+			                        ]);
+
+			                    if(count($request->station_ids) > 0){
+			                    	UserStation::where('user_id', $request->user_id)
+			                    	->delete();
+
+			                    	for($index = 0; $index < count($request->station_ids); $index++){
+				                    	UserStation::insert([
+					                        'user_id' => $request->user_id,
+					                        'station_id' => $request->station_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    if(count($request->series_ids) > 0){
+			                    	UserSeries::where('user_id', $request->user_id)
+			                    	->delete();
+
+			                    	for($index = 0; $index < count($request->series_ids); $index++){
+				                    	UserSeries::insert([
+					                        'user_id' => $request->user_id,
+					                        'series_id' => $request->series_ids[$index],
+					                        'status' => 1,
+					                        'created_by' => $_SESSION["rapidx_user_id"],
+					                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+					                        'created_at' => date('Y-m-d H:i:s'),
+					                        'updated_at' => date('Y-m-d H:i:s'),
+					                    ]);
+			                    	}
+			                    }
+
+			                    DB::commit();
+		                    	return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	} catch (Exception $e) {
+		                		DB::rollback();
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => $e->messages()]);
+		                	}
 		                }
 		                else{
-		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		                }
 		            }
 		            catch(\Exception $e) {
@@ -252,7 +363,7 @@ class UserController extends Controller
         date_default_timezone_set('Asia/Manila');
         session_start();
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        $data = [
 		            'user_id' => $request->user_id,
 		        ];
@@ -264,12 +375,37 @@ class UserController extends Controller
 		        $validator = Validator::make($data, $rules);
 
 		        if($validator->passes()){
-		            $user_info = User::where('id', $request->user_id)->where('logdel', 0)->first();
+		            $user_info = User::with([
+		            		'user_station_details' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            		'user_station_details.station_info' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
 
-		            return response()->json(['auth' => 1, 'user_info' => $user_info, 'result' => 1]);
+		            		'user_series_details' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            		'user_series_details.series_info' => function($query){
+		            			$query->where('logdel', 0);
+		            			$query->where('status', 1);
+		            		},
+		            	])
+		            	->where('id', $request->user_id)
+		            	->where('logdel', 0)
+		            	->first();
+
+		            $qrcode = QrCode::format('png')
+                            ->size(200)->errorCorrection('H')
+                            ->generate($user_info->employee_id);
+
+		            return response()->json(['auth' => 1, 'user_info' => $user_info, 'result' => 1, 'qrcode' => "data:image/png;base64," . base64_encode($qrcode)]);
 		        }
 		        else{
-		            return response()->json(['auth' => 1, 'user_info' => null, 'result' => 0]);  
+		            return response()->json(['auth' => 1, 'user_info' => null, 'result' => 0, 'qrcode' => ""]);
 		        }
 		    }
 		    else{
@@ -287,7 +423,7 @@ class UserController extends Controller
 
         if($request->ajax()){
 	        // Change User Status
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        if($request->action == 1){
 		            $data = [
 		                'user_id' => $request->user_id,
@@ -307,127 +443,85 @@ class UserController extends Controller
 		                    	->where('logdel', 0)
 		                        ->update([
 		                            'status' => $request->status,
+		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
 		                            'updated_at' => date('Y-m-d H:i:s'),
 		                        ]);
 
 		                    return response()->json(['auth' => 1, 'result' => 1, 'error']);
-		                } 
+		                }
 		                catch (Exception $e) {
-		                    return response()->json(['auth' => 1, 'user_info' => null]); 
+		                    return response()->json(['auth' => 1, 'user_info' => null]);
 		                }
 		            }
 		            else{
-		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
+		                return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);
 		            }
 		        }
-		        // Reset Password
-		        else if($request->action == 2){
-		            $data = [
-		                'user_id' => $request->user_id,
-		            ];
-
-		            $rules = [
-		                'user_id' => 'required',
-		            ];
-
-		            $password = '';
-
-		            $validator = Validator::make($data, $rules);
-
-		            if($validator->passes()){
-		                try {
-		                    $password = Hash::make('jct12345');
-		                    User::where('id', $request->user_id)
-	                    		->where('logdel', 0)
-		                        ->update([
-		                            'password' => $password,
-		                            'updated_at' => date('Y-m-d H:i:s'),
-		                        ]);
-
-		                    return response()->json(['auth' => 1, 'result' => 1]);
-		                } 
-		                catch (Exception $e) {
-		                    return response()->json(['auth' => 1, 'result' => 0]);   
-		                }
-		            }
-		            else{
-		                return response()->json(['auth' => 1, 'error' => $validator->messages(), 'password' => $password]);   
-		            }
-		        } 
 	        } // Session Expired
 		    else{
 	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null]);
-		    }  
+		    }
 		}
     	else{
     		abort(403);
     	}
     }
 
-    public function change_password(Request $request){
+    public function get_cbo_user_by_stat(Request $request){
+        date_default_timezone_set('Asia/Manila');
 
         if($request->ajax()){
-	        $data = $request->all();
+	        $search = $request->search;
 
-	        $login_data = array(
-	            'username' => Auth::user()->username,
-	            'password' => $request->password,
-	            'status' => 1,
-	            'logdel' => 0,
-	        );
-
-	        $rules = [
-	            'password' => 'required|min:4',
-	            'new_password' => 'required|min:4',
-	            'confirm_password' => 'required|min:4|same:new_password',
-	        ];
-
-	        $validator = Validator::make($data, $rules);
-
-	        try {
-            	if($validator->passes()){
-            		if(Auth::attempt($login_data)){
-			        	User::where('username', Auth::user()->username)
-		        			->update([
-		        				'password' => Hash::make($request->new_password),
-		        			]);
-
-		             	return response()->json(['result' => 1, 'login_success' => 1, 'auth' => 1]);
-            		}
-	                else{
-	                	return response()->json(['result' => 0, 'login_success' => 0, 'auth' => 1]);
-	                }
-	            }
-	            else{
-	            	return response()->json(['result' => 0, 'error' => $validator->messages(), 'auth' => 1]);
-	            }
-	        } 
-	        catch (Exception $e) {
-	            return response()->json(['result' => 0, 'error' => $e->messages(), 'user_info' => null]);
+	        if($search == ''){
+	            $users = [];
 	        }
+	        else{
+	            $users = User::orderby('name','asc')->select('id','name', 'employee_id')
+	                        ->where('name', 'like', '%' . $search . '%')
+	                        ->orWhere('employee_id', 'like', '%' . $search . '%')
+	                        ->where('status', 1)
+	                        ->where('logdel', 0)
+	                        ->get();
+	        }
+
+	        $response = array();
+	        $response[] = array(
+                "id" => '',
+                "text" => '',
+            );
+
+	        foreach($users as $user){
+	            $response[] = array(
+	                "id" => $user->id,
+	                "text" => $user->name . ' (' . $user->employee_id . ')',
+	            );
+	        }
+
+	        echo json_encode($response);
+	        exit;
         }
     	else{
     		abort(403);
     	}
-
     }
 
-    public function count_users(Request $request){
-        date_default_timezone_set('Asia/Manila');
+    public function user_logout()
+    {
+        //laravel code
+        // session()->forget('rapidx_user_id');
+        // $request->session()->put([
+        //     'rapidx_user_id' => $user_login[0]->id,
+        //     'rapidx_user_level_id' => $user_login[0]->user_level_id,
+        //     'rapidx_username' => $user_login[0]->username,
+        //     'rapidx_name' => $user_login[0]->name
+        // ]);
+        // session()->forget(['rapidx_user_id', 'rapidx_user_level_id', 'rapidx_username', 'rapidx_name']);
+
         session_start();
-        if($request->ajax()){
-	        if(Auth::check()){
-	            $count = User::where('status', 1)->where('logdel', 0)->count();
-
-	            return response()->json(['auth' => 1, 'count' => $count, 'result' => 1]);
-		    }
-		    else{
-	        	return response()->json(['auth' => 0, 'result' => 0, 'error' => null, 'count' => 0]);
-		    }
-		}
-    	else{
-    		abort(403);
-    	}
+        session_unset();
+        session_destroy();
+        Auth::logout();
+        return response()->json(['result' => "1"]);
     }
-
 }

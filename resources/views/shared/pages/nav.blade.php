@@ -7,7 +7,7 @@
          alt="JCT"
          class="brand-image img-circle elevation-3"> -->
       <!-- <i class="fa fa-home"></i> -->
-    <span class="brand-text font-weight-light">In-Line QC Monitoring</span>
+    <center><span class="brand-text font-weight-light">In-Line QC Monitoring</span></center>
     <!-- </center> -->
   </a>
 
@@ -18,6 +18,18 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
+
+             {{-- Clark Comment 01/16/2024 --}}
+        {{-- <li class="nav-item has-treeview">
+          <a href="../RapidX/" class="nav-link">
+            <i class="nav-icon fas fa-arrow-left"></i>
+            <p>
+              Return to RapidX
+            </p>
+          </a>
+        </li> --}}
+                {{-- Clark Comment 01/16/2024 --}}
+
         <li class="nav-item has-treeview">
           <a href="{{ route('dashboard') }}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -27,22 +39,20 @@
           </a>
         </li>
 
-        @if(Auth::user()->user_level == 1)
         <li class="nav-item has-treeview">
-          <a href="{{ route('users') }}" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Users
-            </p>
-          </a>
+            <a href="{{ route('strategic_po') }}" class="nav-link">
+                <i class="nav-icon fas fa-list-ol"></i>
+                <p>
+                Strategic PO
+                </p>
+            </a>
         </li>
-        @endif
-        
+
         <li class="nav-item has-treeview">
-          <a href="{{ route('lines') }}" class="nav-link">
+          <a href="{{ route('serieses') }}" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
-              Lines
+              Series
             </p>
           </a>
         </li>
@@ -52,6 +62,33 @@
             <i class="nav-icon fas fa-cube"></i>
             <p>
               Stations
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="{{ route('users') }}" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="{{ route('product_lines') }}" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Product Lines
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="{{ route('machines') }}" class="nav-link">
+            <i class="nav-icon fas fa-hdd"></i>
+            <p>
+              Machines
             </p>
           </a>
         </li>

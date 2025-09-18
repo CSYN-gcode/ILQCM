@@ -24,6 +24,7 @@ class LineController extends Controller
         if($request->ajax()){
 	        $data = Line::where('logdel', 0)
 	        			->where('status', $request->status)
+	        			->where('product_line_id', $request->product_line_id)
         				->get();
 
 	        return DataTables::of($data)
@@ -65,30 +66,39 @@ class LineController extends Controller
         session_start();
 
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        // Add Line
 		        if(!isset($request->line_id)){
-		            $data = [
-		                'description' => $request->description,
-		            ];
+		            $data = $request->all();
 
 		            $rules = [
-		                'description' => 'required|min:2|unique:lines',
+		                'description' => 'required|min:2',
+		                'product_line_id' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    Line::insert([
-		                        'description' => $request->description,
-		                        'status' => 1,
-		                        'created_by' => Auth::user()->id,
-		                        'last_updated_by' => Auth::user()->id,
-		                        'created_at' => date('Y-m-d H:i:s'),
-		                        'updated_at' => date('Y-m-d H:i:s'),
-		                    ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	$line_info = Line::where("product_line_id", $request->product_line_id)
+		                	->where("description", $request->description)
+		                	->first();
+
+		                	if($line_info == null){
+			                    Line::insert([
+			                        'product_line_id' => $request->product_line_id,
+			                        'description' => $request->description,
+			                        'status' => 1,
+			                        'created_by' => $_SESSION["rapidx_user_id"],
+			                        'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                        'created_at' => date('Y-m-d H:i:s'),
+			                        'updated_at' => date('Y-m-d H:i:s'),
+			                    ]);
+			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	}
+		                	else{
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => ["description" => "The description has already been taken."]]);
+		                	}
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
@@ -100,29 +110,37 @@ class LineController extends Controller
 		        }
 		        // Edit Line
 		        else{
-		            $data = [
-		                'line_id' => $request->line_id,
-		                'description' => $request->description,
-		            ];
+		            $data = $request->all();
 
 		            $rules = [
 		                'line_id' => 'required|numeric',
-		                'description' => 'required|min:2|unique:lines,description,' . $request->line_id,
+		                'description' => 'required|min:2',
+		                'product_line_id' => 'required',
 		            ];
 
 		            $validator = Validator::make($data, $rules);
 
 		            try {
 		                if($validator->passes()){
-		                    Line::where('id', $request->line_id)
-		                    	->where('logdel', 0)
-		                    	->where('status', 1)
-		                        ->update([
-		                            'description' => $request->description,
-		                            'last_updated_by' => Auth::user()->id,
-		                            'updated_at' => date('Y-m-d H:i:s'),
-		                        ]);
-		                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+		                	$line_info = Line::where("product_line_id", $request->product_line_id)
+		                	->where("id", "!=", $request->line_id)
+		                	->where("description", $request->description)
+		                	->first();
+
+		                	if($line_info == null){
+			                    Line::where('id', $request->line_id)
+			                    	->where('logdel', 0)
+			                    	->where('status', 1)
+			                        ->update([
+			                            'description' => $request->description,
+			                            'last_updated_by' => $_SESSION["rapidx_user_id"],
+			                            'updated_at' => date('Y-m-d H:i:s'),
+			                        ]);
+			                    return response()->json(['auth' => 1, 'result' => 1, 'error' => null]);
+							}
+		                	else{
+		                		return response()->json(['auth' => 1, 'result' => 0, 'error' => ["description" => "The description has already been taken."]]);
+		                	}
 		                }
 		                else{
 		                    return response()->json(['auth' => 1, 'result' => 0, 'error' => $validator->messages()]);    
@@ -146,7 +164,7 @@ class LineController extends Controller
         date_default_timezone_set('Asia/Manila');
         session_start();
         if($request->ajax()){
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        $data = [
 		            'line_id' => $request->line_id,
 		        ];
@@ -181,7 +199,7 @@ class LineController extends Controller
 
         if($request->ajax()){
 	        // Change Line Status
-	        if(Auth::check()){
+	        if(isset($_SESSION["rapidx_user_id"])){
 		        if($request->action == 1){
 		            $data = [
 		                'line_id' => $request->line_id,
@@ -201,7 +219,7 @@ class LineController extends Controller
 		                    	->where('logdel', 0)
 		                        ->update([
 		                            'status' => $request->status,
-		                            'last_updated_by' => Auth::user()->id,
+		                            'last_updated_by' => $_SESSION["rapidx_user_id"],
 		                            'updated_at' => date('Y-m-d H:i:s'),
 		                        ]);
 
@@ -227,9 +245,10 @@ class LineController extends Controller
 
     public function get_cbo_line_by_stat(Request $request){
         date_default_timezone_set('Asia/Manila');
+        session_start();
 
         if($request->ajax()){
-        	if(Auth::check()){
+        	if(isset($_SESSION["rapidx_user_id"])){
 		        $search = $request->search;
 
 		        if($search == ''){
@@ -263,7 +282,58 @@ class LineController extends Controller
         		$response = array();
 		            $response[] = array(
 		                "id" => '',
-		                "text" => 'Please reload again.',
+		                "text" => 'Please reload againsd.',
+		            );
+
+		        echo json_encode($response);
+        	}
+        }
+    	else{
+    		abort(403);
+    	}
+    }
+
+    public function get_cbo_line_by_product_line(Request $request){
+        date_default_timezone_set('Asia/Manila');
+        session_start();
+
+        if($request->ajax()){
+        	if(isset($_SESSION["rapidx_user_id"])){
+		        $search = $request->search;
+
+		        if($search == ''){
+		            $lines = [];
+		        }
+		        else{
+		            $lines = Line::orderby('description','asc')->select('id','description')
+		                        ->where('description', 'like', '%' . $search . '%')
+		                        ->where('product_line_id', $request->product_line_id)
+		                        ->where('status', 1)
+		                        ->where('logdel', 0)
+		                        ->get();
+		        }
+
+		        $response = array();
+		        $response[] = array(
+	                "id" => '',
+	                "text" => '',
+	            );
+
+		        foreach($lines as $line){
+		            $response[] = array(
+		                "id" => $line->id,
+		                "text" => $line->description,
+		            );
+		        }
+
+		        echo json_encode($response);
+		        exit;
+        	}
+        	else{
+        		$response = array();
+		            $response[] = array(
+		                "id" => '',
+		                "text" => 'Please reload againsd.',
 		            );
 
 		        echo json_encode($response);
