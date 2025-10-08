@@ -69,7 +69,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -137,7 +137,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                       </tbody>
                     </table>
                   </div> <!-- .table-responsive -->
@@ -184,6 +184,11 @@
                   <option value="4">QF/TSOP/SMPO</option>
                   <option value="5">PPS-CN</option>
                   <option value="6">PPS-TS</option>
+                  {{-- 10082025 Added by Nessa, for modification create CRUD module --}}
+                  <option value="7">TC/DC Connectors</option>
+                  <option value="8">Card Connectors</option>
+                  <option value="9">Flexicon Connectors</option>
+                  <option value="10">IC Sockets</option>
                 </select>
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
@@ -279,7 +284,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -314,7 +319,7 @@
             param.status = $(".selFilByStat").eq(0).val();
         }
       },
-      
+
       "columns":[
         { "data" : "raw_family" },
         { "data" : "description" },
@@ -322,7 +327,7 @@
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2],
           "data": null,
@@ -332,10 +337,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -369,10 +374,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Product Line';        
+          title = 'Archive Product Line';
         }
         else if(status == 1){
-          title = 'Restore Product Line';        
+          title = 'Restore Product Line';
         }
       }
       // else if(action == 2){
@@ -395,7 +400,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
@@ -438,7 +443,7 @@
     $('.select2bs4').select2({
       theme: 'bootstrap4'
     });
-    
+
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -474,14 +479,14 @@
             param.product_line_id = $(".txtSelectedProdLineId").val();
         }
       },
-      
+
       "columns":[
         { "data" : "description" },
         { "data" : "raw_status" },
         { "data" : "raw_action", orderable:false, searchable:false }
       ],
 
-      "columnDefs": [ 
+      "columnDefs": [
         {
           "targets": [0, 1, 2],
           "data": null,
@@ -491,10 +496,10 @@
       ],
       "order": [[ 1, "asc" ]],
       "initComplete": function(settings, json) {
-          
+
       },
       "drawCallback": function( settings ) {
-          
+
       }
     }).on( 'error', function () {
       toastr.warning('DataTable not loaded properly. Please reload the page. <br> <button class="pull-right btn btn-danger btn-xs btnReload float-sm-right">Reload</button>');
@@ -530,10 +535,10 @@
 
       if(action == 1){
         if(status == 2){
-          title = 'Archive Line';        
+          title = 'Archive Line';
         }
         else if(status == 1){
-          title = 'Restore Line';        
+          title = 'Restore Line';
         }
       }
       // else if(action == 2){
@@ -556,7 +561,7 @@
             }
           },
           cancel: function () {
-            
+
           },
         }
       });
