@@ -284,7 +284,10 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
+<<<<<<< HEAD
+=======
                                       <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
+>>>>>>> 82e293cbc7a421d69f3a787c5ab51b3622638366
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
@@ -3002,6 +3005,69 @@
             GetPODetails(po_no);
             $("#modalSearchPoNo").modal('hide');
     });
+        // $.confirm({
+        //     title: 'Search P.O. No.',
+        //     content: '' +
+        //     '<form action="" class="formSearchPoNo">' +
+        //         '<div class="form-group">' +
+        //             '<label>Enter P.O. No.</label>' +
+        //             '<input type="text" placeholder="P.O. No." class="po_no form-control" required />' +
+        //         '</div>' +
+        //     '</form>',
+        //     buttons: {
+        //         formSubmit: {
+        //             text: 'Search',
+        //             btnClass: 'btn-blue',
+        //             action: function () {
+        //                 var po_no = this.$content.find('.po_no').val();
+        //                 if(!po_no){
+        //                     toastr.warning('Invalid P.O. No.');
+        //                     return false;
+        //                 }
+        //                 GetPODetails(po_no);
+        //             }
+        //         },
+        //         cancel: function () {
+        //             //close
+        //         },
+        //     },
+        //     onContentReady: function () {
+        //         // bind to events
+        //         var jc = this;
+        //         this.$content.find('form').on('submit', function (e) {
+        //             // if the user submits the form by pressing enter in the field.
+        //             e.preventDefault();
+        //             jc.$$formSubmit.trigger('click'); // reference the button and click it
+        //         });
+        //     }
+        // });
+
+        // console.log($('.po_no').focus());
+        // $('.po_no').first().focus();
+        // console.log('dito na');
+    // });
+
+    // formSearchPoNo
+    // $('.formSearchPoNo').on('shown.modal', function () {
+    //     console.log('testing shown form');
+    //     $('.po_no').focus();
+    // });
+
+    // $('.po_no').click(function (e) {
+    //     e.preventDefault();
+    //     console.log('test');
+    //     $('.po_no').focus();
+    // });
+
+    // document.find('.po_no').addEventListener('click', function(){
+    //     this.focus();
+    // });
+
+    // $('.formSearchPoNo').on('click', '.po_no', function (e){
+    //     console.log('po field clicked');
+    //     // e.preventDefault();
+    //     this.focus();
+    // });
 
     $(".btnAddNoProduction").click(function(){
       $.confirm({

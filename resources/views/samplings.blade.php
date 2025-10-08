@@ -486,6 +486,11 @@
         });
     });
 
+    // $('.po_no').click(function (e){
+    //     // e.preventDefault();
+    //     $('.po_no').focus();
+    // });
+
     var cnfrmScanOperator = $.confirm({
         lazyOpen: true,
         title: '',

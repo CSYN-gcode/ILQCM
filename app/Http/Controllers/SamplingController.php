@@ -117,7 +117,6 @@ class SamplingController extends Controller
         // return $request->all();
 
         // return response()->json(['auth' => 1, 'result' => $request->all(), 'error' => null]);
-
         // return $request->multi_select_sampling_id[0];
 
         if($request->ajax()){
@@ -131,7 +130,6 @@ class SamplingController extends Controller
 
             try {
                 if($validator->passes()){
-
                     if($request->multi_select_sampling_id > 1){
                         $multi_select_sampling_array = explode(',', $request->multi_select_sampling_id);
                     }else{
