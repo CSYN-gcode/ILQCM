@@ -221,15 +221,15 @@
 
     $(".btnAddFamily").click(function(e){
       $("#mdlSaveFamily").modal('show');
-      frmSaveStrategicPo[0].reset();
-      $(".input-error", frmSaveStrategicPo).text('');
-      $(".form-control", frmSaveStrategicPo).removeClass('is-invalid');
-      $("select[name='series_name']", frmSaveStrategicPo).html("");
-      $("select[name='series_name']", frmSaveStrategicPo).val("").trigger("change");
+      frmSaveFamily[0].reset();
+      $(".input-error", frmSaveFamily).text('');
+      $(".form-control", frmSaveFamily).removeClass('is-invalid');
+      $("select[name='series_name']", frmSaveFamily).html("");
+      $("select[name='series_name']", frmSaveFamily).val("").trigger("change");
     });
 
     $('#mdlSaveFamily').on('shown.bs.modal', function (e) {
-      $('input[name="description"]', frmSaveStrategicPo).focus();
+      $('input[name="description"]', frmSaveFamily).focus();
     })
 
     $("#tblFamily").on('click', '.btnActions', function(e){
