@@ -589,6 +589,7 @@ class ComposerStaticInit53e8633ad61fe1d3171a951f3fe1e63d
         'App\\Http\\Requests\\DlaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/DlaRequest.php',
         'App\\Model\\DLACheckItem' => __DIR__ . '/../..' . '/app/Model/DLACheckItem.php',
         'App\\Model\\DLAResult' => __DIR__ . '/../..' . '/app/Model/DLAResult.php',
+        'App\\Model\\Family' => __DIR__ . '/../..' . '/app/Model/Family.php',
         'App\\Model\\Line' => __DIR__ . '/../..' . '/app/Model/Line.php',
         'App\\Model\\Machine' => __DIR__ . '/../..' . '/app/Model/Machine.php',
         'App\\Model\\MaterialIssuanceSubSystem' => __DIR__ . '/../..' . '/app/Model/MaterialIssuanceSubSystem.php',

@@ -3005,69 +3005,6 @@
             GetPODetails(po_no);
             $("#modalSearchPoNo").modal('hide');
     });
-        // $.confirm({
-        //     title: 'Search P.O. No.',
-        //     content: '' +
-        //     '<form action="" class="formSearchPoNo">' +
-        //         '<div class="form-group">' +
-        //             '<label>Enter P.O. No.</label>' +
-        //             '<input type="text" placeholder="P.O. No." class="po_no form-control" required />' +
-        //         '</div>' +
-        //     '</form>',
-        //     buttons: {
-        //         formSubmit: {
-        //             text: 'Search',
-        //             btnClass: 'btn-blue',
-        //             action: function () {
-        //                 var po_no = this.$content.find('.po_no').val();
-        //                 if(!po_no){
-        //                     toastr.warning('Invalid P.O. No.');
-        //                     return false;
-        //                 }
-        //                 GetPODetails(po_no);
-        //             }
-        //         },
-        //         cancel: function () {
-        //             //close
-        //         },
-        //     },
-        //     onContentReady: function () {
-        //         // bind to events
-        //         var jc = this;
-        //         this.$content.find('form').on('submit', function (e) {
-        //             // if the user submits the form by pressing enter in the field.
-        //             e.preventDefault();
-        //             jc.$$formSubmit.trigger('click'); // reference the button and click it
-        //         });
-        //     }
-        // });
-
-        // console.log($('.po_no').focus());
-        // $('.po_no').first().focus();
-        // console.log('dito na');
-    // });
-
-    // formSearchPoNo
-    // $('.formSearchPoNo').on('shown.modal', function () {
-    //     console.log('testing shown form');
-    //     $('.po_no').focus();
-    // });
-
-    // $('.po_no').click(function (e) {
-    //     e.preventDefault();
-    //     console.log('test');
-    //     $('.po_no').focus();
-    // });
-
-    // document.find('.po_no').addEventListener('click', function(){
-    //     this.focus();
-    // });
-
-    // $('.formSearchPoNo').on('click', '.po_no', function (e){
-    //     console.log('po field clicked');
-    //     // e.preventDefault();
-    //     this.focus();
-    // });
 
     $(".btnAddNoProduction").click(function(){
       $.confirm({
@@ -3120,19 +3057,6 @@
         '</div>' +
         '</form>',
         buttons: {
-            // formSubmit: {
-            //     text: 'Search',
-            //     btnClass: 'btn-blue',
-            //     visibility: false,
-            //     action: function () {
-            //         var scanned_employee_id = this.$content.find('.scanned_employee_id').val();
-            //         if(!scanned_employee_id){
-            //             toastr.warning('Employee ID is required.');
-            //             return false;
-            //         }
-            //         GetOperatorDetails(scanned_employee_id, $('select[name="station_id"]', frmSaveSampling).val());
-            //     }
-            // },
             cancel: function () {
                 //close
             },
@@ -3229,31 +3153,6 @@
                     });
                 }
             });
-
-            console.log('dlaCheckItems', dlaCheckItems);
-            console.log('unchecked_dlaCheckItems', unchecked_dlaCheckItems);
-            //   // CHECKED CHECKBOX
-            //   $(".chkDLA:checked").each(function(){
-            //       dlaCheckItems.push({
-            //         value: $(this).val(),
-            //         index: $(this).attr('index'),
-            //         date_index: $(this).attr('date-index'),
-            //         date: $(this).attr('date'),
-            //         // monitoring_id: $(this).attr('monitoring-id'), //commented by clark **redudant data
-            //       });
-            //     //   console.table(dlaCheckItems);
-            //   });
-
-            //   let unchecked_dlaCheckItems = [];
-
-            // // UNCHECKED CHECKBOX
-            // //   $(".chkDLA:not:checked").each(function(){
-            //     $("input:checkbox:not(:checked)").each(function(){
-            //     unchecked_dlaCheckItems.push({
-            //         index: $(this).attr('index')
-            //         // monitoring_id: $(this).attr('monitoring-id'), //commented by clark **redudant data
-            //       });
-            //   });
 
             unchecked_dlaCheckItems = unchecked_dlaCheckItems.filter(unchecked => !dlaCheckItems.some(checked => (checked.index === unchecked.index)));
             // console.log('FINAL unchecked_dlaCheckItems', unchecked_dlaCheckItems);

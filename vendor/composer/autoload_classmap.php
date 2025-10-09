@@ -32,6 +32,7 @@ return array(
     'App\\Http\\Requests\\DlaRequest' => $baseDir . '/app/Http/Requests/DlaRequest.php',
     'App\\Model\\DLACheckItem' => $baseDir . '/app/Model/DLACheckItem.php',
     'App\\Model\\DLAResult' => $baseDir . '/app/Model/DLAResult.php',
+    'App\\Model\\Family' => $baseDir . '/app/Model/Family.php',
     'App\\Model\\Line' => $baseDir . '/app/Model/Line.php',
     'App\\Model\\Machine' => $baseDir . '/app/Model/Machine.php',
     'App\\Model\\MaterialIssuanceSubSystem' => $baseDir . '/app/Model/MaterialIssuanceSubSystem.php',

@@ -177,19 +177,19 @@
               <label class="col-sm-2 col-form-label">Family</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" name="product_line_id" placeholder="ProductLine ID" style="display: none;">
-                <select class="form-control" name="family" placeholder="Family">
-                  <option value="1" selected="true">BGA/LGA</option>
+                <select class="form-control select2" id="selFamily" name="family"></select>
+                  {{-- <option value="1" selected="true">BGA/LGA</option>
                   <option value="2">BGA-FP</option>
                   <option value="3">Probe Pin</option>
                   <option value="4">QF/TSOP/SMPO</option>
                   <option value="5">PPS-CN</option>
                   <option value="6">PPS-TS</option>
-                  {{-- 10082025 Added by Nessa, for modification create CRUD module --}}
                   <option value="7">TC/DC Connectors</option>
                   <option value="8">Card Connectors</option>
                   <option value="9">Flexicon Connectors</option>
-                  <option value="10">IC Sockets</option>
-                </select>
+                  <option value="10">IC Sockets</option> --}}
+                  {{-- 10082025 Added by Nessa, for modification create CRUD module --}}
+                {{-- </select> --}}
                 <span class="text-danger float-sm-right input-error"></span>
               </div>
             </div>
@@ -360,6 +360,8 @@
       frmSaveProductLine[0].reset();
       $(".input-error", frmSaveProductLine).text('');
       $(".form-control", frmSaveProductLine).removeClass('is-invalid');
+
+      GetFamilyName($("#selFamily"));
     });
 
     $('#mdlSaveProductLine').on('shown.bs.modal', function (e) {
@@ -407,8 +409,8 @@
     });
 
     $("#frmSaveProductLine").submit(function(e){
-      e.preventDefault();
-      SaveProductLine();
+        e.preventDefault();
+        SaveProductLine();
     });
 
     $("#tblProductLines").on('click', '.btnEditProductLine', function(e){
@@ -438,11 +440,6 @@
     bsCustomFileInput.init();
     //Initialize Select2 Elements
     $('.select2').select2();
-
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-      theme: 'bootstrap4'
-    });
 
     toastr.options = {
       "closeButton": false,

@@ -43,6 +43,7 @@ Route::get('/dashboard', 'RouteController@dashboard')->name('dashboard');
 Route::get('/user_logout', 'UserController@user_logout');
 
 // Route::get('/pats_ppd_dashboard', 'RouteController@pats_ppd_dashboard')->name('pats_ppd_dashboard');
+Route::get('/families', 'RouteController@families')->name('families');
 Route::get('/strategic_po', 'RouteController@strategic_po')->name('strategic_po');
 Route::get('/serieses', 'RouteController@serieses')->name('serieses');
 Route::get('/users', 'RouteController@users')->name('users');
@@ -150,6 +151,12 @@ Route::get('/monitoring_v2/{id}', function ($id) {
 });
 
 //CLARK
+// FAMILY CONTROLLER
+Route::get('/view_family', 'FamilyController@viewFamily')->name('view_family');
+Route::post('/save_family', 'FamilyController@saveFamily')->name('save_family');
+Route::post('/family_action', 'FamilyController@familyAction')->name('family_action');
+Route::get('/get_family_by_id', 'FamilyController@getFamilyById')->name('get_family_by_id');
+
 // STRATEGIC PO CONTROLLER
 Route::get('/view_strategic_po', 'StrategicPoController@viewStrategicPo')->name('view_strategic_po');
 Route::post('/save_strategic_po', 'StrategicPoController@saveStrategicPo')->name('save_strategic_po');

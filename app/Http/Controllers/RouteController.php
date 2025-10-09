@@ -101,8 +101,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('view_monitoring_clark');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -111,8 +110,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('monitoring_v2');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -121,8 +119,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('view_monitoring');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -131,8 +128,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('samplings');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -141,8 +137,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('reference_types');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -151,8 +146,7 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('serieses');
-        }
-        else{
+        }else{
             return redirect()->route('session_expired');
         }
     }
@@ -161,8 +155,16 @@ class RouteController extends Controller
         session_start();
         if(isset($_SESSION["rapidx_user_id"])){
             return view('strategic_po');
+        }else{
+            return redirect()->route('session_expired');
         }
-        else{
+    }
+
+    public function families(){
+        session_start();
+        if(isset($_SESSION["rapidx_user_id"])){
+            return view('family');
+        }else{
             return redirect()->route('session_expired');
         }
     }

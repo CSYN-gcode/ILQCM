@@ -49,6 +49,15 @@
         </li>
 
         <li class="nav-item has-treeview">
+          <a href="{{ route('families') }}" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Family
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
           <a href="{{ route('serieses') }}" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
