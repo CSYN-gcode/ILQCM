@@ -269,6 +269,8 @@
 <!-- Custom Links -->
 <script src="{{ asset('public/scripts/client/ProductLine.js') }}"></script>
 <script src="{{ asset('public/scripts/client/Line.js') }}"></script>
+<script src="{{ asset('public/scripts/client/Family.js?n=1') }}"></script>
+
 
 <!-- JS Codes -->
 <script type="text/javascript">

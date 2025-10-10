@@ -108,14 +108,7 @@
                                         <div class="input-group-prepend w-20">
                                             <span class="input-group-text w-100">Family</span>
                                         </div>
-                                        <select class="form-control form-control selFilByFamily" name="family">
-                                            <option value="1" selected="true">BGA/LGA</option>
-                                            <option value="2">BGA-FP</option>
-                                            <option value="3">Probe Pin</option>
-                                            <option value="4">QF/TSOP/SMPO</option>
-                                            <option value="5">PPS-CN</option>
-                                            <option value="6">PPS-TS</option>
-                                        </select>
+                                        <select class="form-control form-control select2 selFilByFamily" name="family" style="width: 60%;"></select>
                                     </div>
                                 </div> <!-- .float-sm-left -->
                             </div>
@@ -308,6 +301,7 @@
 @section('js_content')
 <!-- Custom Links -->
 <script src="{{ asset('public/scripts/client/Monitoring.js?n=1132434') }}"></script>
+<script src="{{ asset('public/scripts/client/Family.js?n=1') }}"></script>
 
 <!-- JS Codes -->
 <script type="text/javascript">
@@ -373,6 +367,8 @@
     $('.txtFilByWorkWeek').keyup(function(){
       dtMonitorings.draw();
     });
+
+    GetFamilyName($(".selFilByFamily"));
 
     $('.selFilByFamily').change(function(){
       // $('.btnAddMonitoring').prop('disabled', true);

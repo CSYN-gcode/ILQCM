@@ -153,3 +153,40 @@ function FamilyAction(family_id, action, status){
         }
     });
 }
+
+function GetFamilyName(cboElement, FamilyId = null){
+    let result;
+    $.ajax({
+        url: 'get_family_by_id',
+        method: 'get',
+        dataType: 'json',
+        beforeSend: function() {
+            result = '<option value="0" disabled selected>--Loading--</option>';
+            cboElement.html(result);
+        },
+        success: function(response) {
+            let data = response['family_info'];
+            if(data.length > 0){
+                console.log('nandito1');
+
+                    result = '<option value="" disabled selected>Select Family Name</option>';
+                    result += '<option value="N/A"> N/A </option>';
+                for(let i = 0; i < data.length; i++){
+                    result += '<option value="' + data[i].id + '">' + data[i].family_name + '</option>';
+                }
+            }else{
+                result = '<option value="0" selected disabled> -- No record found -- </option>';
+            }
+            cboElement.html(result);
+
+            if(FamilyId != null){
+                cboElement.val(FamilyId).trigger('change');
+            }
+        },
+        error: function(data, xhr, status) {
+            result = '<option value="0" selected disabled> -- Reload Again -- </option>';
+            cboElement.html(result);
+            console.log('Data: ' + data + "\n" + "XHR: " + xhr + "\n" + "Status: " + status);
+        }
+    });
+}
