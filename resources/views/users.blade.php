@@ -238,7 +238,6 @@
     // CLARK CHANGES
 
     $("#tblUsers").on('click', '.btnGotoEtr', function(e){
-        console.log('pindot');
         let emp_id = $(this).attr('user-id');
         $.ajax({
             type: "get",
@@ -247,13 +246,16 @@
                 emp_id: emp_id
             },
             dataType: "json",
-            success: function (response) {
-                let pkid = response['result'].pkid;
-                // console.log('id', pkid);
-                if(response['emp_cat'] == 'pmi'){
-                    window.open("http://systemone/etr/emp_record_viewer.php?empID="+pkid)
-                }else if(response['emp_cat'] == 'subcon'){
-                    window.open("http://systemone/etr/subcon_employee_records_viewer.php?empID="+pkid)
+            success: function (response){
+                if(response['result'] != null){
+                    let pkid = response['result'].pkid;
+                    if(response['emp_cat'] == 'pmi'){
+                        window.open("http://systemone/etr/emp_record_viewer.php?empID="+pkid)
+                    }else if(response['emp_cat'] == 'subcon'){
+                        window.open("http://systemone/etr/subcon_employee_records_viewer.php?empID="+pkid)
+                    }
+                }else{
+                    toastr.error('Employee ID Not Found in Systemone Employee Training Record');
                 }
             }
         });

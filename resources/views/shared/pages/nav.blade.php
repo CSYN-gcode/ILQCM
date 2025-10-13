@@ -41,7 +41,7 @@
 
         <li class="nav-item has-treeview">
             <a href="{{ route('strategic_po') }}" class="nav-link">
-                <i class="nav-icon fas fa-list-ol"></i>
+                <i class="nav-icon fas fa-shopping-cart"></i>
                 <p>
                 Strategic PO
                 </p>
@@ -50,7 +50,7 @@
 
         <li class="nav-item has-treeview">
           <a href="{{ route('families') }}" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
+            <i class="nav-icon fas fa-link"></i>
             <p>
               Family
             </p>
@@ -59,7 +59,7 @@
 
         <li class="nav-item has-treeview">
           <a href="{{ route('serieses') }}" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
+            <i class="nav-icon fas fa-link"></i>
             <p>
               Series
             </p>

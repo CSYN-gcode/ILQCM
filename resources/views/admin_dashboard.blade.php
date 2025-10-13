@@ -29,13 +29,29 @@
                 <p>Strategic PO</p>
               </div>
               <div class="icon">
-                <i class="fas fa-list-ol"></i>
+                <i class="fas fa-shopping-cart"></i>
               </div>
               <a href="{{ route('strategic_po') }}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
+        <div class="col-lg-3 col-6">
+          <!-- small card -->
+          <div class="small-box bg-orange">
+            <div class="inner">
+              <!-- <h3 id="h3RegistrationsCount">0</h3> -->
+              <br><br>
+              <p>Family</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <a href="{{ route('families') }}" class="small-box-footer">
+              More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
         <div class="col-lg-3 col-6">
           <!-- small card -->
           <div class="small-box bg-info">
@@ -45,7 +61,7 @@
               <p>Series</p>
             </div>
             <div class="icon">
-              <i class="fas fa-list"></i>
+              <i class="fas fa-link"></i>
             </div>
             <a href="{{ route('serieses') }}" class="small-box-footer">
               More info <i class="fas fa-arrow-circle-right"></i>
