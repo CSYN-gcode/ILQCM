@@ -284,10 +284,7 @@
                                       <th style="text-align: center; vertical-align: middle;">RESULT</th>
                                       <th style="text-align: center; vertical-align: middle;">DPPM</th>
                                       <th style="text-align: center; vertical-align: middle;">Remarks </th>
-<<<<<<< HEAD
-=======
                                       <th style="text-align: center; vertical-align: middle;">QC Inspector</th>
->>>>>>> 82e293cbc7a421d69f3a787c5ab51b3622638366
                                       <th style="text-align: center; vertical-align: middle;">Validation Result<br>(QC Supervisor)</th>
                                       <th style="text-align: center; vertical-align: middle;">Status</th>
                                       <th style="text-align: center; vertical-align: middle;">Action</th>
