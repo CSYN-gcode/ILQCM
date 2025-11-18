@@ -2191,7 +2191,7 @@
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <h4 class="modal-title"><i class="fa-solid fa-file-circle-check"></i>&nbsp;&nbsp;Search P.O. No.</h4>
-                <button type="button" style="color: #fff" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" style="color: #fff" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -2204,7 +2204,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" id="" class="btn btn-primary"><i id=""
                             class="fa fa-check"></i> Search</button>
                 </div>

@@ -168,7 +168,7 @@ function GetFamilyName(cboElement, FamilyId = null){
             let data = response['family_info'];
             if(data.length > 0){
                 console.log('nandito1');
-
+                    $('.selFilByProdLineDesc').val("").trigger("change");
                     result = '<option value="" disabled selected>Select Family Name</option>';
                     result += '<option value="N/A"> N/A </option>';
                 for(let i = 0; i < data.length; i++){

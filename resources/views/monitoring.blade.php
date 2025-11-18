@@ -400,31 +400,31 @@
       });
     });
 
-    $('.selFilByProdLineDesc').select2({
-        // dropdownParent: $('#mdlSaveItemRegistration'),
-        placeholder: "",
-        minimumInputLength: 2,
-        allowClear: true,
-        ajax: {
-           url: "{{ route('get_cbo_product_line_by_family') }}",
-           type: "get",
-           dataType: 'json',
-           delay: 250,
-           // quietMillis: 100,
-           data: function (params) {
-            return {
-              search: params.term, // search term
-              family: $('.selFilByFamily').val(),
-            };
-           },
-           processResults: function (response) {
-             return {
-                results: response
-             };
-           },
-           cache: true
-        },
-    });
+    // $('.selFilByProdLineDesc').select2({
+    //     // dropdownParent: $('#mdlSaveItemRegistration'),
+    //     placeholder: "",
+    //     minimumInputLength: 2,
+    //     allowClear: true,
+    //     ajax: {
+    //        url: "{{ route('get_cbo_product_line_by_family') }}",
+    //        type: "get",
+    //        dataType: 'json',
+    //        delay: 250,
+    //        // quietMillis: 100,
+    //        data: function (params) {
+    //         return {
+    //           search: params.term, // search term
+    //           family: $('.selFilByFamily').val(),
+    //         };
+    //        },
+    //        processResults: function (response) {
+    //          return {
+    //             results: response
+    //          };
+    //        },
+    //        cache: true
+    //     },
+    // });
 
     // localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
     // localStorage.removeItem("monitorningFilter");
