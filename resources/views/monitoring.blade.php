@@ -71,7 +71,8 @@
                                             <span class="input-group-text w-100">Fiscal Year</span>
                                         </div>
                                         {{-- echo date('Y'); current year --}}
-                                        <input type="text" class="form-control form-control txtFilByYear" name="year" value="<?php echo date('Y'); ?>">
+                                        {{-- <input type="text" class="form-control form-control txtFilByYear" name="year" value="<?php echo date('Y'); ?>"> --}}
+                                        <input type="text" class="form-control form-control txtFilByYear" name="year" value="">
                                     </div>
                                 </div> <!-- .float-sm-left -->
                             </div>
@@ -309,6 +310,13 @@
     frmSaveMonitoring = $("#frmSaveMonitoring");
     btnSaveMonitoring = $('.btnSaveMonitoring');
 
+    let currentFY = getCurrentFiscalYear();
+
+    // Only set if empty (important for edit mode)
+    if (!$('.txtFilByYear').val()) {
+        $('.txtFilByYear').val(currentFY);
+    }
+
     bsCustomFileInput.init();
     //Initialize Select2 Elements
     $('.select2').select2();
@@ -399,35 +407,6 @@
           },
       });
     });
-
-    // $('.selFilByProdLineDesc').select2({
-    //     // dropdownParent: $('#mdlSaveItemRegistration'),
-    //     placeholder: "",
-    //     minimumInputLength: 2,
-    //     allowClear: true,
-    //     ajax: {
-    //        url: "{{ route('get_cbo_product_line_by_family') }}",
-    //        type: "get",
-    //        dataType: 'json',
-    //        delay: 250,
-    //        // quietMillis: 100,
-    //        data: function (params) {
-    //         return {
-    //           search: params.term, // search term
-    //           family: $('.selFilByFamily').val(),
-    //         };
-    //        },
-    //        processResults: function (response) {
-    //          return {
-    //             results: response
-    //          };
-    //        },
-    //        cache: true
-    //     },
-    // });
-
-    // localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
-    // localStorage.removeItem("monitorningFilter");
 
     if(localStorage.getItem("monitorningFilter") == undefined){
       localStorage.setItem("monitorningFilter", JSON.stringify(monitorningFilter));
@@ -705,50 +684,159 @@
     });
 
     $('input[name="work_week"]', frmSaveMonitoring).on('keyup change', function(){
-      var currYear = "2023";
-      var monthofCurrentYear = moment().format("MM")
-      console.log('month now', monthofCurrentYear);
-      if(monthofCurrentYear == 1 || monthofCurrentYear == 2 || monthofCurrentYear == 3){
-        var currYear = moment().format("YYYY") - 1;
-        console.log('fiscalyear now', currYear);
-      }else{
-        var currYear = moment().format("YYYY");
-        // var currYear = "2024";
-        console.log('year now', currYear);
-      }
+        let week = parseInt($(this).val());
+        let fiscalYearStart = parseInt($('.txtFilByYear').val());
 
-      //  console.log('month now', monthofCurrentYear);
-      //   var currYear = moment().format("YYYY");
-      //   console.log('year now', currYear);
-      //Pass in the first of a given calendar month and the day weekday
-      var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
-      $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
-      $('input[name="date_to"]', frmSaveMonitoring).val(dateRange.dateTo);
+        if (!week || !fiscalYearStart) return;
+
+        let { start, end } = getWeekN(fiscalYearStart, week);
+
+        function format(date) {
+            let y = date.getFullYear();
+            let m = String(date.getMonth() + 1).padStart(2, '0');
+            let d = String(date.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
+
+        $('input[name="date_from"]').val(format(start));
+        $('input[name="date_to"]').val(format(end));
+
+        console.log('work week changed', $(this).val());
+    //   var currYear = "2023";
+    //   var monthofCurrentYear = moment().format("MM")
+    //   console.log('month now', monthofCurrentYear);
+    //   if(monthofCurrentYear == 1 || monthofCurrentYear == 2 || monthofCurrentYear == 3){
+    //     var currYear = moment().format("YYYY") - 1;
+    //     console.log('fiscalyear now', currYear);
+    //   }else{
+    //     var currYear = moment().format("YYYY");
+    //     // var currYear = "2024";
+    //     console.log('year now', currYear);
+    //   }
+
+    //   //Pass in the first of a given calendar month and the day weekday
+    //   var dateRange = getFirstWeekDay(currYear + "-04-01", 0, ($(this).val() - 1));
+    //   $('input[name="date_from"]', frmSaveMonitoring).val(dateRange.dateFrom);
+    //   $('input[name="date_to"]', frmSaveMonitoring).val(dateRange.dateTo);
+
+        // let week = parseInt($(this).val());
+        // console.log('week', week);
+
+        // let fiscalYearStart = parseInt($('.txtFilByYear').val());
+
+        // if (!week || !fiscalYearStart) return;
+
+        // let baseDate = new Date(fiscalYearStart, 3, 1);
+        // let endLimit = new Date(fiscalYearStart + 1, 2, 31);
+
+        // // compute start
+        // let startDate = new Date(
+        //     baseDate.getFullYear(),
+        //     baseDate.getMonth(),
+        //     baseDate.getDate() + (week - 1) * 7
+        // );
+
+        // // compute end
+        // let endDate = new Date(
+        //     startDate.getFullYear(),
+        //     startDate.getMonth(),
+        //     startDate.getDate() + 6
+        // );
+
+        // // Prevent overlap
+        // if (endDate > endLimit) {
+        //     endDate = endLimit;
+        // }
+
+        // function format(date) {
+        //     let y = date.getFullYear();
+        //     let m = String(date.getMonth() + 1).padStart(2, '0');
+        //     let d = String(date.getDate()).padStart(2, '0');
+        //     return `${y}-${m}-${d}`;
+        // }
+
+        // console.log('start', format(startDate));
+        // console.log('end', format(endDate));
+
+        // $('input[name="date_from"]').val(format(startDate));
+        // $('input[name="date_to"]').val(format(endDate));
     });
 
-    function getFirstWeekDay(dateString, dayOfWeek, workWeek) {
-      var date = moment(dateString, "YYYY-MM-DD");
+    // function getFirstWeekDay(dateString, dayOfWeek, workWeek) {
+    //   var date = moment(dateString, "YYYY-MM-DD");
 
-      var day = date.day();
-      var diffDays = 0;
+    //   var day = date.day();
+    //   var diffDays = 0;
 
-      var dateFrom = "";
-      var dateTo = "";
+    //   var dateFrom = "";
+    //   var dateTo = "";
 
-      if (day > dayOfWeek) {
-        diffDays = (7 * workWeek) - (day - dayOfWeek);
-      } else {
-        diffDays = dayOfWeek - day;
-      }
+    //   if (day > dayOfWeek) {
+    //     diffDays = (7 * workWeek) - (day - dayOfWeek);
+    //   } else {
+    //     diffDays = dayOfWeek - day;
+    //   }
 
-      var tempDateFrom = date.add(diffDays, 'day');
-      var dateFrom = tempDateFrom.format("YYYY-MM-DD");
-      dateTo = tempDateFrom.add(6, 'day').format("YYYY-MM-DD");
+    //   var tempDateFrom = date.add(diffDays, 'day');
+    //   var dateFrom = tempDateFrom.format("YYYY-MM-DD");
+    //   dateTo = tempDateFrom.add(6, 'day').format("YYYY-MM-DD");
 
-      return {
-        dateFrom: dateFrom,
-        dateTo: dateTo
-      };
+    //   return {
+    //     dateFrom: dateFrom,
+    //     dateTo: dateTo
+    //   };
+    // }
+
+    // function format(date) {
+    //     let y = date.getFullYear();
+    //     let m = String(date.getMonth() + 1).padStart(2, '0');
+    //     let d = String(date.getDate()).padStart(2, '0');
+    //     return `${y}-${m}-${d}`;
+    // }
+
+    function getWeek1(fiscalYearStart) {
+        let start = new Date(fiscalYearStart, 3, 1); // April 1
+        let dayOfWeek = start.getDay(); // 0=Sunday ... 6=Saturday
+
+        let diffToSaturday = 6 - dayOfWeek; // days to Saturday
+        let end = new Date(start);
+        end.setDate(start.getDate() + diffToSaturday);
+
+        return { start, end };
+    }
+
+    function getWeekN(fiscalYearStart, weekNumber) {
+        if (weekNumber < 1) return null;
+
+        // Week 1
+        let week1 = getWeek1(fiscalYearStart);
+        if (weekNumber === 1) return week1;
+
+        // Start from Sunday after week1.end
+        let start = new Date(week1.end);
+        start.setDate(start.getDate() + 1); // Sunday
+
+        // Loop to week N
+        for (let i = 2; i < weekNumber; i++) {
+            start.setDate(start.getDate() + 7);
+        }
+
+        let end = new Date(start);
+        end.setDate(start.getDate() + 6); // Saturday
+
+        // Clamp to fiscal year end (March 31 next year)
+        let endLimit = new Date(fiscalYearStart + 1, 2, 31);
+        if (end > endLimit) end = endLimit;
+
+        return { start, end };
+    }
+
+    function getCurrentFiscalYear() {
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth(); // 0 = Jan
+
+        return (month < 3) ? year - 1 : year;
     }
 
   });
